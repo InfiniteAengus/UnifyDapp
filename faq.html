@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+  <title>FAQ - Unifty</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script type="text/javascript" src="js/buffer.js"></script>
+  <script type="text/javascript" src="js/misc.js"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/plugins/chartist.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+  <style type="text/css">
+    .dark-edition .modal a {
+      color: #8b92a9;
+      font-weight: 700;
+    }
+
+    .main-timeline {
+      position: relative
+    }
+
+    .main-timeline:before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0
+    }
+
+    .main-timeline .timeline {
+      margin-bottom: 40px;
+      position: relative
+    }
+
+    .main-timeline .timeline:after {
+      content: "";
+      display: block;
+      clear: both
+    }
+
+    .main-timeline .icon {
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: none;
+    }
+
+    .main-timeline .icon:before,
+    .main-timeline .icon:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.33s ease-out 0s
+    }
+
+    .main-timeline .icon:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -3px
+    }
+
+    .main-timeline .icon:after {
+      border: 2px solid #25b1c3;
+      left: 3px
+    }
+
+    .main-timeline .timeline:hover .icon:before {
+      left: 3px
+    }
+
+    .main-timeline .timeline:hover .icon:after {
+      left: -3px
+    }
+
+    .main-timeline .date-content {
+      width: 50%;
+      float: left;
+      margin-top: 22px;
+      position: relative
+    }
+
+    .main-timeline .date-content:before {
+      content: "";
+      width: 36.5%;
+      height: 2px;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0
+    }
+
+    .main-timeline .date-outer {
+      width: 125px;
+      height: 125px;
+      font-size: 16px;
+      text-align: center;
+      margin: auto;
+      z-index: 1
+    }
+
+    .main-timeline .date-outer:before,
+    .main-timeline .date-outer:after {
+      content: "";
+      width: 125px;
+      height: 125px;
+      margin: 0 auto;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.33s ease-out 0s
+    }
+
+    .main-timeline .date-outer:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -6px
+    }
+
+    .main-timeline .date-outer:after {
+      border: 2px solid #25b1c3;
+      left: 6px
+    }
+
+    .main-timeline .timeline:hover .date-outer:before {
+      left: 6px
+    }
+
+    .main-timeline .timeline:hover .date-outer:after {
+      left: -6px
+    }
+
+    .main-timeline .date {
+      width: 100%;
+      margin: auto;
+      position: absolute;
+      top: 27%;
+      left: 0
+    }
+
+    .main-timeline .month {
+      font-size: 18px;
+      font-weight: 700
+    }
+
+    .main-timeline .month {
+      color: #232323;
+    }
+
+    .main-timeline .year {
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+      color: #232323;
+      line-height: 36px
+    }
+
+    .main-timeline .timeline-content {
+      width: 50%;
+      padding: 20px 0 20px 50px;
+      float: right
+    }
+
+    .main-timeline .title {
+      font-size: 19px;
+      line-height: 24px;
+      margin: 0 0 15px 0
+    }
+
+    .main-timeline .description {
+      margin-bottom: 0
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content {
+      float: right
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content:before {
+      left: 10px
+    }
+
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+      padding: 20px 50px 20px 0;
+      text-align: right
+    }
+
+    @media only screen and (max-width: 991px) {
+      .main-timeline .date-content {
+        margin-top: 35px
+      }
+
+      .main-timeline .date-content:before {
+        width: 22.5%
+      }
+
+      .main-timeline .timeline-content {
+        padding: 10px 0 10px 30px
+      }
+
+      .main-timeline .title {
+        font-size: 17px
+      }
+
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        padding: 10px 30px 10px 0
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .main-timeline:before {
+        margin: 0;
+        left: 7px
+      }
+
+      .main-timeline .timeline {
+        margin-bottom: 20px
+      }
+
+      .main-timeline .timeline:last-child {
+        margin-bottom: 0
+      }
+
+      .main-timeline .icon {
+        margin: auto 0
+      }
+
+      .main-timeline .date-content {
+        width: 95%;
+        float: right;
+        margin-top: 0
+      }
+
+      .main-timeline .date-content:before {
+        display: none
+      }
+
+      .main-timeline .date-outer {
+        width: 110px;
+        height: 110px
+      }
+
+      .main-timeline .date-outer:before,
+      .main-timeline .date-outer:after {
+        width: 110px;
+        height: 110px
+      }
+
+      .main-timeline .date {
+        top: 30%
+      }
+
+      .main-timeline .year {
+        font-size: 24px
+      }
+
+      .main-timeline .timeline-content,
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0
+      }
+
+      .main-timeline .title {
+        margin-bottom: 10px
+      }
+    }
+
+    .dark-edition .card .card-body .card-description {
+      color: #8b92a9;
+    }
+
+    .description,
+    .card-description,
+    .footer-big p {
+      color: #8b92a9;
+    }
+
+    .title,
+    .title a,
+    .card-title,
+    .card-title a,
+    .info-title,
+    .info-title a,
+    .footer-brand,
+    .footer-brand a,
+    .footer-big h5,
+    .footer-big h5 a,
+    .footer-big h4,
+    .footer-big h4 a,
+    .media .media-heading,
+    .media .media-heading a {
+      color: #8b92a9;
+    }
+
+    body {
+      color: #8b92a9;
+    }
+
+    .navbar,
+    .navbar-text a {
+      color: inherit;
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <script src="js/themeDefault.js"></script>
+
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://unifty.io" class="simple-text logo-normal">
+        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+          Binance Smart Chain
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="material-icons-round">home</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item" id="marketNavLink">
+          <a class="nav-link" href="market.html">
+            <i class="material-icons-round">storefront</i>
+            <p>NFT Market</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="collectibles.html">
+            <i class="material-icons-round">account_balance_wallet</i>
+            <p>Your Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager.html">
+            <i class="material-icons-round">collections</i>
+            <p>Collection Manager</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="farm-builder.html">
+            <i class="material-icons-round">build</i>
+            <p>Farm Builder</p>
+          </a>
+        </li>
+        <li class="nav-item bridgeNav">
+          <a class="nav-link" href="bridge.html">
+            <i class="material-icons-round">360</i>
+            <p>NFT Bridge</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);" id="nulsSco">
+            <i class="material-icons-round">monetization_on</i>
+            <p>Get Project Funding</p>
+          </a>
+        </li>
+        <li class="nav-item" id="xdaiFarm">
+          <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0x87E5aFba16E3BEbd967699B4D5472B2ae1AA8Fa7">
+            <i class="material-icons">grass</i>
+            <p>Rares Farm - NIF (xDai)</p>
+          </a>
+        </li>
+
+        <li class="nav-item" id="genesisFarm">
+          <a class="nav-link" href="https://unifty.io/farm.html?farm=0xA2c88A39b1DE8f1d723d9E76AD07f6012826d0f3">
+            <i class="material-icons">grass</i>
+            <p>Genesis Farm - NIF-LP</p>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-text">
+          <div class="sidebar-text icons">
+            <span class="navbar-text">              
+              <a href="https://www.facebook.com/unifty.io" target="_blank">
+                <i class="fa fa-facebook"></i>              </a>
+              
+              <a href="https://www.instagram.com/unifty_io/" target="_blank">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://t.me/unifty" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://discord.gg/5ZBTgnAd9s" target="_blank">
+                <i class="fa fa-discord"></i>
+              </a>
+              <a href="https://twitter.com/unifty_io" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              </span>
+          </div>
+
+          <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Unifty Development d.o.o.<br/>All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- SIDEBAR END -->
+
+  <div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+      <div class="container-fluid">                
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+          aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+      <!-- HEADER -->
+      <div class="custom-header">
+        <div class="custom-header__title">Unifty.io</div>
+        <div class="custom-header__dropdowns">
+          <script>
+            // fix for initial doubleclick required upon page load
+            $(document).ready(function () {
+              $('#chainSelectionDropdown').click();
+            });
+          </script>
+
+          <div class="dropdown ml-3 mr-3 dropdown--chains">
+            <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select chain
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="https://unifty.io/">Ethereum</a>
+              <a class="dropdown-item" href="https://unifty.io/xdai/">xDai</a>
+              <a class="dropdown-item" href="https://unifty.io/bsc/">Binance Smart Chain</a>
+              <a class="dropdown-item" href="https://unifty.io/avalanche/">Avalanche</a>
+              <a class="dropdown-item" href="https://unifty.io/celo/">Celo</a>
+              <a class="dropdown-item" href="https://unifty.io/matic/">Polygon (Matic)</a>
+              <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+              <a class="dropdown-item" href="https://unifty.io/rinkeby/">Rinkeby (Testnet)</a>
+            </div>            
+          </div>
+
+          <div class="theme-toggler">
+            <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+              <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+            </label>
+            <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+          </div>
+
+        </div>
+      </div>
+      <!-- HEADER END -->
+      
+      <div class="content__welcome-text">
+        <p>
+          Please read through our FAQ to get answers to most common questions.
+        </p>
+      </div>
+
+      <div class="container-fluid">
+
+        <h1>FAQ</h1>
+
+        <div class="row">
+          <div class="col-xl-12 col-lg-12">
+            <div class="card faq">
+              <div class="card-body">
+                <div class="card-description">
+
+                  <h5 class="mt-3">What are NFTs?</h5>
+                  <p>NFTs (Non-Fungible Tokens) are representations of collectibles on the blockchain (Ethereum in the
+                    case of UNIFTY). NFTs are usually associated with digital art but their use-cases are limitless.
+                    NFTs are one of the fastest growing asset classes in the crypto space.</p>
+                  <h5 class="mt-3">What is UNIFTY's ultimate goal?</h5>
+                  <p>UNIFTY is aiming to become the major hub for exchanging, creating, managing and market NFTs and
+                    collectibles.</p>
+                  <h5 class="mt-3">What has been done so far?</h5>
+                  <p>UNIFTY just started with the collection manager, the website and first social media announcements.
+                    If you are reading this it means you are very early!</p>
+                  <h5 class="mt-3">What is a collection?</h5>
+                  <p>A collection holds many NFTs of the same type. If you have a series of Manga NFTs for example, you
+                    would store them in the same collection. Collections at UNIFTY are ERC1155 contracts, the new NFT
+                    standard for Ethereum.</p>
+                  <h5 class="mt-3">Why should I create collections at UNIFTY? I can create NFTs at Rarible and OpenSea
+                    already.</h5>
+                  <p>Because the collections there aren't yours. For example at Rarible, your NFTs belong to the Rarible
+                    collection and aren't technically yours. On the other hand, custom erc155 collections at Unifty are
+                    approx. 50% cheaper than custom erc1155 collections at Rarible. If you intend to build a community
+                    around your NFTs it is critical that you have full ownership and administrative privileges over all
+                    contracts in play. The collections you create at UNIFTY are entirely yours. Additionally, all
+                    contracts made with UNIFTY are already verified!</p>
+                  <h5 class="mt-3">How much do your services cost?</h5>
+                  <p>If you are holding NIF or owning one of our Free Pass wildcard collectibles, nothing! If you aren't
+                    holding/owning none, a developer fee will apply.</p>
+                  <h5 class="mt-3">What is planned in the future?</h5>
+                  <p>Please check out our <a href="index.html">Roadmap</a>. To make it quick: we are currently
+                    developing a complete toolset for managing NFTs. Phase 1 of the Roadmap will end with the
+                    availability of our NFT swapping dapp where everyone will be able to exchange NFTs in a similar
+                    fashion to Uniswap.</p>
+                  <h5 class="mt-3">Will you release a token?</h5>
+                  <p>Yes, in fact the token exists already and is called NIF. Our token will play a major role within
+                    the UNIFTY ecosystem.</p>
+                  <h5 class="mt-3">What are the tokenomics of NIF?</h5>
+                  <p>
+                    In the first step, holding NIF will allow you to use our tools for free and will be finally used to
+                    determine NFTs of similar value for our upcoming NFT swapping as well as providing cheaper swap
+                    fees.
+                    <br /><br />
+                    Symbol: NIF
+                    <br />
+                    Total Supply: 5,000,000
+                    <br />
+                    Decimals: 18
+                    <br /><br />
+                    NIF token contract at Etherscan.io:
+                    <br />
+                    <a href="https://etherscan.io/address/0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e"
+                      target="_blank">0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e</a>
+                    <br /><br>
+                    1,000,000 $NIF have been initially pooled at <a
+                      href="https://app.uniswap.org/#/swap?inputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e"
+                      target="_blank">Uniswap.</a>
+                    <br />
+                    Pool liquidity locked with <a
+                      href="https://v2.unicrypt.network/pair/0x63607de7ae773638d012561a01383ab8ac321371"
+                      target="_blank">Unicrypt</a>.
+                    <br />
+                    <a href="https://team.finance/view-coin/0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e?name=Unifty&symbol=NIF"
+                      target="_blank">Team Wallet</a> locked until April 5th, 2021, after that date, the wallet's NIF
+                    will be locked in a new contract to automatically distribute it as pool liquidity based on the
+                    project's net income.
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALERT -->
+        <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+          aria-labelledby="alertModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body modal-non-nft-content">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
+            <span class="material-icons-round">
+              find_replace
+            </span>
+            Get $NIF on Uniswap
+          </a>
+        </li>
+
+        <li class="nav-item" id="ramp-btn">
+          <a class="nav-link">
+                      <span class="material-icons-round">
+                        attach_money
+                      </span>
+            Buy crypto with RAMP
+          </a>
+        </li>
+        
+        <li class="nav-item shop" id="shopEthereum" style="display:none;">
+          <a class="nav-link" href="https://unifty.io/farm-view.html?address=0x7387DF14E182b37aEF944C231E6f4D88EbBa1145">
+            <span class="material-icons-round">
+              shopping_cart
+            </span>
+            Shop
+          </a>
+        </li>
+
+        <li class="nav-item shop" id="shopXdai" style="display:none;">
+          <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0xCBe3F53c26A717704d12D219F8B43016BbDa9082">
+            <span class="material-icons-round">
+              shopping_cart
+            </span>
+            Shop
+          </a>
+        </li>
+
+        <li class="nav-item shop" id="shopBsc" style="display:none;">
+          <a class="nav-link" href="https://unifty.io/bsc/farm-view.html?address=0x7B717526fF81f28053F82170D96f01B4605A5e90">
+            <span class="material-icons-round">
+              shopping_cart
+            </span>
+            Shop
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://unifty.eth.link">
+            <span class="material-icons-round">
+              present_to_all
+            </span>
+            Mirror
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="roadmap.html">
+            <span class="material-icons-round">
+              swap_calls
+            </span>
+            Roadmap
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">
+            <span class="material-icons-round">
+              help_outline
+            </span>
+            FAQ
+          </a>
+        </li>
+
+        <li class="nav-item" style="display:none;" id="torus">
+          <a class="nav-link" href="javascript:enableTorus();">
+                    <span class="material-icons-round">
+                      account_balance_wallet
+                    </span>
+            Enable Wallet
+          </a>
+        </li>
+
+        <li class="nav-item" style="display:none;" id="torusAddress">
+          <a href="javascript:void(0);" id="torusAddressPopover" type="button" class="btn btn-clipboard" style="cursor: pointer;" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" title="Your Address" data-html="true" data-content="">
+                      <span class="material-icons-round">
+                        account_balance_wallet
+                      </span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- FOOTER END -->
+
+  </div>
+  <script src="js/ramp-init.js"></script>
+  <script src="js/themeSwitch.js"></script>
+</body>
+
+</html>
