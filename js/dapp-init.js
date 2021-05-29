@@ -29,18 +29,13 @@ function waitForPaging(pageId, itemCount) {
     $(window).off('scroll');
     return new Promise(
         function(resolve, reject){
-            if(itemCount % 8 == 0){
-                let nearToBottom = 450;
-                if ($(window).scrollTop() + $(window).height() >=
-                    $(document).height() - nearToBottom) {
-                    resolve('done');
-                }
-            }
-            else if(itemCount % 8 == 7){
+            if(itemCount % 50 == 49){
                 $(window).on('scroll', function(){
-                    let nearToBottom = 450;
+                    let nearToBottom = window.screen.height;
+
                     if ($(window).scrollTop() + $(window).height() >=
                         $(document).height() - nearToBottom) {
+                        console.log("Hit Shit");
                         resolve('done');
                     }
                 });

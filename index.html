@@ -13,7 +13,7 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
@@ -363,6 +363,7 @@
       </a>
     </div>
 
+    
     <div class="sidebar-wrapper">
       <ul class="nav">
         <li class="nav-item active">
@@ -402,9 +403,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0);" id="nulsSco">
+          <a class="nav-link" href="project-funding.html" id="nulsSco">
             <i class="material-icons-round">monetization_on</i>
             <p>Get Project Funding</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="guides-faq.html">
+            <i class="material-icons-round">help_center</i>
+            <p>Guides & FAQ</p>
           </a>
         </li>
         <li class="nav-item" id="xdaiFarm">
@@ -431,7 +438,7 @@
               <a href="https://www.facebook.com/unifty.io" target="_blank">
                 <i class="fa fa-facebook"></i>              </a>
               
-              <a href="https://www.instagram.com/unifty_io/" target="_blank">
+              <a href="https://www.instagram.com/unifty.io/" target="_blank">
                 <i class="fa fa-instagram"></i>
               </a>
               <a href="https://t.me/unifty" target="_blank">
@@ -491,17 +498,17 @@
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
               id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Select chain
+              Ethereum
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="https://unifty.io/">Ethereum</a>
-              <a class="dropdown-item" href="https://unifty.io/xdai/">xDai</a>
-              <a class="dropdown-item" href="https://unifty.io/bsc/">Binance Smart Chain</a>
-              <a class="dropdown-item" href="https://unifty.io/avalanche/">Avalanche</a>
-              <a class="dropdown-item" href="https://unifty.io/celo/">Celo</a>
-              <a class="dropdown-item" href="https://unifty.io/matic/">Polygon (Matic)</a>
+              <a class="dropdown-item" href="https://unifty.io/"><img src="assets/img/network-icons/ethereum_logo.svg">Ethereum</a>
+              <a class="dropdown-item" href="https://unifty.io/xdai/"><img src="assets/img/network-icons/xdai_logo.svg">xDai</a>
+              <a class="dropdown-item" href="https://unifty.io/bsc/"><img src="assets/img/network-icons/binance_logo.svg">Binance Smart Chain</a>
+              <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
+              <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
+              <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
               <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
-              <a class="dropdown-item" href="https://unifty.io/rinkeby/">Rinkeby (Testnet)</a>
+              <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
             </div>            
           </div>
 
@@ -658,6 +665,37 @@
       <h3>Selected farms created with Unifty's Farm Builder by 3rd parties</h3>
       
       <div class="container-fluid featured-farms">
+
+
+
+
+        <div class="card farm-card">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <img src="https://slinkyfinance.xyz/img/200.png">
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Ink2 - Elastic supply protocol</h3>
+            <a class="btn btn-primary card-toggler first-collapsed" data-toggle="collapse" href="#multiCollapseDesc32" role="button" aria-expanded="false" aria-controls="multiCollapseDesc32">
+              Read more...
+            </a>
+            <div class="collapse multi-collapse" id="multiCollapseDesc32">
+              <p class="card-description">
+                Get our exclusive NFT ESC Collection, hodlers get benefits on future development.
+              </p>
+            </div>
+            <a class="btn btn-primary card-toggler first-collapsed" data-toggle="collapse" href="#multiCollapseLinks32" role="button" aria-expanded="false" aria-controls="multiCollapseLinks32">
+              Open Farms
+            </a>
+            <div class="collapse multi-collapse" id="multiCollapseLinks32">
+              <a class="card-link"
+                 href="https://unifty.io/bsc/farm-view.html?address=0x619f27A5aB78f01b93C2783667b505d2c4b83fa5"><i
+                      class="fa fa-external-link"></i>Open Farm, BSC</a>
+
+            </div>
+          </div>
+        </div>
 
 
 
@@ -825,6 +863,7 @@
           </div>
         </div>
 
+        <!--
         <div class="card farm-card">
           <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
@@ -856,12 +895,12 @@
                  href="https://unifty.io/xdai/farm-view.html?address=0x3B7e510fe15CCc5ca0B1dfAAfefA57fA980E1394"><i
                       class="fa fa-external-link"></i>xDai</a><br />
               <a class="card-link"
-                 href="https://unifty.io/bsc/farm-view.html?address=0x5d77B5A2C60A0CCF8C80eE738070f5f1a6b0eD68"><i
+                 href="https://unifty.io/bsc/farm-view.html?address=0x9472A50AB7BD71127fE33233D95feeF1fD3A8217"><i
                       class="fa fa-external-link"></i>BSC</a><br />
               <a class="card-link" href="https://www.harem-token.com" target="_blank"><i class="fa fa-home"></i>Web</a>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <div class="card farm-card">
           <div class="card-header card-header-info card-header-icon">
@@ -1027,7 +1066,7 @@
         </div>
 
 
-
+<!--
         <div class="card farm-card">
           <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
@@ -1064,7 +1103,7 @@
 
             </div>
           </div>
-        </div>
+        </div>-->
 
 
         <div class="card farm-card">
@@ -1213,6 +1252,7 @@
           </div>
         </div>
 
+        <!--
         <div class="card farm-card">
           <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
@@ -1241,7 +1281,7 @@
                       class="fa fa-external-link"></i>Open Farm Shop, BSC</a>
           </div>
         </div>
-        </div>
+        </div>-->
 
 
               <div class="card farm-card">
@@ -1420,9 +1460,9 @@
                       <a class="card-link"
                         href="https://unifty.io/xdai/farm-view.html?address=0xb474F405F0DF84fbe57751Af0CB1AE534f5639b5"><i
                           class="fa fa-external-link"></i>$HNY/$COLD LP RARES, xDai</a><br />
-                      <a class="card-link"
+                      <!--<a class="card-link"
                         href="https://unifty.io/xdai/farm-view.html?address=0x5d004F2576465aEa90328bCcC219cC8b4873cC53"><i
-                          class="fa fa-external-link"></i>$COLD / NSFW!!, xDai</a><br />
+                          class="fa fa-external-link"></i>$COLD / NSFW!!, xDai</a><br />-->
                       <a class="card-link"
                         href="https://unifty.io/xdai/farm-view.html?address=0x305dc5048d9680d8b93a60Fd9f0054Bb0F6C5B19"><i
                           class="fa fa-external-link"></i>$COLD / Music, xDai</a><br />
@@ -1437,6 +1477,7 @@
                 </div>
               </div>
 
+        <!--
               <div class="card farm-card">
                 <div class="card-header card-header-info card-header-icon">
                   <div class="card-icon">
@@ -1469,7 +1510,7 @@
                     <a class="card-link" href="https://www.cryptovoxels.com/play?coords=S@238W,649S" target="_blank"><i class="fa fa-home"></i>Web</a>
                   </div>
                 </div>
-              </div>
+              </div>-->
 
           </div>
 
@@ -1577,7 +1618,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" href="faq.html">
+        <a class="nav-link" href="guides-faq.html">
             <span class="material-icons-round">
               help_outline
             </span>

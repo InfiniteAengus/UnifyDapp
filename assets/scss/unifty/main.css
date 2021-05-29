@@ -1200,8 +1200,8 @@ h3 {
 .sidebar-text.icons {
   margin: 4rem 0 1rem;
 }
-.sidebar-text.icons span a:nth-child(2) {
-  margin: 0 4rem;
+.sidebar-text.icons span a {
+  margin: 0 1rem;
 }
 .sidebar-text.icons span a:hover {
   color: var(--heading-color);

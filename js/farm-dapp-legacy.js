@@ -147,7 +147,16 @@ function TncDapp() {
                 traitsHide : traits_hide
             });
 
-            $('#farmPage').append(tmpl);
+
+            // hack to not display an adult NFT in the unifty rares farm
+            if( chain_id == '1' && nfts[i].erc1155.toLowerCase() == '0x774418646555F414CBaEcA6CF3C72A0613D4daB4'.toLowerCase() && nfts[i].id == 21 ){
+
+                // nothing
+
+            }else{
+
+                $('#farmPage').append(tmpl);
+            }
 
             $('#redeemButton'+nfts[i].erc1155+nfts[i].id).on('click', async function(){
 

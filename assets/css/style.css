@@ -147,7 +147,8 @@ textarea, input {
 .light-edition #walletActions,
 .light-edition #bridgeActions,
 .light-edition #categoryDropdown,
-.light-edition .dropdown-primary, .dark-edition #chainSelectionDropdown,
+.light-edition .dropdown-primary,
+.dark-edition #chainSelectionDropdown,
 .dark-edition #walletActions,
 .dark-edition #bridgeActions,
 .dark-edition #categoryDropdown,
@@ -155,48 +156,60 @@ textarea, input {
   background-color: var(--bg-secondary);
   color: var(--primary-color);
   border: 0.2rem solid var(--primary-color);
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   box-shadow: none;
   font-size: 1.8rem;
   text-transform: none;
   padding: 1rem 1.8rem;
   font-weight: 700; }
 
-.light-edition .dropdown-item.active, .light-edition .dropdown-item:active, .dark-edition .dropdown-item.active, .dark-edition .dropdown-item:active {
+.light-edition .dropdown-item.active,
+.light-edition .dropdown-item:active,
+.dark-edition .dropdown-item.active,
+.dark-edition .dropdown-item:active {
   color: #ffffff !important;
   background-color: var(--primary-color); }
 
 .light-edition #walletActions,
 .light-edition #bridgeActions,
-.light-edition #categoryDropdown, .dark-edition #walletActions,
+.light-edition #categoryDropdown,
+.dark-edition #walletActions,
 .dark-edition #bridgeActions,
 .dark-edition #categoryDropdown {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
   font-weight: 400;
-  padding: .8rem 1.2rem; }
+  padding: 0.8rem 1.2rem; }
   .light-edition #walletActions span,
   .light-edition #bridgeActions span,
-  .light-edition #categoryDropdown span, .dark-edition #walletActions span,
+  .light-edition #categoryDropdown span,
+  .dark-edition #walletActions span,
   .dark-edition #bridgeActions span,
   .dark-edition #categoryDropdown span {
     font-size: 1.4rem;
-    margin-right: .3rem; }
+    margin-right: 0.3rem; }
 
-.light-edition .dropdown-menu, .dark-edition .dropdown-menu {
+.light-edition .dropdown-menu,
+.dark-edition .dropdown-menu {
   background-color: var(--bg-secondary); }
-  .light-edition .dropdown-menu a.dropdown-item, .dark-edition .dropdown-menu a.dropdown-item {
+  .light-edition .dropdown-menu a.dropdown-item,
+  .dark-edition .dropdown-menu a.dropdown-item {
     font-size: 1.4rem; }
 
-.light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
+.light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item,
+.dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
   color: var(--text-primary);
   padding: 1rem 1.2rem; }
-  .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover {
+  .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover,
+  .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover {
     color: var(--text-primary);
     background: none;
     box-shadow: none;
     background-color: var(--primary-hover-light); }
+  .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item img,
+  .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item img {
+    margin-right: 10px; }
 
 .dark-edition .card.farm-card,
 .light-edition .card.farm-card {
@@ -324,6 +337,144 @@ textarea, input {
 
 .main-timeline .date-content:before {
   background: var(--primary-color); }
+
+.projectFunding p {
+  font-weight: 100;
+  font-size: 1.3rem;
+  color: #202060 !important;
+  line-height: 1.78; }
+  .projectFunding p a {
+    font-weight: bold; }
+
+.projectFunding .outline-btn {
+  display: flex;
+  width: max-content;
+  padding: 10px;
+  border: solid 1px #202060;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #202060 !important;
+  font-size: 1.2rem; }
+  .projectFunding .outline-btn img {
+    margin-right: 5px; }
+
+#guidesTabs {
+  border-bottom: solid 1px var(--primary-color);
+  border-radius: 0;
+  padding: 0; }
+  #guidesTabs .nav-item {
+    border: solid 1px rgba(255, 255, 255, 0) !important; }
+    #guidesTabs .nav-item a {
+      color: var(--primary-color) !important;
+      font-size: 2rem;
+      font-weight: 400;
+      padding-left: 30px;
+      padding-right: 30px; }
+    #guidesTabs .nav-item a.active {
+      font-weight: bold;
+      border: 1px solid !important;
+      border-bottom: 2px solid !important;
+      border-color: var(--primary-color) var(--primary-color) var(--bg-primary) !important;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: -1px;
+      margin-left: -1px;
+      background-color: transparent; }
+
+#guidesContent {
+  margin-top: 3.5rem; }
+  #guidesContent #guides h3 {
+    color: var(--primary-color);
+    font-weight: bold;
+    line-height: 1.5; }
+  #guidesContent #guides p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary); }
+    #guidesContent #guides p a {
+      font-weight: bold; }
+  #guidesContent #faq button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: left;
+    box-shadow: none;
+    border-radius: 0;
+    box-shadow: var(--shadow-primary);
+    padding: 13px 20px;
+    border: 0;
+    background-color: var(--bg-tertiary) !important;
+    cursor: pointer; }
+    #guidesContent #faq button[aria-expanded="false"]::after {
+      font-family: "Material Icons";
+      content: "\e313";
+      font-size: 2.5rem;
+      color: var(--primary-color); }
+    #guidesContent #faq button[aria-expanded="true"]::after {
+      font-family: "Material Icons";
+      content: "\e316";
+      font-size: 2.5rem;
+      color: var(--primary-color); }
+  #guidesContent #faq .faq-content {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary); }
+    #guidesContent #faq .faq-content div {
+      padding: 15px 20px; }
+      #guidesContent #faq .faq-content div p {
+        margin: 0; }
+  #guidesContent #faq .faq-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #a3abb2; }
+  #guidesContent #videos > div {
+    display: flex;
+    height: 18rem; }
+    #guidesContent #videos > div > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 5rem; }
+      #guidesContent #videos > div > div h3 {
+        color: var(--primary-color);
+        font-weight: bold;
+        line-height: 1.5; }
+
+#learn-more-socialDiv {
+  width: 30%;
+  height: 100%;
+  margin-left: 4rem;
+  background-color: var(--bg-tertiary) !important;
+  padding: 3rem; }
+  #learn-more-socialDiv h3 {
+    color: var(--primary-color);
+    font-weight: bold;
+    line-height: 1.5; }
+  #learn-more-socialDiv > div {
+    display: flex;
+    flex-direction: row;
+    margin: 2.5rem 0; }
+    #learn-more-socialDiv > div img {
+      height: max-content; }
+    #learn-more-socialDiv > div > div {
+      margin-left: 1rem; }
+      #learn-more-socialDiv > div > div > div {
+        margin-top: 1rem; }
+      #learn-more-socialDiv > div > div h4 {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: var(--text-primary);
+        font-weight: 400; }
+      #learn-more-socialDiv > div > div h5 {
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: bold;
+        color: var(--modal-border-text);
+        margin-bottom: 5px; }
+      #learn-more-socialDiv > div > div a {
+        color: var(--text-primary); }
 
 .dark-edition .card.faq,
 .light-edition .card.faq {
@@ -1015,25 +1166,67 @@ textarea, input {
 .nftHeader {
   width: 100%; }
 
-.dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline,
-.light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline {
+.dark-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline,
+.light-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline {
   background: var(--primary-color) !important;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   border: 0.1rem solid var(--bg-primary);
   font-size: 1.6rem;
   color: var(--bg-secondary);
   font-weight: 700;
-  padding: .3rem .8rem;
+  padding: 0.3rem 0.8rem;
   width: 90%; }
-  .dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:hover, .dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:active,
-  .light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:hover,
-  .light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:active {
+  .dark-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline:hover, .dark-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline:active,
+  .light-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline:hover,
+  .light-edition
+.main-panel
+.content
+.container-fluid
+#offersPage.row
+.nftListing
+.card.card-profile
+.card-body button.btn-outline:active {
     background-color: var(--primary-hover-dark) !important; }
 
 .dark-edition .main-panel .modal-dialog .modal-content,
 .light-edition .main-panel .modal-dialog .modal-content {
   border: 0.1rem solid var(--modal-border-text);
-  background-color: var(--bg-tertiary); }
+  background-color: white; }
   .dark-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled),
   .light-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled) {
     cursor: var(--cursor-pointer); }
@@ -1051,13 +1244,14 @@ textarea, input {
     align-items: center;
     padding: 1.5rem;
     color: var(--modal-text);
-    border-bottom: 0.1rem solid var(--modal-border-text); }
+    border-bottom: 0.1rem solid var(--modal-border-text);
+    background-color: var(--bg-tertiary); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title {
       font-family: "Poppins", sans-serif;
       font-size: 2rem;
       font-weight: 700;
-      letter-spacing: .48px; }
+      letter-spacing: 0.48px; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header .close {
       color: var(--modal-text);
@@ -1076,7 +1270,7 @@ textarea, input {
     font-size: 1.3rem; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .container,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .container {
-      border-radius: .4rem;
+      border-radius: 0.4rem;
       background-color: var(--bg-primary);
       margin-bottom: 1rem; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body select,
@@ -1085,7 +1279,7 @@ textarea, input {
       height: auto;
       background-image: none;
       border: 0.1rem solid #3b414c;
-      border-radius: .8rem;
+      border-radius: 0.8rem;
       font-size: 1.3rem;
       color: var(--modal-text);
       padding: 1rem; }
@@ -1095,17 +1289,17 @@ textarea, input {
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body select option,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body select option {
         background-color: var(--bg-tertiary);
-        padding: .5rem 0; }
+        padding: 0.5rem 0; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .col {
       padding: 0; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button {
       min-width: 10rem;
-      padding: .8rem .5rem;
+      padding: 0.8rem 0.5rem;
       font-size: 1.2rem;
       border: 0.1rem solid var(--primary-color);
-      border-radius: .4rem;
+      border-radius: 0.4rem;
       background-color: transparent;
       color: var(--primary-color);
       box-shadow: none; }
@@ -1120,7 +1314,7 @@ textarea, input {
       align-items: center;
       font-size: 1.3rem;
       font-weight: 500;
-      letter-spacing: .32px;
+      letter-spacing: 0.32px;
       color: var(--modal-text); }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover {
@@ -1128,12 +1322,12 @@ textarea, input {
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required {
         color: var(--primary-color);
-        margin-left: .3rem; }
+        margin-left: 0.3rem; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round {
         font-size: 2.2rem;
         color: var(--modal-border-text);
-        margin-left: .5rem; }
+        margin-left: 0.5rem; }
         .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover,
         .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover {
           color: var(--primary-color);
@@ -1146,11 +1340,11 @@ textarea, input {
       background-color: transparent !important;
       background-image: none;
       border: 0.1rem solid var(--modal-border-text);
-      border-radius: .8rem;
+      border-radius: 0.8rem;
       padding: 1rem;
       font-size: 1.3rem;
       color: var(--modal-text);
-      transition: all .3s; }
+      transition: all 0.3s; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder,
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input::placeholder,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder,
@@ -1164,18 +1358,18 @@ textarea, input {
         border: 0.1rem solid var(--primary-color); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input {
-      padding: .5rem 1rem; }
+      padding: 0.5rem 1rem; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea {
       height: auto;
       background-color: transparent;
       background-image: none;
       border: 0.1rem solid var(--modal-border-text);
-      border-radius: .8rem;
+      border-radius: 0.8rem;
       padding: 1rem;
       font-size: 1.3rem;
       color: var(--modal-text);
-      transition: all .3s; }
+      transition: all 0.3s; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus {
         border: 0.1rem solid var(--primary-color); }
@@ -1192,7 +1386,8 @@ textarea, input {
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row {
         margin: 0; }
-      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input, .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select,
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input,
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select {
         height: auto;
@@ -1224,7 +1419,7 @@ textarea, input {
       box-shadow: none;
       font-size: 1.4rem;
       flex: 1;
-      border-radius: .8rem;
+      border-radius: 0.8rem;
       margin: 0; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary,
     .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary {
@@ -1359,11 +1554,11 @@ textarea, input {
     height: calc(100vh - 16rem);
     display: flex;
     flex-direction: column;
-    padding-bottom: 2rem; }
+    padding-bottom: 3rem; }
     @media only screen and (min-width: 112.5em) {
       .dark-edition .sidebar .sidebar-wrapper,
       .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: .7rem; } }
+        padding-bottom: 0.7rem; } }
     @media only screen and (max-width: 75em) {
       .dark-edition .sidebar .sidebar-wrapper,
       .light-edition .sidebar .sidebar-wrapper {
@@ -1402,8 +1597,8 @@ textarea, input {
   overflow: auto; }
   .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar,
   .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar {
-    width: .8rem;
-    height: .1rem; }
+    width: 0.8rem;
+    height: 0.1rem; }
   .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb,
   .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb);
@@ -1458,8 +1653,8 @@ textarea, input {
     background-color: var(--primary-hover-light); }
   .sidebar .nav li a,
   .sidebar .nav li .dropdown-menu a {
-    padding: .5rem;
-    border-radius: .8rem; }
+    padding: 0.5rem;
+    border-radius: 0.8rem; }
 
 .sidebar-text {
   display: flex;

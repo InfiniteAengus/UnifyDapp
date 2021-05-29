@@ -44,35 +44,48 @@ function TncDapp() {
 
             let ask = ret.ask;
 
+            let shadowed = 'true';
+
+            if( !blocked_collections.includes(ask.erc1155Address[0].toLowerCase()) ) {
+
+                shadowed = 'false';
+            }
+
             let hasMore = 0;
 
-            if( ask.erc1155Address.length > 1){
+            if (ask.erc1155Address.length > 1) {
 
                 hasMore = ask.erc1155Address.length - 1;
             }
 
-            _this.render(
-                ask.erc1155Address[0],
-                ask.id[0],
-                ask.amount[0],
-                ask.erc1155Address.length == 1 ? ask.pricePerItem[0] : ask.price,
-                ask.tokenAddress,
-                address == '' ? tncLib.account : address,
-                ask.seller,
-                ask.swapMode,
-                ret.index,
-                hasMore,
-                which,
-                ask.erc1155Address.length > 1 ? true : false,
-                ask.erc1155Address.length - 1,
-                category,
-                i
-            );
+            if('false' == shadowed || ( address != '' && tncLib.account.toLowerCase() == address.toLowerCase() ) ) {
 
-            await sleep(300);
-            nftCount++;
+                _this.render(
+                    ask.erc1155Address[0],
+                    ask.id[0],
+                    ask.amount[0],
+                    ask.erc1155Address.length == 1 ? ask.pricePerItem[0] : ask.price,
+                    ask.tokenAddress,
+                    address == '' ? tncLib.account : address,
+                    ask.seller,
+                    ask.swapMode,
+                    ret.index,
+                    hasMore,
+                    which,
+                    ask.erc1155Address.length > 1 ? true : false,
+                    ask.erc1155Address.length - 1,
+                    category,
+                    i,
+                    shadowed
+                );
 
-            if(which == '') {
+                nftCount++;
+            }
+
+            await sleep(100);
+
+
+            if (which == '') {
 
                 await waitForPaging('offersPage', nftCount);
             }
@@ -94,7 +107,7 @@ function TncDapp() {
         }
     };
 
-    this.render = async function(erc1155, id, amount, price, token, address, sellerAddress, swapMode, index, hasMore, which, isBatch, multiplier, category, category_index){
+    this.render = async function(erc1155, id, amount, price, token, address, sellerAddress, swapMode, index, hasMore, which, isBatch, multiplier, category, category_index, shadowed){
 
         fetchUrl(api_url + '1.0/'+chain_id+'/collections/events/URI/erc1155Address/'+erc1155+'/id/0', 5000);
 
@@ -251,6 +264,7 @@ function TncDapp() {
                 ticker: await tncLib.tokenSymbolErc20(token),
                 index: index,
                 price: price,
+                shadowed: shadowed,
                 explorer : explorer + token,
                 swap : swapMode == 1 || swapMode == 2 ? 'true' : '',
                 options: sellerAddress.toLowerCase() == tncLib.account.toLowerCase() ? 'true' : '',
@@ -335,6 +349,7 @@ function TncDapp() {
                 ticker: await tncLib.tokenSymbolErc20(token),
                 index: index,
                 price: price,
+                shadowed: shadowed,
                 explorer : explorer + token,
                 swap : swapMode == 1 || swapMode == 2 ? 'true' : '',
                 options: sellerAddress.toLowerCase() == tncLib.account.toLowerCase() ? 'true' : '',
@@ -1031,6 +1046,7 @@ function TncDapp() {
                 var o = new Option("wMatic (Wrapped Matic)", "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270");
                 $(o).html("Matic (Wrapped)");
                 $("#lookupToken").append(o);
+
                 break;
             case '61': // BSC TESTNET
                 var o = new Option("NIF (Unifty)", "0xaC636E43b2a3e8654c993c4c5A72a2cDc41Db0FF");
@@ -1476,6 +1492,7 @@ function TncDapp() {
                 var o = new Option("wMatic (Wrapped Matic)", "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270");
                 $(o).html("Matic (Wrapped)");
                 $("#nftSellToken2").append(o);
+
                 break;
             case '61': // BSC TESTNET
                 var o = new Option("NIF (Unifty)", "0xaC636E43b2a3e8654c993c4c5A72a2cDc41Db0FF");

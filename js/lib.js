@@ -125,7 +125,7 @@ function TncLib(){
 
         // assuming ethereum mainnet if nothing else specified
 
-        // FANTOM
+        // ethereum
     } else{
 
         this.nif = new web3.eth.Contract( nifABI, '0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e', {from:this.account} );
@@ -1400,6 +1400,8 @@ function TncLib(){
     };
 
     this.transferMultiBatch = async function(erc1155Address, recipients, ids, amounts, preCallback, postCallback, errCallback){
+
+        console.log(recipients);
 
         await sleep(sleep_time);
 

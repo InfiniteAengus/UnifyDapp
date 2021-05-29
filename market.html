@@ -16,27 +16,27 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="js/ipfs.js"></script>
     <script type="text/javascript" src="js/buffer.js"></script>
-    <script type="text/javascript" src="js/misc.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/nifABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/genesisABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/farmABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/marketABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/swapABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/lib.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/lib-market.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/market-dapp.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/dapp-init.js?v=1.9.5"></script>
-    <script type="text/javascript" src="js/cookie.js?v=1.9.5"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/farmABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/marketABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/swapABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib-market.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/market-dapp.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
     <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -65,10 +65,6 @@
         .is-focused .dark-edition .modal .form-control {
             background-color: #eee;
             padding: 5px;
-        }
-
-        .dark-edition .modal select {
-            height: 36px !important;
         }
 
         .nftListing {
@@ -214,10 +210,16 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);" id="nulsSco">
+                <a class="nav-link" href="project-funding.html" id="nulsSco">
                     <i class="material-icons-round">monetization_on</i>
                     <p>Get Project Funding</p>
-                </a>
+                  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guides-faq.html">
+                <i class="material-icons-round">help_center</i>
+                <p>Guides & FAQ</p>
+              </a>
             </li>
 
             <li class="nav-item" id="xdaiFarm">
@@ -244,7 +246,7 @@
                         <a href="https://www.facebook.com/unifty.io" target="_blank">
                           <i class="fa fa-facebook"></i>              </a>
                         
-                        <a href="https://www.instagram.com/unifty_io/" target="_blank">
+                        <a href="https://www.instagram.com/unifty.io/" target="_blank">
                           <i class="fa fa-instagram"></i>
                         </a>
                         <a href="https://t.me/unifty" target="_blank">
@@ -303,18 +305,18 @@
                 <div class="dropdown ml-3 mr-3 dropdown--chains">
                     <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select chain
+                        Ethereum
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="https://unifty.io/">Ethereum</a>
-                        <a class="dropdown-item" href="https://unifty.io/xdai/">xDai</a>
-                        <a class="dropdown-item" href="https://unifty.io/bsc/">Binance Smart Chain</a>
-                        <a class="dropdown-item" href="https://unifty.io/avalanche/">Avalanche</a>
-                        <a class="dropdown-item" href="https://unifty.io/celo/">Celo</a>
-                        <a class="dropdown-item" href="https://unifty.io/matic/">Polygon (Matic)</a>
+                        <a class="dropdown-item" href="https://unifty.io/"><img src="assets/img/network-icons/ethereum_logo.svg">Ethereum</a>
+                        <a class="dropdown-item" href="https://unifty.io/xdai/"><img src="assets/img/network-icons/xdai_logo.svg">xDai</a>
+                        <a class="dropdown-item" href="https://unifty.io/bsc/"><img src="assets/img/network-icons/binance_logo.svg">Binance Smart Chain</a>
+                        <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
+                        <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
+                        <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
                         <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
-                        <a class="dropdown-item" href="https://unifty.io/rinkeby/">Rinkeby (Testnet)</a>
-                    </div>
+                        <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
+                      </div>
                 </div>
 
                 <div class="theme-toggler">
@@ -400,7 +402,12 @@
                     <div class="card card-profile">
 
                         {{#ifNotEquals image ""}}
-                            <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                            {{#ifEquals shadowed "false"}}
+                                <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                            {{/ifEquals}}
+                            {{#ifEquals shadowed "true"}}
+                            <img class="card-avatar" loading="lazy" src="assets/img/nsfw.jpg" alt="{{name}}">
+                            {{/ifEquals}}
                         {{/ifNotEquals}}
 
                         {{#ifEquals checkOpenSea "Check on OpenSea"}}
@@ -1117,7 +1124,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="faq.html">
+                <a class="nav-link" href="guides-faq.html">
             <span class="material-icons-round">
               help_outline
             </span>

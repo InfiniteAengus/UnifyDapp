@@ -582,10 +582,10 @@ function TncDapp() {
 
     this.processTransferMultiBatch = async function(){
 
-        let recipients = $('#nftTransferMultiBatchToAddresses').val().trim().replace("\r").split("\n");
+        let recipients = $('#nftTransferMultiBatchToAddresses').val().replace("\r","").split("\n");
         let collection = $('#nftTransferMultiBatchCollection').val().trim();
-        let ids = $('#nftTransferMultiBatchIds').val().trim().replace("\r").split("\n");
-        let amounts = $('#nftTransferMultiBatchAmounts').val().trim().replace("\r").split("\n");
+        let ids = $('#nftTransferMultiBatchIds').val().replace("\r","").split("\n");
+        let amounts = $('#nftTransferMultiBatchAmounts').val().replace("\r","").split("\n");
 
         if(!web3.utils.isAddress(collection)){
             _alert('Given collection is not a valid address.');
@@ -602,9 +602,27 @@ function TncDapp() {
             return;
         }
 
+        let wrong_recipients = '';
+        for(let i = 0; i < recipients.length; i++){
+
+            if(!web3.utils.isAddress(recipients[i])){
+                wrong_recipients += recipients[i] + '<br/>';
+            }
+        }
+
+        if(wrong_recipients != ''){
+            _alert('The following addresses are invalid:<br/><br/>' + wrong_recipients);
+            return;
+        }
+
         if(ids.length != amounts.length){
             _alert('There must be as many NFT IDs as there are amounts.');
             return;
+        }
+
+        for(let i = 0; i < recipients.length; i++){
+
+            recipients[i] = recipients[i].trim();
         }
 
         let approved = await tncLib.erc1155IsApprovedForAll(tncLib.account, tncLib.multiBatch.options.address, collection);
