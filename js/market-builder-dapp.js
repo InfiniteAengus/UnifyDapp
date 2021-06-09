@@ -539,8 +539,8 @@ function TncDapp() {
 
             func(
                 address,
+                id,
                 status == '1' ? true : false,
-                parseInt(id),
                 wrapperAddress,
                 function () {
                     $('#marketAllowedDisallowedButton').prop('disabled', true);
