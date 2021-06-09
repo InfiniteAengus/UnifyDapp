@@ -271,7 +271,7 @@ function TncDapp() {
                         }, 300);
                     });
 
-                    if(chain_id == '1') {
+                    if(chain_id == '1' || disable_royalties_button) {
                         $('.marketRoyaltiesLink').css('display', 'none');
                     }
                 }
@@ -826,7 +826,7 @@ function TncDapp() {
     this.storeIpfsImage = function(fileElement, urlStorageElement){
 
         $('.submitNewUpdate').prop('disabled', true);
-        let tmp = $('.submitNewUpdate').html();
+        let tmp = $('.submitNewUpdate:visible').html();
         $('.submitNewUpdate').html('Uploading Image...');
 
         let reader = new FileReader();
@@ -856,7 +856,7 @@ function TncDapp() {
     this.storeIpfsVideo = function(fileElement, urlStorageElement){
 
         $('.submitNewUpdate').prop('disabled', true);
-        let tmp = $('.submitNewUpdate').html();
+        let tmp = $('.submitNewUpdate:visible').html();
         $('.submitNewUpdate').html('Uploading Video...');
 
         let reader = new FileReader();
@@ -892,7 +892,7 @@ function TncDapp() {
     this.storeIpfsAudio = function(fileElement, urlStorageElement){
 
         $('.submitNewUpdate').prop('disabled', true);
-        let tmp = $('.submitNewUpdate').html();
+        let tmp = $('.submitNewUpdate:visible').html();
         $('.submitNewUpdate').html('Uploading Audio File...');
 
         let reader = new FileReader();
@@ -928,7 +928,7 @@ function TncDapp() {
     this.storeIpfsInteractive = function(fileElement, urlStorageElement){
 
         $('.submitNewUpdate').prop('disabled', true);
-        let tmp = $('.submitNewUpdate').html();
+        let tmp = $('.submitNewUpdate:visible').html();
         $('.submitNewUpdate').html('Uploading Interactive File...');
 
         let reader = new FileReader();
@@ -1235,6 +1235,11 @@ function TncDapp() {
 
     $('#nftSubmit').on('click', async function(){
 
+        if ($(this).hasClass("disabled")) {
+            console.log("Please wait for transaction to complete")
+          return;
+        }
+
         if(
             (
                 $('#nftIsEdit').val() == '0' && parseInt($('#nftSupply').val().trim()) < 0
@@ -1312,16 +1317,25 @@ function TncDapp() {
                     $('#nftErc1155Address').val(),
                     function (){
                         toastr["info"]('Please wait for the transaction to finish.', "Creating new NFT....");
+                        console.log("Creating new nft here")
+                        $("#nftSubmit").addClass("disabled");
+                        $('#nftSubmit').html('Creating NFT');
+
                     },
                     function(receipt){
                         console.log(receipt);
                         toastr.remove();
                         toastr["success"]('Transaction has been finished.', "Success");
+                        $("#nftSubmit").removeClass("disabled");
+                        
                         _this.loadPage('');
                     },
                     function(){
                         toastr.remove();
                         toastr["error"]('An error occurred with your new NFT transaction.', "Error");
+                        $("#nftSubmit").removeClass("disabled");
+                        $('#nftSubmit').html('Fail');
+
                     });
             }
             else
@@ -1333,22 +1347,33 @@ function TncDapp() {
                     nftJsonUrl,
                     $('#nftErc1155Address').val(),
                     function (){
-                        toastr["info"]('Please wait for the transaction to finish.', "Updating NFT....");
+                        toastr["info"]('Please wait for the transaction to finish.', "Updating NFT....");                        
+                        $("#nftSubmit").addClass("disabled");
+                        $('#nftSubmit').html('Updating NFT');
                     },
                     function(receipt){
                         console.log(receipt);
                         toastr.remove();
                         toastr["success"]('Transaction has been finished.', "Success");
+                        $("#nftSubmit").removeClass("disabled");
+
                     },
                     function(){
                         toastr.remove();
                         toastr["error"]('An error occurred with your NFT Update transaction.', "Error");
+                        $("#nftSubmit").removeClass("disabled");
+
                     });
             }
         });
     });
 
     $('#erc1155Submit').on('click', async function(){
+
+        if ($(this).hasClass("disabled")) {
+            console.log("Please wait for transaction to complete")
+          return;
+        }
 
         if(
             (
@@ -1395,6 +1420,8 @@ function TncDapp() {
                     function (){
                         try{
                             toastr["info"]("Please wait for the transaction to finish.", "Creating new Collection....");
+                            $("#erc1155Submit").addClass("disabled");
+                            $("#erc1155Submit").html("Creating collection");
                         }catch(e){
                             console.log(e);
                         }
@@ -1404,6 +1431,9 @@ function TncDapp() {
                             console.log(receipt);
                             toastr.remove();
                             toastr["success"]('Transaction has been finished.', "Success");
+                            $("#erc1155Submit").removeClass("disabled");
+                            $("#erc1155Submit").html("Create");
+
                             _this.populateMyErc1155s();
                         }catch(e){
                             console.log(e);
@@ -1413,6 +1443,8 @@ function TncDapp() {
                         try{
                             toastr.remove();
                             toastr["error"]('An error occurred with your new Collection transaction. Do you have sufficient funds?', "Error");
+                            $("#erc1155Submit").removeClass("disabled");
+                            $("#erc1155Submit").html("Create");
                         }catch(e){
                             console.log(e);
                         }
@@ -1429,6 +1461,8 @@ function TncDapp() {
                     function (){
                         try{
                             toastr["info"]("Please wait for the transaction to finish.", "Updating Collection....");
+                            $("#erc1155Submit").addClass("disabled");
+                            $("#erc1155Submit").html("Updating collection");
                         }catch(e){
                             console.log(e);
                         }
@@ -1438,6 +1472,8 @@ function TncDapp() {
                             console.log(receipt);
                             toastr.remove();
                             toastr["success"]('Transaction has been finished.', "Success");
+                            $("#erc1155Submit").removeClass("disabled");
+                            $("#erc1155Submit").html("Create");
                             _this.populateMyErc1155s();
                         }catch(e){
                             console.log(e);
@@ -1447,6 +1483,8 @@ function TncDapp() {
                         try{
                             toastr.remove();
                             toastr["error"]('An error occurred with your updated Collection transaction.', "Error");
+                            $("#erc1155Submit").removeClass("disabled");
+                            $("#erc1155Submit").html("Create");
                         }catch(e){
                             console.log(e);
                         }

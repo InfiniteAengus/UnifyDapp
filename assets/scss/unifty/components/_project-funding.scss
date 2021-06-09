@@ -1,0 +1,28 @@
+.projectFunding {
+  p {
+    font-weight: 100;
+    font-size: 1.3rem;
+    color: #202060 !important;
+    line-height: 1.78;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .outline-btn {
+    display: flex;
+    width: max-content;
+    padding: 10px;
+    border: solid 1px #202060;
+    border-radius: 8px;
+
+    font-weight: bold;
+    color: #202060 !important;
+    font-size: 1.2rem;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+}

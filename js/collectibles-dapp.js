@@ -214,6 +214,11 @@ function TncDapp() {
 
         $('#collectiblesPage').append(tmpl);
 
+        if(disable_sell_button){
+
+            $('.marketSellLink').css('display','none');
+        }
+
         if(chain_id == '1') {
             $('.marketSellLink').css('display', 'none');
         }
@@ -258,15 +263,18 @@ function TncDapp() {
             }, 300);
         });
 
-        setTimeout(async function () {
+        if(!disable_royalties_button) {
 
-            let owner = await tncLib.erc1155Owner(erc1155);
-            if(owner){
+            setTimeout(async function () {
 
-                $('#nftRoyaltiesModalButton' + erc1155 + id).css('display', 'flex');
-            }
+                let owner = await tncLib.erc1155Owner(erc1155);
+                if (owner) {
 
-        }, 100);
+                    $('#nftRoyaltiesModalButton' + erc1155 + id).css('display', 'flex');
+                }
+
+            }, 100);
+        }
 
     };
 

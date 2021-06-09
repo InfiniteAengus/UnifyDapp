@@ -16,27 +16,28 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="js/ipfs.js"></script>
     <script type="text/javascript" src="js/buffer.js"></script>
-    <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/nifABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/genesisABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/farmABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/marketABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/swapABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/lib-market.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/market-dapp.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
-    <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/farmABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/marketABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/swapABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/lib-market.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/market-dapp.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.7"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
     <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -198,6 +199,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="market-builder.html">
+                    <i class="material-icons-round">build</i>
+                    <p>Market Builder</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="farm-builder.html">
                     <i class="material-icons-round">build</i>
                     <p>Farm Builder</p>
@@ -208,12 +215,6 @@
                     <i class="material-icons-round">360</i>
                     <p>NFT Bridge</p>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="project-funding.html" id="nulsSco">
-                    <i class="material-icons-round">monetization_on</i>
-                    <p>Get Project Funding</p>
-                  </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="guides-faq.html">
@@ -402,22 +403,18 @@
                     <div class="card card-profile">
 
                         {{#ifNotEquals image ""}}
+                        <a href="{{opensea}}">
+                        
                             {{#ifEquals shadowed "false"}}
-                                <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                            <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                        
                             {{/ifEquals}}
-                            {{#ifEquals shadowed "true"}}
-                            <img class="card-avatar" loading="lazy" src="assets/img/nsfw.jpg" alt="{{name}}">
+                            {{#ifEquals shadowed "true"}}                        
+                            <img class="card-avatar" loading="lazy" src="assets/img/nsfw.jpg" alt="{{name}}">                        
                             {{/ifEquals}}
+                        
+                        </a>
                         {{/ifNotEquals}}
-
-                        {{#ifEquals checkOpenSea "Check on OpenSea"}}
-                            <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
-                        {{/ifEquals}}
-
-                        {{#ifEquals checkOpenSea "Open Details"}}
-                            <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}">{{checkOpenSea}}</a>
-                        {{/ifEquals}}
-
 
                         <div class="card-body">
 
@@ -465,7 +462,7 @@
                                 {{/ifNotEquals}}
                             </div>
 
-                            <h5 class="card-title text-truncate"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+                            <h5 class="card-title text-truncate"><a href="{{opensea}}" target="_blank">{{name}}</a></h5>
 
                             <div class="collection-name">{{{collectionName}}}</div>
 
@@ -529,7 +526,20 @@
                             <div> </div>
                             {{/ifEquals}}
 
-                            <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse2{{index}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
+                            {{#ifEquals checkOpenSea "Check on OpenSea"}}
+                            <a class="traits btn btn-outline" href="{{opensea}}"
+                                target="_blank">{{checkOpenSea}}</a>
+                            {{/ifEquals}}
+                            
+                            {{#ifEquals checkOpenSea "Open Details"}}
+                            <a class="traits btn btn-outline""
+                                href="{{opensea}}">{{checkOpenSea}}</a>
+                            {{/ifEquals}}
+                            
+                            
+                            
+                            <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse2{{index}}" role="button"
+                                aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
                                 Traits
                             </a>
 
@@ -578,7 +588,9 @@
                     <div class="card card-profile">
 
                         {{#ifNotEquals image ""}}
-                        <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                        <a href="{{opensea}}">
+                            <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                        </a>
                         {{/ifNotEquals}}
 
                         <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
@@ -628,7 +640,7 @@
                                 {{/ifNotEquals}}
                             </div>
 
-                            <h5 class="card-title text-truncate"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+                            <h5 class="card-title text-truncate"><a href="{{opensea}}" target="_blank">{{name}}</a></h5>
 
                             <div class="collection-name">{{{collectionName}}}</div>
 
@@ -1115,10 +1127,10 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="roadmap.html">
-            <span class="material-icons-round">
-              swap_calls
-            </span>
-                    Roadmap
+                    <span class="material-icons-round">
+                        group
+                      </span>
+                      About UNIFTY
                 </a>
             </li>
 

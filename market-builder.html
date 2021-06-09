@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <title>Market Builder - Unifty</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/web3.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script type="text/javascript" src="js/ipfs.js"></script>
+    <script type="text/javascript" src="js/buffer.js"></script>
+    <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/farmABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/customMarketGenesisABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/customWrapABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/customMarketABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/customSwapABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/lib-custom-market.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/market-builder-dapp.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.7"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/js/plugins/chartist.min.js"></script>
+    <script src="assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            new ClipboardJS('.btn-clipboard');
+        });
+    </script>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+          integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <style type="text/css">
+        .modal .form-check .form-check-input {
+            opacity: unset !important;
+            height: unset !important;
+            width: unset !important;
+            z-index: 0 !important;
+        }
+
+        .dark-edition .modal .form-control {
+            color: #8b92a9;
+        }
+
+        .dark-edition .modal a {
+            color: #8b92a9;
+            font-weight: 700;
+        }
+
+        .dark-edition .modal .form-control,
+        .is-focused .dark-edition .modal .form-control {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        .nftListing {
+            min-width: 300px;
+        }
+
+        .btn-outline {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        .btn-clipboard {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .fa-clipboard,
+        .fa-external-link {
+            font-size: 1.2rem !important;
+        }
+
+        .traits-collapse ul li {
+            border-bottom: 1px solid #8b92a9;
+        }
+
+        .traits-collapse ul li:last-child {
+            border-bottom: none;
+        }
+
+        .dark-edition .card .card-body .card-description {
+            color: #8b92a9;
+        }
+
+        .description,
+        .card-description,
+        .footer-big p {
+            color: #8b92a9;
+        }
+
+        .title,
+        .title a,
+        .card-title,
+        .card-title a,
+        .info-title,
+        .info-title a,
+        .footer-brand,
+        .footer-brand a,
+        .footer-big h5,
+        .footer-big h5 a,
+        .footer-big h4,
+        .footer-big h4 a,
+        .media .media-heading,
+        .media .media-heading a {
+            color: #8b92a9;
+        }
+
+        body {
+            color: #8b92a9;
+        }
+
+        .navbar,
+        .navbar-text a {
+            color: inherit;
+        }
+    </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<script src="js/themeDefault.js"></script>
+
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="logo">
+        <a href="https://unifty.io" class="simple-text logo-normal">
+            <img src="assets/img/unifty2.png" width="125" border="0" />
+            <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+                Binance Smart Chain
+            </div>
+        </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="material-icons-round">home</i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li class="nav-item" id="marketNavLink">
+                <a class="nav-link" href="market.html">
+                    <i class="material-icons-round">storefront</i>
+                    <p>NFT Market</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="collectibles.html">
+                    <i class="material-icons-round">account_balance_wallet</i>
+                    <p>Your Wallet</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="manager.html">
+                    <i class="material-icons-round">collections</i>
+                    <p>Collection Manager</p>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="market-builder.html">
+                    <i class="material-icons-round">build</i>
+                    <p>Market Builder</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="farm-builder.html">
+                    <i class="material-icons-round">build</i>
+                    <p>Farm Builder</p>
+                </a>
+            </li>
+            <li class="nav-item bridgeNav">
+                <a class="nav-link" href="bridge.html">
+                    <i class="material-icons-round">360</i>
+                    <p>NFT Bridge</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="guides-faq.html">
+                    <i class="material-icons-round">help_center</i>
+                    <p>Guides & FAQ</p>
+                </a>
+            </li>
+            <li class="nav-item" id="xdaiFarm">
+                <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0x87E5aFba16E3BEbd967699B4D5472B2ae1AA8Fa7">
+                    <i class="material-icons">grass</i>
+                    <p>Rares Farm - NIF (xDai)</p>
+                </a>
+            </li>
+
+            <li class="nav-item" id="genesisFarm">
+                <a class="nav-link" href="https://unifty.io/farm.html?farm=0xA2c88A39b1DE8f1d723d9E76AD07f6012826d0f3">
+                    <i class="material-icons">grass</i>
+                    <p>Genesis Farm - NIF-LP</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-text">
+                <div class="sidebar-text icons">
+            <span class="navbar-text">
+              <a href="https://www.facebook.com/unifty.io" target="_blank">
+                <i class="fa fa-facebook"></i>              </a>
+
+              <a href="https://www.instagram.com/unifty.io/" target="_blank">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://t.me/unifty" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://discord.gg/5ZBTgnAd9s" target="_blank">
+                <i class="fa fa-discord"></i>
+              </a>
+              <a href="https://twitter.com/unifty_io" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              </span>
+                </div>
+
+                <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Unifty Development d.o.o.<br/>All rights reserved.
+            </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- SIDEBAR END -->
+
+<div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                    aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+        <!-- HEADER -->
+        <div class="custom-header">
+            <div class="custom-header__title">Unifty.io</div>
+            <div class="custom-header__dropdowns">
+                <script>
+                    // fix for initial doubleclick required upon page load
+                    // $(document).ready(function () {
+                    //   $('#chainSelectionDropdown').click();
+                    // });
+                </script>
+
+                <div class="dropdown ml-3 mr-3 dropdown--chains">
+                    <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ethereum
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="https://unifty.io/"><img src="assets/img/network-icons/ethereum_logo.svg">Ethereum</a>
+                        <a class="dropdown-item" href="https://unifty.io/xdai/"><img src="assets/img/network-icons/xdai_logo.svg">xDai</a>
+                        <a class="dropdown-item" href="https://unifty.io/bsc/"><img src="assets/img/network-icons/binance_logo.svg">Binance Smart Chain</a>
+                        <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
+                        <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
+                        <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
+                        <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+                        <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
+                    </div>
+                </div>
+
+                <div class="theme-toggler">
+                    <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+                        <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+                    </label>
+                    <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+                </div>
+
+            </div>
+        </div>
+        <!-- HEADER END -->
+        <div class="content__welcome-text">
+            <p>
+                Welcome to the administration panel for all of your markets!
+
+
+            </p>
+        </div>
+
+        <h1>Market Builder</h1>
+        <p>
+
+            Info -> A market is a place where you can buy, sell and swap NFTs and earn fees. Create open or curated markets with just a few clicks!
+        </p>
+
+        <div href="javascript:void(0);" class="add-new-card-container" data-toggle="modal" data-target="#marketModal"
+             id="newMarketModalButton">
+      <span class="material-icons">
+        add_circle
+      </span>
+            Add New Market
+        </div>
+
+        <script id="no-markets" type="text/x-handlebars-template">
+            <div class="container-fluid">
+                <div style="text-align: center" class="justify-content-center content-center">
+                    You don't own a market yet. Why not create one?
+                </div>
+            </div>
+        </script>
+
+        <!-- Market View -->
+        <script id="market-template" type="text/x-handlebars-template">
+            <div class="farmListing mb-3">
+                <div class="card card-profile">
+                    {{#ifNotEquals image ""}}
+                    <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                    {{/ifNotEquals}}
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            <button class="btn btn-sm btn-clipboard btn-clipboard{{index2}}" data-clipboard-text="{{url}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                                <i class="fa fa-clipboard"></i>
+                            </button>
+                            <a href="{{url}}">{{name}} <i class="fa fa-external-link"></i></a>
+                        </h5>
+
+                        <div class="mb-3" {{{hideTier}}}>
+                            <span class="badge badge-info">Tier: {{currentTier}}</span>
+                        </div>
+
+
+                        {{#ifNotEquals description ""}}
+                        <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                              <span class="material-icons-round">
+                                info
+                              </span>
+                        </button>
+                        {{/ifNotEquals}}
+
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="btn btn-secondary btn-light dropdown-toggle mb-3" id="marketActions{{address}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="material-icons-round">
+                                    create
+                                  </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="marketActions{{address}}">
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#withdrawFundsModal" data-contract-address="{{address}}" id="marketWithdrawFees{{address}}" class="marketWithdrawFees">Withdraw Fees</a>
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#withdrawSwapFundsModal" data-contract-address="{{address}}" id="marketWithdrawSwapFees{{address}}" class="marketWithdrawSwapFees">Withdraw Swap Fees</a>
+
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#setupFundsModal" data-contract-address="{{address}}" id="marketSetupFees{{address}}" class="marketSetupFees">Setup Fees</a>
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#setupSwapFundsModal" data-contract-address="{{address}}" id="marketSetupSwapFees{{address}}" class="marketSetupFees">Setup Swap Fees</a>
+
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#marketInfoModal" data-contract-address="{{address}}" id="marketEditInfo{{address}}" class="marketEditInfo">Edit Market Info</a>
+
+                                <a href="javascript:void(0);" {{{displayTier3Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setAllowedWallets" data-contract-address="{{address}}" id="marketSetAllowedWallets{{address}}" class="setAllowedWallets">Whitelist Wallet</a>
+                                <a href="javascript:void(0);" {{{displayTier2Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setAllowedNfts" data-contract-address="{{address}}" id="marketSetAllowedNfts{{address}}" class="setAllowedNfts">Whitelist NFT</a>
+                                <a href="javascript:void(0);" {{{displayTier1Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setAllowedCollections" data-contract-address="{{address}}" id="marketSetAllowedCollections{{address}}" class="setAllowedCollections">Whitelist Collection</a>
+
+                                <a href="javascript:void(0);" {{{displayTier3Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setDisallowedWallets" data-contract-address="{{address}}" id="marketSetDisallowedWallets{{address}}" class="setDisallowedWallets">Blacklist Wallet</a>
+                                <a href="javascript:void(0);" {{{displayTier2Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setDisallowedNfts" data-contract-address="{{address}}" id="marketSetDisallowedNfts{{address}}" class="setDisallowedNfts">Blacklist NFT</a>
+                                <a href="javascript:void(0);" {{{displayTier1Option}}} class="dropdown-item" data-toggle="modal" data-target="#marketAllowDisallowModal" data-type="setDisallowedCollections" data-contract-address="{{address}}" id="marketSetDisallowedCollections{{address}}" class="setDisallowedCollections">Blacklist Collection</a>
+
+                                <a href="javascript:void(0);" class="dropdown-item" {{{hideIfTierNot0}}} data-toggle="modal" data-target="#marketStakeModal" data-contract-address="{{address}}" id="marketStake{{address}}" class="marketStake">Stake</a>
+                                <a href="javascript:void(0);" class="dropdown-item" {{{hideIfTier0}}} data-toggle="modal" data-target="#marketUnstakeModal" data-contract-address="{{address}}" id="marketUnstake{{address}}" class="marketUnstake">Unstake</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </script>
+
+
+        <div class="row" id="marketsPage" style="display: none;"></div>
+
+        <script id="next-button" type="text/x-handlebars-template">
+            <div id="loadMore" class="container-fluid">
+                <div style="text-align: center" class="justify-content-center content-center">
+                    <button class="btn btn-outline" id="loadMoreButton">Load More</button>
+                </div>
+            </div>
+        </script>
+
+        <!-- New Market Contract -->
+        <div class="modal fade" style="overflow-y: scroll;" id="marketModal" tabindex="-1"
+             aria-labelledby="marketModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marketModalLabel">New Market</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <div class="col">
+
+                            <form id="marketForm" onsubmit="return false;">
+
+                                <div class="form-group">
+                                    <label for="marketName">Name<span class="required">*</span></label>
+                                    <input type="text" placeholder="Enter a name for your market" class="form-control" id="marketName">
+                                </div>
+
+                                <div class="form-group" id="tierGroup">
+                                    <label for="marketTier">Select Tier<span class="required">*</span></label>
+                                    <select class="form-control" id="marketTier">
+                                        <option value="1">Tier 1 (stake 10 NIF): allow/disallow collections</option>
+                                        <option value="2">Tier 2 (stake 25 NIF): Tier 1 + allow/disallow individual NFTs</option>
+                                        <option value="3">Tier 3 (stake 100 NIF): Tier 1 + Tier2 + allow/disallow wallet addresses</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marketDescription">Description</label>
+                                    <textarea class="form-control" id="marketDescription" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marketImageFile">Click to Choose Image....</label>
+                                    <input type="file" class="form-control-file imageFile" id="marketImageFile" accept="image/*">
+                                    <div class="imageFileDisplay mt-3"></div>
+                                    <input type="hidden" id="marketImageUrl" value="" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marketFeeAddress">Fee Address<span class="required">*</span></label>
+                                    <input type="text"
+                                           placeholder="Used to receive sales and swap fees."
+                                           class="form-control" id="marketFeeAddress">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marketFee">Sales fee in percent<span class="required">*</span></label>
+                                    <input type="text" value="2.00" placeholder="Enter a sales fee in percent for your market" class="form-control" id="marketFee">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marketSwapFee">Swap Fee in percent (NIF)<span class="required">*</span></label>
+                                    <input type="text" value="2.00" placeholder="Enter a swap fee in percent for your market" class="form-control" id="marketSwapFee">
+                                </div>
+
+                                <fieldset class="form-group">
+                                    <legend>Social (optional)</legend>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-3" placeholder="Twitter Url" id="marketTwitter">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Discord Url" id="marketDiscord">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Telegram Url" id="marketTelegram">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-3" placeholder="Medium Url" id="marketMedium">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Instagram Url" id="marketInstagram">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Youtube Url" id="marketYoutube">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-3" placeholder="Website Url" id="marketWeb">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Email address" id="marketEmail">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone" id="marketPhone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label for="marketCustomLink">Custom Link</label>
+                                            <input type="text" class="form-control" placeholder="Enter a link to a custom url"
+                                                   id="marketCustomLink">
+                                        </div>
+                                        <div class="col">
+                                            <label for="marketCustomLinkText">Custom Link Text</label>
+                                            <input type="text" class="form-control" placeholder="Enter a link text for your custom url"
+                                                   id="marketCustomLinkText">
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+
+                                <input type="hidden" id="marketUpdateAddress" value="" />
+                                <input type="hidden" id="marketIsEdit" value="0" />
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div style="display:none;" id="stakeMarket" class="footer-description">
+                            Choose 1 of 3 available tier levels and stake $NIF to create your market.<br/>
+                            All tiers include full functionality plus the following bonus features:<br/><br/>
+                            Tier1 (<span id="tier1Nif"></span> NIF): allow/disallow collections<br/>
+                            Tier2 (<span id="tier2Nif"></span> NIF): Tier 1 + allow/disallow individual NFTs<br/>
+                            Tier3 (<span id="tier3Nif"></span> NIF): Tier 1 + Tier2 + allow/disallow wallet addresses<br/><br/>
+                            Additionally, Tier 3 allows you to keep all sale and swap fees, while Tier1 and Tier2 allow to keep 50% of fees.<br/><br/>
+                            You may unstake at any time. Unstaking will stop all buying and selling activity on the marketplace while offers can still be cancelled and returned to the owner.
+                        </div>
+                        <div style="display:none;" id="feeMarket" class="footer-description"><span id="ethFee"></span> <span class="currency"></span> developer fee per
+                            market. <div style="display:none;" id="paymentDescription">Unlimited market creation if holding <span id="nifMinMarket"></span>
+                                NIF or owning one of our market builder wildcards.</div> No subsequent fees, one-time payment. Gas fees
+                            always apply.</div>
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary submitNewUpdate" id="marketSubmit">Create Market</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Market Info Modal -->
+        <div class="modal fade" style="overflow-y: scroll;" id="marketInfoModal" tabindex="-1"
+             aria-labelledby="marketInfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marketInfoModalLabel">Edit Market Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <form id="marketInfoForm" onsubmit="return false;">
+
+                            <div class="form-group">
+                                <label for="marketInfoName">Name<span class="required">*</span></label>
+                                <input type="text" placeholder="Enter a name for your market" class="form-control" id="marketInfoName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="marketInfoDescription">Description</label>
+                                <textarea class="form-control" id="marketInfoDescription" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="marketInfoImageFile">Click to Choose Image....</label>
+                                <input type="file" class="form-control-file imageFile" id="marketInfoImageFile" accept="image/*">
+                                <div class="imageFileDisplay mt-3"></div>
+                                <input type="hidden" id="marketInfoImageUrl" value="" />
+                            </div>
+
+                            <fieldset class="form-group">
+                                <legend>Social (optional)</legend>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control mb-3" placeholder="Twitter Url" id="marketInfoTwitter">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Discord Url" id="marketInfoDiscord">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telegram Url" id="marketInfoTelegram">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control mb-3" placeholder="Medium Url" id="marketInfoMedium">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Instagram Url" id="marketInfoInstagram">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Youtube Url" id="marketInfoYoutube">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control mb-3" placeholder="Website Url" id="marketInfoWeb">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Email address" id="marketInfoEmail">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Phone" id="marketInfoPhone">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="marketInfoCustomLink">Custom Link</label>
+                                        <input type="text" class="form-control" placeholder="Enter a link to a custom url"
+                                               id="marketInfoCustomLink">
+                                    </div>
+                                    <div class="col">
+                                        <label for="marketInfoCustomLinkText">Custom Link Text</label>
+                                        <input type="text" class="form-control" placeholder="Enter a link text for your custom url"
+                                               id="marketInfoCustomLinkText">
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                            <input type="hidden" value="" id="marketInfoMarketAddress" name="marketInfoMarketAddress" />
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="marketInfoButton">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Allow/Disallow Modal -->
+        <div class="modal fade" style="overflow-y: scroll;" id="marketAllowDisallowModal" tabindex="-1" role="dialog"
+             aria-labelledby="marketAllowDisallowModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marketAllowDisallowModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <form onsubmit="return false;">
+
+                            <div class="form-group">
+
+                                <div class="form-group">
+                                    <label for="marketAllowedDisallowedStatusAddress" id="marketAllowedDisallowedStatusAddressId"><span class="required">*</span></label>
+                                    <input type="text" placeholder="Enter an address" class="form-control" id="marketAllowedDisallowedStatusAddress">
+                                </div>
+
+                                <div class="form-group" id="marketAllowedDisallowedStatusIdGroup" style="display:none;">
+                                    <label for="marketAllowedDisallowedStatusId" id="marketAllowedDisallowedStatusIdId"><span class="required">*</span></label>
+                                    <input type="text" placeholder="Enter an NFT ID" class="form-control" id="marketAllowedDisallowedStatusId">
+                                </div>
+
+                                <label class="form-check-label" for="marketAllowedDisallowedStatus0" id="marketAllowedDisallowedStatus0Label"></label>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="marketAllowedDisallowedStatus" id="marketAllowedDisallowedStatus0"
+                                           class="farmShopRunMode" value="1">
+                                    <label class="form-check-label" for="marketAllowedDisallowedStatus0">Yes</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="marketAllowedDisallowedStatus" id="marketAllowedDisallowedStatus1"
+                                           class="farmShopRunMode" value="0">
+                                    <label class="form-check-label" for="marketAllowedDisallowedStatus1">No</label>
+                                </div>
+
+                            </div>
+
+                            <input type="hidden" value="" id="marketAllowDisallowType" name="marketAllowDisallowType" />
+                            <input type="hidden" value="" id="marketAllowDisallowWrapperAddress" name="marketAllowDisallowWrapperAddress" />
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" style="margin-right: 0;" id="marketAllowedDisallowedButton">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stake -->
+        <div class="modal fade" style="overflow-y: scroll;" id="marketStakeModal" tabindex="-1" role="dialog"
+             aria-labelledby="marketStakeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marketStakeModalLabel">Stake</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+                        <form onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="marketTier">Select Tier<span class="required">*</span></label>
+                                <select class="form-control" id="marketStakeTier">
+                                    <option value="1">Tier 1 (stake 10 NIF): allow/disallow collections</option>
+                                    <option value="2">Tier 2 (stake 25 NIF): Tier 1 + Tier2 + allow/disallow wallet addresses</option>
+                                    <option value="3">Tier 3 (stake 100 NIF): Tier 1 + Tier2 + allow/disallow wallet addresses</option>
+                                </select>
+                            </div>
+
+                            <input type="hidden" value="" id="marketStakeWrapperAddress" name="marketStakeWrapperAddress" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" style="margin-right: 0;" id="marketStakeButton">Stake</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unstake -->
+        <div class="modal fade" style="overflow-y: scroll;" id="marketUnstakeModal" tabindex="-1" role="dialog"
+             aria-labelledby="marketUnstakeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marketUnstakeModalLabel">Unstake</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+                        You are currently on Tier <span id="marketCurrentTier"></span>.<br/><br/>
+                        In order to unstake, please click on the button below.<br/><br/>
+                        Please be aware that unstaking will disable new offers. Users can still sell their NFTs and you can still withdraw fees.<br/><br/>
+                        You can pick a new tier at any time and resume all features.
+                        <form onsubmit="return false;">
+                            <input type="hidden" value="" id="marketUnstakeWrapperAddress" name="marketUnstakeWrapperAddress" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" style="margin-right: 0;" id="marketUnstakeButton">Unstake</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdraw Fees -->
+
+        <div class="modal fade" style="overflow-y: scroll;" id="withdrawFundsModal" tabindex="-1" role="dialog" aria-labelledby="withdrawFundsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="withdrawFundsModalLabel">Withdraw Fees</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <p>Here you can lookup and withdraw collected fees.</p>
+
+                        <form onsubmit="return false;">
+
+                            <div class="form-group">
+                                <label for="lookupToken">Token to lookup</label>
+                                <select class="form-control" id="lookupToken">
+                                </select>
+                            </div>
+
+                            <div id="lookupTokenWrapper" class="form-group" style="display:none;">
+                                <label for="lookupTokenAddress">Custom <span class="networkStd"></span> Token Address *</label>
+                                <input type="text" placeholder="Enter a token address to lookup your current balance" class="form-control" id="lookupTokenAddress">
+                            </div>
+
+                            <small id="lookupInfo" class="form-text text-muted"></small>
+
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="lookupButton">Lookup</button>
+                            </div>
+
+                            <input type="hidden" value="" id="lookupWrapperAddress" name="lookupWrapperAddress" />
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="withdrawFundsButton" style="display:none;">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdraw Swap Fees -->
+
+        <div class="modal fade" style="overflow-y: scroll;" id="withdrawSwapFundsModal" tabindex="-1" role="dialog" aria-labelledby="withdrawSwapFundsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="withdrawSwapFundsModalLabel">Withdraw Swap Fees</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <p>Here you can withdraw collected swap fees in $NIF.</p>
+                        <p>Funds: <span id="withdrawSwapFundsNif"></span> $NIF</p>
+
+                        <form onsubmit="return false;">
+                            <input type="hidden" value="" id="swapFeesWrapperAddress" name="swapFeesWrapperAddress" />
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="withdrawSwapFundsButton" style="display:none;">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SETUP FEES -->
+        <div class="modal fade" style="overflow-y: scroll;" id="setupFundsModal" tabindex="-1" role="dialog"
+             aria-labelledby="setupFundsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setupFundsModalLabel">Setup Fees</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <form onsubmit="return false;">
+
+                            <div class="form-group">
+                                <label for="marketSetupFeeAddress">Fee Address<span class="required">*</span></label>
+                                <input type="text"
+                                       placeholder="Used to receive sales fees."
+                                       class="form-control" id="marketSetupFeeAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="marketSetupFee">Sales fee in percent<span class="required">*</span></label>
+                                <input type="text" value="" placeholder="Enter a sales fee in percent for your market" class="form-control" id="marketSetupFee">
+                            </div>
+
+                            <input type="hidden" value="" id="setupFeesWrapperAddress" name="setupFeesWrapperAddress" />
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" style="margin-right: 0;" id="marketSetupFeeButton">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SETUP SWAP FEES -->
+        <div class="modal fade" style="overflow-y: scroll;" id="setupSwapFundsModal" tabindex="-1" role="dialog"
+             aria-labelledby="setupSwapFundsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setupSwapFundsModalLabel">Setup Swap Fees</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                        <form onsubmit="return false;">
+
+                            <div class="form-group">
+                                <label for="marketSetupSwapFeeAddress">Swap Fee Address<span class="required">*</span></label>
+                                <input type="text"
+                                       placeholder="Used to receive swap fees."
+                                       class="form-control" id="marketSetupSwapFeeAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="marketSetupSwapFee">Sales fee in percent<span class="required">*</span></label>
+                                <input type="text" value="" placeholder="Enter a sales fee in percent for your market swaps" class="form-control" id="marketSetupSwapFee">
+                            </div>
+
+                            <input type="hidden" value="" id="setupSwapFeesWrapperAddress" name="setupSwapFeesWrapperAddress" />
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" style="margin-right: 0;" id="marketSetupSwapFeeButton">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALERT -->
+        <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+             aria-labelledby="alertModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-non-nft-content">
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right: 0;">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODALS END -->
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
+            <span class="material-icons-round">
+              find_replace
+            </span>
+                Get $NIF on Uniswap
+            </a>
+        </li>
+
+        <li class="nav-item" id="ramp-btn">
+            <a class="nav-link">
+                    <span class="material-icons-round">
+                      attach_money
+                    </span>
+                Buy crypto with RAMP
+            </a>
+        </li>
+
+        <li class="nav-item shop" id="shopEthereum" style="display:none;">
+            <a class="nav-link" href="https://unifty.io/farm-view.html?address=0x7387DF14E182b37aEF944C231E6f4D88EbBa1145">
+          <span class="material-icons-round">
+            shopping_cart
+          </span>
+                Shop
+            </a>
+        </li>
+
+        <li class="nav-item shop" id="shopXdai" style="display:none;">
+            <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0xCBe3F53c26A717704d12D219F8B43016BbDa9082">
+          <span class="material-icons-round">
+            shopping_cart
+          </span>
+                Shop
+            </a>
+        </li>
+
+        <li class="nav-item shop" id="shopBsc" style="display:none;">
+            <a class="nav-link" href="https://unifty.io/bsc/farm-view.html?address=0x7B717526fF81f28053F82170D96f01B4605A5e90">
+          <span class="material-icons-round">
+            shopping_cart
+          </span>
+                Shop
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://unifty.eth.link">
+            <span class="material-icons-round">
+              present_to_all
+            </span>
+                Mirror
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="roadmap.html">
+                <span class="material-icons-round">
+                    group
+                  </span>
+                  About UNIFTY
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="guides-faq.html">
+            <span class="material-icons-round">
+              help_outline
+            </span>
+                FAQ
+            </a>
+        </li>
+
+        <li class="nav-item" style="display:none;" id="torus">
+            <a class="nav-link" href="javascript:enableTorus();">
+                    <span class="material-icons-round">
+                      account_balance_wallet
+                    </span>
+                Enable Wallet
+            </a>
+        </li>
+
+        <li class="nav-item" style="display:none;" id="torusAddress">
+            <a href="javascript:void(0);" id="torusAddressPopover" type="button" class="btn btn-clipboard" style="cursor: pointer;" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" title="Your Address" data-html="true" data-content="">
+                      <span class="material-icons-round">
+                        account_balance_wallet
+                      </span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<!-- FOOTER END -->
+
+</div>
+<script src="js/ramp-init.js"></script>
+<script src="js/themeSwitch.js"></script>
+</body>
+
+</html>

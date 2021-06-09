@@ -134,3 +134,24 @@ body.light-edition {
   --scrollbar-thumb: linear-gradient(0deg, #ccccdd 27%, rgba(32, 32, 96, .5) 60%);
   --scrollbar-thumb-hover: linear-gradient(13deg, #b8b8c5 14%, #202060 64%);
 }
+
+.defaultPointer{
+  --cursor-default: auto !important;
+  --cursor-pointer: pointer !important;
+  --cursor-text: auto !important;
+
+  // a, button, .theme-toggler{
+  //   cursor: pointer !important;
+  // }
+}
+
+//Load more on farms
+#loadMore{
+  grid-column: 1/-1;
+  margin: 2rem 0;
+
+  #loadMoreButton{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}

@@ -49,9 +49,9 @@ function TncLibMarket(){
         // Moonbase Alpha
     } else if(chain_id === "507") {
 
-        this.market = new web3.eth.Contract(marketABI, '', {from: this.account});
-        this.swap = new web3.eth.Contract(swapABI, '', {from: this.account});
-        this.wrap = new web3.eth.Contract(marketWrapABI, '', {from: this.account});
+        this.market = new web3.eth.Contract(marketABI, '0x3bed2637738c403bE932E81a8D66137Ee94c1D3c', {from: this.account});
+        this.swap = new web3.eth.Contract(swapABI, '0x800196EBe88508FD76835F847794870e49E01C3a', {from: this.account});
+        this.wrap = new web3.eth.Contract(marketWrapABI, '0x6C126493CE8742bf5C8B8c3eB0622dA69AEC6C4C', {from: this.account});
         this.account = '';
 
         // CELO

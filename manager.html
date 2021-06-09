@@ -16,22 +16,23 @@
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/ipfs.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/nifABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/genesisABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/farmABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/marketABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/swapABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/lib-market.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/erc1155-dapp.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/marketABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/swapABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/lib-market.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/erc1155-dapp.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.7"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -201,6 +202,12 @@
           </a>
         </li>
           <li class="nav-item">
+              <a class="nav-link" href="market-builder.html">
+                  <i class="material-icons-round">build</i>
+                  <p>Market Builder</p>
+              </a>
+          </li>
+          <li class="nav-item">
               <a class="nav-link" href="farm-builder.html">
                   <i class="material-icons-round">build</i>
                   <p>Farm Builder</p>
@@ -212,12 +219,7 @@
             <p>NFT Bridge</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="project-funding.html" id="nulsSco">
-            <i class="material-icons-round">monetization_on</i>
-            <p>Get Project Funding</p>
-          </a>
-        </li>
+ 
         <li class="nav-item">
           <a class="nav-link" href="guides-faq.html">
             <i class="material-icons-round">help_center</i>
@@ -298,12 +300,6 @@
        <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-          <script>
-            // fix for initial doubleclick required upon page load
-            // $(document).ready(function () {
-            //   $('#chainSelectionDropdown').click();
-            // });
-          </script>
 
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
@@ -340,25 +336,32 @@
       
       <div class="content__welcome-text">
         <p>
-          This is the administration panel for all of your collections and NFTs that you manage.
+          Welcome to the administration panel for all of your collections, and NFTs that you manage.
+        
         </p>
-      </div>
-
-      <h1>Collections</h1>
+        </div>
+        
+        <h1>Collections</h1>
+        
+        <p>
+          Info -> A collection is like a book - the cover, and structure. Inside a book, you have chapters, and pages.
+          Similarly, inside a collection, you have NFT IDs (chapters), and individual NFT tokens (pages). Basically, a
+          collection is a cover for your NFTs.
+        </p>
 
       <div class="add-new-card-container" data-toggle="modal" data-target="#nftContractModal"
       id="nftNewCollectionModalButton">
-        Add new collection
         <span class="material-icons">
           add_circle
         </span>
+        Add new collection
       </div>
 
         <div class="add-new-card-container" data-toggle="modal" data-target="#nftTransferMultiBatchModal" id="nftTransferMultiBatchModalButton">
-            Multi Batch Transfer
             <span class="material-icons">
             add_circle
             </span>
+            Multi Batch Transfer
         </div>
 
       <div class="container-fluid">
@@ -989,11 +992,11 @@
 
           <li class="nav-item">
               <a class="nav-link" href="roadmap.html">
-            <span class="material-icons-round">
-              swap_calls
-            </span>
-                  Roadmap
-              </a>
+                <span class="material-icons-round">
+                  group
+                </span>
+                About UNIFTY
+                </a>
           </li>
 
 

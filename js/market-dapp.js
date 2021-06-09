@@ -58,7 +58,7 @@ function TncDapp() {
                 hasMore = ask.erc1155Address.length - 1;
             }
 
-            if('false' == shadowed || ( address != '' && tncLib.account.toLowerCase() == address.toLowerCase() ) ) {
+            if('false' == shadowed || ( address != '' && await web3.utils.isAddress(address) ) ) {
 
                 _this.render(
                     ask.erc1155Address[0],

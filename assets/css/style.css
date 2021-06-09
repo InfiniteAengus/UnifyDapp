@@ -100,6 +100,18 @@ body.light-edition {
   --scrollbar-thumb: linear-gradient(0deg, #ccccdd 27%, rgba(32, 32, 96, .5) 60%);
   --scrollbar-thumb-hover: linear-gradient(13deg, #b8b8c5 14%, #202060 64%); }
 
+.defaultPointer {
+  --cursor-default: auto !important;
+  --cursor-pointer: pointer !important;
+  --cursor-text: auto !important; }
+
+#loadMore {
+  grid-column: 1/-1;
+  margin: 2rem 0; }
+  #loadMore #loadMoreButton {
+    font-size: 1.2rem;
+    font-weight: 500; }
+
 h1 {
   font-family: "Poppins", sans-serif;
   font-size: 2.4rem;
@@ -139,6 +151,9 @@ h3 {
 
 .text-muted a {
   color: var(--heading-color); }
+
+.about-info {
+  color: var(--text-primary); }
 
 textarea, input {
   cursor: var(--cursor-text); }
@@ -327,6 +342,8 @@ textarea, input {
   font-size: 1.6rem;
   color: var(--text-footer);
   font-weight: 400; }
+  .main-timeline p.description strong {
+    color: var(--heading-color); }
 
 .main-timeline .date-outer:before {
   background: var(--primary-color);
@@ -359,22 +376,21 @@ textarea, input {
     margin-right: 5px; }
 
 #guidesTabs {
-  border-bottom: solid 1px var(--primary-color);
+  border-bottom: solid 1px var(--heading-color);
   border-radius: 0;
   padding: 0; }
   #guidesTabs .nav-item {
     border: solid 1px rgba(255, 255, 255, 0) !important; }
     #guidesTabs .nav-item a {
-      color: var(--primary-color) !important;
+      color: var(--heading-color) !important;
       font-size: 2rem;
       font-weight: 400;
-      padding-left: 30px;
-      padding-right: 30px; }
+      padding: 15px 10px 10px; }
     #guidesTabs .nav-item a.active {
       font-weight: bold;
       border: 1px solid !important;
       border-bottom: 2px solid !important;
-      border-color: var(--primary-color) var(--primary-color) var(--bg-primary) !important;
+      border-color: var(--heading-color) var(--heading-color) var(--bg-primary) !important;
       border-radius: 8px 8px 0 0;
       margin-bottom: -1px;
       margin-left: -1px;
@@ -1226,7 +1242,7 @@ textarea, input {
 .dark-edition .main-panel .modal-dialog .modal-content,
 .light-edition .main-panel .modal-dialog .modal-content {
   border: 0.1rem solid var(--modal-border-text);
-  background-color: white; }
+  background-color: var(--bg-secondary); }
   .dark-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled),
   .light-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled) {
     cursor: var(--cursor-pointer); }
@@ -1494,15 +1510,28 @@ textarea, input {
   background-color: var(--bg-secondary);
   border-radius: 20px;
   padding: 2px;
-  height: 36px;
+  height: 40px;
   margin-left: 5px;
   user-select: none;
-  box-shadow: var(--shadow-primary); }
+  box-shadow: var(--shadow-primary);
+  border: 0.2rem solid var(--primary-color); }
+  @media only screen and (min-width: 112.5em) {
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
+      height: 42px; } }
+  @media only screen and (max-width: 75em) {
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
+      height: 38px; } }
   @media only screen and (max-width: 991px) {
     .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
     .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
       width: 58px;
-      height: 28px; } }
+      height: 30px; } }
+  @media only screen and (max-width: 56.25em) {
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
+      height: 31px; } }
   .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler input,
   .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler input {
     opacity: 0; }
@@ -1716,27 +1745,29 @@ textarea, input {
       width: 100%; } }
   .dark-edition .main-panel .content,
   .light-edition .main-panel .content {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     padding: 3rem 5rem 7rem;
-    min-height: calc(100vh - .5rem); }
+    min-height: calc(100vh - 0.5rem); }
   .dark-edition .main-panel .content .add-new-card-container,
   .light-edition .main-panel .content .add-new-card-container {
+    width: max-content;
     display: flex;
     align-items: center;
-    font-size: 1.4rem;
-    color: var(--text-primary);
+    font-size: 1.6rem;
+    color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
-    transition: all 1s; }
-    .dark-edition .main-panel .content .add-new-card-container span,
-    .light-edition .main-panel .content .add-new-card-container span {
-      margin-left: .5rem;
-      font-size: 1.8rem; }
+    padding: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    background-color: var(--primary-color); }
     .dark-edition .main-panel .content .add-new-card-container:hover,
     .light-edition .main-panel .content .add-new-card-container:hover {
       cursor: var(--cursor-pointer); }
-      .dark-edition .main-panel .content .add-new-card-container:hover span,
-      .light-edition .main-panel .content .add-new-card-container:hover span {
-        transform: scale(1.1); }
+    .dark-edition .main-panel .content .add-new-card-container span,
+    .light-edition .main-panel .content .add-new-card-container span {
+      margin-right: 1rem;
+      font-size: 24px; }
   .dark-edition .main-panel .navbar.navbar-absolute,
   .light-edition .main-panel .navbar.navbar-absolute {
     padding-top: 2rem; }
@@ -1757,7 +1788,7 @@ textarea, input {
   .dark-edition .main-panel .card,
   .light-edition .main-panel .card {
     background: var(--bg-tertiary);
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     z-index: 0;
     margin: 0; }
   .dark-edition .main-panel .nftHeader-stakingOptions-container,
@@ -1771,8 +1802,12 @@ textarea, input {
   .dark-edition .main-panel .content .row,
   .light-edition .main-panel .content .row {
     margin: 0 0 1rem 0; }
+  .dark-edition .main-panel .content #marketsPage.row,
   .dark-edition .main-panel .content #farmsPage.row,
-  .light-edition .main-panel .content #farmsPage.row {
+  .dark-edition .main-panel .content .row.team-list,
+  .light-edition .main-panel .content #marketsPage.row,
+  .light-edition .main-panel .content #farmsPage.row,
+  .light-edition .main-panel .content .row.team-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     grid-gap: 2rem; }
@@ -1813,24 +1848,26 @@ textarea, input {
     .light-edition .main-panel .content .container-fluid .wallet-container .row .container-fluid,
     .light-edition .main-panel .content .container-fluid .bridge-container .row .container-fluid {
       font-size: 1.4rem; }
-  .dark-edition .main-panel .content .container-fluid .wallet-container, .dark-edition .main-panel .content .container-fluid .bridge-container,
+  .dark-edition .main-panel .content .container-fluid .wallet-container,
+  .dark-edition .main-panel .content .container-fluid .bridge-container,
   .light-edition .main-panel .content .container-fluid .wallet-container,
   .light-edition .main-panel .content .container-fluid .bridge-container {
     padding: 2rem;
     background-color: var(--bg-tertiary);
     box-shadow: var(--shadow-primary);
-    border-radius: .8rem; }
-    .dark-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary, .dark-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary,
+    border-radius: 0.8rem; }
+    .dark-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary,
+    .dark-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary,
     .light-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary,
     .light-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary {
       border: 0.2rem solid var(--subheading-color);
-      border-radius: .8rem;
+      border-radius: 0.8rem;
       background-color: var(--bg-tertiary);
       box-shadow: none;
       color: var(--heading-color);
       font-size: 1.2rem;
-      letter-spacing: .32px;
-      padding: .8rem 1.2rem; }
+      letter-spacing: 0.32px;
+      padding: 0.8rem 1.2rem; }
   .dark-edition .main-panel .footer,
   .light-edition .main-panel .footer {
     border-top: none; }

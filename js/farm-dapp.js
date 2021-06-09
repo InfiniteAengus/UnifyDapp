@@ -624,7 +624,7 @@ function TncDapp() {
                     $(this).html(button_text);
                 }
                 else if(stock > 0){
-                    let button_text = Number($(this).data('points')).toFixed(8) + ' Points'
+                    let button_text = parseFloat($(this).data('points').toFixed(8)) + ' Points'
                     $(this).html(button_text);
                 } else if(stock == 0){
                     $(this).html('Sold Out');

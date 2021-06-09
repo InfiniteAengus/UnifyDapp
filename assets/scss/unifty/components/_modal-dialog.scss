@@ -1,8 +1,7 @@
 .dark-edition .main-panel .modal-dialog .modal-content,
 .light-edition .main-panel .modal-dialog .modal-content {
   border: 0.1rem solid var(--modal-border-text);
-  //background-color: var(--bg-tertiary);
-  background-color: white;
+  background-color: var(--bg-secondary);
 
   .close:not(:disabled):not(.disabled) {
     cursor: var(--cursor-pointer);

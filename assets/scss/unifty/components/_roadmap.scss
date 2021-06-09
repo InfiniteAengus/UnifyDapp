@@ -31,6 +31,10 @@
   font-size: 1.6rem;
   color: var(--text-footer);
   font-weight: 400;
+
+  strong {
+    color: var(--heading-color);
+  }
 }
 
 .main-timeline .date-outer {

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#48a9a6;fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="xdai_logo" transform="translate(-1086 -168)">
+        <path id="Rectangle_2" fill="none" d="M0 0H24V24H0z" transform="translate(1086 168)"/>
+        <g id="Page-1" transform="translate(1026.7 108.7)">
+            <g id="Artboard" transform="translate(62.3 62.3)">
+                <path id="Fill-2" d="M62.3 65.9h7.205v-3.6H62.3z" class="cls-2" transform="translate(-62.3 -62.3)"/>
+                <path id="Fill-3" d="M141.1 65.9h7.205v-3.6H141.1z" class="cls-2" transform="translate(-130.305 -62.3)"/>
+                <path id="Fill-4" d="M148.305 141.1h-3.6v3.6h-3.6v3.6h7.205z" class="cls-2" transform="translate(-130.305 -130.305)"/>
+                <path id="Fill-5" d="M69.505 148.305v-3.6H65.9v-3.6h-3.6v7.205z" class="cls-2" transform="translate(-62.3 -130.305)"/>
+            </g>
+        </g>
+    </g>
+</svg>

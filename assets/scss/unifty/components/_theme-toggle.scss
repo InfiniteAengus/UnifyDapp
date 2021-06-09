@@ -11,14 +11,27 @@
     background-color: var(--bg-secondary);
     border-radius: 20px;
     padding: 2px;
-    height: 36px;
+    height: 40px;
     margin-left: 5px;
     user-select: none;
     box-shadow: var(--shadow-primary);
+    border: 0.2rem solid var(--primary-color);
 
-    @include respond (nav-collapse) {
+    @include respond(big-desktop) {
+      height: 42px;
+    }
+
+    @include respond(tab-land) {
+      height: 38px;
+    }
+
+    @include respond(nav-collapse) {
       width: 58px;
-      height: 28px;
+      height: 30px;
+    }
+
+    @include respond(tab-port) {
+      height: 31px;
     }
 
     input {
@@ -37,7 +50,7 @@
         border-radius: 20px;
         color: var(--bg-primary);
 
-        @include respond (nav-collapse) {
+        @include respond(nav-collapse) {
           font-size: 24px;
         }
       }

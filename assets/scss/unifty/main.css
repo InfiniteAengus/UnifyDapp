@@ -535,20 +535,23 @@ h3 {
 }
 
 .nftListing,
-.farmListing {
+.farmListing,
+.marketListing{
   min-width: 20rem;
   width: 50.5rem;
   padding: 0;
   margin-right: 2rem !important;
 }
 .nftListing .card-profile,
-.farmListing .card-profile {
+.farmListing .card-profile,
+.marketListing .card-profile {
   position: relative;
   margin-top: 0;
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 .nftListing .card-profile .card-avatar,
-.farmListing .card-profile .card-avatar {
+.farmListing .card-profile .card-avatar,
+.marketListing .card-profile .card-avatar {
   min-width: 15.6rem;
   min-height: 15.6rem;
   max-width: 15.6rem;
@@ -558,15 +561,18 @@ h3 {
   background-color: var(--image-padding);
 }
 .nftListing .card-profile .card-body,
-.farmListing .card-profile .card-body {
+.farmListing .card-profile .card-body,
+.marketListing .card-profile .card-body {
   position: static;
 }
 .nftListing .card-profile .card-body h5.card-title,
-.farmListing .card-profile .card-body h5.card-title {
+.farmListing .card-profile .card-body h5.card-title,
+.marketListing .card-profile .card-body h5.card-title {
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.28px;
 }
+
 .nftListing .card-profile .card-body h5.card-title a,
 .farmListing .card-profile .card-body h5.card-title a {
   color: var(--heading-color);

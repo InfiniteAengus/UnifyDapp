@@ -16,19 +16,20 @@
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/ipfs.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/nifABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/genesisABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/farmABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/farm-dapp.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/farm-dapp.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.7"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -200,6 +201,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="market-builder.html">
+            <i class="material-icons-round">build</i>
+            <p>Market Builder</p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="farm-builder.html">
             <i class="material-icons-round">build</i>
             <p>Farm Builder</p>
@@ -211,12 +218,7 @@
             <p>NFT Bridge</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="project-funding.html" id="nulsSco">
-            <i class="material-icons-round">monetization_on</i>
-            <p>Get Project Funding</p>
-          </a>
-        </li>
+ 
         <li class="nav-item">
           <a class="nav-link" href="guides-faq.html">
             <i class="material-icons-round">help_center</i>
@@ -468,20 +470,15 @@
             
               <div class="card card-profile">
                   {{#ifNotEquals image ""}}
-                      <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                  <a href="{{opensea}}">
+                    <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                  </a>
                   {{/ifNotEquals}}
                   
-                  {{#ifEquals checkOpenSea "Check on OpenSea"}}
-                      <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
-                  {{/ifEquals}}
-
-                  {{#ifEquals checkOpenSea "Open Details"}}
-                      <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}">{{checkOpenSea}}</a>
-                  {{/ifEquals}}
               
 
                   <div class="card-body">
-                    <h5 class="card-title"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+                    <h5 class="card-title"><a href="{{opensea}}" target="_blank">{{name}}</a></h5>
                       {{#ifNotEquals animation_url ""}}
                       <a class="btn btn-outline mb-3 video-btn-link" data-toggle="collapse" href="#collapseVideo{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapseVideo{{erc1155}}{{id}}">
                         <span class="material-icons">
@@ -554,9 +551,18 @@
                           <br />
                       {{/ifNotEquals}}
 
-                      <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
-                          Traits
-                      </a>
+                      
+                  {{#ifEquals checkOpenSea "Check on OpenSea"}}
+                  <a class="traits btn btn-outline" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
+                  {{/ifEquals}}
+                  
+                  {{#ifEquals checkOpenSea "Open Details"}}
+                  <a class="traits btn btn-outline" href="{{opensea}}">{{checkOpenSea}}</a>
+                  {{/ifEquals}}
+                  
+                  <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
+                    Traits
+                  </a>
                       <div class="collapse traits-collapse" id="collapse{{erc1155}}{{id}}">
                           <ul class="list-group">
                               {{#each attributes}}
@@ -1086,9 +1092,9 @@
         <li class="nav-item">
           <a class="nav-link" href="roadmap.html">
             <span class="material-icons-round">
-              swap_calls
+              group
             </span>
-            Roadmap
+            About UNIFTY
           </a>
         </li>
 

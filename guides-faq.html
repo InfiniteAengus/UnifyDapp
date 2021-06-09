@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="maximum-scale=1.0, initial-scale=1.0, width=device-width" name="viewport" />
+  <title>Guides & FAQ - Unifty</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script type="text/javascript" src="js/buffer.js"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/plugins/chartist.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.8"></script>
+  <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js"
+    integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" />
+
+  <style type="text/css">
+    .dark-edition .modal a {
+      color: #8b92a9;
+      font-weight: 700;
+    }
+
+    .main-timeline {
+      position: relative;
+    }
+
+    .main-timeline:before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .main-timeline .timeline {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .main-timeline .timeline:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .main-timeline .icon {
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: none;
+    }
+
+    .main-timeline .icon:before,
+    .main-timeline .icon:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.33s ease-out 0s;
+    }
+
+    .main-timeline .icon:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -3px;
+    }
+
+    .main-timeline .icon:after {
+      border: 2px solid #25b1c3;
+      left: 3px;
+    }
+
+    .main-timeline .timeline:hover .icon:before {
+      left: 3px;
+    }
+
+    .main-timeline .timeline:hover .icon:after {
+      left: -3px;
+    }
+
+    .main-timeline .date-content {
+      width: 50%;
+      float: left;
+      margin-top: 22px;
+      position: relative;
+    }
+
+    .main-timeline .date-content:before {
+      content: "";
+      width: 36.5%;
+      height: 2px;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0;
+    }
+
+    .main-timeline .date-outer {
+      width: 125px;
+      height: 125px;
+      font-size: 16px;
+      text-align: center;
+      margin: auto;
+      z-index: 1;
+    }
+
+    .main-timeline .date-outer:before,
+    .main-timeline .date-outer:after {
+      content: "";
+      width: 125px;
+      height: 125px;
+      margin: 0 auto;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.33s ease-out 0s;
+    }
+
+    .main-timeline .date-outer:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -6px;
+    }
+
+    .main-timeline .date-outer:after {
+      border: 2px solid #25b1c3;
+      left: 6px;
+    }
+
+    .main-timeline .timeline:hover .date-outer:before {
+      left: 6px;
+    }
+
+    .main-timeline .timeline:hover .date-outer:after {
+      left: -6px;
+    }
+
+    .main-timeline .date {
+      width: 100%;
+      margin: auto;
+      position: absolute;
+      top: 27%;
+      left: 0;
+    }
+
+    .main-timeline .month {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .main-timeline .month {
+      color: #232323;
+    }
+
+    .main-timeline .year {
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+      color: #232323;
+      line-height: 36px;
+    }
+
+    .main-timeline .timeline-content {
+      width: 50%;
+      padding: 20px 0 20px 50px;
+      float: right;
+    }
+
+    .main-timeline .title {
+      font-size: 19px;
+      line-height: 24px;
+      margin: 0 0 15px 0;
+    }
+
+    .main-timeline .description {
+      margin-bottom: 0;
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content {
+      float: right;
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content:before {
+      left: 10px;
+    }
+
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+      padding: 20px 50px 20px 0;
+      text-align: right;
+    }
+
+    @media only screen and (max-width: 991px) {
+      .main-timeline .date-content {
+        margin-top: 35px;
+      }
+
+      .main-timeline .date-content:before {
+        width: 22.5%;
+      }
+
+      .main-timeline .timeline-content {
+        padding: 10px 0 10px 30px;
+      }
+
+      .main-timeline .title {
+        font-size: 17px;
+      }
+
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        padding: 10px 30px 10px 0;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .main-timeline:before {
+        margin: 0;
+        left: 7px;
+      }
+
+      .main-timeline .timeline {
+        margin-bottom: 20px;
+      }
+
+      .main-timeline .timeline:last-child {
+        margin-bottom: 0;
+      }
+
+      .main-timeline .icon {
+        margin: auto 0;
+      }
+
+      .main-timeline .date-content {
+        width: 95%;
+        float: right;
+        margin-top: 0;
+      }
+
+      .main-timeline .date-content:before {
+        display: none;
+      }
+
+      .main-timeline .date-outer {
+        width: 110px;
+        height: 110px;
+      }
+
+      .main-timeline .date-outer:before,
+      .main-timeline .date-outer:after {
+        width: 110px;
+        height: 110px;
+      }
+
+      .main-timeline .date {
+        top: 30%;
+      }
+
+      .main-timeline .year {
+        font-size: 24px;
+      }
+
+      .main-timeline .timeline-content,
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .main-timeline .title {
+        margin-bottom: 10px;
+      }
+    }
+
+    .dark-edition .card .card-body .card-description {
+      color: #8b92a9;
+    }
+
+    .description,
+    .card-description,
+    .footer-big p {
+      color: #8b92a9;
+    }
+
+    .title,
+    .title a,
+    .card-title,
+    .card-title a,
+    .info-title,
+    .info-title a,
+    .footer-brand,
+    .footer-brand a,
+    .footer-big h5,
+    .footer-big h5 a,
+    .footer-big h4,
+    .footer-big h4 a,
+    .media .media-heading,
+    .media .media-heading a {
+      color: #8b92a9;
+    }
+
+    body {
+      color: #8b92a9;
+    }
+
+    .navbar,
+    .navbar-text a {
+      color: inherit;
+    }
+  </style>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <script src="js/themeDefault.js"></script>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://unifty.io" class="simple-text logo-normal">
+        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em">
+          Binance Smart Chain
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="material-icons-round">home</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item" id="marketNavLink">
+          <a class="nav-link" href="market.html">
+            <i class="material-icons-round">storefront</i>
+            <p>NFT Market</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="collectibles.html">
+            <i class="material-icons-round">account_balance_wallet</i>
+            <p>Your Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager.html">
+            <i class="material-icons-round">collections</i>
+            <p>Collection Manager</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="market-builder.html">
+            <i class="material-icons-round">build</i>
+            <p>Market Builder</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="farm-builder.html">
+            <i class="material-icons-round">build</i>
+            <p>Farm Builder</p>
+          </a>
+        </li>
+        <li class="nav-item bridgeNav">
+          <a class="nav-link" href="bridge.html">
+            <i class="material-icons-round">360</i>
+            <p>NFT Bridge</p>
+          </a>
+        </li>
+ 
+
+        <li class="nav-item active">
+          <a class="nav-link" href="guides-faq.html">
+            <i class="material-icons-round">help_center</i>
+            <p>Guides & FAQ</p>
+          </a>
+        </li>
+        <li class="nav-item" id="xdaiFarm">
+          <a class="nav-link"
+            href="https://unifty.io/xdai/farm-view.html?address=0x87E5aFba16E3BEbd967699B4D5472B2ae1AA8Fa7">
+            <i class="material-icons">grass</i>
+            <p>Rares Farm - NIF (xDai)</p>
+          </a>
+        </li>
+
+        <li class="nav-item" id="genesisFarm">
+          <a class="nav-link" href="https://unifty.io/farm.html?farm=0xA2c88A39b1DE8f1d723d9E76AD07f6012826d0f3">
+            <i class="material-icons">grass</i>
+            <p>Genesis Farm - NIF-LP</p>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-text">
+          <div class="sidebar-text icons">
+            <span class="navbar-text">
+              <a href="https://www.facebook.com/unifty.io" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+
+              <a href="https://www.instagram.com/unifty.io/" target="_blank">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://t.me/unifty" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://discord.gg/5ZBTgnAd9s" target="_blank">
+                <i class="fa fa-discord"></i>
+              </a>
+              <a href="https://twitter.com/unifty_io" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </span>
+          </div>
+
+          <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Unifty Development d.o.o.<br />All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR END -->
+
+  <div class="main-panel">
+    <!-- NAV TOGGLER -->
+    <nav class="
+          navbar navbar-expand-lg navbar-transparent navbar-absolute
+          fixed-top
+        " id="navigation-example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+          aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+      <!-- HEADER -->
+      <div class="custom-header">
+        <div class="custom-header__title">Unifty.io</div>
+        <div class="custom-header__dropdowns">
+          <script>
+            // fix for initial doubleclick required upon page load
+            $(document).ready(function () {
+              $("#chainSelectionDropdown").click();
+            });
+          </script>
+
+          <div class="dropdown ml-3 mr-3 dropdown--chains">
+            <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ethereum
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="https://unifty.io/"><img
+                  src="assets/img/network-icons/ethereum_logo.svg" />Ethereum</a>
+              <a class="dropdown-item" href="https://unifty.io/xdai/"><img
+                  src="assets/img/network-icons/xdai_logo.svg" />xDai</a>
+              <a class="dropdown-item" href="https://unifty.io/bsc/"><img
+                  src="assets/img/network-icons/binance_logo.svg" />Binance Smart Chain</a>
+              <a class="dropdown-item" href="https://unifty.io/avalanche/"><img
+                  src="assets/img/network-icons/avalanche_logo.svg" />Avalanche</a>
+              <a class="dropdown-item" href="https://unifty.io/celo/"><img
+                  src="assets/img/network-icons/celo_logo.svg" />Celo</a>
+              <a class="dropdown-item" href="https://unifty.io/matic/"><img
+                  src="assets/img/network-icons/polygon-logo.svg" />Polygon (Matic)</a>
+              <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+              <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img
+                  src="assets/img/network-icons/rinkeby_logo.svg" />Rinkeby (Testnet)</a>
+            </div>
+          </div>
+
+          <div class="theme-toggler">
+            <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+              <span class="material-icons-round dark-mode"> dark_mode </span>
+            </label>
+            <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+          </div>
+        </div>
+      </div>
+      <!-- HEADER END -->
+
+      <div class="content__welcome-text">
+        <p>Here you can find guides, FAQ and videos.</p>
+      </div>
+
+      <div class="container-fluid">
+
+        <div style="display: flex; flex-direction: row;">
+          <div style="width: 70%;">
+            <ul class="nav nav-tabs" id="guidesTabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="guides-tab" data-toggle="tab" href="#guides" role="tab"
+                  aria-controls="guides" aria-selected="true">Guides</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="faq-tab" data-toggle="tab" href="#faq" role="tab" aria-controls="faq"
+                  aria-selected="false">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="videos"
+                  aria-selected="false">YouTube tutorials</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="guidesContent">
+              <div class="tab-pane fade show active" id="guides" role="tabpanel" aria-labelledby="guides-tab">
+                <h3>Collection - how to?</h3>
+                <p>
+                  Go through a quick rundown on how to create your first collection.<br />
+                  <a href="assets/pdf/Collection-howTo.pdf" target="_blank">Read more...</a>
+                </p>
+
+                <br />
+
+                <h3>NFT - how to?</h3>
+                <p>
+                  Go through a quick rundown on how to create, transfer, mint, burn, sell, buy, and edit your NFT.<br />
+                  <a href="assets/pdf/NFT-howTo.pdf" target="_blank">Read more...</a>
+                </p>
+                
+                <br />
+
+                <h3>Farm - how to?</h3>
+                <p>
+                  Go through a quick rundown on how to create your first farm, and add NFTs to it.<br />
+                  <a href="assets/pdf/Farm-howTo.pdf" target="_blank">Read more...</a>
+                </p>
+
+
+              </div>
+              <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#what-are-nfts"
+                    aria-expanded="false" aria-controls="what-are-nfts">
+                    What are NFTs?
+                  </button>
+                  <div class="faq-content collapse" id="what-are-nfts">
+                    <div>
+                      <p>
+                        NFTS (Non-Fungible Tokens) are representations of
+                        collectibles on the blockchain (Ethereum in the case of
+                        Unifty). NFTs are usually associated with digital art but
+                        their use-cases are limitless. NFTs are one of the
+                        fastest-growing asset classes in the crypto space.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#unifty-ultimate-goal"
+                    aria-expanded="false" aria-controls="unifty-ultimate-goal">
+                    What is Unifty’s ultimate goal?
+                  </button>
+                  <div class="faq-content collapse" id="unifty-ultimate-goal">
+                    <div>
+                      <p>
+                        UNIFTY is aiming to become the major hub for exchanging,
+                        creating, managing, and market NFTs and collectibles.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#what-is-a-collection"
+                    aria-expanded="false" aria-controls="what-is-a-collection">
+                    What is a collection?
+                  </button>
+                  <div class="faq-content collapse" id="what-is-a-collection">
+                    <div>
+                      <p>
+                        A collection holds many NFTs of the same type. If you have
+                        a series of Manga NFTs for example, you would store them
+                        in the same collection. Collections at UNIFTY are ERC1155
+                        contracts, the new NFT standard for Ethereum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#why-create-collections"
+                    aria-expanded="false" aria-controls="why-create-collections">
+                    Why should I create collections at UNIFTY? I can create NFTs
+                    at Rarible and OpenSea already?
+                  </button>
+                  <div class="faq-content collapse" id="why-create-collections">
+                    <div>
+                      <p>
+                        Because the collections there aren’t yours. For example at
+                        Rarible, your NFTs belong to the Rarible collection and
+                        aren’t technically yours. On the other hand, custom
+                        ERC1155 collections at Unifty are approx. 50% cheaper than
+                        custom ERC1155 collections at Rarible. If you intend to
+                        build a community around your NFTs it is critical that you
+                        have full ownership and administrative privileges over all
+                        contracts in play. The collections you create at UNIFTY
+                        are entirely yours. Additionally, all contracts made with
+                        UNIFTY are already verified.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-divider"></div>
+                <div class="faq-divider"></div>
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#services-cost"
+                    aria-expanded="false" aria-controls="services-cost">
+                    How much do your services cost?
+                  </button>
+                  <div class="faq-content collapse" id="services-cost">
+                    <div>
+                      <p>
+                        If you’re holding NIF or owning one of our Free Pass
+                        wildcard collectibles, nothing! If you aren’t
+                        holding/owning any, a developer fee will apply.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#releasing-token"
+                    aria-expanded="false" aria-controls="releasing-token">
+                    Will you release a token?
+                  </button>
+                  <div class="faq-content collapse" id="releasing-token">
+                    <div>
+                      <p>
+                        Yes, in fact, the token exists already and is called NIF.
+                        Our token will play a major role within the UNIFTY
+                        ecosystem.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#nif-tokenomics"
+                    aria-expanded="false" aria-controls="nif-tokenomics">
+                    What are the tokenomics of NIF?
+                  </button>
+                  <div class="faq-content collapse" id="nif-tokenomics">
+                    <div>
+                      <p>
+                        In the first step, holding NIF will allow you to use our
+                        tools free, and will be finally used to determine NFTs of
+                        similar value for our upcoming NFT swapping as well as
+                        providing cheaper swap fees.
+                        <br />
+                        Symbol: NIF
+                        <br />
+
+                        Total supply: 5,000,000
+                        <br />
+
+                        Decimals: 18 NIF token contract at
+                        <a href="https://etherscan.io/" target="_blank">Etherscan.io</a>:
+                        <a href="https://etherscan.io/address/0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e"
+                          target="_blank">0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e</a>
+                        1,000,000 $NIF have been initially pooled at
+                        <a href="https://app.uniswap.org/#/swap?inputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e"
+                          target="_blank">Uniswap</a>.
+                        <br />
+
+                        Pool liquidity locked with Unicrypt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#how-to-transfer-nft"
+                    aria-expanded="false" aria-controls="how-to-transfer-nft">
+                    How to transfer NFTs from one Unifty account to another one?
+                  </button>
+                  <div class="faq-content collapse" id="how-to-transfer-nft">
+                    <div>
+                      <p>
+                        If your account is linked to your wallet ( usually MetaMask or Trust Wallet), all you need to do
+                        is
+                        send the NFT from whichever wallet has it currently to the receiving address for your second
+                        wallet.
+                        After that, log into Unifty while your second wallet is the active one on MetaMask or Trust
+                        Wallet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#info-current-trades"
+                    aria-expanded="false" aria-controls="info-current-trades">
+                    Where can I see information about the current trade stats?
+                  </button>
+                  <div class="faq-content collapse" id="info-current-trades">
+                    <div>
+                      <p>
+                        Please check out our <a href="https://t.me/UniftyTraders" target="_blank">Telegram group</a>.
+                        There,
+                        you can talk freely about Unifty or our token $NIF
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#using-staking-or-dapp"
+                    aria-expanded="false" aria-controls="using-staking-or-dapp">
+                    Why can’t I see my staking or use the dapp?
+                  </button>
+                  <div class="faq-content collapse" id="using-staking-or-dapp">
+                    <div>
+                      <p>
+                        The wallet sometimes crashes after connecting. All you need to do is disable and re-enable your
+                        wallet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#half-points-in-farm"
+                    aria-expanded="false" aria-controls="half-points-in-farm">
+                    Why are my points cut in half on the farm?
+                  </button>
+                  <div class="faq-content collapse" id="half-points-in-farm">
+                    <div>
+                      <p>
+                        What probably happened is that the farm owner adjusted the reward rate. Owners are allowed to
+                        edit
+                        the rate, but that affects all stakers, not just the individual stakers. So it’s not removing,
+                        but
+                        adjusting.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#farm-foreign-nfts"
+                    aria-expanded="false" aria-controls="farm-foreign-nfts">
+                    If I bought an NFT on Bakery Swap, can I create a farm for it on Unifty?
+                  </button>
+                  <div class="faq-content collapse" id="farm-foreign-nfts">
+                    <div>
+                      <p>
+                        Yes, you can. But only if it’s bep1155.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#nft-sales-avax"
+                    aria-expanded="false" aria-controls="nft-sales-avax">
+                    Do NFT sales on AVAX go automatically to MetaMask?
+                  </button>
+                  <div class="faq-content collapse" id="nft-sales-avax">
+                    <div>
+                      <p>
+                        You need to withdraw funds in the NFT market, under the market options.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#deflationary-token"
+                    aria-expanded="false" aria-controls="deflationary-token">
+                    What is a deflationary token?
+                  </button>
+                  <div class="faq-content collapse" id="deflationary-token">
+                    <div>
+                      <p>
+                        That’s a token that decreases in total supply every time a token transfer happens. As with every
+                        transfer, a percentage of the transferred amount will be burned.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#farm-not-showing"
+                    aria-expanded="false" aria-controls="farm-not-showing">
+                    What can I do if my newly created collection or farm is not showing?
+                  </button>
+                  <div class="faq-content collapse" id="farm-not-showing">
+                    <div>
+                      <p>
+                        You can try clearing the cache on your browser and refresh.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#free-tokens"
+                    aria-expanded="false" aria-controls="free-tokens">
+                    How can I get free tokens?
+                  </button>
+                  <div class="faq-content collapse" id="free-tokens">
+                    <div>
+                      <p>
+                        You can get your free tokens <a href="https://faucet.rinkeby.io/" target="_blank">HERE</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#disabled-farm"
+                    aria-expanded="false" aria-controls="disabled-farm">
+                    Can a farm pool be disabled for a certain amount of time?
+                  </button>
+                  <div class="faq-content collapse" id="disabled-farm">
+                    <div>
+                      <p>
+                        Unfortunately no. Even if you set the reward rate at 0 for the time you want the pool to be
+                        paused,
+                        we don’t recommend that. It would affect accrued but unspent points.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#get-nif"
+                    aria-expanded="false" aria-controls="get-nif">
+                    Where can I get some of your $NIFs?
+                  </button>
+                  <div class="faq-content collapse" id="get-nif">
+                    <div>
+                      <p>
+                        <a href="https://app.uniswap.org/#/swap" target="_blank">Uniswap</a>, <a
+                          href="https://pancakeswap.finance/" target="_blank">PancakeSwap</a>, <a
+                          href="https://trade.kucoin.com/NIF-USDT" target="_blank">Kucoin</a> and <a
+                          href="https://burgerswap.org/trade/swap" target="_blank">BurgerSwap</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse"
+                    data-target="#info-about-transactions" aria-expanded="false"
+                    aria-controls="info-about-transactions">
+                    Where can I see info about my transactions?
+                  </button>
+                  <div class="faq-content collapse" id="info-about-transactions">
+                    <div>
+                      <p>
+                        After you finish your transactions, you can see all the information on <a
+                          href="https://etherscan.io/" target="_blank">Etherscan</a> , <a href="https://blockscan.com/"
+                          target="_blank"></a>Blockscout</a>, or <a href="https://bscscan.com/"
+                          target="_blank"></a>BscScan</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse"
+                    data-target="#how-to-create-collection" aria-expanded="false"
+                    aria-controls="how-to-create-collection">
+                    Who can teach me how to create my first collection and farm?
+                  </button>
+                  <div class="faq-content collapse" id="how-to-create-collection">
+                    <div>
+                      <p>
+                        We made tutorials to help you with the learning process. You can find out how to create your
+                        first
+                        <a href="https://uniftyio.medium.com/creating-collections-with-unifty-c4cfca091109"
+                          target="_blank"></a>collection</a> and your first <a
+                          href="https://uniftyio.medium.com/creating-customs-nft-farms-with-unifty-1e95e353ac26"
+                          target="_blank"></a>farm</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse"
+                    data-target="#adding-someones-collection" aria-expanded="false"
+                    aria-controls="adding-someones-collection">
+                    Can I add someone else’s collection to the site?
+                  </button>
+                  <div class="faq-content collapse" id="adding-someones-collection">
+                    <div>
+                      <p>
+                        You can add a third-party collection, but it only displays if you have those tokens in your
+                        wallet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#genesis-farm"
+                    aria-expanded="false" aria-controls="genesis-farm">
+                    What is Genesis Farm - NIF-LP?
+                  </button>
+                  <div class="faq-content collapse" id="genesis-farm">
+                    <div>
+                      <p>
+                        That is Unifty’s farm for LP NIF stakers. There, the NFTs are not being sold on the marketplace.
+                        LP
+                        NIF stakers can earn points to get NFTs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#what-are-traits"
+                    aria-expanded="false" aria-controls="what-are-traits">
+                    What are traits?
+                  </button>
+                  <div class="faq-content collapse" id="what-are-traits">
+                    <div>
+                      <p>
+                        A trait is a piece of information linked to the NFT ID. It has 3 parts: Key (attribute), Value
+                        (data), and Type (Text, Number, Boost number and percentage, or date). As an example for Key and
+                        Value, you could have “Color” - “Red”.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#what-are-royalties"
+                    aria-expanded="false" aria-controls="what-are-royalties">
+                    What are royalties?
+                  </button>
+                  <div class="faq-content collapse" id="what-are-royalties">
+                    <div>
+                      <p>
+                        They allow collection owners to receive a portion of each sale on the Unifty marketplace, up to
+                        50%.
+                        It is optional, and may not be taken into account for OTC transactions or in other marketplaces.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+                <div>
+                  <button class="collapsible" type="button" data-toggle="collapse" data-target="#cant-see-new-nft"
+                    aria-expanded="false" aria-controls="cant-see-new-nft">
+                    Why can’t I see my newly created NFT?
+                  </button>
+                  <div class="faq-content collapse" id="cant-see-new-nft">
+                    <div>
+                      <p>
+                        If you don’t see your NFT in your wallet - click the settings icon next to “Wallet” and register
+                        the
+                        collection, from the collection manager you can copy that directly. Alternatively, you can find
+                        it
+                        in your transaction history on Etherscan, BSCscan, Blockscout, or any other relevant block
+                        explorer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-divider"></div>
+
+              </div>
+              <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                <div>
+                  <iframe src="https://www.youtube.com/embed/fWJjmRpuVxA" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                  <div>
+                    <h3>How to create collections on Unifty.io</h3>
+                    <p>Go through a quick rundown on how to setup a new NFT collection and create your first NFT, then
+                      we’ll sell it! </p>
+                    <p>Duration: 5:07</p>
+                  </div>
+                </div>
+                <br><br>
+                <div>
+                  <iframe src="https://www.youtube.com/embed/aSaaOxoyBTw" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                  <div>
+                    <h3>How to create NFTs on UNIFTY.io</h3>
+                    <p>Go through a quick rundown on how to create a new NFT, then we’ll sell it! </p>
+                    <p>Duration: 6:35</p>
+                  </div>
+                </div>
+                <br><br>
+                <div>
+                  <iframe src="https://www.youtube.com/embed/KUP3Il5zEP4" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                  <div>
+                    <h3>How to buy NFTs on UNIFTY.IO</h3>
+                    <p>Buying NFTs has never been easier. Here's a quick guide to buying your first NFT on UNIFTY.IO</p>
+                    <p>Duration: 2:12</p>
+                  </div>
+                </div>
+                <br><br>
+                <div>
+                  <iframe src="https://www.youtube.com/embed/5cjMXX7ZPZ8" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                  <div>
+                    <h3>How to sell NFTs on UNIFTY.IO</h3>
+                    <p>Sell your NFTs like a pro!</p>
+                    <p>Duration: 4:35</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="learn-more-socialDiv">
+            <h3>Follow Unifty</h3>
+            <p>Follow Us to learn more and find out the latest news about Unifty.</p>
+
+            <div>
+              <img src="assets/img/social-icons/telegram.svg">
+              <div>
+                <h4>Telegram Groups</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://t.me/unifty" target="_blank">t.me/unifty</a>
+                </div>
+
+                <div>
+                  <h5>UNIFTY TRADE CHANNEL</h5>
+                  <a href="https://t.me/UniftyTraders" target="_blank">t.me/UniftyTraders</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/discord.svg">
+
+              <div>
+                <h4>Discord Group</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://discord.com/invite/5ZBTgnAd9s" target="_blank">discord/Unifty Community</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/twiter.svg">
+
+              <div>
+                <h4>Twitter</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://twitter.com/unifty_io" target="_blank">twitter/unifty_io</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/instagram.svg">
+
+              <div>
+                <h4>Instagram</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://www.instagram.com/unifty.io/" target="_blank">instagram/unifty.io</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/facebook.svg">
+
+              <div>
+                <h4>facebook</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://www.facebook.com/unifty.io" target="_blank">facebook/unifty.io</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/linkedin.svg">
+
+              <div>
+                <h4>LinkedIn</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://www.linkedin.com/in/unifty-development/" target="_blank">linkedin/unifty-development</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/medium.svg">
+
+              <div>
+                <h4>Medium</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://uniftyio.medium.com/" target="_blank">medium/uniftyio</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/youtube.svg">
+
+              <div>
+                <h4>YouTube</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://www.youtube.com/channel/UCcObER-bpLPf8ni3vhDhUTw" target="_blank">yt/unifty</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <img src="assets/img/social-icons/tiktok.svg">
+
+              <div>
+                <h4>TikTok</h4>
+
+                <div>
+                  <h5>UNIFTY CHANNEL</h5>
+                  <a href="https://www.tiktok.com/@unifty_io?lang=de-DE" target="_blank">tiktok/unifty_io</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ALERT -->
+        <div class="modal fade" style="overflow-y: scroll" id="alertModal" tabindex="-1" role="dialog"
+          aria-labelledby="alertModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank"
+            href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
+            <span class="material-icons-round"> find_replace </span>
+            Get $NIF on Uniswap
+          </a>
+        </li>
+
+        <li class="nav-item" id="ramp-btn">
+          <a class="nav-link">
+            <span class="material-icons-round"> attach_money </span>
+            Buy crypto with RAMP
+          </a>
+        </li>
+
+        <li class="nav-item shop" id="shopEthereum" style="display: none">
+          <a class="nav-link"
+            href="https://unifty.io/farm-view.html?address=0x7387DF14E182b37aEF944C231E6f4D88EbBa1145"><i
+              class="material-icons">shopping_cart</i> Shop</a>
+        </li>
+
+        <li class="nav-item shop" id="shopXdai" style="display: none">
+          <a class="nav-link"
+            href="https://unifty.io/xdai/farm-view.html?address=0xCBe3F53c26A717704d12D219F8B43016BbDa9082"><i
+              class="material-icons">shopping_cart</i> Shop</a>
+        </li>
+
+        <li class="nav-item shop" id="shopBsc" style="display: none">
+          <a class="nav-link"
+            href="https://unifty.io/bsc/farm-view.html?address=0x7B717526fF81f28053F82170D96f01B4605A5e90"><i
+              class="material-icons">shopping_cart</i> Shop</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://unifty.eth.link">
+            <span class="material-icons-round"> present_to_all </span>
+            Mirror
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="roadmap.html">
+            <span class="material-icons-round">
+              group
+            </span>
+            About UNIFTY
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="guides-faq.html">
+            <span class="material-icons-round"> help_outline </span>
+            FAQ
+          </a>
+        </li>
+
+        <li class="nav-item" style="display: none" id="torus">
+          <a class="nav-link" href="javascript:enableTorus();">
+            <span class="material-icons-round"> account_balance_wallet </span>
+            Enable Wallet
+          </a>
+        </li>
+
+        <li class="nav-item" style="display: none" id="torusAddress">
+          <a href="javascript:void(0);" id="torusAddressPopover" type="button" class="btn btn-clipboard"
+            style="cursor: pointer" data-container="body" data-toggle="popover" data-trigger="hover"
+            data-placement="top" title="Your Address" data-html="true" data-content="">
+            <span class="material-icons-round"> account_balance_wallet </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- FOOTER END -->
+  </div>
+  <script src="js/ramp-init.js"></script>
+  <script src="js/themeSwitch.js"></script>
+</body>
+
+</html>
