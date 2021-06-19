@@ -1,13 +1,14 @@
 .footer {
   position: fixed;
   bottom: 0;
-  left: 30rem;
-  width: calc(100% - 40rem);
+  left: 28rem;
+  width: calc(100% - 38rem);
 
-  @include respond(big-desktop) {
-    left: 33rem;
-    width: calc(100% - 43rem);
-  }
+  // @include respond(big-desktop) {
+  //   left: 33rem;
+  //   width: calc(100% - 43rem);
+  // }
+
   @include respond(nav-collapse) {
     left: 0;
     width: -moz-available;

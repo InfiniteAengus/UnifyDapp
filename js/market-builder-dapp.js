@@ -310,9 +310,11 @@ function TncDapp() {
                         $('#marketSubmit').prop('disabled', false);
                         $('#marketSubmit').html('Create Market');
                     },
-                    function () {
+                    function (err) {
                         toastr.remove();
-                        toastr["error"]('An error occurred with your approval transaction.', "Error");
+                        let errMsg = 'An error occurred with your approval transaction.';
+                        toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $('#marketSubmit').prop('disabled', false);
                         $('#marketSubmit').html('Create Market');
                     });
@@ -345,7 +347,9 @@ function TncDapp() {
                     function (err) {
                         toastr.remove();
                         let errMsg = 'An error occurred with your New Market transaction. Do you have sufficient funds?';
+
                         toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $('#marketSubmit').prop('disabled', false);
                         $('#marketSubmit').html('Create Market');
                     }
@@ -425,6 +429,7 @@ function TncDapp() {
                     $('#marketInfoButton').html('Update');
                     let errMsg = 'An error occurred with your Update Market Info transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });
@@ -532,6 +537,7 @@ function TncDapp() {
                     $('#marketAllowedDisallowedButton').html('Save');
                     let errMsg = 'An error occurred with your transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
 
@@ -561,6 +567,7 @@ function TncDapp() {
                     $('#marketAllowedDisallowedButton').html('Save');
                     let errMsg = 'An error occurred with your transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -640,6 +647,7 @@ function TncDapp() {
                 $('#marketUnstakeButton').html('Unstake');
                 let errMsg = 'An error occurred with your unstaking transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -709,9 +717,11 @@ function TncDapp() {
                     $('#marketStakeButton').prop('disabled', false);
                     $('#marketStakeButton').html('Stake');
                 },
-                function () {
+                function (err) {
                     toastr.remove();
-                    toastr["error"]('An error occurred with your approval transaction.', "Error");
+                    let errMsg = 'An error occurred with your approval transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                     $('#marketStakeButton').prop('disabled', false);
                     $('#marketStakeButton').html('Stake');
                 });
@@ -738,6 +748,7 @@ function TncDapp() {
                     toastr.remove();
                     let errMsg = 'An error occurred with your staking transaction. Do you have sufficient funds?';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -966,11 +977,13 @@ function TncDapp() {
                     $('#lookupInfo').text('');
                     _alert('Withdraw successful!');
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Withdraw');
-                    toastr["error"]('An error occurred with your withdrawal transaction.', "Error");
+                    let errMsg = 'An error occurred with your withdrawal transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });
@@ -1024,11 +1037,13 @@ function TncDapp() {
                     $('#lookupInfo').text('');
                     _alert('Withdraw successful!');
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Withdraw');
-                    toastr["error"]('An error occurred with your withdrawal transaction.', "Error");
+                    let errMsg = 'An error occurred with your withdrawal transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });
@@ -1072,6 +1087,7 @@ function TncDapp() {
                 toastr.remove();
                 let errMsg = 'An error occurred with your swap setup transaction. Do you have sufficient funds?';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -1114,6 +1130,7 @@ function TncDapp() {
                 toastr.remove();
                 let errMsg = 'An error occurred with your fee setup transaction. Do you have sufficient funds?';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };

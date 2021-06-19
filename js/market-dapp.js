@@ -453,11 +453,13 @@ function TncDapp() {
                 _alert('Cancellation successful!');
                 $('#nftCancel'+$('#nftBuyIndex').val()).closest('.nftListing').css('display', 'none');
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
-                toastr["error"]('An error occurred with your cancellation transaction.', "Error");
+                let errMsg = 'An error occurred with your cancellation transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -517,9 +519,11 @@ function TncDapp() {
                     $('#nftBatchBuy'+index).html('Buy');
                     $('#alertModal').modal('hide');
                 },
-                function () {
+                function (err) {
                     toastr.remove();
-                    toastr["error"]('An error occurred with your approval transaction.', "Error");
+                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
                     $(_button).html('Buy!');
                     $('#nftBatchBuy'+index).prop('disabled', false);
@@ -565,13 +569,15 @@ function TncDapp() {
                         $('#nftBatchBuy'+index).closest('.nftListing').css('display', 'none');
                     }
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $('#nftBatchBuy'+index).prop('disabled', false);
                     $('#nftBatchBuy'+index).html('Buy');
                     $(_button).html('Buy!');
-                    toastr["error"]('An error occurred with your buying transaction.', "Error");
+                    let errMsg = 'An error occurred with your buying transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -661,9 +667,11 @@ function TncDapp() {
                             $('#nftBuyButtonShortcut'+index).html('Buy');
                             $('#alertModal').modal('hide');
                         },
-                        function () {
+                        function (err) {
                             toastr.remove();
-                            toastr["error"]('An error occurred with your approval transaction.', "Error");
+                            let errMsg = 'An error occurred with your approval transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $(_button).prop('disabled', false);
                             $(_button).html('Buy!');
                             $('#nftBuyButtonShortcut'+index).prop('disabled', false);
@@ -706,13 +714,15 @@ function TncDapp() {
                                 $('#nftBuyButtonShortcut'+index).closest('.nftListing').css('display', 'none');
                             }
                         },
-                        function(){
+                        function(err){
                             toastr.remove();
                             $(_button).prop('disabled', false);
                             $('#nftBuyButtonShortcut'+index).prop('disabled', false);
                             $('#nftBuyButtonShortcut'+index).html('Buy');
                             $(_button).html('Buy!');
-                            toastr["error"]('An error occurred with your buying transaction.', "Error");
+                            let errMsg = 'An error occurred with your buying transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                         }
                     );
                 }
@@ -814,9 +824,11 @@ function TncDapp() {
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
                 },
-                function () {
+                function (err) {
                     toastr.remove();
-                    toastr["error"]('An error occurred with your approval transaction.', "Error");
+                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
                 });
@@ -847,11 +859,13 @@ function TncDapp() {
                     }
                     _alert('Swap request successful. If your request is getting accepted, the swap will be performed. You can cancel your request at any time.');
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
-                    toastr["error"]('An error occurred with your swapping transaction.', "Error");
+                    let errMsg = 'An error occurred with your swapping transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -1145,11 +1159,13 @@ function TncDapp() {
                     $('#lookupInfo').text('');
                     _alert('Withdraw successful!');
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Withdraw');
-                    toastr["error"]('An error occurred with your withdrawal transaction.', "Error");
+                    let errMsg = 'An error occurred with your withdrawal transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });
@@ -1382,6 +1398,7 @@ function TncDapp() {
                             toastr.remove();
                             let errMsg = 'An error occurred with your set approval for all transaction.';
                             toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $('#alertModal').modal('hide');
                             $('#amountToAdd'+erc1155Address+id).val('');
                         }
@@ -1889,11 +1906,13 @@ function TncDapp() {
                 }
                 _alert('The swap has been successful!');
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Accept');
-                toastr["error"]('An error occurred with your swapping transaction.', "Error");
+                let errMsg = 'An error occurred with your swapping transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -1925,11 +1944,13 @@ function TncDapp() {
                 toastr["success"]('Transaction has been finished.', "Success");
                 _alert('The swap cancellation has been successful!');
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
-                toastr["error"]('An error occurred with your cancelling transaction.', "Error");
+                let errMsg = 'An error occurred with your cancelling transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -1938,6 +1959,11 @@ function TncDapp() {
 
         let price = parseFloat($('#nftSellPrice').val().trim());
         let sellToken = $('#nftSellToken2').val().trim();
+
+        if($('#nftSellToken2').val().trim() == 'custom'){
+            sellToken = $('#nftSellCustomTokenAddress2').val().trim();
+        }
+
         let category = parseInt($('#nftSellCategory').val().trim());
 
         if(isNaN(category) || category < 0){
@@ -2021,11 +2047,13 @@ function TncDapp() {
                 $('#nftSellButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function () {
+            function (err) {
                 toastr.remove();
                 $('#nftSellButton').prop('disabled', false);
                 $('#nftSellButton').html('Sell!');
-                toastr["error"]('An error occurred with your sell transaction.', "Error");
+                let errMsg = 'An error occurred with your sell transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             });
     }
 

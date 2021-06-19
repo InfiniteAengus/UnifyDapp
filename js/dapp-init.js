@@ -131,7 +131,7 @@ $(document).ready(async function(){
                         currencyName = 'DEV';
                         currencySymbol = 'DEV';
                         currencyDecimals = 18;
-                        blockExplorerUrl = '';
+                        blockExplorerUrl = 'https://moonbeam-explorer.netlify.app/';
 
                         desc =  'You are not connected to the '+chainName+'.<br/><br/>' +
                             'Please use the following setup in Metamask => Settings => Networks => Add Network: <br /><br />' +
@@ -265,6 +265,7 @@ $(document).ready(async function(){
 
                     }catch(e){
 
+                        console.log(e);
                         $('#alertModal').find('.modal-dialog').addClass('modal-lg')
                         _alert(desc);
                     }
@@ -380,6 +381,10 @@ function enableTorus(){
             case 'a86a':
                 chain = 'https://api.avax.network/ext/bc/C/rpc';
                 networkName = 'Avalanche';
+                break;
+            case '507':
+                chain = 'https://rpc.testnet.moonbeam.network';
+                networkName = 'Moonbeam (Alpha)';
                 break;
             case '1':
                 chain = 'mainnet';

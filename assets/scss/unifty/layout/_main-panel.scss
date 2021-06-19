@@ -1,11 +1,12 @@
 .dark-edition .main-panel,
 .light-edition .main-panel {
-  width: calc(100% - 30rem);
+  width: calc(100% - 28rem);
   background-color: var(--bg-primary);
 
-  @include respond(big-desktop) {
-    width: calc(100% - 33rem);
-  }
+  // @include respond(big-desktop) {
+  //   width: calc(100% - 33rem);
+  // }
+
   @include respond(nav-collapse) {
     width: 100%;
   }
@@ -20,7 +21,7 @@
     width: max-content;
     display: flex;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
     padding: 12px;
@@ -35,7 +36,7 @@
 
     span {
       margin-right: 1rem;
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 

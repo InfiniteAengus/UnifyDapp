@@ -534,12 +534,14 @@ function TncDapp() {
                 _alert('Cancellation successful!');
                 $('#nftCancel'+$('#nftBuyIndex').val()).closest('.nftListing').css('display', 'none');
             },
-            function(e){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
 
-                toastr["error"]('An error occurred with your cancellation transaction.', "Error");
+                let errMsg = 'An error occurred with your cancellation transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -599,9 +601,11 @@ function TncDapp() {
                     $('#nftBatchBuy'+index).html('Buy');
                     $('#alertModal').modal('hide');
                 },
-                function () {
+                function (err) {
                     toastr.remove();
-                    toastr["error"]('An error occurred with your approval transaction.', "Error");
+                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
                     $(_button).html('Buy!');
                     $('#nftBatchBuy'+index).prop('disabled', false);
@@ -647,14 +651,16 @@ function TncDapp() {
                         $('#nftBatchBuy'+index).closest('.nftListing').css('display', 'none');
                     }
                 },
-                function(e){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $('#nftBatchBuy'+index).prop('disabled', false);
                     $('#nftBatchBuy'+index).html('Buy');
                     $(_button).html('Buy!');
-                    toastr["error"]('An error occurred with your buying transaction.', "Error");
-                    if(!e.message.includes('denied transaction')) {
+                    let errMsg = 'An error occurred with your buying transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
+                    if(!err.message.includes('denied transaction')) {
                         _alert("We could not perform your buy order. Please contact the market owner.");
                     }
                 }
@@ -746,9 +752,11 @@ function TncDapp() {
                             $('#nftBuyButtonShortcut'+index).html('Buy');
                             $('#alertModal').modal('hide');
                         },
-                        function () {
+                        function (err) {
                             toastr.remove();
-                            toastr["error"]('An error occurred with your approval transaction.', "Error");
+                            let errMsg = 'An error occurred with your approval transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $(_button).prop('disabled', false);
                             $(_button).html('Buy!');
                             $('#nftBuyButtonShortcut'+index).prop('disabled', false);
@@ -791,14 +799,16 @@ function TncDapp() {
                                 $('#nftBuyButtonShortcut'+index).closest('.nftListing').css('display', 'none');
                             }
                         },
-                        function(e){
+                        function(err){
                             toastr.remove();
                             $(_button).prop('disabled', false);
                             $('#nftBuyButtonShortcut'+index).prop('disabled', false);
                             $('#nftBuyButtonShortcut'+index).html('Buy');
                             $(_button).html('Buy!');
-                            toastr["error"]('An error occurred with your buying transaction.', "Error");
-                            if(!e.message.includes('denied transaction')) {
+                            let errMsg = 'An error occurred with your buying transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
+                            if(!err.message.includes('denied transaction')) {
                                 _alert("We could not perform your buy order. Please contact the market owner.");
                             }
                         }
@@ -902,9 +912,11 @@ function TncDapp() {
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
                 },
-                function () {
+                function (err) {
                     toastr.remove();
-                    toastr["error"]('An error occurred with your approval transaction.', "Error");
+                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
                 });
@@ -936,12 +948,14 @@ function TncDapp() {
                     }
                     _alert('Swap request successful. If your request is getting accepted, the swap will be performed. You can cancel your request at any time.');
                 },
-                function(e){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
-                    toastr["error"]('An error occurred with your swapping transaction.', "Error");
-                    if(!e.message.includes('denied transaction')) {
+                    let errMsg = 'An error occurred with your swapping transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
+                    if(!err.message.includes('denied transaction')) {
                         _alert("We could not perform your swap request. Please contact the market owner.");
                     }
                 }
@@ -1238,11 +1252,13 @@ function TncDapp() {
                     $('#lookupInfo').text('');
                     _alert('Withdraw successful!');
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Withdraw');
-                    toastr["error"]('An error occurred with your withdrawal transaction.', "Error");
+                    let errMsg = 'An error occurred with your withdrawal transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });
@@ -1461,7 +1477,7 @@ function TncDapp() {
         out += '<div class="col-3">';
         out += '<input type="text" '+displayAmountDisabled+' class="amountToAdd amountToAdd'+erc1155Address+'" value="" placeholder="0" style="width: 50px;margin-right: 5px;" data-erc1155address="'+erc1155Address+'" data-id="'+id+'" id="amountToAdd'+erc1155Address+id+'"/>';
         out += '<a '+displayApprovalLink+' class="approveNft approveNft'+erc1155Address+'" id="approveNft'+erc1155Address+id+'" data-erc1155address="'+erc1155Address+'" data-id="'+id+'" href="javascript:void(0);">Approve first!</a>';
-        out += '<br/>You own: ' + nft.balance;
+        out += 'You own: ' + nft.balance;
         out += '</div>';
         out += '<div class="col-2">';
         out += '<a '+displayRoyalties+' class="amountToAdd royalties" value="" placeholder="0" style="width: 50px;margin-right: 5px;" data-contract-address="'+erc1155Address+'" data-toggle="modal" data-target="#royaltiesModal" data-edit="true" data-nft-id="'+id+'" id="royalties'+erc1155Address+id+'" href="javascript:void(0);">Set Royalties ('+royalties+' %)</a>';
@@ -1509,6 +1525,7 @@ function TncDapp() {
                         toastr.remove();
                         let errMsg = 'An error occurred with your set approval for all transaction.';
                         toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $('#alertModal').modal('hide');
                         $('#amountToAdd'+erc1155Address+id).val('');
                     }
@@ -2017,12 +2034,14 @@ function TncDapp() {
                 }
                 _alert('The swap has been successful!');
             },
-            function(e){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Accept');
-                toastr["error"]('An error occurred with your swapping transaction.', "Error");
                 _alert("We could not perform your accept request. Please contact the market owner.");
+                let errMsg = 'An error occurred with your swapping transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -2055,11 +2074,13 @@ function TncDapp() {
                 toastr["success"]('Transaction has been finished.', "Success");
                 _alert('The swap cancellation has been successful!');
             },
-            function(e){
+            function(err){
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
-                toastr["error"]('An error occurred with your cancelling transaction.', "Error");
+                let errMsg = 'An error occurred with your cancelling transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);                
             }
         );
     }
@@ -2068,6 +2089,11 @@ function TncDapp() {
 
         let price = parseFloat($('#nftSellPrice').val().trim());
         let sellToken = $('#nftSellToken2').val().trim();
+
+        if($('#nftSellToken2').val().trim() == 'custom'){
+            sellToken = $('#nftSellCustomTokenAddress2').val().trim();
+        }
+
         let category = parseInt($('#nftSellCategory').val().trim());
 
         if(isNaN(category) || category < 0){
@@ -2087,6 +2113,7 @@ function TncDapp() {
         try {
             decimals = await tncLib.tokenDecimalsErc20(sellToken);
         }catch(e){
+            console.log(e);
             _alert('Invalid token! Seems not to support the decimals() information.');
             return;
         }
@@ -2154,12 +2181,14 @@ function TncDapp() {
                 $('#nftSellButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function (e) {
+            function (err) {
                 toastr.remove();
                 $('#nftSellButton').prop('disabled', false);
                 $('#nftSellButton').html('Sell!');
-                toastr["error"]('An error occurred with your sell transaction.', "Error");
-                if(!e.message.includes('denied transaction')) {
+                let errMsg = 'An error occurred with your sell transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
+                if(!err.message.includes('denied transaction')) {
                     _alert("We could not put your offer on sale. Please contact the market owner to check back if your wallet, collection or NFT is allowed to be posted.");
                 }
             });
@@ -2275,11 +2304,13 @@ function TncDapp() {
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 $('#storeRoyaltiesButton').html('Set Royalties');
-                toastr["error"]('An error occurred with your royalties transaction.', "Error");
+                let errMsg = 'An error occurred with your royalties transaction.'                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             });
     }
 

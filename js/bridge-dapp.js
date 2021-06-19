@@ -275,12 +275,14 @@ function TncDapp() {
             $(_button).prop("disabled", false);
             $(_button).html("Redeem Now!");
           },
-          function () {
+          function (err) {
             toastr.remove();
+            let errMsg = "An error occurred with your approval transaction."
             toastr["error"](
-              "An error occurred with your approval transaction.",
+              errMsg,
               "Error"
-            );
+              );
+            errorPopup("Error", errMsg, err.stack);
             $(_button).prop("disabled", false);
             $(_button).html("Redeem");
           }
@@ -309,14 +311,17 @@ function TncDapp() {
             $("#bridgedPage").html("");
             _this.loadPage("");
           },
-          function () {
+          function (err) {
             toastr.remove();
             $(_button).prop("disabled", false);
             $(_button).html("Redeem");
+            let errMsg = "An error occurred with your redemption transaction.";
             toastr["error"](
-              "An error occurred with your redemption transaction.",
+              errMsg,
               "Error"
             );
+            errorPopup("Error", errMsg, err.stack);
+
           }
         );
       }
@@ -371,14 +376,17 @@ function TncDapp() {
         $("#bridgedPage").html("");
         _this.loadPage("");
       },
-      function () {
+      function (err) {
         toastr.remove();
         $(_button).prop("disabled", false);
         $(_button).html("Deposit");
+        let errMsg = "An error occurred with your deposit transaction.";
         toastr["error"](
-          "An error occurred with your deposit transaction.",
+          errMsg,
           "Error"
         );
+        errorPopup("Error", errMsg, err.stack);
+
       }
     );
   };
@@ -406,14 +414,17 @@ function TncDapp() {
         $("#bridgedPage").html("");
         _this.loadPage("");
       },
-      function () {
+      function (err) {
         toastr.remove();
         $(_button).prop("disabled", false);
         $(_button).html("Withdraw");
+        let errMsg = "An Withdraw occurred with your withdrawal transaction.";
         toastr["error"](
-          "An Withdraw occurred with your withdrawal transaction.",
+          errMsg,
           "Error"
         );
+        errorPopup("Error", errMsg, err.stack);
+
       }
     );
   };
@@ -449,7 +460,7 @@ function TncDapp() {
         $("#bridgedPage").html("");
         _this.loadPage("");
       },
-      function () {
+      function (err) {
         toastr.remove();
         _alert(
           "Your restore cancellation request failed. Either the NFT has been redeemed already or the 2-hour grace-time did not expire yet."
@@ -459,10 +470,10 @@ function TncDapp() {
         setTimeout(function () {
           $(_button).html("Restore");
         }, 3000);
-        toastr["error"](
-          "An Withdraw occurred with your restore cancellation transaction.",
-          "Error"
-        );
+
+        let errMsg = "An Withdraw occurred with your restore cancellation transaction.";           
+        toastr["error"](errMsg, "Error");
+        errorPopup("Error", errMsg, err.stack);
       }
     );
   };

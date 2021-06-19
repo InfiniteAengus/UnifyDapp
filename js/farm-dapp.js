@@ -111,9 +111,11 @@ function TncDapp() {
                         $('#nftStakeButton').prop('disabled', false);
                         $('#nftStakeButton').html('Stake Now!');
                     },
-                    function () {
+                    function (err) {
                         toastr.remove();
-                        toastr["error"]('An error occurred with your approval transaction.', "Error");
+                        let errMsg = 'An error occurred with your approval transaction.';                    
+                        toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $('#nftStakeButton').prop('disabled', false);
                         $('#nftStakeButton').html('Stake!');
                     });
@@ -150,6 +152,7 @@ function TncDapp() {
                             errMsg = 'Staking amount exceeds limit or general gas error.';
                         }
                         toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $('#nftStakeButton').prop('disabled', false);
                         $('#nftStakeButton').html('Stake!');
                     });
@@ -195,6 +198,7 @@ function TncDapp() {
                         errMsg = 'Unstaking amount exceeds balance or general gas error.';
                     }
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
         });
 
@@ -512,7 +516,9 @@ function TncDapp() {
                         },
                         function (err) {
                             toastr.remove();
-                            toastr["error"]('An error occurred with your Buy transaction.', "Error");
+                            let errMsg = 'An error occurred with your Buy transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $('#buyButton').prop('disabled', false);
                             $('#buyButton').html('Buy');
                         });
@@ -548,7 +554,9 @@ function TncDapp() {
                         },
                         function (err) {
                             toastr.remove();
-                            toastr["error"]('An error occurred with your redeem transaction.', "Error");
+                            let errMsg = 'An error occurred with your redeem transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                         });
 
                 }
@@ -767,6 +775,7 @@ function TncDapp() {
                 $('#farmEditDataButton').html('Remove');
                 let errMsg = 'An error occurred with your removing NFTs transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -857,6 +866,7 @@ function TncDapp() {
                 $('#farmEditDataButton').html('Update');
                 let errMsg = 'An error occurred with your update NFT transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -896,6 +906,7 @@ function TncDapp() {
                 $('#farmShopEditDataButton').html('Update');
                 let errMsg = 'An error occurred with your update NFT transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -978,6 +989,7 @@ function TncDapp() {
                     $('#addNftsButton').html('Add');
                     let errMsg = 'An error occurred with your adding NFTs transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
 
@@ -1008,6 +1020,7 @@ function TncDapp() {
                     $('#addNftsButton').html('Add');
                     let errMsg = 'An error occurred with your set approval for all transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -1035,6 +1048,7 @@ function TncDapp() {
                 $('#withdrawFeesButton').html('Withdraw');
                 let errMsg = 'An error occurred with your withdraw transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
 

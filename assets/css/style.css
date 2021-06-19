@@ -49,6 +49,7 @@ body.light-edition {
   --title-color: #ec6fd2;
   --bg-primary: #0d141a;
   --bg-secondary: #121a21;
+  --bg-secondary-light: rgba(18, 26, 33, .5);
   --bg-tertiary: #121a21;
   --text-primary: #9d9db4;
   --text-primary-light: rgba(157, 157, 180, .5);
@@ -78,6 +79,7 @@ body.light-edition {
   --title-color: #202040;
   --bg-primary: #f4f7fb;
   --bg-secondary: #ffffff;
+  --bg-secondary-light: rgba(255, 255, 255, .5);
   --bg-tertiary: #eef0f8;
   --text-primary: #4c4c6f;
   --text-primary-light: rgba(76, 76, 111, .5);
@@ -114,7 +116,7 @@ body.light-edition {
 
 h1 {
   font-family: "Poppins", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.48px;
   color: var(--heading-color); }
@@ -143,7 +145,7 @@ h1.nftListingsTitle {
 
 h3 {
   font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.32px;
   color: var(--text-primary);
@@ -1239,6 +1241,176 @@ textarea, input {
 .card-body button.btn-outline:active {
     background-color: var(--primary-hover-dark) !important; }
 
+#collectiblePage .collectible-wrapper {
+  display: flex;
+  margin-top: 3rem; }
+
+#collectiblePage .collectible-wrapper .image-container {
+  flex: 2;
+  background-color: var(--bg-secondary);
+  margin-right: 3rem;
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  box-shadow: var(--shadow-primary);
+  border-radius: .4rem; }
+  #collectiblePage .collectible-wrapper .image-container .btn.btn-outline.video-btn-link {
+    border: 1px solid var(--dark-primary);
+    background-color: var(--white) !important;
+    color: var(--dark-primary);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    max-width: 25rem; }
+    #collectiblePage .collectible-wrapper .image-container .btn.btn-outline.video-btn-link span {
+      font-size: 2.4rem;
+      margin-right: 0.5rem; }
+
+#collectiblePage .collectible-wrapper .details-container {
+  flex: 4;
+  display: flex;
+  flex-direction: column; }
+  #collectiblePage .collectible-wrapper .details-container__upper {
+    background-color: var(--bg-secondary);
+    padding: 5rem;
+    box-shadow: var(--shadow-primary);
+    border-radius: .4rem; }
+    #collectiblePage .collectible-wrapper .details-container__upper .header {
+      display: flex;
+      justify-content: space-between;
+      margin: 0; }
+      #collectiblePage .collectible-wrapper .details-container__upper .header .title {
+        margin-top: 0; }
+      #collectiblePage .collectible-wrapper .details-container__upper .header .title h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.4rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin: 0; }
+      #collectiblePage .collectible-wrapper .details-container__upper .header #amount-div span.badge.badge-info {
+        background-color: unset;
+        color: var(--text-primary);
+        font-size: 1.2rem; }
+    #collectiblePage .collectible-wrapper .details-container__upper .collection-name {
+      font-size: 1.6rem;
+      color: var(--text-primary); }
+    #collectiblePage .collectible-wrapper .details-container__upper #actions-container .nft-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark-secondary); }
+    #collectiblePage .collectible-wrapper .details-container__upper #actions-container a {
+      color: inherit; }
+    #collectiblePage .collectible-wrapper .details-container__upper #actions-container .btn.btn-outline {
+      width: 50%;
+      min-width: 20rem;
+      box-shadow: none;
+      border-radius: .6rem;
+      border: 1px solid var(--primary-color);
+      background-color: var(--primary-color) !important;
+      color: var(--bg-secondary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      cursor: var(--cursor-pointer); }
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse.show,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapsing,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    padding: 0 4.5rem;
+    border-radius: .4rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse.show .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapsing .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse .utils-vertical {
+      height: 0.7rem; }
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    padding: 0 4.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: .4rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse .utils-vertical {
+      height: 0.4rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show div:not(:last-child),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing div:not(:last-child),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse div:not(:last-child) {
+      margin-bottom: 1rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show div > span:first-child,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing div > span:first-child,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse div > span:first-child {
+      display: inline-block;
+      width: 20rem;
+      text-transform: uppercase; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show div > :nth-child(2n),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing div > :nth-child(2n),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse div > :nth-child(2n) {
+      font-size: 1.4rem;
+      font-weight: 700; }
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing,
+  #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    padding: 0 4.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: .4rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing .utils-vertical,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse .utils-vertical {
+      height: 0.4rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show div:not(:last-child),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing div:not(:last-child),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse div:not(:last-child) {
+      margin-bottom: 1rem; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show div > span:first-child,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing div > span:first-child,
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse div > span:first-child {
+      display: inline-block;
+      width: 20rem;
+      text-transform: uppercase; }
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show div > :nth-child(2n),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing div > :nth-child(2n),
+    #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse div > :nth-child(2n) {
+      font-weight: 600; }
+
+.btn.btn-primary.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 1.4rem;
+  background-color: var(--bg-secondary-light) !important;
+  box-shadow: none;
+  border-radius: 0.4rem; }
+  .btn.btn-primary.collapsible:hover, .btn.btn-primary.collapsible:focus, .btn.btn-primary.collapsible:active {
+    box-shadow: none; }
+  .btn.btn-primary.collapsible[aria-expanded="false"]::after {
+    font-family: "Material Icons";
+    content: "\e313";
+    font-size: 1.8rem; }
+  .btn.btn-primary.collapsible[aria-expanded="true"]::after {
+    font-family: "Material Icons";
+    content: "\e316";
+    font-size: 1.8rem; }
+
+.btn.btn-primary.collapsible:not(:disabled):not(.disabled):active {
+  color: var(--heading-color); }
+
+.collapse .collectible-collapse-open {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 3.6rem 6rem;
+  text-align: left; }
+
 .dark-edition .main-panel .modal-dialog .modal-content,
 .light-edition .main-panel .modal-dialog .modal-content {
   border: 0.1rem solid var(--modal-border-text);
@@ -1464,6 +1636,49 @@ textarea, input {
       .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active {
         background-color: var(--primary-hover-dark); }
 
+
+#marketForm #tierGroup select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 60%), linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
+  background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px, 100% 0;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+#nftSellWallet .approveNft {
+  display: block; }
+
+.modalErrorDiv {
+  display: flex;
+  align-items: center; }
+  .modalErrorDiv .imageContainer {
+    display: flex;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-right: 2.4rem;
+    justify-content: center;
+    align-items: center; }
+    .modalErrorDiv .imageContainer img {
+      width: max-content;
+      height: max-content; }
+  .modalErrorDiv h3 {
+    margin-bottom: 0;
+    color: var(--heading-color);
+    font-weight: 500; }
+  .modalErrorDiv h4 {
+    color: var(--heading-color);
+    font-weight: bold; }
+  .modalErrorDiv p {
+    color: var(--text-primary);
+    margin: 0; }
+
+.modalDivider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.24);
+  margin: 1rem 0; }
+
+
 .dark-edition .main-panel .content .container-fluid.wallet .title-options-container,
 .light-edition .main-panel .content .container-fluid.wallet .title-options-container {
   display: flex;
@@ -1560,7 +1775,7 @@ textarea, input {
 
 .dark-edition .sidebar,
 .light-edition .sidebar {
-  width: 30rem;
+  width: 28rem;
   background-color: var(--bg-secondary);
   opacity: 1;
   font-size: 1.6rem;
@@ -1569,10 +1784,6 @@ textarea, input {
   .light-edition .sidebar::before {
     background-color: var(--bg-secondary);
     font-size: 1.6rem; }
-  @media only screen and (min-width: 112.5em) {
-    .dark-edition .sidebar,
-    .light-edition .sidebar {
-      width: 33rem; } }
   @media only screen and (max-width: 991px) {
     .dark-edition .sidebar,
     .light-edition .sidebar {
@@ -1665,10 +1876,10 @@ textarea, input {
     color: var(--primary-color);
     margin-right: 1.3rem; }
   .sidebar .nav p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.32px;
-    color: #a3abb2; }
+    color: #808080; }
   .sidebar .nav li:first-child > a {
     margin: 0 2.4rem; }
   .sidebar .nav li:not(:first-child) > a {
@@ -1710,8 +1921,9 @@ textarea, input {
   margin: 1.5rem 2.4rem; }
 
 .main-panel .content__welcome-text {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--text-primary);
+  font-weight: 300;
   padding: .8rem 0;
   margin-bottom: 2rem;
   width: 80%; }
@@ -1728,17 +1940,13 @@ textarea, input {
         z-index: 1050; } }
   .main-panel .content .custom-header__title {
     color: var(--title-color);
-    font-size: 4rem;
+    font-size: 3.6rem;
     font-weight: 700; }
 
 .dark-edition .main-panel,
 .light-edition .main-panel {
-  width: calc(100% - 30rem);
+  width: calc(100% - 28rem);
   background-color: var(--bg-primary); }
-  @media only screen and (min-width: 112.5em) {
-    .dark-edition .main-panel,
-    .light-edition .main-panel {
-      width: calc(100% - 33rem); } }
   @media only screen and (max-width: 991px) {
     .dark-edition .main-panel,
     .light-edition .main-panel {
@@ -1753,7 +1961,7 @@ textarea, input {
     width: max-content;
     display: flex;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
     padding: 12px;
@@ -1767,7 +1975,7 @@ textarea, input {
     .dark-edition .main-panel .content .add-new-card-container span,
     .light-edition .main-panel .content .add-new-card-container span {
       margin-right: 1rem;
-      font-size: 24px; }
+      font-size: 20px; }
   .dark-edition .main-panel .navbar.navbar-absolute,
   .light-edition .main-panel .navbar.navbar-absolute {
     padding-top: 2rem; }
@@ -1875,18 +2083,14 @@ textarea, input {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 30rem;
-  width: calc(100% - 40rem);
+  left: 28rem;
+  width: calc(100% - 38rem);
   margin: 0 5rem;
   padding: .5rem 0;
   background: var(--bg-tertiary);
   border-top-left-radius: .8rem;
   border-top-right-radius: .8rem;
   box-shadow: var(--shadow-primary); }
-  @media only screen and (min-width: 112.5em) {
-    .footer {
-      left: 33rem;
-      width: calc(100% - 43rem); } }
   @media only screen and (max-width: 991px) {
     .footer {
       left: 0;

@@ -376,12 +376,12 @@ function TncDapp() {
             },
             function (err) {
                 toastr.remove();
-                let errMsg = 'An error occurred with your New Farm Shop Addon transaction. Do you have sufficient funds?';
-                _alert(errMsg);
                 $('#farmShopAddonBuyButton').prop('disabled', false);
                 $('#farmShopAddonBuyButton').html('Buy');
 
+                let errMsg = 'An error occurred with your New Farm Shop Addon transaction. Do you have sufficient funds?';                    
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -420,11 +420,11 @@ function TncDapp() {
             function (err) {
                 toastr.remove();
                 let errMsg = 'An error occurred with your Farm Shop Addon Step 2 transaction. Do you have sufficient funds?';
-                _alert(errMsg);
                 $('#farmShopAddonStep2Button').prop('disabled', false);
                 $('#farmShopAddonStep2Button').html('Allow');
-
+                   
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -461,11 +461,11 @@ function TncDapp() {
             function (err) {
                 toastr.remove();
                 let errMsg = 'An error occurred with your Farm Shop Addon Step 3 transaction. Do you have sufficient funds?';
-                _alert(errMsg);
                 $('#farmShopAddonStep2Button').prop('disabled', false);
                 $('#farmShopAddonStep2Button').html('Allow');
-
+                
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -495,11 +495,12 @@ function TncDapp() {
             function (err) {
                 toastr.remove();
                 let errMsg = 'An error occurred with your Shop RunMode transaction. Do you have sufficient funds?';
-                _alert(errMsg);
                 $('#farmShopEditButton').prop('disabled', false);
                 $('#farmShopEditButton').html('Save');
 
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
+
             }
         );
     }
@@ -592,8 +593,9 @@ function TncDapp() {
                 },
                 function (err) {
                     toastr.remove();
-                    let errMsg = 'An error occurred with your New Farm transaction. Do you have sufficient funds?';
+                    let errMsg = 'An error occurred with your New Farm transaction. Do you have sufficient funds?';            
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
 
@@ -625,6 +627,8 @@ function TncDapp() {
                 $('#editRewardRateButton').html('Update');
                 let errMsg = 'An error occurred with your Set Reward Rate transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
+
             }
         );
     };
@@ -655,6 +659,7 @@ function TncDapp() {
                 $('#editControllerButton').html('Update');
                 let errMsg = 'An error occurred with your Set Controller transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -697,6 +702,7 @@ function TncDapp() {
                 $('#editStakeButton').html('Update');
                 let errMsg = 'An error occurred with your Edit Stakes transaction.';
                 toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     };
@@ -771,6 +777,7 @@ function TncDapp() {
                     $('#farmInfoButton').html('Update');
                     let errMsg = 'An error occurred with your Update Farm Info transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         });

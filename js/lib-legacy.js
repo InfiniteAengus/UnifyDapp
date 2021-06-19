@@ -106,7 +106,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -171,7 +171,7 @@ function TncLib(){
                 value: ""+fee
             });
         }catch(e){
-            errCallback("");
+            errCallback(e);
             return;
         }
 
@@ -185,7 +185,7 @@ function TncLib(){
                 value: ""+fee
             })
             .on('error', async function(e){
-                errCallback('');
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -220,7 +220,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback('');
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -254,7 +254,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback('');
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -347,7 +347,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -373,7 +373,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -399,7 +399,7 @@ function TncLib(){
                 gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
             })
             .on('error', async function(e){
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 preCallback();
@@ -530,7 +530,7 @@ function TncLib(){
             })
             .on('error', async function(e){
                 console.log(e);
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 console.log('hash', transactionHash);
@@ -558,7 +558,7 @@ function TncLib(){
             })
             .on('error', async function(e){
                 console.log(e);
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 console.log('hash', transactionHash);
@@ -597,7 +597,7 @@ function TncLib(){
         })
         .on('error', async function(e){
             console.log(e);
-            errCallback();
+            errCallback(e);
         })
         .on('transactionHash', async function(transactionHash){
             preCallback();
@@ -628,7 +628,7 @@ function TncLib(){
             })
             .on('error', async function(e){
                 console.log(e);
-                errCallback();
+                errCallback(e);
             })
             .on('transactionHash', async function(transactionHash){
                 console.log('hash', transactionHash);

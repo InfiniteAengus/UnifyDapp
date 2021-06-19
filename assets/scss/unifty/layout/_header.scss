@@ -1,7 +1,8 @@
 .main-panel .content {
   &__welcome-text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--text-primary);
+    font-weight: 300;
     padding: .8rem 0;
     margin-bottom: 2rem;
     width: 80%;
@@ -23,7 +24,7 @@
   
     &__title {
       color: var(--title-color);
-      font-size: 4rem;
+      font-size: 3.6rem;
       font-weight: 700;
     }
   }

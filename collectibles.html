@@ -16,28 +16,31 @@
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/ipfs.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/config.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/nifABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/genesisABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/farmABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/marketABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/swapABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/lib.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/lib-bridge.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/lib-market.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/collectibles-dapp.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/dapp-init.js?v=1.9.7"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.7"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/erc721ABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/marketABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/swapABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/converter721To1155ABI.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/lib-convert721.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/lib-bridge.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/lib-market.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/collectibles-dapp.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.10"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -203,7 +206,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="market-builder.html">
-            <i class="material-icons-round">build</i>
+            <i class="material-icons-round">add_business</i>
             <p>Market Builder</p>
           </a>
         </li>
@@ -319,7 +322,7 @@
               <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
               <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
               <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
-              <!--<a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+              <a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/"><img src="assets/img/network-icons/rinkeby_logo.svg">Moonbeam (Alpha)</a>
               <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
             </div>        
           </div>
@@ -365,6 +368,12 @@
                   id="addCollectionModalButton">Register Collection</a>
                 <a href="javascript:void(0);" style="display: none;" class="dropdown-item" data-toggle="modal"
                   data-target="#cancelBridgeModal" id="cancelBridgeModalButton">Cancel Bridge Job</a>
+
+                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#convert721Modal"
+                   id="convert721ModalButton">Convert From EIP-721</a>
+
+                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#return721Modal"
+                   id="return721ModalButton">Return To EIP-721</a>
               </div>
             </div>
           </div>
@@ -657,7 +666,7 @@
                 <form onsubmit="return false;">
 
                   <p>
-                    Before proceeding, please add enough gas <a href="https://unifty.io/bridge.html">here</a>.
+                    Before proceeding, please add enough gas <a href="https://unifty.io/bridge.html">here</a> (recommended: 0.03 - 0.05 ETH).
                   </p>
 
                   <div class="form-group">
@@ -893,6 +902,86 @@
           </div>
         </div>
 
+        <!-- Return 721 -->
+
+        <div class="modal fade" style="overflow-y: scroll;" id="return721Modal" tabindex="-1" role="dialog"
+             aria-labelledby="return721ModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="return721ModalLabel">Return To EIP-721</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body modal-non-nft-content">
+
+                <p>Please enter the EIP-1155 NFT ID from the Uniftyverse 721 collection in order to receive back the original EIP-721 token.<br/><br/>Please make sure you own all supply of the converted NFT in order to receive the original one.</p>
+
+                <form onsubmit="return false;">
+
+                  <div class="form-group">
+                    <label for="return721Id">NFT ID *</label>
+                    <input value="" type="text" placeholder="The NFT ID of the Uniftyverse 721 collection" class="form-control" id="return721Id">
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="return721Button">Return</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Convert 721 -->
+
+        <div class="modal fade" style="overflow-y: scroll;" id="convert721Modal" tabindex="-1" role="dialog"
+             aria-labelledby="convert721ModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="convert721ModalLabel">Convert From EIP-721</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body modal-non-nft-content">
+
+                <p>Here you may convert individual EIP-721 that you own into EIP-1155 NFTs. You may also define fractions.
+                  <br/><br/>Please note that if you want to get back your original EIP-721 NFT, you will need to return all EIP-1155 fractions associated with it.
+                  <br/><br/>The resulting EIP-1155 NFTs will be created in the Uniftyverse721 collection at address <span id="uniftyverse721Address"></span>.
+                  <br/><br/>After successful conversion, you will get the EIP-1155 token id. Please write down this ID as it is required to receive back your original EIP-721 NFT from the "Return to EIP-721" option.
+                </p>
+
+                <form onsubmit="return false;">
+
+                  <div class="form-group">
+                    <label for="convert721Address">EIP-721 Address *</label>
+                    <input value="" type="text" placeholder="The EIP-721 contract address." class="form-control" id="convert721Address">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="convert721TokenId">NFT ID *</label>
+                    <input value="" type="text" placeholder="The NFT id to convert." class="form-control" id="convert721TokenId">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="convert721Fractions">Fractions *</label>
+                    <input value="1" type="text" placeholder="The fractions, must be 1 min." class="form-control" id="convert721Fractions">
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="convert721Button">Convert</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <!-- Interactive -->  
         <div class="modal fade" style="overflow-y: scroll;" id="nftInteractiveModal" tabindex="-1" role="dialog"
@@ -1006,16 +1095,6 @@
             Shop
           </a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://unifty.eth.link">
-            <span class="material-icons-round">
-              present_to_all                
-            </span>
-            Mirror
-          </a>
-        </li>
-
 
         <li class="nav-item">
           <a class="nav-link" href="roadmap.html">

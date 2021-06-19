@@ -328,9 +328,11 @@ function TncDapp() {
                     toastr.remove();
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function(){
+                function(err){
                     toastr.remove();
-                    toastr["error"]('An error occurred with your burn transaction.', "Error");
+                    let errMsg = 'An error occurred with your burn transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
         });
 
@@ -360,9 +362,11 @@ function TncDapp() {
                     toastr.remove();
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function(){
+                function(err){
                     toastr.remove();
-                    toastr["error"]('An error occurred with your mint transaction.', "Error");
+                    let errMsg = 'An error occurred with your mint transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
         });
 
@@ -388,9 +392,11 @@ function TncDapp() {
                     toastr.remove();
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function(){
+                function(err){
                     toastr.remove();
-                    toastr["error"]('An error occurred with your transfer transaction.', "Error");
+                    let errMsg = 'An error occurred with your transfer transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
         });
     };
@@ -655,6 +661,7 @@ function TncDapp() {
                     $('#nftTransferMultiBatchButton').html('Transfer');
                     let errMsg = 'An error occurred with your set approval for all transaction.';
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -680,11 +687,13 @@ function TncDapp() {
                     $('#nftTransferMultiBatchButton').prop('disabled', false);
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function(){
+                function(err){
                     toastr.remove();
                     $('#nftTransferMultiBatchButton').prop('disabled', false);
                     $('#nftTransferMultiBatchButton').html('Transfer');
-                    toastr["error"]('An error occurred with your transfer transaction.', "Error");
+                    let errMsg = 'An error occurred with your transfer transaction.';
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
         }
     }
@@ -720,11 +729,13 @@ function TncDapp() {
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 $('#storeRoyaltiesButton').html('Set Royalties');
-                toastr["error"]('An error occurred with your royalties transaction.', "Error");
+                let errMsg = 'An error occurred with your royalties transaction.';
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             });
     }
 
@@ -1330,9 +1341,11 @@ function TncDapp() {
                         
                         _this.loadPage('');
                     },
-                    function(){
+                    function(err){
                         toastr.remove();
-                        toastr["error"]('An error occurred with your new NFT transaction.', "Error");
+                        let errMsg = 'An error occurred with your new NFT transaction.';
+                        toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $("#nftSubmit").removeClass("disabled");
                         $('#nftSubmit').html('Fail');
 
@@ -1358,9 +1371,11 @@ function TncDapp() {
                         $("#nftSubmit").removeClass("disabled");
 
                     },
-                    function(){
+                    function(err){
                         toastr.remove();
-                        toastr["error"]('An error occurred with your NFT Update transaction.', "Error");
+                        let errMsg = 'An error occurred with your NFT Update transaction.';                    
+                        toastr["error"](errMsg, "Error");
+                        errorPopup("Error", errMsg, err.stack);
                         $("#nftSubmit").removeClass("disabled");
 
                     });
@@ -1439,10 +1454,12 @@ function TncDapp() {
                             console.log(e);
                         }
                     },
-                    function(){
+                    function(err){
                         try{
                             toastr.remove();
-                            toastr["error"]('An error occurred with your new Collection transaction. Do you have sufficient funds?', "Error");
+                            let errMsg = 'An error occurred with your new Collection transaction. Do you have sufficient funds?';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $("#erc1155Submit").removeClass("disabled");
                             $("#erc1155Submit").html("Create");
                         }catch(e){
@@ -1479,10 +1496,12 @@ function TncDapp() {
                             console.log(e);
                         }
                     },
-                    function(){
+                    function(err){
                         try{
                             toastr.remove();
-                            toastr["error"]('An error occurred with your updated Collection transaction.', "Error");
+                            let errMsg = 'An error occurred with your updated Collection transaction.';                    
+                            toastr["error"](errMsg, "Error");
+                            errorPopup("Error", errMsg, err.stack);
                             $("#erc1155Submit").removeClass("disabled");
                             $("#erc1155Submit").html("Create");
                         }catch(e){

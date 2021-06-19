@@ -20,10 +20,23 @@ function TncDapp() {
             for (let i = 0; i < nfts.length; i++) {
                 if (await tncLib.balanceof(verse, address, nfts[i]) > 0) {
                     _this.render(verse, nfts[i], address);
-                    await sleep(300);
+                    await sleep(150);
                     nftCount++;
                     await waitForPaging('collectiblesPage', nftCount);
                 }
+            }
+        }
+
+        let verse721 = tncLibConvert721.uniftyverse721;
+        collections.push(verse721);
+        let nfts = await tncLib.getNftsByAddress(address, verse721);
+        console.log("721 length: ", nfts.length);
+        for (let i = 0; i < nfts.length; i++) {
+            if (await tncLib.balanceof(verse721, address, nfts[i]) > 0) {
+                _this.render(verse721, nfts[i], address);
+                await sleep(150);
+                nftCount++;
+                await waitForPaging('collectiblesPage', nftCount);
             }
         }
 
@@ -37,7 +50,7 @@ function TncDapp() {
             for(let j = 0; j < nfts.length; j++){
                 if(await tncLib.balanceof(myCollection.erc1155, address, nfts[j]) > 0) {
                     _this.render(myCollection.erc1155, nfts[j], address);
-                    await sleep(300);
+                    await sleep(150);
                     nftCount++;
                     await waitForPaging('collectiblesPage', nftCount);
                 }
@@ -52,7 +65,7 @@ function TncDapp() {
             for (let i = 0; i < nfts.length; i++) {
                 if (await tncLib.balanceof(rarible, address, nfts[i]) > 0) {
                     _this.render(rarible, nfts[i], address);
-                    await sleep(300);
+                    await sleep(150);
                     nftCount++;
                     await waitForPaging('collectiblesPage', nftCount);
                 }
@@ -189,7 +202,7 @@ function TncDapp() {
             srcChainid : srcInfo[2],
             srcCollection : srcInfo[0],
             srcId : srcInfo[1],
-            bridgeOn : chain_id == '64' ? chain_id : '',
+            bridgeOn : chain_id == '64' || chain_id == '4' ? chain_id : '',
             bridgeOnBack : bridgeBack ? chain_id : '',
             checkOpenSea : chain_id == '1' || chain_id == '4' ? 'Check on OpenSea' : 'Open Details',
             image: data_image,
@@ -587,11 +600,15 @@ function TncDapp() {
                 $('#nftTransferButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $('#nftTransferButton').prop('disabled', false);
                 $('#nftTransferButton').html('Send');
-                toastr["error"]('An error occurred with your transfer transaction.', "Error");
+
+                let errMsg = 'An error occurred with your transfer transaction.';
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
+
             });
 
     };
@@ -645,7 +662,7 @@ function TncDapp() {
                 $('#bridgedPage').html('');
                 _this.loadPage('');
             },
-            function(){
+            function(err){
                 toastr.remove();
                 _alert('Your job cancellation request failed. Either the NFT has been redeemed already or the 2-hour grace-time did not expire yet.');
                 $(_button).html('Cancel Error');
@@ -653,7 +670,10 @@ function TncDapp() {
                 setTimeout(function(){
                     $(_button).html('Cancel');
                 }, 3000);
-                toastr["error"]('An occurred with your job cancellation transaction.', "Error");
+
+                let errMsg = 'An occurred with your job cancellation transaction.';
+                toastr["error"](errMsg, "Error");                
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -702,12 +722,16 @@ function TncDapp() {
                     $(_button).prop('disabled', false);
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function (e) {
-                    console.log(e);
+                function (err) {
+                    console.log(err);
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Bridge');
-                    toastr["error"]('An error occurred with your bridging transaction.', "Error");
+
+                    let errMsg = 'An error occurred with your bridging transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
+
                 }
             );
 
@@ -734,8 +758,9 @@ function TncDapp() {
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Bridge');
-                    let errMsg = 'An error occurred with your set approval for all transaction.';
+                    let errMsg = 'An error occurred with your set approval for all transaction.';                    
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
         }
@@ -784,11 +809,14 @@ function TncDapp() {
                     $(_button).prop('disabled', false);
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function () {
+                function (err) {
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Bridge');
-                    toastr["error"]('An error occurred with your bridging transaction.', "Error");
+
+                    let errMsg = 'An error occurred with your bridging transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 }
             );
 
@@ -815,8 +843,11 @@ function TncDapp() {
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Bridge');
-                    let errMsg = 'An error occurred with your set approval for all transaction.';
+                    
+                    let errMsg = 'An error occurred with your set approval for all transaction.';                    
                     toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
+                    
                 }
             );
         }
@@ -864,7 +895,7 @@ function TncDapp() {
         }
 
         if(pricePerItem <= 0){
-            _alert('Please enter a valid price per item.');
+            _alert("Please enter a valid price per item.");
             return;
         }
 
@@ -927,11 +958,14 @@ function TncDapp() {
                     $('#nftSellButton').prop('disabled', false);
                     toastr["success"]('Transaction has been finished.', "Success");
                 },
-                function () {
+                function (err) {
                     toastr.remove();
                     $('#nftSellButton').prop('disabled', false);
                     $('#nftSellButton').html('Sell!');
-                    toastr["error"]('An error occurred with your sell transaction.', "Error");
+                    
+                    let errMsg = 'An error occurred with your sell transaction.';                    
+                    toastr["error"](errMsg, "Error");
+                    errorPopup("Error", errMsg, err.stack);
                 });
 
         }else{
@@ -960,8 +994,8 @@ function TncDapp() {
                     toastr.remove();
                     $('#nftSellButton').prop('disabled', false);
                     $('#nftSellButton').html('Sell!');
-                    let errMsg = 'An error occurred with your set approval for all transaction.';
-                    toastr["error"](errMsg, "Error");
+                    _alert('An error occurred with your set approval for all transaction.');
+                    return;
                 }
             );
         }
@@ -979,6 +1013,7 @@ function TncDapp() {
                 switch(chain_id){
 
                     case '64':
+                    case '4':
                         $('#cancelBridgeModalButton').css('display', 'block');
                         break;
                 }
@@ -1001,12 +1036,17 @@ function TncDapp() {
                 $('#royaltiesModal').off('show.bs.modal');
                 $('#royaltiesModal').on('show.bs.modal', _this.populateRoyalties);
 
+                $('#convert721Modal').off('show.bs.modal');
+                $('#convert721Modal').on('show.bs.modal', _this.populateConvert721);
+
                 $('#cancelButton').on('click', _this.cancelJob);
                 $('#bridgeButton').on('click', _this.performBridging);
                 $('#bridgeBackButton').on('click', _this.performBackBridging);
                 $('#addCollectionButton').on('click', _this.registerCollection);
                 $('#nftTransferButton').on('click', _this.transfer);
                 $('#nftSellButton').on('click', _this.sell);
+                $('#convert721Button').on('click', _this.performConversion721);
+                $('#return721Button').on('click', _this.performReturn721);
 
                 $('#nftInteractiveModal').off('hide.bs.modal');
                 $('#nftInteractiveModal').on('hide.bs.modal', function(){
@@ -1087,11 +1127,14 @@ function TncDapp() {
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 toastr["success"]('Transaction has been finished.', "Success");
             },
-            function(){
+            function(err){
                 toastr.remove();
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 $('#storeRoyaltiesButton').html('Set Royalties');
-                toastr["error"]('An error occurred with your royalties transaction.', "Error");
+
+                let errMsg = 'An error occurred with your royalties transaction.';                    
+                toastr["error"](errMsg, "Error");
+                errorPopup("Error", errMsg, err.stack);
             });
     }
 
@@ -1102,6 +1145,199 @@ function TncDapp() {
 
         $('#nftRoyalties').val(_this.formatNumberString(await tncLibMarket.getRoyalties($(e.relatedTarget).data('contractAddress'), $(e.relatedTarget).data('nftId')), 2));
     }
+
+    this.performConversion721 = async function(){
+
+        let address = $('#convert721Address').val().trim();
+        let tokenId = $('#convert721TokenId').val().trim();
+        let fractions = $('#convert721Fractions').val().trim();
+
+        fractions = parseInt(fractions);
+        tokenId = parseInt(tokenId);
+
+        if(!web3.utils.isAddress(address)){
+            _alert('Given EIP-721 address is not valid.');
+            return;
+        }
+
+        if(tokenId < 0 || isNaN(tokenId)){
+
+            _alert('Invalid token id.');
+            return;
+        }
+
+        if(fractions < 0 || isNaN(fractions)){
+
+            _alert('Invalid fractions given. Must be 1 min.');
+            return;
+        }
+
+        let approved = false;
+
+        try {
+            approved = await tncLibConvert721.erc721IsApprovedForAll(tncLib.account, tncLibConvert721.conv721.options.address, address);
+        }catch(e){
+            _alert('Something went wrong. Did you enter a correct EIP-721 contract address?');
+            return;
+        }
+
+        toastr.remove();
+        $('#convert721Button').html('Pending Transaction...');
+        $('#convert721Button').prop('disabled', true);
+
+
+        if(approved) {
+
+            window.tncLibConvert721.convert(
+                address,
+                tokenId,
+                fractions,
+                function () {
+                    toastr["info"]('Please wait for the transaction to finish.', "Converting from EIP-721....");
+                },
+                function (receipt) {
+                    console.log(receipt);
+                    toastr.remove();
+                    $('#convert721Button').html('Convert');
+                    $('#convert721Button').prop('disabled', false);
+                    toastr["success"]('Transaction has been finished.', "Success");
+
+                    $('#convert721Modal').modal('hide');
+
+                    _alert('The conversion has been performed successful.<br/></br><h2>ID: '+receipt.events.Converted.returnValues._verseId+'</h2><br/>Please write down the ID above as it represents the EIP-1155 token id in the Uniftyverse 721 collcetion and is required if you want to return your original EIP-721 token.<br/><br/><button type="button" class="btn btn-secondary" onclick="location.reload()">Reload</button>');
+                },
+                function (e) {
+                    toastr.remove();
+                    $('#convert721Button').prop('disabled', false);
+                    $('#convert721Button').html('Convert');
+                    toastr["error"]('An error occurred with your conversion transaction.', "Error");
+                    _alert("There has been an error with your conversion. Please make sure you entered the right EIP-721 contract address and token id. Also make sure you actually own the NFT and it hasn't been converted yet.");
+                });
+
+        }else{
+
+            $('#convert721Button').prop('disabled', true);
+            $('#convert721Button').html('Approve first...');
+
+            toastr.remove();
+
+            tncLibConvert721.erc721SetApprovalForAll(
+                tncLibConvert721.conv721.options.address,
+                true,
+                address,
+                function () {
+                    toastr["info"]('Please wait for the transaction to finish.', "Set approval for all....");
+                },
+                function (receipt) {
+                    console.log(receipt);
+                    toastr.remove();
+                    $('#convert721Button').prop('disabled', false);
+                    $('#convert721Button').html('Convert');
+                    toastr["success"]('Transaction has been finished.', "Success");
+                    _alert('Approval succeeded! Now please close this window and click "Convert" to complete the transaction.');
+                },
+                function (err) {
+                    toastr.remove();
+                    $('#convert721Button').prop('disabled', false);
+                    $('#convert721Button').html('Convert');
+                    let errMsg = 'An error occurred with your set approval for all transaction.';
+                    toastr["error"](errMsg, "Error");
+                }
+            );
+
+        }
+    };
+
+    this.performReturn721 = async function(){
+
+        let tokenId = $('#return721Id').val().trim();
+
+        tokenId = parseInt(tokenId);
+
+        if(tokenId < 0 || isNaN(tokenId)){
+
+            _alert('Invalid token id.');
+            return;
+        }
+
+        let approved = false;
+
+        try {
+            approved = await tncLib.erc1155IsApprovedForAll(tncLib.account, tncLibConvert721.conv721.options.address, tncLibConvert721.uniftyverse721);
+        }catch (e){
+
+            _alert('Something went wrong.');
+            return;
+        }
+
+        toastr.remove();
+        $('#return721Button').html('Pending Transaction...');
+        $('#return721Button').prop('disabled', true);
+
+        if(approved) {
+
+            window.tncLibConvert721.undo(
+                tokenId,
+                function () {
+                    toastr["info"]('Please wait for the transaction to finish.', "Returning EIP-721....");
+                },
+                function (receipt) {
+                    console.log(receipt);
+                    toastr.remove();
+                    $('#return721Button').html('Return');
+                    $('#return721Button').prop('disabled', false);
+                    toastr["success"]('Transaction has been finished.', "Success");
+
+                    $('#return721Modal').modal('hide');
+
+                    _alert('The EIP-721 token has been returned successfully!<br/><br/><button type="button" class="btn btn-secondary" onclick="location.reload()">Reload</button>');
+                },
+                function (e) {
+                    toastr.remove();
+                    $('#return721Button').prop('disabled', false);
+                    $('#return721Button').html('Return');
+                    toastr["error"]('An error occurred with your conversion transaction.', "Error");
+                    _alert("There has been an error with your conversion. Please make sure you entered the right EIP-721 contract address and token id. Also make sure you actually own the NFT and it hasn't been converted yet.");
+                });
+
+        }else{
+
+            $('#return721Button').prop('disabled', true);
+            $('#return721Button').html('Approve first...');
+
+            toastr.remove();
+
+            tncLib.erc1155SetApprovalForAll(
+                tncLibConvert721.conv721.options.address,
+                true,
+                tncLibConvert721.uniftyverse721,
+                function () {
+                    toastr["info"]('Please wait for the transaction to finish.', "Set approval for all....");
+                },
+                function (receipt) {
+                    console.log(receipt);
+                    toastr.remove();
+                    $('#return721Button').prop('disabled', false);
+                    $('#return721Button').html('Return');
+                    toastr["success"]('Transaction has been finished.', "Success");
+                    _alert('Approval succeeded! Now please close this window and click "Return" to complete the transaction.');
+                },
+                function (err) {
+                    toastr.remove();
+                    $('#return721Button').prop('disabled', false);
+                    $('#return721Button').html('Return');
+                    let errMsg = 'An error occurred with your set approval for all transaction.';
+                    toastr["error"](errMsg, "Error");
+                }
+            );
+
+        }
+    };
+
+    this.populateConvert721 = async function(e){
+
+        $('#uniftyverse721Address').html(tncLibConvert721.uniftyverse721);
+    };
 
     this.formatNumberString = function (string, decimals) {
 
@@ -1259,6 +1495,8 @@ function run(connected) {
         tncLibMarket.account = tncLib.account;
         window.tncLibBridgeIn = new TncLibBridge();
         tncLibBridgeIn.account = tncLib.account;
+        window.tncLibConvert721 = new TncLibConvert721();
+        tncLibConvert721.account = tncLib.account;
 
         if(typeof accounts == 'undefined' || accounts.length == 0){
 
