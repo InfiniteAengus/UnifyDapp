@@ -1,0 +1,224 @@
+#collectiblePage .collectible-wrapper {
+    display: flex;
+    margin-top: 3rem;
+  }
+  
+  #collectiblePage .collectible-wrapper .image-container {
+    flex: 2;
+    background-color: var(--bg-secondary);
+    margin-right: 3rem;
+    padding: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    box-shadow: var(--shadow-primary);
+    border-radius: .4rem;
+  
+    .btn.btn-outline.video-btn-link {
+      border: 1px solid var(--dark-primary);
+      background-color: var(--white) !important;
+      color: var(--dark-primary);
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      max-width: 25rem;
+  
+      span {
+        font-size: 2.4rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
+  #collectiblePage .collectible-wrapper .details-container {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+  
+    &__upper {
+      background-color: var(--bg-secondary);
+      padding: 5rem;
+      box-shadow: var(--shadow-primary);
+      border-radius: .4rem;
+  
+      //title and stocks
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+
+        .title {
+            margin-top: 0;
+        }
+  
+        .title h4 {
+          font-family: "Poppins", sans-serif;
+          font-size: 2.4rem;
+          color: var(--primary-color);
+          font-weight: 700;
+          margin: 0;
+        }
+  
+        #amount-div {
+          span.badge.badge-info {
+            background-color: unset;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+          }
+        }
+      }
+  
+      //collection name
+      .collection-name {
+        font-size: 1.6rem;
+        color: var(--text-primary);
+      }
+  
+      //buy button and price
+      #actions-container {
+        .nft-price {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: var(--dark-secondary);
+        }
+        a {
+          color: inherit;
+        }
+  
+        .btn.btn-outline {
+          width: 50%;
+          min-width: 20rem;
+          box-shadow: none;
+          border-radius: .6rem;
+          border: 1px solid var(--primary-color);
+          background-color: var(--primary-color) !important;
+          color: var(--bg-secondary);
+          font-size: 1.6rem;
+          font-weight: 700;
+          cursor: var(--cursor-pointer);
+        }
+      }
+    }
+  
+    &__lower {
+      #collapse-nft-description.collapse.show,
+      #collapse-nft-description.collapsing,
+      #collapse-nft-description.collapse {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        background-color: var(--bg-secondary);
+        padding: 0 4.5rem;
+        border-radius: .4rem;
+  
+        .utils-vertical {
+          height: 0.7rem;
+        }
+      }
+  
+      #collapse-nft-details.collapse.show,
+      #collapse-nft-details.collapsing,
+      #collapse-nft-details.collapse {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        padding: 0 4.5rem;
+        background-color: var(--bg-secondary);
+        border-radius: .4rem;
+  
+        .utils-vertical {
+          height: 0.4rem;
+        }
+  
+        div:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+  
+        div > span:first-child {
+          display: inline-block;
+          width: 20rem;
+          text-transform: uppercase;
+        }
+        div > :nth-child(2n) {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+      }
+  
+      #collapse-nft-traits.collapse.show,
+      #collapse-nft-traits.collapsing,
+      #collapse-nft-traits.collapse {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        padding: 0 4.5rem;
+        background-color: var(--bg-secondary);
+        border-radius: .4rem;
+  
+        .utils-vertical {
+          height: 0.4rem;
+        }
+  
+        div:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+  
+        div > span:first-child {
+          display: inline-block;
+          width: 20rem;
+          text-transform: uppercase;
+        }
+        div > :nth-child(2n) {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  // collapsible header button
+  .btn.btn-primary.collapsible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    background-color: var(--bg-secondary-light) !important;
+    box-shadow: none;
+    border-radius: 0.4rem;
+
+    &:hover, &:focus, &:active {
+        box-shadow: none;
+    }
+  
+    &[aria-expanded="false"] {
+      &::after {
+        font-family: "Material Icons";
+        content: "\e313";
+        font-size: 1.8rem;
+      }
+    }
+    &[aria-expanded="true"] {
+      &::after {
+        font-family: "Material Icons";
+        content: "\e316";
+        font-size: 1.8rem;
+      }
+    }
+  }
+  
+  .btn.btn-primary.collapsible:not(:disabled):not(.disabled):active {
+    color: var(--heading-color);
+  }
+  
+  // opened collapsed info
+  .collapse {
+    .collectible-collapse-open {
+      background-color: var(--bg-secondary);
+    //   opacity: 0.8;
+    //   font-size: 1.8rem;
+      color: var(--text-primary);
+      padding: 3.6rem 6rem;
+      text-align: left;
+    }
+  }
