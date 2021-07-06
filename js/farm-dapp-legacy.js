@@ -116,9 +116,9 @@ function TncDapp() {
                 setCookie('lastFarm', cookieValue, 365);
 
                 $('#lastFarm').remove();
-                $('.sidebar').find('.nav').append('<li id="lastFarm" class="nav-item' + (getUrlParam('farm') ? ' active' : '') + '">\n' +
+                $('#collapseFarm').find('.nav').append('<li id="lastFarm" class="nav-item collapsible' + (getUrlParam('farm') ? ' active' : '') + '">\n' +
                     '                <a class="nav-link" href="farm.html?farm=' + farmAddress + '">\n' +
-                    '                    <i class="material-icons">grass</i>\n' +
+                    '                    <i class="material-icons">fiber_manual_record</i>\n' +
                     '                    <p class="text-truncate">' + farm_name + '</p>\n' +
                     '                </a>\n' +
                     '            </li>');

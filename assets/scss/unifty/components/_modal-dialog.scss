@@ -264,12 +264,15 @@
   }
 }
 
-
 //Market builder
 #marketForm {
   #tierGroup {
     select {
-      background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 60%),
+      background-image: linear-gradient(
+          45deg,
+          transparent 50%,
+          var(--primary-color) 60%
+        ),
         linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
       background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px,
         100% 0;
@@ -281,50 +284,51 @@
   }
 }
 
-#nftSellWallet{
-  .approveNft{
+#nftSellWallet {
+  .approveNft {
     display: block;
   }
 
-//Error modal
-.modalErrorDiv {
-  display: flex;
-  align-items: center;
-
-  .imageContainer {
+  //Error modal
+  .modalErrorDiv {
     display: flex;
-    width: 4.8rem;
-    height: 4.8rem;
-    margin-right: 2.4rem;
-
-    justify-content: center;
     align-items: center;
-    img {
-      width: max-content;
-      height: max-content;
+
+    .imageContainer {
+      display: flex;
+      width: 4.8rem;
+      height: 4.8rem;
+      margin-right: 2.4rem;
+
+      justify-content: center;
+      align-items: center;
+      img {
+        width: max-content;
+        height: max-content;
+      }
+    }
+
+    h3 {
+      margin-bottom: 0;
+      color: var(--heading-color);
+      font-weight: 500;
+    }
+
+    h4 {
+      color: var(--heading-color);
+      font-weight: bold;
+    }
+
+    p {
+      color: var(--text-primary);
+      margin: 0;
     }
   }
+  .modalDivider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.24);
 
-  h3 {
-    margin-bottom: 0;
-    color: var(--heading-color);
-    font-weight: 500;
+    margin: 1rem 0;
   }
-
-  h4 {
-    color: var(--heading-color);
-    font-weight: bold;
-  }
-
-  p {
-    color: var(--text-primary);
-    margin: 0;
-  }
-}
-.modalDivider {
-  width: 100%;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.24);
-
-  margin: 1rem 0;
 }

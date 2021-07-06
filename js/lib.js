@@ -62,7 +62,7 @@ function TncLib(){
 
         min_block = 6000000;
 
-        this.nif = new web3.eth.Contract(nifABI, '0x93fEB07f2823600DD3b9EFFd9356de10C387d9d7', {from: this.account});
+        this.nif = new web3.eth.Contract(nifABI, '0xb6be3449c6a4b8ab082733f715788d94e78d60ff', {from: this.account});
         this.erc1155 = new web3.eth.Contract(erc1155ABI, '0xfeA7FDE0ab6A0e32C264FE4Db3597E1938e49947', {from: this.account});
         this.genesis = new web3.eth.Contract(genesisABI, '0x0dF727dFD080224678307FCDd9B86a4EB6D5533C', {from: this.account});
         this.farm = new web3.eth.Contract(farmABI, '0xC2bC267EF4EA7Db7bD0F4F924A04A9eaE64D8eE3', {from: this.account});

@@ -96,6 +96,7 @@ function TncDapp() {
         let onsale = 0;
         let ticker = '';
         let price = 0;
+        let rawPrice = 0;
         let swap = '';
         let options = '';
         let multiplier = 0;
@@ -129,10 +130,18 @@ function TncDapp() {
             let decimals = await tncLib.tokenDecimalsErc20(ask.tokenAddress);
             price = _this.formatNumberString(price, decimals);
 
-            if(decimals > 2) {
+            if(price.length >= 10) {
 
                 price = price.substring(0, price.length - 10);
             }
+
+            rawPrice = price;
+
+            if(decimals > 2) {
+                price = _this.cleanUpDecimals(price);
+            }
+
+            price = new Intl.NumberFormat('en-US',{ maximumSignificantDigits: 8 }).format(price).toString();
 
             swapMode = ask.swapMode;
             isBatch = ask.erc1155Address.length > 1 ? true : false;
@@ -154,6 +163,7 @@ function TncDapp() {
             ticker: ticker,
             index: index,
             price: price,
+            _price: rawPrice,
             swap : swap,
             options: options,
             seller: seller,
@@ -290,10 +300,18 @@ function TncDapp() {
         let decimals = await tncLib.tokenDecimalsErc20(token);
         price = _this.formatNumberString(price, decimals);
 
-        if(decimals > 2) {
+        if(price.length >= 10) {
 
             price = price.substring(0, price.length - 10);
         }
+
+        let rawPrice = price;
+
+        if(decimals > 2) {
+
+            price = _this.cleanUpDecimals(price);
+        }
+        price = new Intl.NumberFormat('en-US',{ maximumSignificantDigits: 8 }).format(price).toString();
 
         let explorer = 'https://etherscan.io/token/';
         switch(chain_id){
@@ -361,6 +379,7 @@ function TncDapp() {
                 ticker: await tncLib.tokenSymbolErc20(token),
                 index: index,
                 price: price,
+                _price: rawPrice,
                 explorer : explorer + token,
                 swap : swapMode == 1 || swapMode == 2 ? 'true' : '',
                 options: sellerAddress.toLowerCase() == tncLib.account.toLowerCase() ? 'true' : '',
@@ -426,6 +445,7 @@ function TncDapp() {
                 ticker: await tncLib.tokenSymbolErc20(token),
                 index: index,
                 price: price,
+                _price: rawPrice,
                 explorer : explorer + token,
                 swap : swapMode == 1 || swapMode == 2 ? 'true' : '',
                 options: sellerAddress.toLowerCase() == tncLib.account.toLowerCase() ? 'true' : '',
@@ -1263,6 +1283,35 @@ p
         }
 
         return number;
+    };
+
+    this.cleanUpDecimals = function (price) {
+      price = _this.removingDecimals(price);
+
+      let decimalPoints = 0;
+      if (price.includes(".")) {
+        decimalPoints = price.split(".")[1].length;
+      }
+
+      //So that we always have at least 2 zeroes after decimal point
+      if (decimalPoints == 0){
+        price = price + "00"
+      }
+      else if(decimalPoints == 1){
+          price = price + "0";
+      }
+    
+      return price
+    };
+
+    this.removingDecimals = function (string) {
+      while (true) {
+        if (string.slice(-1) == 0) {
+          string = string.substring(0, string.length - 1);
+        } else {
+          return string;
+        }
+      }
     };
 
     this.getUrlParam = function(param_name) {

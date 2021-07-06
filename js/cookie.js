@@ -24,10 +24,10 @@ $(document).ready(function () {
       address = "farm";
       view = "farm";
     }
-    $(".sidebar")
+    $("#collapseFarm")
       .find(".nav")
       .append(
-        '<li id="lastFarm" class="nav-item' +
+        '<li id="lastFarm" class="nav-item collapsible' +
           (getUrlParam(address) ? active : "") +
           '">\n' +
           '                <a class="nav-link" href="' +
@@ -37,7 +37,7 @@ $(document).ready(function () {
           "=" +
           lastFarm.farm +
           '">\n' +
-          '                    <i class="material-icons">grass</i>\n' +
+          '                    <i class="material-icons">fiber_manual_record</i>\n' +
           '                    <p class="text-truncate">' +
           lastFarm.name +
           "</p>\n" +

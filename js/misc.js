@@ -8,6 +8,10 @@
 //let api_url = 'http://localhost/knots/rest/public/';
 let api_url = 'https://api.unifty.cloud/';
 
+$.ajaxSetup({
+    timeout: 60000
+});
+
 $(document).ready(function(){
 
     if(chain_id != '1'){
@@ -38,7 +42,7 @@ $(document).ready(function(){
         $('.hideNonEth').css('display', 'none');
         $('.networkStd').html('BEP20');
         $('#shopEthereum').css('display', 'none');
-        $('#shopBsc').css('display', 'inline-block');
+        $('#shopBsc').css('display', 'block');
         $('#shopXdai').css('display', 'none');
     }else if(chain_id == '4d'){
         $('#featured').css('display', 'none');
@@ -64,7 +68,7 @@ $(document).ready(function(){
         $('.networkStd').html('ERC20');
         $('#shopEthereum').css('display', 'none');
         $('#shopBsc').css('display', 'none');
-        $('#shopXdai').css('display', 'inline-block');
+        $('#shopXdai').css('display', 'block');
     }else if(chain_id == '89'){
         $('#featured').css('display', 'none');
         //$('#genesisFarm').css('display', 'none');
@@ -116,7 +120,7 @@ $(document).ready(function(){
         $('#linkToDai').css('display', 'block');
         $('#linkToMatic').css('display', 'block');
         $('#linkToCelo').css('display', 'block');
-        $('#shopEthereum').css('display', 'inline-block');
+        $('#shopEthereum').css('display', 'block');
         $('#shopBsc').css('display', 'none');
         $('#shopXdai').css('display', 'none');
     }

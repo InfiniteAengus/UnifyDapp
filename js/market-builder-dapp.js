@@ -57,109 +57,115 @@ function TncDapp() {
         }
 
         for(let i = offset - 3; i >= 0; i = i - 3){
+
             currentIndex = i;
+
             let market = await window.tncLibCustomMarket.getMyMarket(i);
+
+            console.log("Market info: ", market);
 
             let _uri = market.uri.replace('ipfs://','https://gateway.ipfs.io/ipfs/').replace('/ipfs/ipfs/', '/ipfs/');
 
+            let data = {name: 'NFT Market', description: '', image: 'https://unifty.io/assets/img/unifty2.png'};
+
             try {
 
-                let data = await $.getJSON(_uri);
-
-                console.log(data);
-
-                let noStakes = await tncLibCustomMarket.userNoStakes(tncLib.account, market.wrapperAddress);
-
-                if (typeof data == 'object') {
-
-                    let currentTier = await tncLibCustomMarket.getCurrentTier(tncLib.account, market.wrapperAddress);
-
-                    let tmpl = _this.marketTemplate({
-                        explorer : explorer,
-                        currency: getCurrency(),
-                        image: data.image.replace('ipfs://','https://gateway.ipfs.io/ipfs/').replace('/ipfs/ipfs/', '/ipfs/'),
-                        name: data.name,
-                        description: data.description,
-                        url : window.location.origin + window.location.pathname.replace('market-builder.html', 'market-view.html') + "?location=" + market.wrapperAddress,
-                        index: i,
-                        index2: i*2,
-                        address: market.wrapperAddress,
-                        currentTier: currentTier,
-                        hideTier: noStakes ? 'style="display:none;"' : '',
-                        displayTier1Option: currentTier < 1 && !noStakes ? 'style="display:none;"' : '',
-                        displayTier2Option: currentTier < 2 && !noStakes ? 'style="display:none;"' : '',
-                        displayTier3Option: currentTier < 3 && !noStakes ? 'style="display:none;"' : '',
-                        hideIfTier0: currentTier == 0 ? 'style="display:none;"' : '',
-                        hideIfTierNot0: currentTier != 0 || noStakes ? 'style="display:none;"' : ''
-                    });
-
-                    $('#marketsPage').append(tmpl);
-
-                    $('.btn-clipboard' + (i*2)).off('click');
-                    $('.btn-clipboard' + (i*2)).on('click', function () {
-
-                        $(this).tooltip('enable');
-                        let _this2 = this;
-                        setTimeout(function () {
-                            $(_this2).tooltip('show');
-                        }, 100);
-                        setTimeout(function () {
-                            $(_this2).tooltip('hide');
-                        }, 3000);
-
-                    });
-
-                    $('.btn-clipboard' + i).off('click');
-                    $('.btn-clipboard' + i).on('click', function () {
-
-                        $(this).tooltip('enable');
-                        let _this2 = this;
-                        setTimeout(function () {
-                            $(_this2).tooltip('show');
-                        }, 100);
-                        setTimeout(function () {
-                            $(_this2).tooltip('hide');
-                        }, 3000);
-
-                    });
-
-                    $('.btn-clipboard' + (i*2)).off('mouseover');
-                    $('.btn-clipboard' + (i*2)).on('mouseover', function () {
-
-                        $(this).tooltip('disable');
-
-                    });
-
-                    $('.btn-clipboard' + i).off('mouseover');
-                    $('.btn-clipboard' + i).on('mouseover', function () {
-
-                        $(this).tooltip('disable');
-
-                    });
-
-                    $(".popover-description").popover({
-                        trigger: "manual",
-                        html: true,
-                        animation: false
-                    }).on("mouseenter", function() {
-                        var _this = this;
-                        $(this).popover("show");
-                        $(".popover").on("mouseleave", function() {
-                            $(_this).popover('hide');
-                        });
-                    }).on("mouseleave", function() {
-                        var _this = this;
-                        setTimeout(function() {
-                            if (!$(".popover:hover").length) {
-                                $(_this).popover("hide");
-                            }
-                        }, 300);
-                    });
-                }
+                data = await $.getJSON(_uri);
 
             }catch (e){
 
                 console.log('Trouble resolving market uri: ', _uri);
+            }
+
+            console.log(data);
+
+            let noStakes = await tncLibCustomMarket.userNoStakes(tncLib.account, market.wrapperAddress);
+
+            if (typeof data == 'object') {
+
+                let currentTier = await tncLibCustomMarket.getCurrentTier(tncLib.account, market.wrapperAddress);
+
+                let tmpl = _this.marketTemplate({
+                    explorer : explorer,
+                    currency: getCurrency(),
+                    image: data.image.replace('ipfs://','https://gateway.ipfs.io/ipfs/').replace('/ipfs/ipfs/', '/ipfs/'),
+                    name: data.name,
+                    description: data.description,
+                    url : window.location.origin + window.location.pathname.replace('market-builder.html', 'market-view.html') + "?location=" + market.wrapperAddress,
+                    index: i,
+                    index2: i*2,
+                    address: market.wrapperAddress,
+                    currentTier: currentTier,
+                    hideTier: noStakes ? 'style="display:none;"' : '',
+                    displayTier1Option: currentTier < 1 && !noStakes ? 'style="display:none;"' : '',
+                    displayTier2Option: currentTier < 2 && !noStakes ? 'style="display:none;"' : '',
+                    displayTier3Option: currentTier < 3 && !noStakes ? 'style="display:none;"' : '',
+                    hideIfTier0: currentTier == 0 ? 'style="display:none;"' : '',
+                    hideIfTierNot0: currentTier != 0 || noStakes ? 'style="display:none;"' : ''
+                });
+
+                $('#marketsPage').append(tmpl);
+
+                $('.btn-clipboard' + (i*2)).off('click');
+                $('.btn-clipboard' + (i*2)).on('click', function () {
+
+                    $(this).tooltip('enable');
+                    let _this2 = this;
+                    setTimeout(function () {
+                        $(_this2).tooltip('show');
+                    }, 100);
+                    setTimeout(function () {
+                        $(_this2).tooltip('hide');
+                    }, 3000);
+
+                });
+
+                $('.btn-clipboard' + i).off('click');
+                $('.btn-clipboard' + i).on('click', function () {
+
+                    $(this).tooltip('enable');
+                    let _this2 = this;
+                    setTimeout(function () {
+                        $(_this2).tooltip('show');
+                    }, 100);
+                    setTimeout(function () {
+                        $(_this2).tooltip('hide');
+                    }, 3000);
+
+                });
+
+                $('.btn-clipboard' + (i*2)).off('mouseover');
+                $('.btn-clipboard' + (i*2)).on('mouseover', function () {
+
+                    $(this).tooltip('disable');
+
+                });
+
+                $('.btn-clipboard' + i).off('mouseover');
+                $('.btn-clipboard' + i).on('mouseover', function () {
+
+                    $(this).tooltip('disable');
+
+                });
+
+                $(".popover-description").popover({
+                    trigger: "manual",
+                    html: true,
+                    animation: false
+                }).on("mouseenter", function() {
+                    var _this = this;
+                    $(this).popover("show");
+                    $(".popover").on("mouseleave", function() {
+                        $(_this).popover('hide');
+                    });
+                }).on("mouseleave", function() {
+                    var _this = this;
+                    setTimeout(function() {
+                        if (!$(".popover:hover").length) {
+                            $(_this).popover("hide");
+                        }
+                    }, 300);
+                });
             }
 
             let maxPerLoad = 9;
@@ -405,6 +411,8 @@ function TncDapp() {
 
             toastr.remove();
 
+            console.log("market address: ", $('#marketInfoMarketAddress').val());
+
             tncLibCustomMarket.setMarketUri(
                 $('#marketInfoMarketAddress').val(),
                 farmJsonUrl,
@@ -443,32 +451,49 @@ function TncDapp() {
 
         let _uri = await tncLibCustomMarket.getMarketUri(wrapperAddress);
 
+        let data = {
+            name: '',
+            description: '',
+            twitter: '',
+            discord: '',
+            telegram: '',
+            medium: '',
+            instagram: '',
+            youtube : '',
+            web: '',
+            email: '',
+            phone: '',
+            customLink: {value: '', name: ''},
+            image : 'https://unifty.io/assets/img/unifty2.png'
+        };
+
         try {
 
-            let data = await $.getJSON(_uri);
-            if (typeof data == 'object') {
-
-                $('#marketInfoMarketAddress').val(wrapperAddress);
-                $('#marketInfoName').val(data.name);
-                $('#marketInfoDescription').val(data.description);
-                $('#marketInfoImageUrl').val(data.image);
-                $('#marketInfoTwitter').val(data.twitter);
-                $('#marketInfoDiscord').val(data.discord);
-                $('#marketInfoTelegram').val(data.telegram);
-                $('#marketInfoMedium').val(data.medium);
-                $('#marketInfoInstagram').val(data.instagram);
-                $('#marketInfoYoutube').val(data.youtube);
-                $('#marketInfoWeb').val(data.web);
-                $('#marketInfoEmail').val(data.email);
-                $('#marketInfoPhone').val(data.phone);
-                $('#marketInfoCustomLink').val(data.customLink.value);
-                $('#marketInfoCustomLinkText').val(data.customLink.name);
-                $('.imageFileDisplay').html('<img src=' + JSON.stringify(data.image) + ' border="0" width="200"/>');
-            }
+            data = await $.getJSON(_uri);
 
         }catch (e){
 
             console.log('Trouble resolving market uri: ', _uri);
+        }
+
+        if (typeof data == 'object') {
+
+            $('#marketInfoMarketAddress').val(wrapperAddress);
+            $('#marketInfoName').val(data.name);
+            $('#marketInfoDescription').val(data.description);
+            $('#marketInfoImageUrl').val(data.image);
+            $('#marketInfoTwitter').val(data.twitter);
+            $('#marketInfoDiscord').val(data.discord);
+            $('#marketInfoTelegram').val(data.telegram);
+            $('#marketInfoMedium').val(data.medium);
+            $('#marketInfoInstagram').val(data.instagram);
+            $('#marketInfoYoutube').val(data.youtube);
+            $('#marketInfoWeb').val(data.web);
+            $('#marketInfoEmail').val(data.email);
+            $('#marketInfoPhone').val(data.phone);
+            $('#marketInfoCustomLink').val(data.customLink.value);
+            $('#marketInfoCustomLinkText').val(data.customLink.name);
+            $('.imageFileDisplay').html('<img src=' + JSON.stringify(data.image) + ' border="0" width="200"/>');
         }
     };
 

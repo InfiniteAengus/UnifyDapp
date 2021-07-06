@@ -1340,6 +1340,14 @@ function TncDapp() {
                         $("#nftSubmit").removeClass("disabled");
                         
                         _this.loadPage('');
+
+                        $('#nftNewModal').modal('hide');
+
+                        if(chain_id != '1') {
+                            _alert('<div style="font-size: 1.6rem;">Your NFT has been successfully created!<br/><br/>You may want to sell your NFT from within your <a href="collectibles.html">wallet</a> in our <a href="market.html">marketplace</a> (only 2% sale fees, custom royalties and more).<br/><br/>You can also create your own marketplace using our <a href="market-builder.html">Market Builder</a> and set yourself apart from the competition!<br/><br/>Free white-label solution available on <a href="https://github.com/Unifty/UniftyDapp" target="_blank">Github</a>.</div>');
+                        }else{
+                            _alert('<div style="font-size: 1.6rem;">Your NFT has been successfully created!<br/><br/>You can create your own marketplace using the <a href="market-builder.html">Market Builder</a> and set yourself apart from the competition!<br/><br/>Free white-label solution available on <a href="https://github.com/Unifty/UniftyDapp" target="_blank">Github</a>.</div>');
+                        }
                     },
                     function(err){
                         toastr.remove();

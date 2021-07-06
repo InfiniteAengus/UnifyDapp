@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8">
   <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
-  <title>FAQ - Unifty</title>
+  <title>Changelog - Unifty</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,9 +13,8 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/config.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/misc.js"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.11"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.10"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>  
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -23,6 +22,7 @@
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <script src="assets/js/plugins/chartist.min.js"></script>
   <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.8"></script>
   <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css"
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
     integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
   <style type="text/css">
     .dark-edition .modal a {
       color: #8b92a9;
@@ -408,14 +409,14 @@
             <i class="material-icons-round">360</i>
             <p>NFT Bridge</p>
           </a>
-        </li>
-
+        </li>        
+        
         <div id="accordion">
           <!-- FARMS -->
           <div>
             <ul class="nav">
-              <li class="nav-item collapsibleParent">
-                <a class="nav-link" data-toggle="collapse" data-target="#collapseFarm" aria-expanded="false"  >
+              <li class="nav-item collapsibleParent bridgeNav">
+                <a class="nav-link" data-toggle="collapse" data-target="#collapseFarm" aria-expanded="false">
                   <div>
                     <i class="material-icons-round">grass</i>
                     <p>Farms</p>
@@ -423,7 +424,7 @@
                 </a>
               </li>
             </ul>
-
+        
             <div id="collapseFarm" class="collapse hide" data-parent="#accordion">
               <ul class="nav">
                 <li class="nav-item collapsible" id="xdaiFarm">
@@ -432,7 +433,7 @@
                     <p>Rares Farm - NIF (xDai)</p>
                   </a>
                 </li>
-
+        
                 <li class="nav-item collapsible" id="genesisFarm">
                   <a class="nav-link" href="https://unifty.io/farm.html?farm=0xA2c88A39b1DE8f1d723d9E76AD07f6012826d0f3">
                     <i class="material-icons">fiber_manual_record</i>
@@ -442,16 +443,16 @@
               </ul>
             </div>
           </div>
-
+                    
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" target="_blank"
-                 href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
+                href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
                 <i class="material-icons-round">find_replace</i>
                 <p>Get $NIF on Uniswap</p>
               </a>
             </li>
-
+          
             <li class="nav-item" id="ramp-btn">
               <a class="nav-link">
                 <i class="material-icons-round">attach_money</i>
@@ -463,13 +464,13 @@
           <!-- UNIFTY -->
           <div>
             <ul class="nav">
-              <li class="nav-item collapsibleParent">
+              <li class="nav-item collapsibleParent active">
                 <a class="nav-link" data-toggle="collapse" data-target="#collapseUnifty" aria-expanded="false">
                   <div>
                     <i>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="#202060"
-                              d="M16.174 6.942L23 5l-7.261.522L17 3l-3 2 1-3-3.032 2.274A7.842 7.842 0 0 0 10 4H5l1.049 1.049a8.031 8.031 0 0 0-1.813 1.412L1 7l2.234.745a7.916 7.916 0 0 0-1.083 2.721L1 12h1a7.746 7.746 0 0 0 .134 1.422l-.021.005a10 10 0 0 0 4.341 6.88c.11.075.22.15.332.221l.123.074a9.907 9.907 0 0 0 5.2 1.472c.709 0 2.776-.074 2.776-.5A10 10 0 0 0 11 15.012V15a8.891 8.891 0 0 1 .456-2.8 3.5 3.5 0 0 0 2.59 1.751A2.5 2.5 0 0 0 19 13.5c0-.876-2.1-5.539-2.1-5.539a8.028 8.028 0 0 0-.726-1.019zm-5.206 4.128c.028 0 .057 0 .086.006v.01c-.029-.004-.054-.012-.086-.016z" />
+                          d="M16.174 6.942L23 5l-7.261.522L17 3l-3 2 1-3-3.032 2.274A7.842 7.842 0 0 0 10 4H5l1.049 1.049a8.031 8.031 0 0 0-1.813 1.412L1 7l2.234.745a7.916 7.916 0 0 0-1.083 2.721L1 12h1a7.746 7.746 0 0 0 .134 1.422l-.021.005a10 10 0 0 0 4.341 6.88c.11.075.22.15.332.221l.123.074a9.907 9.907 0 0 0 5.2 1.472c.709 0 2.776-.074 2.776-.5A10 10 0 0 0 11 15.012V15a8.891 8.891 0 0 1 .456-2.8 3.5 3.5 0 0 0 2.59 1.751A2.5 2.5 0 0 0 19 13.5c0-.876-2.1-5.539-2.1-5.539a8.028 8.028 0 0 0-.726-1.019zm-5.206 4.128c.028 0 .057 0 .086.006v.01c-.029-.004-.054-.012-.086-.016z" />
                         <path fill="none" d="M0 0H24V24H0z" />
                       </svg>
                     </i>
@@ -478,7 +479,7 @@
                 </a>
               </li>
             </ul>
-
+        
             <div id="collapseUnifty" class="collapse hide" data-parent="#accordion">
               <ul class="nav">
                 <li class="nav-item shop collapsible" id="shopEthereum" style="display:none;">
@@ -489,7 +490,7 @@
                     <p>Shop</p>
                   </a>
                 </li>
-
+          
                 <li class="nav-item shop collapsible" id="shopXdai" style="display:none;">
                   <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0xCBe3F53c26A717704d12D219F8B43016BbDa9082">
                     <i class="material-icons-round">
@@ -498,7 +499,7 @@
                     <p>Shop</p>
                   </a>
                 </li>
-
+          
                 <li class="nav-item shop collapsible" id="shopBsc" style="display:none;">
                   <a class="nav-link" href="https://unifty.io/bsc/farm-view.html?address=0x7B717526fF81f28053F82170D96f01B4605A5e90">
                     <i class="material-icons-round">
@@ -534,7 +535,7 @@
                       <p>Brand Assets</p>
                     </a>
                 </li>
-                <li class="nav-item collapsible">
+                <li class="nav-item collapsible active">
                     <a class="nav-link" href="changelog.html">
                       <i class="material-icons-round">
                         fiber_manual_record
@@ -649,7 +650,7 @@
               <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
               <a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/"><img src="assets/img/network-icons/rinkeby_logo.svg">Moonbeam (Alpha)</a>
               <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
-            </div>         
+            </div>      
           </div>
 
           <div class="theme-toggler">
@@ -670,90 +671,166 @@
       
       <div class="content__welcome-text">
         <p>
-          Please read through our FAQ to get answers to most common questions.
+          Get an idea of who we are, and where are we heading towards to in the upcoming months.
         </p>
       </div>
-
-      <div class="container-fluid">
-
-        <h1>FAQ</h1>
-
+      
+      <div class="container-fluid">  
+        <!-- CHANGELOG -->
         <div class="row">
-          <div class="col-xl-12 col-lg-12">
-            <div class="card faq">
-              <div class="card-body">
-                <div class="card-description">
+            <div class="col-xl-12 ">
+                <h1>Changelog</h1>
+            </div>
 
-                  <h5 class="mt-3">What are NFTs?</h5>
-                  <p>NFTs (Non-Fungible Tokens) are representations of collectibles on the blockchain (Ethereum in the
-                    case of UNIFTY). NFTs are usually associated with digital art but their use-cases are limitless.
-                    NFTs are one of the fastest growing asset classes in the crypto space.</p>
-                  <h5 class="mt-3">What is UNIFTY's ultimate goal?</h5>
-                  <p>UNIFTY is aiming to become the major hub for exchanging, creating, managing and market NFTs and
-                    collectibles.</p>
-                  <h5 class="mt-3">What has been done so far?</h5>
-                  <p>UNIFTY just started with the collection manager, the website and first social media announcements.
-                    If you are reading this it means you are very early!</p>
-                  <h5 class="mt-3">What is a collection?</h5>
-                  <p>A collection holds many NFTs of the same type. If you have a series of Manga NFTs for example, you
-                    would store them in the same collection. Collections at UNIFTY are ERC1155 contracts, the new NFT
-                    standard for Ethereum.</p>
-                  <h5 class="mt-3">Why should I create collections at UNIFTY? I can create NFTs at Rarible and OpenSea
-                    already.</h5>
-                  <p>Because the collections there aren't yours. For example at Rarible, your NFTs belong to the Rarible
-                    collection and aren't technically yours. On the other hand, custom erc155 collections at Unifty are
-                    approx. 50% cheaper than custom erc1155 collections at Rarible. If you intend to build a community
-                    around your NFTs it is critical that you have full ownership and administrative privileges over all
-                    contracts in play. The collections you create at UNIFTY are entirely yours. Additionally, all
-                    contracts made with UNIFTY are already verified!</p>
-                  <h5 class="mt-3">How much do your services cost?</h5>
-                  <p>If you are holding NIF or owning one of our Free Pass wildcard collectibles, nothing! If you aren't
-                    holding/owning none, a developer fee will apply.</p>
-                  <h5 class="mt-3">What is planned in the future?</h5>
-                  <p>Please check out our <a href="index.html">Roadmap</a>. To make it quick: we are currently
-                    developing a complete toolset for managing NFTs. Phase 1 of the Roadmap will end with the
-                    availability of our NFT swapping dapp where everyone will be able to exchange NFTs in a similar
-                    fashion to Uniswap.</p>
-                  <h5 class="mt-3">Will you release a token?</h5>
-                  <p>Yes, in fact the token exists already and is called NIF. Our token will play a major role within
-                    the UNIFTY ecosystem.</p>
-                  <h5 class="mt-3">What are the tokenomics of NIF?</h5>
-                  <p>
-                    In the first step, holding NIF will allow you to use our tools for free and will be finally used to
-                    determine NFTs of similar value for our upcoming NFT swapping as well as providing cheaper swap
-                    fees.
-                    <br /><br />
-                    Symbol: NIF
-                    <br />
-                    Total Supply: 5,000,000
-                    <br />
-                    Decimals: 18
-                    <br /><br />
-                    NIF token contract at Etherscan.io:
-                    <br />
-                    <a href="https://etherscan.io/address/0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e"
-                      target="_blank">0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e</a>
-                    <br /><br>
-                    1,000,000 $NIF have been initially pooled at <a
-                      href="https://app.uniswap.org/#/swap?inputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e"
-                      target="_blank">Uniswap.</a>
-                    <br />
-                    Pool liquidity locked with <a
-                      href="https://v2.unicrypt.network/pair/0x63607de7ae773638d012561a01383ab8ac321371"
-                      target="_blank">Unicrypt</a>.
-                    <br />
-                    <a href="https://team.finance/view-coin/0x7e291890B01E5181f7ecC98D79ffBe12Ad23df9e?name=Unifty&symbol=NIF"
-                      target="_blank">Team Wallet</a> locked until April 5th, 2021, after that date, the wallet's NIF
-                    will be locked in a new contract to automatically distribute it as pool liquidity based on the
-                    project's net income.
-                  </p>
-
-                </div>
-              </div>
+        </div>
+        <div class="col-xl-12 changelog-date">
+          <h3>July 5, 2021</h3>
+        </div>
+        <div class=" col-xl-12 ">
+          <div class="changelog-grid">
+            <div>
+              <span class="changelog-tag-new">
+                New
+              </span>
+            </div>
+            <div class="changelog-text">
+              <span>Add collapsible sidebar menu</span>
+              <span>Add new items in the sidebar menu</span>
+              <span>Add roadmap self standing page</span>
+              <span>Add assets page</span>
+              <span>Add changelog page</span>
             </div>
           </div>
+
+        <div class="col-xl-12 changelog-date">
+            <h3>June 28, 2021</h3>
+        </div>
+        <div class=" col-xl-12 ">
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-new">
+                        New
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>Add new sidebar menu</span>
+                    <span>Add timestamp on newsbar</span>
+                </div>
+            </div>
+
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-improved">
+                        Improved
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>Medium articles linked with Guides & FAQ page</span>
+                </div>
+            </div>
+
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-fixed">
+                        Fixed
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>GUI issues</span>
+                </div>
+            </div>
         </div>
 
+        <div class="col-xl-12 changelog-date">
+            <h3>June 15, 2021</h3>
+        </div>
+        <div class=" col-xl-12 ">
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-new">
+                        New
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>Add Market builder</span>
+                    <span>Add About Unifty page</span>
+                    <span>Decrease font size through whole site</span>
+                    <span>New text for copyright/contet violation</span>
+                    <span>Error pop up created</span>
+                    <span>Add new tutorials in Guides & FAQ</span>
+                </div>
+            </div>
+
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-improved">
+                        Improved
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>On home screen, welcome text update</span>
+                    <span>Your Wallet, Collection, Farm builder - update text</span>
+                    <span>NFT, Farm, etc card design improved</span>
+                    <span>When clicked on card title or picture, details should open</span>
+                    <span>Mouse pointer for Safari users</span>
+                    <span>Collection button is too small</span>
+                </div>
+            </div>
+
+            <div class="changelog-grid">
+                <div>
+                    <span class="changelog-tag-fixed">
+                        Fixed
+                    </span>
+                </div>
+                <div class="changelog-text">
+                    <span>GUI issues</span>
+                </div>
+            </div>
+        </div>
+
+            <div class="col-xl-12 changelog-date">
+                <h3>May 31, 2021</h3>
+            </div>
+            <div class=" col-xl-12 ">
+                <div class="changelog-grid">
+                    <div>
+                        <span class="changelog-tag-new">
+                            New
+                        </span>
+                    </div>
+                    <div class="changelog-text">
+                        <span>Integrate Ramp.network</span>
+                        <span>Add Guides & FAQ page</span>
+                    </div>
+                </div>
+
+                <div class="changelog-grid">
+                    <div>
+                        <span class="changelog-tag-improved">
+                            Improved
+                        </span>
+                    </div>
+                    <div class="changelog-text">
+                        <span>The popups are too "heavy"</span>
+                        <span>Add all social media links</span>
+                        <span>Show current logo chain</span>
+                    </div>
+                </div>
+
+                <div class="changelog-grid">
+                    <div>
+                        <span class="changelog-tag-fixed">
+                            Fixed
+                        </span>
+                    </div>
+                    <div class="changelog-text">
+                        <span>GUI issues</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <!-- ALERT -->
         <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
           aria-labelledby="alertModalLabel" aria-hidden="true">
@@ -765,7 +842,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body modal-non-nft-content">
+              <div class="modal-body">
 
               </div>
               <div class="modal-footer">
@@ -776,7 +853,8 @@
         </div>
 
       </div>
-
+    
+    </div>
     </div>
 
   </div>

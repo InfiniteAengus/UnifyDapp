@@ -357,6 +357,141 @@ textarea, input {
 .main-timeline .date-content:before {
   background: var(--primary-color); }
 
+.changelog {
+  margin-top: 50px; }
+
+.changelog-date h3 {
+  font-size: large;
+  font-weight: bold; }
+
+.changelog-grid {
+  display: grid;
+  grid-template-columns: 90px auto;
+  grid-gap: 10px; }
+  .changelog-grid div {
+    padding: 5px 0; }
+
+.changelog-tag-new {
+  padding: 2px 29px;
+  text-align: center;
+  max-width: 84px;
+  border-radius: 11px;
+  color: #c6cbd1;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #9c27b0; }
+
+.changelog-tag-improved {
+  padding: 2px 12px;
+  text-align: center;
+  max-width: 84px;
+  border-radius: 11px;
+  color: #c6cbd1;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #202060; }
+
+.changelog-tag-fixed {
+  padding: 2px 26px;
+  text-align: center;
+  max-width: 84px;
+  border-radius: 11px;
+  color: #c6cbd1;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #6c757d; }
+
+.changelog-text {
+  color: var(--text-primary);
+  font-size: 1.125em; }
+  .changelog-text span {
+    margin-bottom: 16px;
+    display: block; }
+  .changelog-text a {
+    font-weight: bolder;
+    text-decoration: none; }
+
+.brand-assets {
+  margin: 2.5rem 0; }
+
+.brand-assets-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: var(--bg-primary);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  border: 0; }
+  .brand-assets-btn i {
+    padding-right: 10px; }
+  .brand-assets-btn:hover {
+    cursor: var(--cursor-pointer); }
+
+.brand-spacing {
+  padding: 10px; }
+
+.brand-assets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 2rem;
+  grid-gap: 2rem; }
+
+.brand-assets-img-element {
+  text-align: center;
+  background: var(--bg-tertiary);
+  border-radius: 0.8rem; }
+  .brand-assets-img-element h3 {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    font-size: 1.8rem; }
+  .brand-assets-img-element .download-option {
+    margin-bottom: 1.5rem; }
+    .brand-assets-img-element .download-option a {
+      padding: 0 20px;
+      color: #4c4c6f; }
+  .brand-assets-img-element .img-holder {
+    height: 27.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: .6rem;
+    box-shadow: var(--shadow-primary);
+    transition: all .2s ease-in-out; }
+    .brand-assets-img-element .img-holder:hover {
+      transform: scale(1.15); }
+    .brand-assets-img-element .img-holder img {
+      max-width: 90%;
+      max-height: 90%; }
+
+.bold {
+  font-weight: bold; }
+
+@media (max-width: 1110px) {
+  .brand-assets-grid {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media (max-width: 720px) {
+  .brand-assets-img-element .download-option a {
+    padding: 0 10px; }
+  .brand-assets-img-element .img-holder img {
+    max-width: 80%;
+    max-height: 80%; } }
+
+@media (max-width: 490px) {
+  .brand-assets-grid {
+    grid-template-columns: 1fr 1fr; }
+  .brand-assets-img-element .img-holder {
+    height: 20rem; } }
+
+@media (max-width: 335px) {
+  .download-option a {
+    padding: 0; }
+  .download-option i {
+    display: none; } }
+
 .projectFunding p {
   font-weight: 100;
   font-size: 1.3rem;
@@ -1636,7 +1771,6 @@ textarea, input {
       .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active {
         background-color: var(--primary-hover-dark); }
 
-
 #marketForm #tierGroup select {
   background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 60%), linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
   background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px, 100% 0;
@@ -1648,36 +1782,35 @@ textarea, input {
 #nftSellWallet .approveNft {
   display: block; }
 
-.modalErrorDiv {
+#nftSellWallet .modalErrorDiv {
   display: flex;
   align-items: center; }
-  .modalErrorDiv .imageContainer {
+  #nftSellWallet .modalErrorDiv .imageContainer {
     display: flex;
     width: 4.8rem;
     height: 4.8rem;
     margin-right: 2.4rem;
     justify-content: center;
     align-items: center; }
-    .modalErrorDiv .imageContainer img {
+    #nftSellWallet .modalErrorDiv .imageContainer img {
       width: max-content;
       height: max-content; }
-  .modalErrorDiv h3 {
+  #nftSellWallet .modalErrorDiv h3 {
     margin-bottom: 0;
     color: var(--heading-color);
     font-weight: 500; }
-  .modalErrorDiv h4 {
+  #nftSellWallet .modalErrorDiv h4 {
     color: var(--heading-color);
     font-weight: bold; }
-  .modalErrorDiv p {
+  #nftSellWallet .modalErrorDiv p {
     color: var(--text-primary);
     margin: 0; }
 
-.modalDivider {
+#nftSellWallet .modalDivider {
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.24);
   margin: 1rem 0; }
-
 
 .dark-edition .main-panel .content .container-fluid.wallet .title-options-container,
 .light-edition .main-panel .content .container-fluid.wallet .title-options-container {
@@ -1794,7 +1927,9 @@ textarea, input {
     height: calc(100vh - 16rem);
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem; }
+    padding-bottom: 6rem;
+    overflow: hidden;
+    overflow-y: auto; }
     @media only screen and (min-width: 112.5em) {
       .dark-edition .sidebar .sidebar-wrapper,
       .light-edition .sidebar .sidebar-wrapper {
@@ -1802,7 +1937,7 @@ textarea, input {
     @media only screen and (max-width: 75em) {
       .dark-edition .sidebar .sidebar-wrapper,
       .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 2.7rem; } }
+        padding-bottom: 5rem; } }
     @media only screen and (max-width: 991px) {
       .dark-edition .sidebar .sidebar-wrapper,
       .light-edition .sidebar .sidebar-wrapper {
@@ -1832,32 +1967,36 @@ textarea, input {
         .light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul li:nth-child(2) {
           margin: 1rem 0; }
 
-.dark-edition .sidebar .sidebar-wrapper ul.nav,
-.light-edition .sidebar .sidebar-wrapper ul.nav {
-  overflow: auto; }
-  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar,
-  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar {
-    width: 0.8rem;
-    height: 0.1rem; }
-  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb,
-  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 10px; }
-  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover,
-  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover); }
-  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track,
-  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track {
-    background: var(--scrolbar-track);
-    border-radius: 10px;
-    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
-  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover,
-  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover {
-    background: var(--scrollbar-track-hover); }
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.1rem; }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px; }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover); }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track {
+  background: var(--scrolbar-track);
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover {
+  background: var(--scrollbar-track-hover); }
 
 .dark-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu,
 .light-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu {
   display: none; }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav:first-child, .light-edition .sidebar .sidebar-wrapper ul.nav:first-child {
+  overflow: auto; }
 
 .dark-edition .sidebar .logo,
 .light-edition .sidebar .logo {
@@ -1879,22 +2018,77 @@ textarea, input {
     font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.32px;
-    color: #808080; }
-  .sidebar .nav li:first-child > a {
-    margin: 0 2.4rem; }
-  .sidebar .nav li:not(:first-child) > a {
-    margin: 1rem 2.4rem 0; }
-  .sidebar .nav li.active > a {
-    background-color: var(--primary-color); }
-  .sidebar .nav li.active a i,
-  .sidebar .nav li.active a p {
-    color: var(--bg-secondary); }
-  .sidebar .nav .nav-item:not(.nav-item.active) a:hover {
+    color: #808080;
+    width: max-content;
+    overflow: hidden; }
+  .sidebar .nav li > a {
+    margin: 1rem 2.4rem 0 !important; }
+  .sidebar .nav li.active:not(.collapsible) > a {
+    background-color: var(--primary-color) !important; }
+  .sidebar .nav li.active:not(.collapsible) a i,
+  .sidebar .nav li.active:not(.collapsible) a p,
+  .sidebar .nav li.active a::after {
+    color: var(--bg-secondary) !important; }
+  .sidebar .nav .nav-item:not(.nav-item.active):not(.collapsibleParent) a:hover {
     background-color: var(--primary-hover-light); }
   .sidebar .nav li a,
   .sidebar .nav li .dropdown-menu a {
     padding: 0.5rem;
-    border-radius: 0.8rem; }
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: row; }
+  .sidebar .nav li.collapsibleParent:hover > a {
+    background-color: var(--primary-hover-light); }
+  .sidebar .nav li.collapsibleParent a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .sidebar .nav li.collapsibleParent a::after {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-right: 1.5rem;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+      color: var(--primary-color); }
+    .sidebar .nav li.collapsibleParent a .collapsed {
+      border-radius: 0.8rem; }
+    .sidebar .nav li.collapsibleParent a[aria-expanded="true"] {
+      background-color: var(--primary-color);
+      border-radius: 0.8rem 0.8rem 0 0; }
+      .sidebar .nav li.collapsibleParent a[aria-expanded="true"] i,
+      .sidebar .nav li.collapsibleParent a[aria-expanded="true"] p {
+        color: var(--bg-secondary); }
+      .sidebar .nav li.collapsibleParent a[aria-expanded="true"] i svg path:first-child {
+        fill: var(--bg-secondary) !important; }
+      .sidebar .nav li.collapsibleParent a[aria-expanded="true"]::after {
+        color: var(--bg-secondary);
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg); }
+  .sidebar .nav li.collapsibleParent i svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: 0.3rem;
+    left: 0.15rem; }
+    .sidebar .nav li.collapsibleParent i svg path:first-child {
+      fill: var(--primary-color); }
+  .sidebar .nav li.collapsibleParent.active i svg path:first-child {
+    fill: var(--bg-secondary) !important; }
+  .sidebar .nav li.collapsible a {
+    background-color: var(--bg-primary);
+    margin-top: 0 !important;
+    border-radius: 0; }
+    .sidebar .nav li.collapsible a i {
+      color: transparent;
+      font-size: 1.1rem; }
+  .sidebar .nav li.collapsible:last-child:not([style*="display:block"]) a {
+    border-radius: 0 0 0.8rem 0.8rem; }
+  .sidebar .nav li.collapsible.active i {
+    color: var(--primary-color); }
 
 .sidebar-text {
   display: flex;
@@ -1919,6 +2113,63 @@ textarea, input {
 .sidebar-divider {
   border-bottom: 0.1rem solid #4c4c6f;
   margin: 1.5rem 2.4rem; }
+
+.dark-edition .sidebar.collapsed,
+.light-edition .sidebar.collapsed {
+  width: 10rem; }
+  .dark-edition .sidebar.collapsed .logo img,
+  .light-edition .sidebar.collapsed .logo img {
+    width: 8.5rem;
+    height: 8.5rem; }
+  .dark-edition .sidebar.collapsed .sidebar-wrapper .nav li > a,
+  .light-edition .sidebar.collapsed .sidebar-wrapper .nav li > a {
+    margin: 1rem 2.6rem 0; }
+  .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item,
+  .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item {
+    width: max-content; }
+    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i,
+    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i {
+      margin: 0; }
+    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p,
+    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p {
+      width: 0px;
+      height: 0px;
+      overflow: auto; }
+    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after,
+    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after {
+      display: none; }
+
+.bs-popover-right {
+  border-radius: 0.8rem; }
+  .bs-popover-right .arrow {
+    display: none; }
+
+.popover-body {
+  padding: 0; }
+
+.sidebarPopover a {
+  display: flex;
+  align-items: center;
+  margin-top: 0 !important;
+  border-radius: 0.8rem;
+  padding: 0.8rem; }
+  .sidebarPopover a p {
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6c757d;
+    margin: 0; }
+  .sidebarPopover a i {
+    color: transparent;
+    font-size: 1.2rem;
+    margin-right: 1.3rem; }
+  .sidebarPopover a.active i {
+    color: var(--primary-color); }
 
 .main-panel .content__welcome-text {
   font-size: 1.4rem;
@@ -1997,7 +2248,7 @@ textarea, input {
   .light-edition .main-panel .card {
     background: var(--bg-tertiary);
     border-radius: 0.8rem;
-    z-index: 0;
+    z-index: auto;
     margin: 0; }
   .dark-edition .main-panel .nftHeader-stakingOptions-container,
   .light-edition .main-panel .nftHeader-stakingOptions-container {

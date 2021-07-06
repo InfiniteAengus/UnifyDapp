@@ -307,50 +307,13 @@ $(document).ready(async function(){
     // Non-dapp browsers...
     else {
 
+
         if(localStorage.getItem('torusLoaded') != 'true') {
             $('#torus').css('display', 'inline-block');
             runReadableOnly();
         }else{
             enableTorus();
         }
-            /*$.getScript('https://cdn.jsdelivr.net/npm/@portis/web3@3.0.2/umd/index.js').done(function(){
-
-                let chain = '0';
-                switch(chain_id){
-                    case '4':
-                        chain = 'rinkeby';
-                        break;
-                    case '64':
-                        chain = 'xdai';
-                        break;
-                    case '89':
-                        chain = 'matic';
-                        break;
-                    case '38':
-                        chain = 'bsc';
-                        break;
-                    case '1':
-                        chain = 'mainnet';
-                        break;
-                }
-
-                if(chain != '0') {
-
-                    localStorage.setItem('useWallet', 'true');
-
-                    const portis = new Portis('baa31c5c-a6fe-4252-911f-7608fa1f8ebe', chain);
-                    window.web3 = new Web3(portis.provider);
-
-                    run(true);
-
-                }
-                else{
-
-                    _alert('Unsupported Network. You may still browser our dapp but not interact with the blockchain.');
-                    runReadableOnly();
-                }
-
-            });*/
     }
 });
 
