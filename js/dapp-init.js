@@ -221,7 +221,7 @@ $(document).ready(async function(){
                         currencyName = 'MATIC';
                         currencySymbol = 'MATIC';
                         currencyDecimals = 18;
-                        blockExplorerUrl = 'https://explorer.matic.network';
+                        blockExplorerUrl = 'https://polygonscan.com';
 
                         desc =  'You are not connected to '+chainName+'.<br/><br/>' +
                             'Please use the following setup in Metamask => Settings => Networks => Add Network: <br /><br />' +

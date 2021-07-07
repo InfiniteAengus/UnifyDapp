@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b8c123-070c-42de-851e-d8a3fedd6f9e" name="Default Changelist" comment="" />
+    <list default="true" id="89b8c123-070c-42de-851e-d8a3fedd6f9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,8 @@
       <workItem from="1623277893402" duration="61000" />
       <workItem from="1624099930189" duration="1297000" />
       <workItem from="1625576611674" duration="5000" />
+      <workItem from="1625576658720" duration="82000" />
+      <workItem from="1625687585023" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="+ added marketbuilder">
       <created>1623198762156</created>
@@ -66,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624099999978</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="# general ux and ui improvements">
+      <created>1625576697970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625576697970</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,16 +90,17 @@
     <MESSAGE value="+ added featured markets&#10;# fixed argument order in nft block status call" />
     <MESSAGE value="# fixed decimals() bug in bundle sales" />
     <MESSAGE value="+ added new features" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ added new features" />
+    <MESSAGE value="# general ux and ui improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="# general ux and ui improvements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1624099999376">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1625576697301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1624099999376" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1624100010143">
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1625576697301" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1625576703788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1624100010143" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1625576703788" />
   </component>
 </project>

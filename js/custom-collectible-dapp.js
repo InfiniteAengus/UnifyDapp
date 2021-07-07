@@ -342,7 +342,7 @@ function TncDapp() {
                 explorer = 'https://blockscout.com/poa/xdai/address/';
                 break;
             case '89':
-                explorer = 'https://explorer.matic.network/address/';
+                explorer = 'https://polygonscan.com/address/';
                 break;
         }
 

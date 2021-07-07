@@ -589,6 +589,8 @@ function TncDapp() {
 
                 break;
             }
+
+            fixingDropdowns();
         }
 
         if(currentIndex + 1 < nfts.length){

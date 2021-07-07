@@ -64,7 +64,7 @@ function TncDapp() {
                 explorer = 'https://blockscout.com/poa/xdai/address/';
                 break;
             case '89':
-                explorer = 'https://explorer.matic.network/address/';
+                explorer = 'https://polygonscan.com/address/';
                 break;
         }
 
@@ -156,6 +156,8 @@ function TncDapp() {
 
                 console.log('Trouble resolving collection uri: ', _uri);
             }
+
+            fixingDropdowns();
 
             let maxPerLoad = 8;
             let currInvertedIndex = (length - 1) - i;
@@ -289,6 +291,8 @@ function TncDapp() {
 
                 break;
             }
+
+            fixingDropdowns();
         }
 
         if(currentIndex + 1 < nfts.length){

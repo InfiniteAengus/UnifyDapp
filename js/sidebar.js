@@ -15,6 +15,7 @@ $(document).ready(function () {
 
   initElements();
   removeUnecessaryShops();
+  fixingDropdowns();
 
   if ($(window).width() <= 974) {
     defaultSidebar();
@@ -24,6 +25,35 @@ $(document).ready(function () {
     userDefault();
   }
 });
+
+function fixingDropdowns() {
+  let dropdowns = $('[data-toggle="dropdown"]');
+  
+  if (dropdowns.length <= 1) {
+    //If there is only the chain dropdown then it is not neccesary to do this
+    return;
+  }
+  
+  let openedDropdown = $('[data-toggle="dropdown"][aria-expanded="true"]');
+  let styleText = openedDropdown.attr("style");
+  
+  let scrollPos = $(document).scrollTop();
+  dropdowns.click();
+
+  //Prevent popups from opening by simulating clicks
+  $(".sidebar").click();
+  $(document).scrollTop(scrollPos);
+
+  if (openedDropdown.length > 0) {
+    reOpenDropdown(openedDropdown, styleText);
+  }
+}
+
+function reOpenDropdown(el, styleText) {
+  el.attr("aria-expanded", "true");
+  el.parent().addClass("show");
+  el.siblings(".dropdown-menu").addClass("show").attr("style", styleText);
+}
 
 $(window).resize(function () {
   // This will execute whenever the window is resized

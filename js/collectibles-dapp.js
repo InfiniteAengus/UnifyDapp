@@ -289,6 +289,7 @@ function TncDapp() {
             }, 100);
         }
 
+        fixingDropdowns();
     };
 
     this.truncate = function(str, n){
