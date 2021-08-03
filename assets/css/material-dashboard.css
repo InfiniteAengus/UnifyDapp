@@ -52,13 +52,13 @@ section {
 
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Baloo 2", "Roboto-Mono";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fafafa;
+  ;
 }
 
 [tabindex="-1"]:focus {
@@ -479,7 +479,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fafafa;
+  
 }
 
 [tabindex="-1"]:focus {
@@ -16878,7 +16878,7 @@ thead.thead-inverse th,
 }
 
 body {
-  background-color: #eee;
+  
   color: #3C4858;
   font-weight: 300;
 }

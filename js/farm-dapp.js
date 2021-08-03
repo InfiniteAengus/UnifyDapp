@@ -129,16 +129,14 @@ function TncDapp() {
                     farmAddress,
                     stake_amount,
                     function () {
-                        toastr["info"]('Please wait for the transaction to finish.', "Staking....");
-                        $('#nftStakeButton').prop('disabled', true);
-                        $('#nftStakeButton').html('Processing...');
+                        $("#nftStakeModal").modal("hide")
+                        _this.infoModal("info" ,"Please wait for the transaction to finish.");
                     },
                     function (receipt) {
                         console.log(receipt);
                         toastr.remove();
-                        toastr["success"]('Transaction has been finished.', "Success");
-                        $('#nftStakeButton').prop('disabled', false);
-                        $('#nftStakeButton').html('Staking successful!');
+                        $("#nftStakeModal").modal("hide")
+                        _this.infoModal("success" ,"Transaction has been finished.");
                         setTimeout(function(){
 
                             $('#nftStakeButton').html('Stake!');
@@ -178,13 +176,14 @@ function TncDapp() {
                 farmAddress,
                 unstake_amount,
                 function () {
-                    toastr["info"]('Please wait for the transaction to finish.', "Unstaking....");
+                    $("#nftUnstakeModal").modal("hide")
+                    _this.infoModal("info" ,"Please wait for the transaction to finish.");
                 },
                 function (receipt) {
                     console.log(receipt);
-                    toastr.remove();
-                    toastr["success"]('Transaction has been finished.', "Success");
-                    $('#nftUnstakeButton').html('Unstaking successful!');
+                    toastr.remove();                    
+                    $("#nftUnstakeModal").modal("hide")
+                    _this.infoModal("success" ,"Transaction has been finished.");
                     setTimeout(function(){
 
                         $('#nftUnstakeButton').html('Unstake!');
@@ -234,7 +233,7 @@ function TncDapp() {
                     farm_discord = typeof data.discord != 'undefined' && data.discord ? data.discord : '';
                     farm_instagram = typeof data.instagram != 'undefined' && data.instagram ? data.instagram : '';
                     farm_youtube = typeof data.youtube != 'undefined' && data.youtube ? data.youtube : '';
-                    farm_web = typeof data.web != 'undefined' && data.web ? data.web : '';
+                    farm_web = typeof data.website != 'undefined' && data.website ? data.website : '';
                     farm_email = typeof data.email != 'undefined' && data.email ? data.email : '';
                     farm_phone = typeof data.phone != 'undefined' && data.phone ? data.phone : '';
                     farm_telegram = typeof data.telegram != 'undefined' && data.telegram ? data.telegram : '';
@@ -760,16 +759,14 @@ function TncDapp() {
             tncLib.account,
             _this.getUrlParam('address'),
             function () {
-                $('#farmEditDataButton').prop('disabled', true);
-                $('#farmEditDataButton').html('Processing...');
-                toastr["info"]('Please wait for the transaction to finish.', "Removing NFTs ....");
+                $("#farmRemoveNftsModal").modal("hide")
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
                 console.log(receipt);
                 toastr.remove();
-                $('#farmEditDataButton').prop('disabled', false);
-                $('#farmEditDataButton').html('Remove');
-                toastr["success"]('Transaction has been finished.', "Success");
+                $("#farmRemoveNftsModal").modal("hide")
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -851,16 +848,14 @@ function TncDapp() {
             artist == '' ? '0x0000000000000000000000000000000000000000' : artist,
             _this.getUrlParam('address'),
             function () {
-                $('#farmEditDataButton').prop('disabled', true);
-                $('#farmEditDataButton').html('Processing...');
-                toastr["info"]('Please wait for the transaction to finish.', "Updating NFT ....");
+                $("#farmEditDataModal").modal("hide")
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
                 console.log(receipt);
                 toastr.remove();
-                $('#farmEditDataButton').prop('disabled', false);
-                $('#farmEditDataButton').html('Update');
-                toastr["success"]('Transaction has been finished.', "Success");
+                $("#farmEditDataModal").modal("hide")
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -972,16 +967,14 @@ function TncDapp() {
                 parseInt(amount),
                 _this.getUrlParam('address'),
                 function () {
-                    $('#addNftsButton').prop('disabled', true);
-                    $('#addNftsButton').html('Processing...');
-                    toastr["info"]('Please wait for the transaction to finish.', "Adding NFTs ....");
+                    $("#addNftsModal").modal("hide")
+                    _this.infoModal("info" ,"Please wait for the transaction to finish.");
                 },
                 function (receipt) {
                     console.log(receipt);
                     toastr.remove();
-                    $('#addNftsButton').prop('disabled', false);
-                    $('#addNftsButton').html('Add');
-                    toastr["success"]('Transaction has been finished.', "Success");
+                    $("#farmModal").modal("hide")
+                    _this.infoModal("success" ,"Transaction has been finished.");
                     _this.lastFarmIndex = -1;
                     _this.populateFarm(_this.getUrlParam('address'));
                 },
@@ -1096,6 +1089,7 @@ function TncDapp() {
                     $('#walletModalBody').html("You don't own any Unifty collection.");
                     return;
                 }
+
                 for(let i = length - 1; i >= 0; i--){
                     let myCollection = await tncLib.getMyErc1155(i);
                     addresses.push(myCollection.erc1155);
@@ -1442,6 +1436,23 @@ function TncDapp() {
             }, 1000);
         }
     };
+
+    this.infoModal = function(state, message){
+
+        let imgSource
+
+        if(state == "success"){
+            imgSource = "assets/img/icons/task_success_black_48.svg";
+        }
+        else{
+            imgSource = "assets/img/icons/info_black_48.svg";
+        }
+
+        _alert("<div class='modalFarmInfo'>" +
+        "<img src='" + imgSource + "'>" +
+        "<h3>" + message + "</h3>" +
+        "</div>");        
+    }
 
     $(document).ready(async function(){
 

@@ -8,56 +8,30 @@ let parentCollapsables;
 
 let collapsibleSidebar;
 
+let collapseButton;
+
 $(document).ready(function () {
+  fixingDropdowns();
+
   $("#menu-collapse").click(() => {
     toggleSidebar();
   });
+  $(".collapsibleParent").parent().css("overflow", "hidden");
 
   initElements();
   removeUnecessaryShops();
-  fixingDropdowns();
-
-  if ($(window).width() <= 974) {
+  
+  if ($(window).width() < 991) {
     defaultSidebar();
-    mainPanel.css("width", "100%");
   } else {
     $("#menu-collapse").show();
     userDefault();
   }
-});
-
-function fixingDropdowns() {
-  let dropdowns = $('[data-toggle="dropdown"]');
-  
-  if (dropdowns.length <= 1) {
-    //If there is only the chain dropdown then it is not neccesary to do this
-    return;
-  }
-  
-  let openedDropdown = $('[data-toggle="dropdown"][aria-expanded="true"]');
-  let styleText = openedDropdown.attr("style");
-  
-  let scrollPos = $(document).scrollTop();
-  dropdowns.click();
-
-  //Prevent popups from opening by simulating clicks
-  $(".sidebar").click();
-  $(document).scrollTop(scrollPos);
-
-  if (openedDropdown.length > 0) {
-    reOpenDropdown(openedDropdown, styleText);
-  }
-}
-
-function reOpenDropdown(el, styleText) {
-  el.attr("aria-expanded", "true");
-  el.parent().addClass("show");
-  el.siblings(".dropdown-menu").addClass("show").attr("style", styleText);
-}
+  });
 
 $(window).resize(function () {
   // This will execute whenever the window is resized
-  if ($(window).width() <= 974) {
+  if ($(window).width() < 991) {
     defaultSidebar();
   } else {
     $("#menu-collapse").show();
@@ -69,13 +43,15 @@ function userDefault() {
   if (
     localStorage.getItem("sidebar") === "expanded" ||
     localStorage.getItem("sidebar") === null
-  ) {
-    collapsibleSidebar = false;
-    expandSidebar();
-  } else {
-    collapsibleSidebar = true;
-    collapseSidebar();
-  }
+    ) {
+      collapsibleSidebar = false;
+      expandSidebar();
+    } else {
+      collapsibleSidebar = true;
+      collapseSidebar();
+    }
+
+    collapseButton.hide();
 }
 
 function initElements() {
@@ -87,6 +63,8 @@ function initElements() {
   sidebarText = $(".sidebar-text.rights").html();
 
   parentCollapsables = $("li.collapsibleParent");
+
+  collapseButton = $("#navigation-example");
 }
 
 function toggleSidebar() {
@@ -100,12 +78,15 @@ function toggleSidebar() {
 }
 
 function defaultSidebar() {
-  expandSidebar();
-
   $("#menu-collapse").hide();
+  sb.removeClass("collapsed");
   mainPanel.removeAttr("style");
+  sidebarRights.html(sidebarText);
 
   removingPopopvers();
+  socialIcons.show();
+
+  collapseButton.show();
 }
 
 function expandSidebar() {
@@ -166,8 +147,13 @@ function closeOpenDropdowns() {
   });
 }
 
+function fixingDropdowns() {  
+  //Fixing dropdowns requiring click
+  $('.dropdown-toggle').dropdown();
+}
+
 function addingPopopvers() {
-  let menuTags = $('.sidebar-wrapper .nav .nav-item:not(".collapsible") a');
+  let menuTags = $('.nav .nav-item:not(".collapsible") a');
   let $this;
 
   menuTags.each(function () {
@@ -261,6 +247,8 @@ function removingPopopvers() {
       "data-container data-placement data-trigger data-content data-original-title title"
     );
 
-    $(this).popover("dispose").off("mouseenter").off("mouseleave");
+    if($(this).data("bs.popover") != undefined){
+      $(this).popover("dispose").off("mouseenter").off("mouseleave");
+    }
   });
 }

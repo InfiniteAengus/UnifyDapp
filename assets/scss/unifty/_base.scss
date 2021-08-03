@@ -26,7 +26,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.4rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-weight: 400;
   
 }
@@ -44,6 +44,7 @@ body.dark-edition {
 
 body.light-edition {
   cursor: var(--cursor-default);
+
 
   a:link,
   a:hover,

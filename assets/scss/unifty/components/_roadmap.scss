@@ -21,7 +21,7 @@
 }
 
 .main-timeline h5.title{
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   color: var(--heading-color);
   font-size: 2rem;
   font-weight: 400;
@@ -172,9 +172,7 @@
     border-radius: .6rem;
     box-shadow: var(--shadow-primary);
     transition: all .2s ease-in-out;
-    &:hover{
-      transform: scale(1.15);
-    }
+    
     img{
       max-width: 90%;
       max-height: 90%;

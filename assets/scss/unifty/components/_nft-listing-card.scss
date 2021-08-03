@@ -6,15 +6,16 @@
   margin: 0 !important;
   min-width: unset;
 
-  .btn{
+  .btn {
     font-size: 1.2rem;
   }
 
-  .card .traits-collapse{
+  .card .traits-collapse {
     font-size: 1.4rem;
   }
 
-  .card-profile, .header-profile {
+  .card-profile,
+  .header-profile {
     position: relative;
     margin-top: 0;
     box-shadow: var(--shadow-primary);
@@ -25,11 +26,11 @@
       min-height: 15.6rem;
       max-width: 15.6rem;
       max-height: 15.6rem;
-      padding: .8rem !important;
-      margin: 1.5rem auto .5rem;
+      padding: 0.8rem !important;
+      margin: 1.5rem auto 0.5rem;
       background-color: var(--image-padding);
 
-      border-radius: .6rem !important;
+      border-radius: 0.6rem !important;
       object-fit: cover;
 
       /*
@@ -37,19 +38,19 @@
             filter: blur(5px);
             */
 
-      transition: transform .2s;
-
+      transition: transform 0.2s;
     }
-    .card-avatar:hover{
+    .card-avatar:hover {
       transform: scale(1.3);
-          
-          /*
+
+      /*
           -webkit-filter: blur(0px); // Safari 6.0 - 9.0
           filter: blur(0px);
           */
     }
-    
-    .card-body, .header-left {
+
+    .card-body,
+    .header-left {
       position: static;
 
       //copy address
@@ -67,16 +68,22 @@
       h5.card-title {
         font-size: 1.8rem;
         font-weight: 700;
-        letter-spacing: .28px;
+        letter-spacing: 0.28px;
         margin: 0 0 1rem 0;
+
         a {
           color: var(--heading-color);
+
+          i {
+            font-weight: 700;
+            font-size: 1.4rem !important;
+          }
         }
       }
 
       .collection-name {
         font-size: 1.2rem;
-        margin: -.8rem 0 1rem 0;
+        margin: -0.8rem 0 1rem 0;
       }
 
       a.video-btn-link {
@@ -93,10 +100,10 @@
         &:hover {
           color: var(--primary-hover-dark);
         }
-  
+
         span {
           font-size: 2rem;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
 
@@ -107,7 +114,7 @@
 
       //stocks
       .badge {
-        padding: .5rem;
+        padding: 0.5rem;
         font-size: 1rem;
         font-weight: 300;
         position: relative;
@@ -140,14 +147,14 @@
         box-shadow: none;
         border: none;
         text-transform: none;
-        border-radius: .6rem;
+        border-radius: 0.6rem;
         background-color: var(--primary-color);
         color: var(--bg-secondary);
-        padding: .3rem .8rem;
+        padding: 0.3rem 0.8rem;
         font-weight: 500;
         width: 90%;
         text-overflow: ellipsis;
-        overflow : hidden;
+        overflow: hidden;
         white-space: nowrap;
 
         &:active {
@@ -160,12 +167,12 @@
       //traits
       a.traits {
         font-size: 1.4rem;
-        border: .1rem solid var(--text-primary);
-        border-radius: .6rem;
+        border: 0.1rem solid var(--text-primary);
+        border-radius: 0.6rem;
         background-color: var(--image-padding) !important;
         text-transform: none;
         color: var(--text-primary);
-        padding: .3rem .8rem;
+        padding: 0.3rem 0.8rem;
         width: 90%;
       }
 
@@ -184,7 +191,8 @@
           font-size: 1.8rem;
         }
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
           span {
             color: var(--text-primary-light);
           }
@@ -218,40 +226,105 @@
             }
           }
         }
+
+        &.show a{
+          background-color: transparent;
+  
+          span {
+            color: var(--text-primary-light);;
+          }        
+        }
       }
 
-      .dropdown.show a {
-        background-color: transparent;
+      //Farm builder dropdown menu
+      .dropdown-btn {
+        position: relative;
+        display: inline-block;
 
-        span {
-          color: var(--text-primary-light);;
-        }        
+        & > a {
+          font-size: 1.4rem;
+          padding: 0.3rem 1rem;
+          background-color: var(--bg-secondary);
+          color: var(--primary-color);
+          box-shadow: none;
+
+          &::before {
+            font-family: "Material Icons Round";
+            content: "edit";
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-right: 1.7rem;
+          }
+
+          &::after {
+            margin-left: 1.7rem;
+          }
+
+          span {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+          }
+
+          &:hover,
+          &:active {
+            span {
+              color: var(--text-primary);
+            }
+          }
+        
+        }
+
+        &.show a {
+          background-color: var(--bg-secondary);
+          font-size: 1.2rem;
+          padding: 1rem;
+          color: var(--text-primary);
+        }
+
+        .dropdown-menu.show {
+          width: 100%;
+        }
       }
     }
   }
 }
 
+//FarmBuilder cards
+#farmsPage .popover-description{
+  position: initial;
+  display:flex;
+  margin: 1.5rem auto;
+  font-size: 1.34rem;
+  text-transform: initial;
+
+  span{
+    margin-right: 0.5rem;
+  }
+
+}
 
 .dark-edition .popover.bs-popover-bottom,
 .dark-edition .popover.bs-popover-top,
 .light-edition .popover.bs-popover-bottom,
 .light-edition .popover.bs-popover-top {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-secondary);
   box-shadow: var(--shadow-primary);
 
-  .arrow, .arrow::before {
+  .arrow,
+  .arrow::before {
     display: none;
   }
 
-  .popover-header, .popover-body {
+  .popover-header,
+  .popover-body {
     padding: 1rem;
     max-height: 15rem;
     overflow: auto;
     color: var(--text-primary);
 
     &::-webkit-scrollbar {
-      width: .5rem;
-      height: .3rem;
+      width: 0.5rem;
+      height: 0.3rem;
     }
     &::-webkit-scrollbar-thumb {
       background: var(--scrollbar-thumb);
@@ -269,11 +342,11 @@
       background: var(--scrollbar-track-hover);
     }
   }
-  
+
   .popover-header {
     background-color: transparent;
-    border-bottom: .1rem solid var(--modal-border-text);
-    font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid var(--modal-border-text);
+    font-family: "Roboto Mono", sans-serif;
     font-size: 1.3rem;
     color: var(--text-primary);
     font-weight: 500;
@@ -285,7 +358,7 @@
 
   .popover-body {
     font-size: 1.2rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "Baloo 2", sans-serif;
     color: var(--text-primary);
     font-weight: 400;
   }
@@ -296,10 +369,9 @@
 .dark-edition .tooltip.bs-tooltip-top,
 .light-edition .tooltip.bs-tooltip-bottom,
 .light-edition .tooltip.bs-tooltip-top {
-  
-
   .tooltip-inner {
-    background-color: var(--subheading-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
   }
 }
 

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around !important;
-  background-color: var(--bg-tertiary);
+  //background-color: var(--bg-tertiary);
   padding: 2.4rem 3.6rem 1.3rem;
   border-radius: .8rem;
   box-shadow: var(--shadow-primary);
@@ -33,6 +33,7 @@
 
   .first-row {
     display: flex;
+    flex-direction: column;
     width: 100%;
 
     @media only screen and (max-width: 26em) {
@@ -40,6 +41,7 @@
     }
 
     .divider {
+      height: 1rem;
       width: 1rem;
     }
 

@@ -6,8 +6,8 @@
   <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
   <title>Farm - Unifty</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
   <link rel="manifest" href="site.webmanifest">
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
@@ -16,20 +16,20 @@
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/ipfs.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/config.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/nifABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/genesisABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farmABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/lib.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farm-dapp.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/dapp-init.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.11"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farm-dapp.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.12"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>  
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -48,7 +48,13 @@
   </script>
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
     integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
   <style type="text/css">
@@ -169,7 +175,7 @@
   <div class="sidebar">
     <div class="logo">
       <a href="https://unifty.io" class="simple-text logo-normal">
-        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <img src="assets/img/logo_transparent.png" width="90" border="0" />
         <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
           Binance Smart Chain
         </div>
@@ -212,6 +218,12 @@
           <a class="nav-link" href="farm-builder.html">
             <i class="material-icons-round">build</i>
             <p>Farm Builder</p>
+          </a>
+        </li>
+        <li class="nav-item" id="tiktokNFTs" style="display:none;">
+          <a class="nav-link" href="tiktok.html">
+            <i class="material-icons-round">collections</i>
+            <p>TikTok™ NFTs</p>
           </a>
         </li>
         <li class="nav-item bridgeNav">
@@ -372,15 +384,14 @@
 
       <div class="sidebar-divider"></div>
 
-
-       <ul class="nav">
-         <li class="nav-item">
-           <a id="menu-collapse" class="nav-link">
-             <i class="material-icons-round">menu_open</i>
-             <p>Collapse menu</p>
-           </a>
-         </li>
-       </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a id="menu-collapse" class="nav-link">
+            <i class="material-icons-round">menu_open</i>
+            <p>Collapse menu</p>
+          </a>
+        </li>
+      </ul>
 
       <div class="sidebar-bottom">
         <div class="sidebar-text">
@@ -439,12 +450,6 @@
       <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-          <script>
-            // fix for initial doubleclick required upon page load - its not needed here
-            // $(document).ready(function () {
-            //   $('#chainSelectionDropdown').click();
-            // });
-          </script>
 
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
@@ -513,44 +518,44 @@
                         </div>
                       </div>
                       <div class="card-links">
+                        {{#ifNotEquals web ""}}
+                            <a href="{{web}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-globe"></i> Web</a>
+                        {{/ifNotEquals}}
+
                         {{#ifNotEquals custom_link_value ""}}
-                            <a href="{{custom_link_value}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-external-link"></i> {{custom_link_name}}</a>
+                            <a href="{{custom_link_value}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-external-link"></i> {{custom_link_name}}</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals twitter ""}}
-                            <a href="{{twitter}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-twitter"></i> Twitter</a>
+                            <a href="{{twitter}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals telegram ""}}
-                            <a href="{{telegram}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-telegram"></i> Telegram</a>
+                            <a href="{{telegram}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-telegram"></i> Telegram</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals discord ""}}
-                            <a href="{{discord}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-discord"></i> Discord</a>
+                            <a href="{{discord}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-discord"></i> Discord</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals instagram ""}}
-                            <a href="{{instagram}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-instagram"></i> Instagram</a>
+                            <a href="{{instagram}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals medium ""}}
-                            <a href="{{medium}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-medium"></i> Medium</a>
+                            <a href="{{medium}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-medium"></i> Medium</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals youtube ""}}
-                            <a href="{{youtube}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-youtube"></i> Youtube</a>
-                        {{/ifNotEquals}}
-
-                        {{#ifNotEquals web ""}}
-                            <a href="{{web}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-home"></i> Web</a>
+                            <a href="{{youtube}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals email ""}}
-                            <a href="mailto:{{email}}" class="card-link" style="white-space: nowrap;"><i class="fa fa-envelope"></i> Email</a>
+                            <a href="mailto:{{email}}" class="card-link" style="white-space: nowrap;" target="_blank"><i class="fa fa-envelope"></i> Email</a>
                         {{/ifNotEquals}}
 
                         {{#ifNotEquals phone ""}}
-                            <div class="mt-2" style="white-space: nowrap;">Phone: {{phone}}</div>
+                            <div class="mt-2" style="white-space: nowrap;"><i class="fa fa-phone"></i> {{phone}}</div>
                         {{/ifNotEquals}}
                       </div>
                     </div>
@@ -666,17 +671,21 @@
                     {{/ifNotEquals}}
 
                       {{#ifNotEquals options ""}}
-                      <div class="dropdown">
-                          <a href="javascript:void(0);" class="btn btn-secondary btn-light dropdown-toggle mb-3" id="farmNftActions{{erc1155}}{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="material-icons-round">
-                                create
-                              </span>
+                      <div class="dropdown-btn mt-3 mb-3">
+                        <a href="javascript:void(0);" class="dropdown-toggle dropdown-primary mb-3" id="farmNftActions{{erc1155}}{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          OPTIONS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="farmNftActions{{erc1155}}{{id}}">
+                          <a href="javascript:void(0);"id="farmEditData{{erc1155}}{{id}}" class="farmEditData dropdown-item" data-toggle="modal" data-target="#farmEditDataModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}">
+                            Edit Data
                           </a>
-                          <div class="dropdown-menu" aria-labelledby="farmNftActions{{erc1155}}{{id}}">
-                              <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#farmEditDataModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}" id="farmEditData{{erc1155}}{{id}}" class="farmEditData">Edit Data</a>
-                              <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#farmRemoveNftsModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}" id="farmRemoveNfts{{erc1155}}{{id}}" class="farmRemoveNfts">Remove NFTs</a>
-                              <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#farmSetShopPriceModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}" data-shop-address="{{shop}}" id="farmSetShopPrice{{erc1155}}{{id}}" class="farmSetShopPrice">Set Shop Price</a>
-                          </div>
+                          <a href="javascript:void(0);" id="farmRemoveNfts{{erc1155}}{{id}}" class="dropdown-item farmRemoveNfts" data-toggle="modal" data-target="#farmRemoveNftsModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}">
+                            Remove NFTs
+                          </a>
+                          <a href="javascript:void(0);" style="display:none;" id="farmSetShopPrice{{erc1155}}{{id}}" class="dropdown-item farmSetShopPrice" data-toggle="modal" data-target="#farmSetShopPriceModal" data-contract-address="{{erc1155}}" data-contract-id="{{id}}" data-shop-address="{{shop}}">
+                            Set Shop Price
+                          </a>
+                        </div>
                       </div>
                       {{/ifNotEquals}}
 
@@ -765,7 +774,9 @@
                   <input type="hidden" id="farmSelectedWalletId" value="" />
 
                   <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#farmWalletModal"
-                    id="farmSelectNftButton">Open Wallet</button>
+                    id="farmSelectNftButton">
+                    <i class="material-icons-round" style="margin-right: 5px;">image</i>
+                    Open Wallet</button>
 
                   <div class="row" id="farmSelectedCode"></div>
 
@@ -895,6 +906,20 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
+              </div>
+              <div>
+                
+
+                <div class="row mb-2 pb-2 helperHeader" style="border-bottom: 1px solid #ccc">
+                  <div class="col-2"><p>NFT</p></div>
+                  <div class="col-3"><p>Name</p></div>
+                  <div class="col-3"><p>Collection</p></div>
+                  <div class="col-2"><p>No.</p></div>
+                  <div class="col-2"><p>You own</p></div>
+                </div>
+                
+
+
               </div>
               <div class="modal-body modal-non-nft-content" id="walletModalBody">
               </div>

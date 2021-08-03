@@ -27,7 +27,13 @@
   <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
     integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 
@@ -359,7 +365,7 @@
   <div class="sidebar">
     <div class="logo">
       <a href="https://unifty.io" class="simple-text logo-normal">
-        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <img src="assets/img/logo_transparent.png" width="90" border="0" />
         <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
           Binance Smart Chain
         </div>
@@ -404,6 +410,12 @@
             <p>Farm Builder</p>
           </a>
         </li>
+          <li class="nav-item" id="tiktokNFTs" style="display:none;">
+              <a class="nav-link" href="tiktok.html">
+                  <i class="material-icons-round">collections</i>
+                  <p>TikTok™ NFTs</p>
+              </a>
+          </li>
         <li class="nav-item bridgeNav">
           <a class="nav-link" href="bridge.html">
             <i class="material-icons-round">360</i>
@@ -562,15 +574,14 @@
 
       <div class="sidebar-divider"></div>
 
-      
-       <ul class="nav">
-         <li class="nav-item">
-           <a id="menu-collapse" class="nav-link">
-             <i class="material-icons-round">menu_open</i>
-             <p>Collapse menu</p>
-           </a>
-         </li>
-       </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a id="menu-collapse" class="nav-link">
+            <i class="material-icons-round">menu_open</i>
+            <p>Collapse menu</p>
+          </a>
+        </li>
+      </ul>
 
       <div class="sidebar-bottom">
         <div class="sidebar-text">
@@ -629,12 +640,6 @@
       <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-          <script>
-            // fix for initial doubleclick required upon page load
-            $(document).ready(function () {
-              $('#chainSelectionDropdown').click();
-            });
-          </script>
 
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
@@ -681,10 +686,88 @@
             <div class="col-xl-12 ">
                 <h1>Changelog</h1>
             </div>
-
         </div>
+
         <div class="col-xl-12 changelog-date">
-          <h3>July 5, 2021</h3>
+          <h3>August 3<sup>rd</sup>, 2021</h3>
+      </div>
+      <div class=" col-xl-12 ">
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-new">
+                      New
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>Add new employees on About Unifty</span>
+              </div>
+          </div>
+
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-improved">
+                      Improved
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>Wallet options</span>
+              </div>
+          </div>
+
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-fixed">
+                      Fixed
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>GUI issues</span>
+              </div>
+          </div>
+      </div>
+        <div class="col-xl-12 changelog-date">
+          <h3>July 21<sup>st</sup>, 2021</h3>
+      </div>
+      <div class=" col-xl-12 ">
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-new">
+                      New
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>Add collapsible sidebar menu</span>
+                  <span>Add feature automatically create NFTs from your TikTok posts</span>
+                  <span>Add new Farm builder UI</span>
+              </div>
+          </div>
+
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-improved">
+                      Improved
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>﻿Assets page beautified</span>
+              </div>
+          </div>
+
+          <div class="changelog-grid">
+              <div>
+                  <span class="changelog-tag-fixed">
+                      Fixed
+                  </span>
+              </div>
+              <div class="changelog-text">
+                  <span>GUI issues</span>
+              </div>
+          </div>
+      </div>
+
+
+        <div class="col-xl-12 changelog-date">
+          <h3>July 5<sup>th</sup>, 2021</h3>
         </div>
         <div class=" col-xl-12 ">
           <div class="changelog-grid">
@@ -694,7 +777,6 @@
               </span>
             </div>
             <div class="changelog-text">
-              <span>Add collapsible sidebar menu</span>
               <span>Add new items in the sidebar menu</span>
               <span>Add roadmap self standing page</span>
               <span>Add assets page</span>
@@ -703,7 +785,7 @@
           </div>
 
         <div class="col-xl-12 changelog-date">
-            <h3>June 28, 2021</h3>
+            <h3>June 28<sup>th</sup>, 2021</h3>
         </div>
         <div class=" col-xl-12 ">
             <div class="changelog-grid">
@@ -742,7 +824,7 @@
         </div>
 
         <div class="col-xl-12 changelog-date">
-            <h3>June 15, 2021</h3>
+            <h3>June 15<sup>th</sup>, 2021</h3>
         </div>
         <div class=" col-xl-12 ">
             <div class="changelog-grid">
@@ -790,7 +872,7 @@
         </div>
 
             <div class="col-xl-12 changelog-date">
-                <h3>May 31, 2021</h3>
+                <h3>May 31<sup>st</sup>, 2021</h3>
             </div>
             <div class=" col-xl-12 ">
                 <div class="changelog-grid">

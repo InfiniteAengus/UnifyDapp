@@ -523,6 +523,14 @@ function TncDapp() {
 
     this.performCancellation = async function(){
 
+        let ask = await tncLibMarket.getAskBase($('#nftBuyIndex').val());
+
+        if(parseInt(ask.amounts) == 0){
+
+            _alert('The offer has been sold or cancelled already.');
+            return;
+        }
+
         toastr.remove();
         $(this).html('Pending Transaction...');
         $(this).prop('disabled', 'disabled');
@@ -1297,6 +1305,21 @@ function TncDapp() {
 
         let nftCount = 0;
         let collections = [];
+
+        // tiktok-address
+        if(chain_id == '38') {
+            let verse = tncLib.tiktokCollection;
+            collections.push(verse);
+            let nfts = await tncLib.getNftsByAddress(address, verse);
+            for (let i = 0; i < nfts.length; i++) {
+                if (await tncLib.balanceof(verse, address, nfts[i]) > 0) {
+                    _this.renderSellSelection(verse, nfts[i], address);
+                    await sleep(300);
+                    nftCount++;
+                    await waitForDiv($('#nftSellWallet'), nftCount);
+                }
+            }
+        }
 
         // uniftyverse
         if(chain_id == '1') {

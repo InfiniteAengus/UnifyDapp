@@ -123,7 +123,7 @@ function TncDapp() {
                 return;
             }
 
-            console.log("ask: ", ask);
+            console.log("ask: ", ask, index);
 
             price = ask.erc1155Address.length == 1 ? ask.pricePerItem[0] : ask.price;
 

@@ -23,13 +23,18 @@
     padding: 1.5rem;
     color: var(--modal-text);
     border-bottom: 0.1rem solid var(--modal-border-text);
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-primary);
 
     h5.modal-title {
-      font-family: "Poppins", sans-serif;
+      font-family: "Baloo 2", sans-serif;
       font-size: 2rem;
       font-weight: 700;
       letter-spacing: 0.48px;
+    }
+
+    .infoHover{
+      margin: 0 1rem 0 auto;
+      padding: 0;
     }
 
     //icon close
@@ -37,6 +42,7 @@
       color: var(--modal-text);
       opacity: 1;
       text-shadow: none;
+      margin: -1rem;
 
       &:focus {
         outline: none;
@@ -59,23 +65,44 @@
       margin-bottom: 1rem;
     }
 
+    label{
+      width: max-content;
+    }
+
     select {
       background-color: transparent;
       height: auto;
-      background-image: none;
       border: 0.1rem solid $modal-border;
       border-radius: 0.8rem;
       font-size: 1.3rem;
       color: var(--modal-text);
       padding: 1rem;
 
+      background-image: linear-gradient(
+          45deg,
+          transparent 50%,
+          var(--primary-color) 60%
+        ),
+        linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
+      background-position: calc(100% - 28px) 16px, calc(100% - 22px) 16px,
+        100% 0;
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
       &:hover {
         cursor: var(--cursor-pointer);
       }
 
+      optgroup {
+        background-color: var(--bg-secondary);
+        color: #a3abb2;
+      }
+
       option {
-        background-color: var(--bg-tertiary);
-        padding: 0.5rem 0;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
       }
     }
 
@@ -97,6 +124,191 @@
         border: 0.1rem solid var(--primary-hover-dark);
         color: var(--primary-hover-dark);
         cursor: var(--cursor-pointer) !important;
+      }
+    }
+
+    form .form-group.img-selector {
+      display: flex;
+      flex-direction: column;
+
+      div.img-side {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        p {
+          height: max-content;
+          margin-left: 1.5rem;
+        }
+      }
+
+      label {
+        width: max-content;
+        color: var(--modal-text);
+        padding: 1rem;
+        border: 0.1rem solid var(--modal-text);
+        border-radius: 0.8rem;
+      }
+
+      p {
+        margin: 0.5rem;
+      }
+    }
+
+    #rewardPerDay {
+      display: flex;
+      justify-content: space-around;
+
+      button {
+        margin-left: 1rem;
+      }
+    }
+
+    #farmSocialMediaAdd {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      p {
+        margin: 0;
+        margin-left: 1rem;
+      }
+    }
+
+    .farmSocialMediaGroup {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .socialMediaName[disabled="disabled"] {
+      opacity: 0.6;
+    }
+
+    .customLinkDiv{
+      display: flex;
+      justify-content: space-between;
+
+      input{
+        width: 49%;
+
+      }
+    }
+
+    .range-wrap {
+      position: relative;
+      margin: 1rem auto 3rem;
+
+      input {
+        cursor: var(--cursor-pointer) !important;
+      }
+    }
+    .range {
+      width: 100%;
+      background-color: transparent;
+      -webkit-appearance: none;
+
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: var(--bg-primary);
+        border-radius: 10px;
+        border: 0px solid #000000;
+      }
+      &::-webkit-slider-thumb {
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -14px;
+      }
+      &:focus::-webkit-slider-runnable-track {
+        background: var(--bg-primary);
+      }
+      &::-moz-range-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: var(--bg-primary);
+        border-radius: 10px;
+        border: 0px solid #000000;
+      }
+      &::-moz-range-thumb {
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer;
+      }
+      &::-ms-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      &::-ms-fill-lower {
+        background: var(--bg-primary);
+        border: 0px solid #000000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px #000000;
+      }
+      &::-ms-fill-upper {
+        background: var(--bg-primary);
+        border: 0px solid #000000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px #000000;
+      }
+      &::-ms-thumb {
+        margin-top: 1px;
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer;
+      }
+      &:focus::-ms-fill-lower {
+        background: var(--bg-primary);
+      }
+      &:focus::-ms-fill-upper {
+        background: var(--bg-primary);
+      }
+    }
+
+    .bubble {
+      background: var(--primary-color);
+      color: white;
+      padding: 4px 12px;
+      position: absolute;
+      border-radius: 4px;
+      left: 50%;
+      top: 3rem;
+      transform: translateX(-50%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--primary-color);
+        left: 50%;
       }
     }
 
@@ -133,7 +345,6 @@
 
     form .form-group input,
     .col-3 input {
-      height: auto;
       background-color: transparent !important;
       background-image: none;
       border: 0.1rem solid var(--modal-border-text);
@@ -168,6 +379,11 @@
       color: var(--modal-text);
       transition: all 0.3s;
 
+      &::placeholder {
+        font-size: 1.3rem;
+        color: var(--modal-border-text);
+      }
+
       &:focus {
         border: 0.1rem solid var(--primary-color);
       }
@@ -195,15 +411,77 @@
         }
       }
     }
+
+    #farmSelectNftButton{
+      display:flex;
+      align-items: center;
+    }
+  }
+
+  
+  .helperHeader{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 2rem !important;
+
+    p{
+      margin:0;
+      font-weight: 600;
+    }
+  }
+
+  #feeCollection{
+    h3{
+      font-family: Baloo 2;
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.56;   
+      color: var(--primary-color);
+
+    }
+  }
+
+  .farm-builder-checkbox {
+    display: flex;
+    align-items: flex-start;
+
+    input {
+      margin-top: 0.2rem;
+      margin-right: 1rem;
+
+      cursor: var(--cursor-pointer);
+    }
+
+    label {
+      font-family: "Roboto Mono";
+      font-size: 1.3rem;
+      line-height: 1.56;    
+
+      cursor: var(--cursor-pointer);
+
+      span{
+        
+        font-weight: 500;
+        color: var(--primary-color);
+      }
+    }
   }
 
   .modal-footer {
+    background-color: var(--bg-primary);
     border-top: 0.1rem solid var(--modal-border-text);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
     line-height: 1.3;
+
+    .disabled{
+      opacity: 0.65;
+      cursor: var(--cursor-default);
+    }
 
     & > :not(:first-child) {
       margin-left: 0;
@@ -265,70 +543,118 @@
 }
 
 //Market builder
-#marketForm {
-  #tierGroup {
-    select {
-      background-image: linear-gradient(
-          45deg,
-          transparent 50%,
-          var(--primary-color) 60%
-        ),
-        linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
-      background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px,
-        100% 0;
-      background-size: 6px 6px, 6px 6px;
-      background-repeat: no-repeat;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-  }
-}
+// #marketForm {
+//   #tierGroup {
+//     select {
+//       background-image: linear-gradient(
+//           45deg,
+//           transparent 50%,
+//           var(--primary-color) 60%
+//         ),
+//         linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
+//       background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px,
+//         100% 0;
+//       background-size: 6px 6px, 6px 6px;
+//       background-repeat: no-repeat;
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//     }
+//   }
+// }
 
 #nftSellWallet {
   .approveNft {
     display: block;
   }
+}
 
-  //Error modal
-  .modalErrorDiv {
+//Error modal
+.modalErrorDiv {
+  display: flex;
+  align-items: center;
+
+  .imageContainer {
     display: flex;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-right: 2.4rem;
+
+    justify-content: center;
     align-items: center;
-
-    .imageContainer {
-      display: flex;
-      width: 4.8rem;
-      height: 4.8rem;
-      margin-right: 2.4rem;
-
-      justify-content: center;
-      align-items: center;
-      img {
-        width: max-content;
-        height: max-content;
-      }
-    }
-
-    h3 {
-      margin-bottom: 0;
-      color: var(--heading-color);
-      font-weight: 500;
-    }
-
-    h4 {
-      color: var(--heading-color);
-      font-weight: bold;
-    }
-
-    p {
-      color: var(--text-primary);
-      margin: 0;
+    img {
+      width: max-content;
+      height: max-content;
     }
   }
-  .modalDivider {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.24);
 
-    margin: 1rem 0;
+  h3 {
+    margin-bottom: 0;
+    color: var(--heading-color);
+    font-weight: 500;
+  }
+
+  h4 {
+    color: var(--heading-color);
+    font-weight: bold;
+  }
+
+  p {
+    color: var(--text-primary);
+    margin: 0;
+  }
+}
+
+.modalDivider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.24);
+
+  margin: 1rem 0;
+}
+
+
+.modalFarmInfo{
+  display: flex;
+  align-items: center;
+
+  margin: 0.7rem 0.4rem;
+
+  img{
+    width: 4rem;
+  }
+
+  h3{
+    margin: 0;
+    margin-left: 1rem;
+
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+}
+
+#farmShopEditModal{
+  .modal-body{
+
+    .form-check{
+      margin: 1.5rem 0;
+
+      input{
+        margin-top: 0.35rem;
+      }
+  
+      label{
+        width: initial;
+  
+        span{
+          display: initial;
+          position: initial; 
+  
+          &.radioBtnLabel{
+            color: var(--primary-color);
+            font-weight: 500;
+          }
+        }
+      }
+    }
   }
 }

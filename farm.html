@@ -5,8 +5,8 @@
     <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
     <title>Your Farms - Unifty</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
     <link rel="manifest" href="site.webmanifest">
     <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
@@ -15,19 +15,19 @@
     <script type="text/javascript" src="js/handlebars.js"></script>
     <script type="text/javascript" src="js/ipfs.js"></script>
     <script type="text/javascript" src="js/buffer.js"></script>
-    <script type="text/javascript" src="js/config.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/misc.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/nifABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/genesisABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/farmABI-legacy.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/lib-legacy.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/farm-dapp-legacy.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/dapp-init.js?v=1.9.11"></script>
-    <script type="text/javascript" src="js/cookie.js?v=1.9.11"></script>
+    <script type="text/javascript" src="js/config.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/farmABI-legacy.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/lib-legacy.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/farm-dapp-legacy.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.12"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.12"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/sidebar.js"></script>  
     <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -44,7 +44,12 @@
             new ClipboardJS('.btn-clipboard');
         });
     </script>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -162,7 +167,7 @@
 <div class="sidebar">
     <div class="logo">
         <a href="https://unifty.io" class="simple-text logo-normal">
-            <img src="assets/img/unifty2.png" width="125" border="0" />
+            <img src="assets/img/logo_transparent.png" width="90" border="0" />
             <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
                 Binance Smart Chain
             </div>
@@ -207,6 +212,12 @@
               <p>Farm Builder</p>
             </a>
           </li>
+            <li class="nav-item" id="tiktokNFTs" style="display:none;">
+                <a class="nav-link" href="tiktok.html">
+                    <i class="material-icons-round">collections</i>
+                    <p>TikTok™ NFTs</p>
+                </a>
+            </li>
           <li class="nav-item bridgeNav">
             <a class="nav-link" href="bridge.html">
               <i class="material-icons-round">360</i>
@@ -365,16 +376,15 @@
   
         <div class="sidebar-divider"></div>
 
+        <ul class="nav">
+            <li class="nav-item">
+              <a id="menu-collapse" class="nav-link">
+                <i class="material-icons-round">menu_open</i>
+                <p>Collapse menu</p>
+              </a>
+            </li>
+          </ul>
 
-       <ul class="nav">
-         <li class="nav-item">
-           <a id="menu-collapse" class="nav-link">
-             <i class="material-icons-round">menu_open</i>
-             <p>Collapse menu</p>
-           </a>
-         </li>
-       </ul>
-  
         <div class="sidebar-bottom">
           <div class="sidebar-text">
             <div class="sidebar-text icons">
@@ -432,12 +442,6 @@
     <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-            <script>
-                // fix for initial doubleclick required upon page load
-                // $(document).ready(function () {
-                //   $('#chainSelectionDropdown').click();
-                // });
-            </script>
 
             <div class="dropdown ml-3 mr-3 dropdown--chains">
                 <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"

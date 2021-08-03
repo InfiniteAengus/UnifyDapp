@@ -6,8 +6,8 @@
   <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
   <title>Farm Builder - Unifty</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
   <link rel="manifest" href="site.webmanifest">
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
@@ -16,20 +16,20 @@
   <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/ipfs.js"></script>
   <script type="text/javascript" src="js/buffer.js"></script>
-  <script type="text/javascript" src="js/config.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/misc.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/nifABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/genesisABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farmABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/lib.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/farm-builder-dapp.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/dapp-init.js?v=1.9.11"></script>
-  <script type="text/javascript" src="js/cookie.js?v=1.9.11"></script>
+  <script type="text/javascript" src="js/config.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/farm-builder-dapp.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.12"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.12"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>  
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -48,7 +48,13 @@
   </script>
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
     integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
   <style type="text/css">
@@ -162,7 +168,7 @@
   <div class="sidebar">
     <div class="logo">
       <a href="https://unifty.io" class="simple-text logo-normal">
-        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <img src="assets/img/logo_transparent.png" width="90" border="0" />
         <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
           Binance Smart Chain
         </div>
@@ -205,6 +211,12 @@
           <a class="nav-link" href="farm-builder.html">
             <i class="material-icons-round">build</i>
             <p>Farm Builder</p>
+          </a>
+        </li>
+        <li class="nav-item" id="tiktokNFTs" style="display:none;">
+          <a class="nav-link" href="tiktok.html">
+            <i class="material-icons-round">collections</i>
+            <p>TikTok™ NFTs</p>
           </a>
         </li>
         <li class="nav-item bridgeNav">
@@ -365,15 +377,14 @@
 
       <div class="sidebar-divider"></div>
 
-
-       <ul class="nav">
-         <li class="nav-item">
-           <a id="menu-collapse" class="nav-link">
-             <i class="material-icons-round">menu_open</i>
-             <p>Collapse menu</p>
-           </a>
-         </li>
-       </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a id="menu-collapse" class="nav-link">
+            <i class="material-icons-round">menu_open</i>
+            <p>Collapse menu</p>
+          </a>
+        </li>
+      </ul>
 
       <div class="sidebar-bottom">
         <div class="sidebar-text">
@@ -432,12 +443,6 @@
       <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-          <script>
-            // fix for initial doubleclick required upon page load
-            // $(document).ready(function () {
-            //   $('#chainSelectionDropdown').click();
-            // });
-          </script>
 
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
@@ -524,63 +529,67 @@
 
         <!-- Farms View -->
         <script id="farm-template" type="text/x-handlebars-template">
-                <div class="farmListing mb-3">
-                    <div class="card card-profile">
-                        {{#ifNotEquals image ""}}
-                        <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
-                        {{/ifNotEquals}}
-                        <div class="card-body">
-                            <div class="mt-5">
-                              <p class="text-truncate">
-                                  <button class="btn btn-sm btn-clipboard btn-clipboard{{index}}" data-clipboard-text="{{farm}}" data-toggle="tooltip" data-placement="top" title="Copied">
-                                      <i class="fa fa-clipboard"></i>
-                                  </button>
-                                  <a style="font-size: 1.2rem !important;" href="{{explorer}}{{farm}}" target="_blank">{{farm}}</a>
-                              </p>
-                            </div>
-
-                            <h5 class="card-title">
-                              <button class="btn btn-sm btn-clipboard btn-clipboard{{index2}}" data-clipboard-text="{{url}}" data-toggle="tooltip" data-placement="top" title="Copied">
-                                  <i class="fa fa-clipboard"></i>
-                              </button>
-                              <a href="{{url}}">{{name}} <i class="fa fa-external-link"></i></a>
-                            </h5>
-
-                            <div class="mb-3">
-                                <span class="badge badge-info">NFT Count: {{nftcount}}</span>
-                                <span class="badge badge-info">Controller Funds: {{controllerFunds}} {{currency}}</span>
-                                <span class="badge badge-info">Total Fees: {{totalFees}} {{currency}}</span>
-                            </div>
 
 
-                          {{#ifNotEquals description ""}}
-                            <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
-                              <span class="material-icons-round">
-                                info
-                              </span>
-                            </button>
-                          {{/ifNotEquals}}
+          <div class="farmListing mb-3">
+            <div class="card card-profile">
+                {{#ifNotEquals image ""}}
+                <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                {{/ifNotEquals}}
 
-                            <div class="dropdown">
-                                <a href="javascript:void(0);" class="btn btn-secondary btn-light dropdown-toggle mb-3" id="farmActions{{farm}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="material-icons-round">
-                                    create
-                                  </span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="farmActions{{farm}}">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#farmInfoModal" data-contract-address="{{farm}}" id="farmEditInfo{{farm}}" class="farmEditInfo">Edit Farm Info</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editStakeModal" data-contract-address="{{farm}}" id="farmEditStakes{{farm}}">Edit Stakes</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editRewardRateModal" data-contract-address="{{farm}}" id="farmEditRewardRate{{farm}}">Edit Reward Rate</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editControllerModal" data-contract-address="{{farm}}" id="farmEditController{{farm}}">Edit Controller</a>
-                                    <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonModal" data-contract-address="{{farm}}" id="farmShopAddon{{farm}}">Buy Shop Addon</a>
-                                    <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonWhitelistAdminModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}" id="farmShopAddonWhitelistAdmin{{farm}}">Shop Addon Step 2</a>
-                                    <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonPauserModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}" id="farmShopAddonPauser{{farm}}">Shop Addon Step 3</a>
-                                    <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#farmShopEditModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}"  data-shop-runmode="{{runmode}}"  id="farmShopEdit{{farm}}">Edit Shop Addon</a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card-body">
+
+                    <div class="dropdown-btn mt-3">
+                      <a href="javascript:void(0);" class="dropdown-toggle dropdown-primary mb-3" id="farmActions{{farm}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        OPTIONS
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="farmActions{{farm}}">
+                          <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#farmInfoModal" data-contract-address="{{farm}}" id="farmEditInfo{{farm}}" class="farmEditInfo">Edit Farm Info</a>
+                          <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editStakeModal" data-contract-address="{{farm}}" id="farmEditStakes{{farm}}">Edit Stakes</a>
+                          <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editRewardRateModal" data-contract-address="{{farm}}" id="farmEditRewardRate{{farm}}">Edit Reward Rate</a>
+                          <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#editControllerModal" data-contract-address="{{farm}}" id="farmEditController{{farm}}">Edit Controller</a>
+                          <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonModal" data-contract-address="{{farm}}" id="farmShopAddon{{farm}}">Buy Shop Addon</a>
+                          <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonWhitelistAdminModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}" id="farmShopAddonWhitelistAdmin{{farm}}">Shop Addon Step 2</a>
+                          <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#shopAddonPauserModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}" id="farmShopAddonPauser{{farm}}">Shop Addon Step 3</a>
+                          <a href="javascript:void(0);" style="display:none;" class="dropdown-item" data-toggle="modal" data-target="#farmShopEditModal" data-contract-address="{{farm}}" data-shop-address="{{shop}}"  data-shop-runmode="{{runmode}}"  id="farmShopEdit{{farm}}">Edit Shop Addon</a>
+                      </div>
                     </div>
+
+                    <div class="mt-5">
+                      <p class="text-truncate">
+                          <button class="btn btn-sm btn-clipboard btn-clipboard{{index}}" data-clipboard-text="{{farm}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                              <i class="fa fa-clipboard"></i>
+                          </button>
+                          <a style="font-size: 1.2rem !important;" href="{{explorer}}{{farm}}" target="_blank">{{farm}}</a>
+                      </p>
+                    </div>
+
+                    <h5 class="card-title">
+                      <!-- <button class="btn btn-sm btn-clipboard btn-clipboard{{index2}}" data-clipboard-text="{{url}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                          <i class="fa fa-clipboard"></i>
+                      </button> -->
+                      <a href="{{url}}">{{name}} <i class="fa fa-external-link"></i></a>
+                    </h5>
+
+                    <div class="mb-3">
+                        <span class="badge badge-info">NFT Count: {{nftcount}}</span>
+                        <span class="badge badge-info">Controller Funds: {{controllerFunds}} {{currency}}</span>
+                        <span class="badge badge-info">Total Fees: {{totalFees}} {{currency}}</span>
+                    </div>
+
+
+                  {{#ifNotEquals description ""}}
+                    <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                      <span class="material-icons-round">
+                        info
+                      </span>
+                      Description
+                    </button>
+                  {{/ifNotEquals}}
                 </div>
+
+            </div>
+        </div>
 
 
             </script>
@@ -603,8 +612,14 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="farmModalLabel">New Farm</h5>
+
+                <button type="button" class="btn btn-secondary infoHover" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Information" data-content="Hover over the form input title for more information.">
+                  <span class="material-icons-round">
+                    info
+                  </span>
+                </button>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">×</span>
                 </button>
               </div>
               <div class="modal-body modal-non-nft-content">
@@ -613,116 +628,117 @@
 
                   <form id="farmForm" onsubmit="return false;">
 
-                    <p>
-                      <strong>NOTE:</strong> please don't use deflationy or inflationary staking tokens (e.g. SafeMoon based contracts).<br/>
-                      Those tokens are known to cause problems when being staked in smart contracts as they don't behave as of the EIP-20 standard.<br/><br/>
-                      Alternatively you can use Liquidity-Tokens instead.
-                      <br/><br/>
-                      Please understand that Unifty is not responsible for faulty 3rd-party tokens. In doubts, please contact the token developer directly.
-                    </p>
-
                     <div class="form-group">
-                      <label for="farmName">Name<span class="required">*</span></label>
+                      <label for="farmName" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Name" data-content="Enter the name you want for your farm">
+                        Name<span class="required">*</span>
+                      </label>
                       <input type="text" placeholder="Enter a name for your farm" class="form-control" id="farmName">
                     </div>
 
                     <div class="form-group">
-                      <label for="farmTokenAddress">Staking Token<span class="required">*</span></label>
+                      <label for="farmTokenAddress" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Staking token" data-content="Use the token you would like to use or select custom token if your token is not in the list">
+                        Staking Token<span class="required">*</span>
+                      </label>
                       <select class="form-control" id="farmTokenAddress">
                       </select>
                     </div>
 
                     <div id="farmCustomTokenAddressWrapper" class="form-group" style="display:none;">
-                      <label for="farmCustomTokenAddress">Custom <span class="networkStd"></span> Token Address<span class="required">*</span></label>
+                      <label for="farmCustomTokenAddress" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Custom token" data-content="Enter a contract address for the token, which you can find on a block explorer like Etherscan">
+                        Custom <span class="networkStd"></span> Token Address<span class="required">*</span>
+                      </label>
                       <input type="text" placeholder="Enter a token address to stake with" class="form-control"
                         id="farmCustomTokenAddress">
                       <small id="farmCustomTokenAddressInfo" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
-                      <label for="farmMinStake">Minimum Stake<span class="required">*</span></label>
+                      <label for="farmMinStake" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Minimum stake" data-content="Enter a minimum of tokens a user needs to stake">
+                        Minimum Stake<span class="required">*</span>
+                      </label>
                       <input type="text" placeholder="Minimum amount of tokens to stake with" class="form-control"
                         id="farmMinStake" value="0">
                     </div>
 
                     <div class="form-group">
-                      <label for="farmMaxStake">Maximum Stake<span class="required">*</span></label>
+                      <label for="farmMaxStake" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Maximum stake" data-content="Enter the maximum tokens a user can stake">
+                        Maximum Stake<span class="required">*</span>
+                      </label>
                       <input type="text" placeholder="Maximum amount of tokens to stake with" class="form-control"
                         id="farmMaxStake">
                     </div>
 
                     <div class="form-group">
-                      <label for="farmDescription">Description</label>
-                      <textarea class="form-control" id="farmDescription" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="farmImageFile">Click to Choose Image....</label>
-                      <input type="file" class="form-control-file imageFile" id="farmImageFile" accept="image/*">
-                      <div class="imageFileDisplay mt-3"></div>
-                      <input type="hidden" id="farmImageUrl" value="" />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="farmControllerAddress">Controller Address<span class="required">*</span></label>
+                      <label for="farmControllerAddress" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Controller address" data-content="Enter farms owner wallet address">
+                        Controller Address<span class="required">*</span>
+                      </label>
                       <input type="text"
                         placeholder="The Ethereum address of the controller. Used to receive controller fees."
                         class="form-control" id="farmControllerAddress">
                     </div>
 
-                    <fieldset class="form-group">
-                      <legend>Social (optional)</legend>
-
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control mb-3" placeholder="Twitter Url" id="farmTwitter">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Discord Url" id="farmDiscord">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Telegram Url" id="farmTelegram">
+                    
+                    <div class="form-group img-selector">
+                      <div class="imageFileDisplay mb-3"></div>
+                      <div class="img-side">
+                          <label for="farmImageFile" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Farm image" data-content="Upload farm image">
+                            <i class="material-icons-round" style="margin-right: 5px;">image</i>
+                            Click to Choose Image
+                          </label>
+                          <input type="file" class="form-control-file imageFile" id="farmImageFile" accept="image/*">
+                          <input type="hidden" id="farmImageUrl" value="" />
+                        <p>You can upload JPG, PNG or GIF file</p>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="farmDescription" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-content="Enter description of the farm">
+                        Description
+                      </label>
+                      <textarea class="form-control" id="farmDescription" rows="3" placeholder="Enter a description for your farm"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="farmSocialMediaName" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Social media" data-content="Enter social media links attached to the farm">
+                        Social Media (optional)
+                      </label>
+                      <div class="farmSocialMediaGroupWrapper">
+                        <div class="farmSocialMediaGroup row mb-2">
+                          <select name="socialMediaName[]" class="socialMediaName form-control col-4">
+                            <option value="website">Website</option>
+                            <option value="twitter">Twitter</option>
+                            <option value="discord">Discord</option>
+                            <option value="telegram">Telegram</option>
+                            <option value="medium">Medium</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                          </select>
+                          <input type="text" name="socialMediaLink[]" value="" class="form-control col-7" placeholder="Link to your social media account">
+                          <a class="removeSocial" style="display:flex; align-items: center;">
+                            <i class="material-icons-round">cancel</i>                          
+                          </a>
                         </div>
                       </div>
+                      <a type="button" id="farmSocialMediaAdd" name="farmSocialMediaAdd" class="farmSocialMediaAdd mt-3">
+                        <i class="material-icons-round">add_circle</i>
+                        <p>Add More Social Media</p>
+                      </a>
+                    </div>
 
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control mb-3" placeholder="Medium Url" id="farmMedium">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Instagram Url" id="farmInstagram">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Youtube Url" id="farmYoutube">
-                        </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control mb-3" placeholder="Website Url" id="farmWeb">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Email address" id="farmEmail">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Phone" id="farmPhone">
-                        </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="col">
-                          <label for="farmCustomLink">Custom Link</label>
+                    <div class="form-group">
+                        <label for="farmCustomLink" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Custom link" data-content="Enter a custom link attached to the farm">
+                          Custom Link
+                        </label>
+                        <div class="customLinkDiv">
                           <input type="text" class="form-control" placeholder="Enter a link to a custom url"
                             id="farmCustomLink">
-                        </div>
-                        <div class="col">
-                          <label for="farmCustomLinkText">Custom Link Text</label>
                           <input type="text" class="form-control" placeholder="Enter a link text for your custom url"
                             id="farmCustomLinkText">
                         </div>
-                      </div>
-
-                    </fieldset>
+                    </div>
 
                     <input type="hidden" id="farmUpdateAddress" value="" />
                     <input type="hidden" id="farmIsEdit" value="0" />
@@ -732,20 +748,25 @@
               </div>
 
               <div class="modal-footer">
-                <div id="feeCollection" class="footer-description"><span id="ethFeeFarm"></span> <span class="currency"></span> developer fee per
-                  farm. <div id="paymentDescription">Unlimited farm creation if holding <span id="nifMinFarm"></span>
-                    NIF or owning one of our <a
-                      href="https://opensea.io/assets/0x774418646555f414cbaeca6cf3c72a0613d4dab4/10"
-                      target="_blank">farm builder wildcards</a>.</div> No subsequent fees, one-time payment. Gas fees
-                  always apply.</div>
+                <div id="feeCollection" class="footer-description">
+                  <h3>Please read the notice and check the box to continue!</h3>
+                  <div class="farm-builder-checkbox">
+                    <input type="checkbox" id="flexCheckDefault">
+                    <label for="flexCheckDefault">
+                      <span id="farm-builder-fee">120</span> <span id="farm-builder-currency">MATIC</span> developer fee per farm. No subsequent fees, one-time payment. Gas fees always apply.
+                    </label>
+                  </div>
+                </div>
                   <div class="buttons-container">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary submitNewUpdate" id="farmSubmit">Create Farm</button>
+                    <button type="button" class="btn btn-primary submitNewUpdate disabled" id="farmSubmit">Create Farm</button>
                   </div>
               </div>
             </div>
           </div>
         </div>
+
+
 
         <!-- Edit Farm Info Modal -->
         <div class="modal fade" style="overflow-y: scroll;" id="farmInfoModal" tabindex="-1"
@@ -767,56 +788,37 @@
                     <input type="text" placeholder="Enter a name for your farm" class="form-control" id="farmInfoName">
                   </div>
 
+                  <div class="form-group img-selector">
+                    <div class="imageFileDisplay mb-3"></div>
+                    <div class="img-side">
+                        <label for="farmInfoImageFile" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Farm image" data-content="Upload farm image">
+                          <i class="material-icons-round" style="margin-right: 5px;">image</i>
+                          Click to Choose Image
+                        </label>
+                        <input type="file" class="form-control-file imageFile" id="farmInfoImageFile" accept="image/*">
+                        <input type="hidden" id="farmInfoImageUrl" value="" />
+                      <p>You can upload JPG, PNG or GIF file</p>
+                    </div>
+                    
+                  </div>
+
                   <div class="form-group">
                     <label for="farmInfoDescription">Description</label>
                     <textarea class="form-control" id="farmInfoDescription" rows="3"></textarea>
                   </div>
 
-                  <div class="form-group">
-                    <label for="farmInfoImageFile">Click to Choose Image....</label>
-                    <input type="file" class="form-control-file imageFile" id="farmInfoImageFile" accept="image/*">
-                    <div class="imageFileDisplay mt-3"></div>
-                    <input type="hidden" id="farmInfoImageUrl" value="" />
-                  </div>
 
-                  <fieldset class="form-group">
+                  <fieldset id="editSocialMedia" class="form-group">
                     <legend>Social (optional)</legend>
 
-                    <div class="form-row">
-                      <div class="col">
-                        <input type="text" class="form-control mb-3" placeholder="Twitter Url" id="farmInfoTwitter">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Discord Url" id="farmInfoDiscord">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Telegram Url" id="farmInfoTelegram">
-                      </div>
+                    <div class="farmSocialMediaGroupWrapper">
+                      
                     </div>
 
-                    <div class="form-row">
-                      <div class="col">
-                        <input type="text" class="form-control mb-3" placeholder="Medium Url" id="farmInfoMedium">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Instagram Url" id="farmInfoInstagram">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Youtube Url" id="farmInfoYoutube">
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="col">
-                        <input type="text" class="form-control mb-3" placeholder="Website Url" id="farmInfoWeb">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Email address" id="farmInfoEmail">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Phone" id="farmInfoPhone">
-                      </div>
-                    </div>
+                    <a type="button" id="farmSocialMediaAdd" name="farmSocialMediaAdd" class="farmSocialMediaAdd mt-3 mb-3">
+                      <i class="material-icons-round">add_circle</i>
+                      <p>Add More Social Media</p>
+                    </a>
 
                     <div class="form-row">
                       <div class="col">
@@ -932,17 +934,28 @@
               <div class="modal-header">
                 <h5 class="modal-title" id="editRewardRateModalLabel">Edit Reward Rate</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">×</span>
                 </button>
               </div>
               <div class="modal-body modal-non-nft-content">
 
                 <form onsubmit="return false;">
-
+                  
                   <div class="form-group">
-                    <label for="farmEditRewardRate">Reward Rate (in seconds)<span class="required">*</span></label>
-                    <input type="text" placeholder="The reward rate in seconds. Default is 86400 seconds (1 day)."
-                      class="form-control" id="farmEditRewardRate">
+                    <label for="farmEditRewardRate">
+                      Reward Rate per day<span class="required">*</span>
+                    </label>
+                    <div id="rewardPerDay">
+                      <input type="text" placeholder="86400" class="form-control" id="farmEditRewardRate">
+
+                        <button id="rangeMin">ADD MIN.</button>
+                        <button id="rangeMax">ADD MAX.</button>
+                    </div>
+                  </div>
+
+                  <div class="range-wrap">
+                    <input type="range" class="range" min="86400" max="1728000" value=864000 step=86400>
+                    <output class="bubble"></output>
                   </div>
 
                   <input type="hidden" value="" id="editRewardRate" name="editRewardRate" />
@@ -1091,27 +1104,24 @@
 
                   <p>
                     Here you can define in what run-mode your farm shop should operate<br /><br />
-                    Shop Disabled = Farm operates in standard mode.<br /><br />
-                    Farming + Buyouts = Farm operates in standard mode but allows buyouts for items that have a defined
-                    buyout price.<br /><br />
-                    Only Buys = Staking disabled, only buying allowed. If you turn this on after people started staking,
-                    they will be able to continue staking and redeeming until they unstake their entire stakes.
                   </p>
 
-                  <div class="form-check form-check-inline">
+                  <div class="form-check">
                     <input class="form-check-input" type="radio" name="farmShopRunMode" id="farmShopRunMode0"
                       class="farmShopRunMode" value="0">
-                    <label class="form-check-label" for="farmShopRunMode0">Shop Disabled</label>
+                    <label class="form-check-label" for="farmShopRunMode0"><span class="radioBtnLabel">Shop Disabled</span><span> = Farm operates in standard mode.</span></label>
                   </div>
-                  <div class="form-check form-check-inline">
+                  <div class="form-check">
                     <input class="form-check-input" type="radio" name="farmShopRunMode" id="farmShopRunMode1"
                       class="farmShopRunMode" value="1">
-                    <label class="form-check-label" for="farmShopRunMode1">Farming + Buyouts</label>
+                    <label class="form-check-label" for="farmShopRunMode1"><span class="radioBtnLabel">Farming + Buyouts</span> = Farm operates in standard mode but allows buyouts for items that have a defined
+                      buyout price.</label>
                   </div>
-                  <div class="form-check form-check-inline">
+                  <div class="form-check">
                     <input class="form-check-input" type="radio" name="farmShopRunMode" id="farmShopRunMode2"
                       class="farmShopRunMode" value="2">
-                    <label class="form-check-label" for="farmShopRunMode2">Only Buys</label>
+                    <label class="form-check-label" for="farmShopRunMode2"><span class="radioBtnLabel">Only Buys</span> = Staking disabled, only buying allowed. If you turn this on after people started staking,
+                      they will be able to continue staking and redeeming until they unstake their entire stakes.</label>
                   </div>
 
                   <input type="hidden" value="" id="farmShopEditAddress" name="farmShopEditAddress" />

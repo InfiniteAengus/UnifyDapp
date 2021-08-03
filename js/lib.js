@@ -86,6 +86,7 @@ function TncLib(){
     // BINANCE MAINNET
     } else if(chain_id === "38") {
 
+        this.tiktokCollection = '0xaB2774EDaFE44b23Cb2f52AD4B41EC8fb5248beA';
         this.nif = new web3.eth.Contract(nifABI, '0x3aD4eC50f30dAb25C60e0e71755AF6B9690B1297', {from: this.account});
         this.erc1155 = new web3.eth.Contract(erc1155ABI, '0xfeA7FDE0ab6A0e32C264FE4Db3597E1938e49947', {from: this.account});
         this.genesis = new web3.eth.Contract(genesisABI, '0x76a29480bAF57cbCAB5361712Ca215A139269003', {from: this.account});

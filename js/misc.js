@@ -31,6 +31,11 @@ $(document).ready(function(){
         $('#marketSellLink').css('display', 'none');
     }
 
+    if(chain_id == '38'){
+
+        $('#tiktokNFTs').css('display', 'block');
+    }
+
     if(chain_id == '61' || chain_id == '38') {
         $('#featured').css('display', 'none');
         //$('#genesisFarm').css('display', 'none');

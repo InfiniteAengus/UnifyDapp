@@ -418,7 +418,7 @@ function TncDapp() {
         toastr.remove();
         $(_button).prop("disabled", false);
         $(_button).html("Withdraw");
-        let errMsg = "An Withdraw occurred with your withdrawal transaction.";
+        let errMsg = "An error occurred with your withdrawal transaction.";
         toastr["error"](
           errMsg,
           "Error"
@@ -471,7 +471,7 @@ function TncDapp() {
           $(_button).html("Restore");
         }, 3000);
 
-        let errMsg = "An Withdraw occurred with your restore cancellation transaction.";           
+        let errMsg = "An error occurred with your restore cancellation transaction.";
         toastr["error"](errMsg, "Error");
         errorPopup("Error", errMsg, err.stack);
       }

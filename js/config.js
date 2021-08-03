@@ -2,7 +2,7 @@
 let network = 'Rinkeby';
 
 // the chain id of the network as hex value without leading 0x
-let chain_id = '4';
+let chain_id = '1';
 
 // set to true to hide the sell button in the wallet.
 // useful if you want to use a custom marketplace and prevent confusion
@@ -31,6 +31,7 @@ switch(chain_id){
     // Binance Smart Chain
     case '38':
         blocked_collections = [
+            "0xee47899A976CA85AE0fCFFb8c2a0fA4c9Eaa7ba7".toLowerCase(), // skin on skin
             "0x009958B1D79559570D75f8C852b3D4627CB6af30".toLowerCase(), // ariadna
             "0x6b8CBD4A71621D993e2b49b5e87471a6F08704E9".toLowerCase(), // bc
             "0x51d9aea9dd54bCA1496A6CAA1fD58B021ea4B0e6".toLowerCase(), // hentai token

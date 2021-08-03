@@ -23,7 +23,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.4rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-weight: 400; }
 
 body.dark-edition {
@@ -115,7 +115,7 @@ body.light-edition {
     font-weight: 500; }
 
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.48px;
@@ -144,7 +144,7 @@ h1.nftListingsTitle {
   margin-bottom: 1rem; }
 
 h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.32px;
@@ -335,7 +335,7 @@ textarea, input {
   color: var(--bg-primary); }
 
 .main-timeline h5.title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   color: var(--heading-color);
   font-size: 2rem;
   font-weight: 400; }
@@ -460,8 +460,6 @@ textarea, input {
     border-radius: .6rem;
     box-shadow: var(--shadow-primary);
     transition: all .2s ease-in-out; }
-    .brand-assets-img-element .img-holder:hover {
-      transform: scale(1.15); }
     .brand-assets-img-element .img-holder img {
       max-width: 90%;
       max-height: 90%; }
@@ -599,7 +597,7 @@ textarea, input {
   width: 30%;
   height: 100%;
   margin-left: 4rem;
-  background-color: var(--bg-tertiary) !important;
+  background-color: var(--bg-secondary) !important;
   padding: 3rem; }
   #learn-more-socialDiv h3 {
     color: var(--primary-color);
@@ -651,7 +649,7 @@ textarea, input {
           color: var(--primary-hover-dark); }
       .dark-edition .card.faq .card-body .card-description h5,
       .light-edition .card.faq .card-body .card-description h5 {
-        font-family: "Poppins", sans-serif;
+        font-family: "Baloo 2", sans-serif;
         font-size: 1.7rem;
         font-weight: 700;
         letter-spacing: 0.32px;
@@ -666,7 +664,6 @@ textarea, input {
   flex-direction: column;
   align-items: center;
   justify-content: space-around !important;
-  background-color: var(--bg-tertiary);
   padding: 2.4rem 3.6rem 1.3rem;
   border-radius: .8rem;
   box-shadow: var(--shadow-primary); }
@@ -692,6 +689,7 @@ textarea, input {
   .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
   .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row {
     display: flex;
+    flex-direction: column;
     width: 100%; }
     @media only screen and (max-width: 26em) {
       .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
@@ -699,6 +697,7 @@ textarea, input {
         flex-direction: column; } }
     .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider,
     .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider {
+      height: 1rem;
       width: 1rem; }
     @media only screen and (max-width: 26em) {
       .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a:not(:last-child),
@@ -833,7 +832,8 @@ textarea, input {
   .farmListing .card .traits-collapse,
   .nftHeader .card .traits-collapse {
     font-size: 1.4rem; }
-  .nftListing .card-profile, .nftListing .header-profile,
+  .nftListing .card-profile,
+  .nftListing .header-profile,
   .farmListing .card-profile,
   .farmListing .header-profile,
   .nftHeader .card-profile,
@@ -841,7 +841,8 @@ textarea, input {
     position: relative;
     margin-top: 0;
     box-shadow: var(--shadow-primary); }
-    .nftListing .card-profile .card-avatar, .nftListing .header-profile .card-avatar,
+    .nftListing .card-profile .card-avatar,
+    .nftListing .header-profile .card-avatar,
     .farmListing .card-profile .card-avatar,
     .farmListing .header-profile .card-avatar,
     .nftHeader .card-profile .card-avatar,
@@ -850,17 +851,18 @@ textarea, input {
       min-height: 15.6rem;
       max-width: 15.6rem;
       max-height: 15.6rem;
-      padding: .8rem !important;
-      margin: 1.5rem auto .5rem;
+      padding: 0.8rem !important;
+      margin: 1.5rem auto 0.5rem;
       background-color: var(--image-padding);
-      border-radius: .6rem !important;
+      border-radius: 0.6rem !important;
       object-fit: cover;
       /*
             -webkit-filter: blur(5px); // Safari 6.0 - 9.0
             filter: blur(5px);
             */
-      transition: transform .2s; }
-    .nftListing .card-profile .card-avatar:hover, .nftListing .header-profile .card-avatar:hover,
+      transition: transform 0.2s; }
+    .nftListing .card-profile .card-avatar:hover,
+    .nftListing .header-profile .card-avatar:hover,
     .farmListing .card-profile .card-avatar:hover,
     .farmListing .header-profile .card-avatar:hover,
     .nftHeader .card-profile .card-avatar:hover,
@@ -870,7 +872,10 @@ textarea, input {
           -webkit-filter: blur(0px); // Safari 6.0 - 9.0
           filter: blur(0px);
           */ }
-    .nftListing .card-profile .card-body, .nftListing .card-profile .header-left, .nftListing .header-profile .card-body, .nftListing .header-profile .header-left,
+    .nftListing .card-profile .card-body,
+    .nftListing .card-profile .header-left,
+    .nftListing .header-profile .card-body,
+    .nftListing .header-profile .header-left,
     .farmListing .card-profile .card-body,
     .farmListing .card-profile .header-left,
     .farmListing .header-profile .card-body,
@@ -880,7 +885,10 @@ textarea, input {
     .nftHeader .header-profile .card-body,
     .nftHeader .header-profile .header-left {
       position: static; }
-      .nftListing .card-profile .card-body .text-truncate a, .nftListing .card-profile .header-left .text-truncate a, .nftListing .header-profile .card-body .text-truncate a, .nftListing .header-profile .header-left .text-truncate a,
+      .nftListing .card-profile .card-body .text-truncate a,
+      .nftListing .card-profile .header-left .text-truncate a,
+      .nftListing .header-profile .card-body .text-truncate a,
+      .nftListing .header-profile .header-left .text-truncate a,
       .farmListing .card-profile .card-body .text-truncate a,
       .farmListing .card-profile .header-left .text-truncate a,
       .farmListing .header-profile .card-body .text-truncate a,
@@ -890,7 +898,10 @@ textarea, input {
       .nftHeader .header-profile .card-body .text-truncate a,
       .nftHeader .header-profile .header-left .text-truncate a {
         color: var(--heading-color); }
-      .nftListing .card-profile .card-body .text-truncate button, .nftListing .card-profile .header-left .text-truncate button, .nftListing .header-profile .card-body .text-truncate button, .nftListing .header-profile .header-left .text-truncate button,
+      .nftListing .card-profile .card-body .text-truncate button,
+      .nftListing .card-profile .header-left .text-truncate button,
+      .nftListing .header-profile .card-body .text-truncate button,
+      .nftListing .header-profile .header-left .text-truncate button,
       .farmListing .card-profile .card-body .text-truncate button,
       .farmListing .card-profile .header-left .text-truncate button,
       .farmListing .header-profile .card-body .text-truncate button,
@@ -900,7 +911,10 @@ textarea, input {
       .nftHeader .header-profile .card-body .text-truncate button,
       .nftHeader .header-profile .header-left .text-truncate button {
         color: var(--heading-color); }
-      .nftListing .card-profile .card-body h5.card-title, .nftListing .card-profile .header-left h5.card-title, .nftListing .header-profile .card-body h5.card-title, .nftListing .header-profile .header-left h5.card-title,
+      .nftListing .card-profile .card-body h5.card-title,
+      .nftListing .card-profile .header-left h5.card-title,
+      .nftListing .header-profile .card-body h5.card-title,
+      .nftListing .header-profile .header-left h5.card-title,
       .farmListing .card-profile .card-body h5.card-title,
       .farmListing .card-profile .header-left h5.card-title,
       .farmListing .header-profile .card-body h5.card-title,
@@ -911,9 +925,12 @@ textarea, input {
       .nftHeader .header-profile .header-left h5.card-title {
         font-size: 1.8rem;
         font-weight: 700;
-        letter-spacing: .28px;
+        letter-spacing: 0.28px;
         margin: 0 0 1rem 0; }
-        .nftListing .card-profile .card-body h5.card-title a, .nftListing .card-profile .header-left h5.card-title a, .nftListing .header-profile .card-body h5.card-title a, .nftListing .header-profile .header-left h5.card-title a,
+        .nftListing .card-profile .card-body h5.card-title a,
+        .nftListing .card-profile .header-left h5.card-title a,
+        .nftListing .header-profile .card-body h5.card-title a,
+        .nftListing .header-profile .header-left h5.card-title a,
         .farmListing .card-profile .card-body h5.card-title a,
         .farmListing .card-profile .header-left h5.card-title a,
         .farmListing .header-profile .card-body h5.card-title a,
@@ -923,7 +940,24 @@ textarea, input {
         .nftHeader .header-profile .card-body h5.card-title a,
         .nftHeader .header-profile .header-left h5.card-title a {
           color: var(--heading-color); }
-      .nftListing .card-profile .card-body .collection-name, .nftListing .card-profile .header-left .collection-name, .nftListing .header-profile .card-body .collection-name, .nftListing .header-profile .header-left .collection-name,
+          .nftListing .card-profile .card-body h5.card-title a i,
+          .nftListing .card-profile .header-left h5.card-title a i,
+          .nftListing .header-profile .card-body h5.card-title a i,
+          .nftListing .header-profile .header-left h5.card-title a i,
+          .farmListing .card-profile .card-body h5.card-title a i,
+          .farmListing .card-profile .header-left h5.card-title a i,
+          .farmListing .header-profile .card-body h5.card-title a i,
+          .farmListing .header-profile .header-left h5.card-title a i,
+          .nftHeader .card-profile .card-body h5.card-title a i,
+          .nftHeader .card-profile .header-left h5.card-title a i,
+          .nftHeader .header-profile .card-body h5.card-title a i,
+          .nftHeader .header-profile .header-left h5.card-title a i {
+            font-weight: 700;
+            font-size: 1.4rem !important; }
+      .nftListing .card-profile .card-body .collection-name,
+      .nftListing .card-profile .header-left .collection-name,
+      .nftListing .header-profile .card-body .collection-name,
+      .nftListing .header-profile .header-left .collection-name,
       .farmListing .card-profile .card-body .collection-name,
       .farmListing .card-profile .header-left .collection-name,
       .farmListing .header-profile .card-body .collection-name,
@@ -933,8 +967,11 @@ textarea, input {
       .nftHeader .header-profile .card-body .collection-name,
       .nftHeader .header-profile .header-left .collection-name {
         font-size: 1.2rem;
-        margin: -.8rem 0 1rem 0; }
-      .nftListing .card-profile .card-body a.video-btn-link, .nftListing .card-profile .header-left a.video-btn-link, .nftListing .header-profile .card-body a.video-btn-link, .nftListing .header-profile .header-left a.video-btn-link,
+        margin: -0.8rem 0 1rem 0; }
+      .nftListing .card-profile .card-body a.video-btn-link,
+      .nftListing .card-profile .header-left a.video-btn-link,
+      .nftListing .header-profile .card-body a.video-btn-link,
+      .nftListing .header-profile .header-left a.video-btn-link,
       .farmListing .card-profile .card-body a.video-btn-link,
       .farmListing .card-profile .header-left a.video-btn-link,
       .farmListing .header-profile .card-body a.video-btn-link,
@@ -952,7 +989,10 @@ textarea, input {
         text-transform: none;
         padding: 0;
         margin: 0 0 1rem 0 !important; }
-        .nftListing .card-profile .card-body a.video-btn-link:hover, .nftListing .card-profile .header-left a.video-btn-link:hover, .nftListing .header-profile .card-body a.video-btn-link:hover, .nftListing .header-profile .header-left a.video-btn-link:hover,
+        .nftListing .card-profile .card-body a.video-btn-link:hover,
+        .nftListing .card-profile .header-left a.video-btn-link:hover,
+        .nftListing .header-profile .card-body a.video-btn-link:hover,
+        .nftListing .header-profile .header-left a.video-btn-link:hover,
         .farmListing .card-profile .card-body a.video-btn-link:hover,
         .farmListing .card-profile .header-left a.video-btn-link:hover,
         .farmListing .header-profile .card-body a.video-btn-link:hover,
@@ -962,7 +1002,10 @@ textarea, input {
         .nftHeader .header-profile .card-body a.video-btn-link:hover,
         .nftHeader .header-profile .header-left a.video-btn-link:hover {
           color: var(--primary-hover-dark); }
-        .nftListing .card-profile .card-body a.video-btn-link span, .nftListing .card-profile .header-left a.video-btn-link span, .nftListing .header-profile .card-body a.video-btn-link span, .nftListing .header-profile .header-left a.video-btn-link span,
+        .nftListing .card-profile .card-body a.video-btn-link span,
+        .nftListing .card-profile .header-left a.video-btn-link span,
+        .nftListing .header-profile .card-body a.video-btn-link span,
+        .nftListing .header-profile .header-left a.video-btn-link span,
         .farmListing .card-profile .card-body a.video-btn-link span,
         .farmListing .card-profile .header-left a.video-btn-link span,
         .farmListing .header-profile .card-body a.video-btn-link span,
@@ -972,8 +1015,11 @@ textarea, input {
         .nftHeader .header-profile .card-body a.video-btn-link span,
         .nftHeader .header-profile .header-left a.video-btn-link span {
           font-size: 2rem;
-          margin-right: .5rem; }
-      .nftListing .card-profile .card-body audio, .nftListing .card-profile .header-left audio, .nftListing .header-profile .card-body audio, .nftListing .header-profile .header-left audio,
+          margin-right: 0.5rem; }
+      .nftListing .card-profile .card-body audio,
+      .nftListing .card-profile .header-left audio,
+      .nftListing .header-profile .card-body audio,
+      .nftListing .header-profile .header-left audio,
       .farmListing .card-profile .card-body audio,
       .farmListing .card-profile .header-left audio,
       .farmListing .header-profile .card-body audio,
@@ -984,7 +1030,10 @@ textarea, input {
       .nftHeader .header-profile .header-left audio {
         height: 3.2rem;
         margin: 0 0 1rem 0 !important; }
-      .nftListing .card-profile .card-body .badge, .nftListing .card-profile .header-left .badge, .nftListing .header-profile .card-body .badge, .nftListing .header-profile .header-left .badge,
+      .nftListing .card-profile .card-body .badge,
+      .nftListing .card-profile .header-left .badge,
+      .nftListing .header-profile .card-body .badge,
+      .nftListing .header-profile .header-left .badge,
       .farmListing .card-profile .card-body .badge,
       .farmListing .card-profile .header-left .badge,
       .farmListing .header-profile .card-body .badge,
@@ -993,11 +1042,14 @@ textarea, input {
       .nftHeader .card-profile .header-left .badge,
       .nftHeader .header-profile .card-body .badge,
       .nftHeader .header-profile .header-left .badge {
-        padding: .5rem;
+        padding: 0.5rem;
         font-size: 1rem;
         font-weight: 300;
         position: relative; }
-        .nftListing .card-profile .card-body .badge.badge-info, .nftListing .card-profile .header-left .badge.badge-info, .nftListing .header-profile .card-body .badge.badge-info, .nftListing .header-profile .header-left .badge.badge-info,
+        .nftListing .card-profile .card-body .badge.badge-info,
+        .nftListing .card-profile .header-left .badge.badge-info,
+        .nftListing .header-profile .card-body .badge.badge-info,
+        .nftListing .header-profile .header-left .badge.badge-info,
         .farmListing .card-profile .card-body .badge.badge-info,
         .farmListing .card-profile .header-left .badge.badge-info,
         .farmListing .header-profile .card-body .badge.badge-info,
@@ -1008,7 +1060,10 @@ textarea, input {
         .nftHeader .header-profile .header-left .badge.badge-info {
           color: var(--text-primary);
           background-color: transparent; }
-          .nftListing .card-profile .card-body .badge.badge-info:not(:last-child)::before, .nftListing .card-profile .header-left .badge.badge-info:not(:last-child)::before, .nftListing .header-profile .card-body .badge.badge-info:not(:last-child)::before, .nftListing .header-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .nftListing .card-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .nftListing .card-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .nftListing .header-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .nftListing .header-profile .header-left .badge.badge-info:not(:last-child)::before,
           .farmListing .card-profile .card-body .badge.badge-info:not(:last-child)::before,
           .farmListing .card-profile .header-left .badge.badge-info:not(:last-child)::before,
           .farmListing .header-profile .card-body .badge.badge-info:not(:last-child)::before,
@@ -1026,7 +1081,10 @@ textarea, input {
             right: -2px;
             top: 50%;
             transform: translateY(-50%); }
-          .nftListing .card-profile .card-body .badge.badge-info a, .nftListing .card-profile .header-left .badge.badge-info a, .nftListing .header-profile .card-body .badge.badge-info a, .nftListing .header-profile .header-left .badge.badge-info a,
+          .nftListing .card-profile .card-body .badge.badge-info a,
+          .nftListing .card-profile .header-left .badge.badge-info a,
+          .nftListing .header-profile .card-body .badge.badge-info a,
+          .nftListing .header-profile .header-left .badge.badge-info a,
           .farmListing .card-profile .card-body .badge.badge-info a,
           .farmListing .card-profile .header-left .badge.badge-info a,
           .farmListing .header-profile .card-body .badge.badge-info a,
@@ -1036,7 +1094,10 @@ textarea, input {
           .nftHeader .header-profile .card-body .badge.badge-info a,
           .nftHeader .header-profile .header-left .badge.badge-info a {
             color: var(--heading-color); }
-      .nftListing .card-profile .card-body a.redeemButton, .nftListing .card-profile .header-left a.redeemButton, .nftListing .header-profile .card-body a.redeemButton, .nftListing .header-profile .header-left a.redeemButton,
+      .nftListing .card-profile .card-body a.redeemButton,
+      .nftListing .card-profile .header-left a.redeemButton,
+      .nftListing .header-profile .card-body a.redeemButton,
+      .nftListing .header-profile .header-left a.redeemButton,
       .farmListing .card-profile .card-body a.redeemButton,
       .farmListing .card-profile .header-left a.redeemButton,
       .farmListing .header-profile .card-body a.redeemButton,
@@ -1049,16 +1110,19 @@ textarea, input {
         box-shadow: none;
         border: none;
         text-transform: none;
-        border-radius: .6rem;
+        border-radius: 0.6rem;
         background-color: var(--primary-color);
         color: var(--bg-secondary);
-        padding: .3rem .8rem;
+        padding: 0.3rem 0.8rem;
         font-weight: 500;
         width: 90%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap; }
-        .nftListing .card-profile .card-body a.redeemButton:active, .nftListing .card-profile .header-left a.redeemButton:active, .nftListing .header-profile .card-body a.redeemButton:active, .nftListing .header-profile .header-left a.redeemButton:active,
+        .nftListing .card-profile .card-body a.redeemButton:active,
+        .nftListing .card-profile .header-left a.redeemButton:active,
+        .nftListing .header-profile .card-body a.redeemButton:active,
+        .nftListing .header-profile .header-left a.redeemButton:active,
         .farmListing .card-profile .card-body a.redeemButton:active,
         .farmListing .card-profile .header-left a.redeemButton:active,
         .farmListing .header-profile .card-body a.redeemButton:active,
@@ -1070,7 +1134,10 @@ textarea, input {
           color: var(--bg-secondary);
           background-color: var(--primary-hover-dark);
           font-weight: 400; }
-      .nftListing .card-profile .card-body a.traits, .nftListing .card-profile .header-left a.traits, .nftListing .header-profile .card-body a.traits, .nftListing .header-profile .header-left a.traits,
+      .nftListing .card-profile .card-body a.traits,
+      .nftListing .card-profile .header-left a.traits,
+      .nftListing .header-profile .card-body a.traits,
+      .nftListing .header-profile .header-left a.traits,
       .farmListing .card-profile .card-body a.traits,
       .farmListing .card-profile .header-left a.traits,
       .farmListing .header-profile .card-body a.traits,
@@ -1081,13 +1148,16 @@ textarea, input {
       .nftHeader .header-profile .header-left a.traits {
         font-size: 1.4rem;
         border: 0.1rem solid var(--text-primary);
-        border-radius: .6rem;
+        border-radius: 0.6rem;
         background-color: var(--image-padding) !important;
         text-transform: none;
         color: var(--text-primary);
-        padding: .3rem .8rem;
+        padding: 0.3rem 0.8rem;
         width: 90%; }
-      .nftListing .card-profile .card-body .popover-description, .nftListing .card-profile .header-left .popover-description, .nftListing .header-profile .card-body .popover-description, .nftListing .header-profile .header-left .popover-description,
+      .nftListing .card-profile .card-body .popover-description,
+      .nftListing .card-profile .header-left .popover-description,
+      .nftListing .header-profile .card-body .popover-description,
+      .nftListing .header-profile .header-left .popover-description,
       .farmListing .card-profile .card-body .popover-description,
       .farmListing .card-profile .header-left .popover-description,
       .farmListing .header-profile .card-body .popover-description,
@@ -1104,7 +1174,10 @@ textarea, input {
         box-shadow: none;
         padding: 0;
         margin: 0; }
-        .nftListing .card-profile .card-body .popover-description span, .nftListing .card-profile .header-left .popover-description span, .nftListing .header-profile .card-body .popover-description span, .nftListing .header-profile .header-left .popover-description span,
+        .nftListing .card-profile .card-body .popover-description span,
+        .nftListing .card-profile .header-left .popover-description span,
+        .nftListing .header-profile .card-body .popover-description span,
+        .nftListing .header-profile .header-left .popover-description span,
         .farmListing .card-profile .card-body .popover-description span,
         .farmListing .card-profile .header-left .popover-description span,
         .farmListing .header-profile .card-body .popover-description span,
@@ -1114,7 +1187,13 @@ textarea, input {
         .nftHeader .header-profile .card-body .popover-description span,
         .nftHeader .header-profile .header-left .popover-description span {
           font-size: 1.8rem; }
-        .nftListing .card-profile .card-body .popover-description:hover span, .nftListing .card-profile .card-body .popover-description:active span, .nftListing .card-profile .header-left .popover-description:hover span, .nftListing .card-profile .header-left .popover-description:active span, .nftListing .header-profile .card-body .popover-description:hover span, .nftListing .header-profile .card-body .popover-description:active span, .nftListing .header-profile .header-left .popover-description:hover span, .nftListing .header-profile .header-left .popover-description:active span,
+        .nftListing .card-profile .card-body .popover-description:hover span, .nftListing .card-profile .card-body .popover-description:active span,
+        .nftListing .card-profile .header-left .popover-description:hover span,
+        .nftListing .card-profile .header-left .popover-description:active span,
+        .nftListing .header-profile .card-body .popover-description:hover span,
+        .nftListing .header-profile .card-body .popover-description:active span,
+        .nftListing .header-profile .header-left .popover-description:hover span,
+        .nftListing .header-profile .header-left .popover-description:active span,
         .farmListing .card-profile .card-body .popover-description:hover span,
         .farmListing .card-profile .card-body .popover-description:active span,
         .farmListing .card-profile .header-left .popover-description:hover span,
@@ -1132,7 +1211,10 @@ textarea, input {
         .nftHeader .header-profile .header-left .popover-description:hover span,
         .nftHeader .header-profile .header-left .popover-description:active span {
           color: var(--text-primary-light); }
-      .nftListing .card-profile .card-body .dropdown, .nftListing .card-profile .header-left .dropdown, .nftListing .header-profile .card-body .dropdown, .nftListing .header-profile .header-left .dropdown,
+      .nftListing .card-profile .card-body .dropdown,
+      .nftListing .card-profile .header-left .dropdown,
+      .nftListing .header-profile .card-body .dropdown,
+      .nftListing .header-profile .header-left .dropdown,
       .farmListing .card-profile .card-body .dropdown,
       .farmListing .card-profile .header-left .dropdown,
       .farmListing .header-profile .card-body .dropdown,
@@ -1144,7 +1226,10 @@ textarea, input {
         position: absolute;
         top: 1rem;
         left: 1rem; }
-        .nftListing .card-profile .card-body .dropdown a, .nftListing .card-profile .header-left .dropdown a, .nftListing .header-profile .card-body .dropdown a, .nftListing .header-profile .header-left .dropdown a,
+        .nftListing .card-profile .card-body .dropdown a,
+        .nftListing .card-profile .header-left .dropdown a,
+        .nftListing .header-profile .card-body .dropdown a,
+        .nftListing .header-profile .header-left .dropdown a,
         .farmListing .card-profile .card-body .dropdown a,
         .farmListing .card-profile .header-left .dropdown a,
         .farmListing .header-profile .card-body .dropdown a,
@@ -1157,7 +1242,10 @@ textarea, input {
           margin: 0;
           background-color: transparent;
           box-shadow: none; }
-          .nftListing .card-profile .card-body .dropdown a::after, .nftListing .card-profile .header-left .dropdown a::after, .nftListing .header-profile .card-body .dropdown a::after, .nftListing .header-profile .header-left .dropdown a::after,
+          .nftListing .card-profile .card-body .dropdown a::after,
+          .nftListing .card-profile .header-left .dropdown a::after,
+          .nftListing .header-profile .card-body .dropdown a::after,
+          .nftListing .header-profile .header-left .dropdown a::after,
           .farmListing .card-profile .card-body .dropdown a::after,
           .farmListing .card-profile .header-left .dropdown a::after,
           .farmListing .header-profile .card-body .dropdown a::after,
@@ -1167,7 +1255,10 @@ textarea, input {
           .nftHeader .header-profile .card-body .dropdown a::after,
           .nftHeader .header-profile .header-left .dropdown a::after {
             content: none; }
-          .nftListing .card-profile .card-body .dropdown a span, .nftListing .card-profile .header-left .dropdown a span, .nftListing .header-profile .card-body .dropdown a span, .nftListing .header-profile .header-left .dropdown a span,
+          .nftListing .card-profile .card-body .dropdown a span,
+          .nftListing .card-profile .header-left .dropdown a span,
+          .nftListing .header-profile .card-body .dropdown a span,
+          .nftListing .header-profile .header-left .dropdown a span,
           .farmListing .card-profile .card-body .dropdown a span,
           .farmListing .card-profile .header-left .dropdown a span,
           .farmListing .header-profile .card-body .dropdown a span,
@@ -1178,7 +1269,13 @@ textarea, input {
           .nftHeader .header-profile .header-left .dropdown a span {
             color: var(--text-primary);
             font-size: 1.8rem; }
-          .nftListing .card-profile .card-body .dropdown a:hover span, .nftListing .card-profile .card-body .dropdown a:active span, .nftListing .card-profile .header-left .dropdown a:hover span, .nftListing .card-profile .header-left .dropdown a:active span, .nftListing .header-profile .card-body .dropdown a:hover span, .nftListing .header-profile .card-body .dropdown a:active span, .nftListing .header-profile .header-left .dropdown a:hover span, .nftListing .header-profile .header-left .dropdown a:active span,
+          .nftListing .card-profile .card-body .dropdown a:hover span, .nftListing .card-profile .card-body .dropdown a:active span,
+          .nftListing .card-profile .header-left .dropdown a:hover span,
+          .nftListing .card-profile .header-left .dropdown a:active span,
+          .nftListing .header-profile .card-body .dropdown a:hover span,
+          .nftListing .header-profile .card-body .dropdown a:active span,
+          .nftListing .header-profile .header-left .dropdown a:hover span,
+          .nftListing .header-profile .header-left .dropdown a:active span,
           .farmListing .card-profile .card-body .dropdown a:hover span,
           .farmListing .card-profile .card-body .dropdown a:active span,
           .farmListing .card-profile .header-left .dropdown a:hover span,
@@ -1196,34 +1293,178 @@ textarea, input {
           .nftHeader .header-profile .header-left .dropdown a:hover span,
           .nftHeader .header-profile .header-left .dropdown a:active span {
             color: var(--text-primary-light); }
-      .nftListing .card-profile .card-body .dropdown.show a, .nftListing .card-profile .header-left .dropdown.show a, .nftListing .header-profile .card-body .dropdown.show a, .nftListing .header-profile .header-left .dropdown.show a,
-      .farmListing .card-profile .card-body .dropdown.show a,
-      .farmListing .card-profile .header-left .dropdown.show a,
-      .farmListing .header-profile .card-body .dropdown.show a,
-      .farmListing .header-profile .header-left .dropdown.show a,
-      .nftHeader .card-profile .card-body .dropdown.show a,
-      .nftHeader .card-profile .header-left .dropdown.show a,
-      .nftHeader .header-profile .card-body .dropdown.show a,
-      .nftHeader .header-profile .header-left .dropdown.show a {
-        background-color: transparent; }
-        .nftListing .card-profile .card-body .dropdown.show a span, .nftListing .card-profile .header-left .dropdown.show a span, .nftListing .header-profile .card-body .dropdown.show a span, .nftListing .header-profile .header-left .dropdown.show a span,
-        .farmListing .card-profile .card-body .dropdown.show a span,
-        .farmListing .card-profile .header-left .dropdown.show a span,
-        .farmListing .header-profile .card-body .dropdown.show a span,
-        .farmListing .header-profile .header-left .dropdown.show a span,
-        .nftHeader .card-profile .card-body .dropdown.show a span,
-        .nftHeader .card-profile .header-left .dropdown.show a span,
-        .nftHeader .header-profile .card-body .dropdown.show a span,
-        .nftHeader .header-profile .header-left .dropdown.show a span {
-          color: var(--text-primary-light); }
+        .nftListing .card-profile .card-body .dropdown.show a,
+        .nftListing .card-profile .header-left .dropdown.show a,
+        .nftListing .header-profile .card-body .dropdown.show a,
+        .nftListing .header-profile .header-left .dropdown.show a,
+        .farmListing .card-profile .card-body .dropdown.show a,
+        .farmListing .card-profile .header-left .dropdown.show a,
+        .farmListing .header-profile .card-body .dropdown.show a,
+        .farmListing .header-profile .header-left .dropdown.show a,
+        .nftHeader .card-profile .card-body .dropdown.show a,
+        .nftHeader .card-profile .header-left .dropdown.show a,
+        .nftHeader .header-profile .card-body .dropdown.show a,
+        .nftHeader .header-profile .header-left .dropdown.show a {
+          background-color: transparent; }
+          .nftListing .card-profile .card-body .dropdown.show a span,
+          .nftListing .card-profile .header-left .dropdown.show a span,
+          .nftListing .header-profile .card-body .dropdown.show a span,
+          .nftListing .header-profile .header-left .dropdown.show a span,
+          .farmListing .card-profile .card-body .dropdown.show a span,
+          .farmListing .card-profile .header-left .dropdown.show a span,
+          .farmListing .header-profile .card-body .dropdown.show a span,
+          .farmListing .header-profile .header-left .dropdown.show a span,
+          .nftHeader .card-profile .card-body .dropdown.show a span,
+          .nftHeader .card-profile .header-left .dropdown.show a span,
+          .nftHeader .header-profile .card-body .dropdown.show a span,
+          .nftHeader .header-profile .header-left .dropdown.show a span {
+            color: var(--text-primary-light); }
+      .nftListing .card-profile .card-body .dropdown-btn,
+      .nftListing .card-profile .header-left .dropdown-btn,
+      .nftListing .header-profile .card-body .dropdown-btn,
+      .nftListing .header-profile .header-left .dropdown-btn,
+      .farmListing .card-profile .card-body .dropdown-btn,
+      .farmListing .card-profile .header-left .dropdown-btn,
+      .farmListing .header-profile .card-body .dropdown-btn,
+      .farmListing .header-profile .header-left .dropdown-btn,
+      .nftHeader .card-profile .card-body .dropdown-btn,
+      .nftHeader .card-profile .header-left .dropdown-btn,
+      .nftHeader .header-profile .card-body .dropdown-btn,
+      .nftHeader .header-profile .header-left .dropdown-btn {
+        position: relative;
+        display: inline-block; }
+        .nftListing .card-profile .card-body .dropdown-btn > a,
+        .nftListing .card-profile .header-left .dropdown-btn > a,
+        .nftListing .header-profile .card-body .dropdown-btn > a,
+        .nftListing .header-profile .header-left .dropdown-btn > a,
+        .farmListing .card-profile .card-body .dropdown-btn > a,
+        .farmListing .card-profile .header-left .dropdown-btn > a,
+        .farmListing .header-profile .card-body .dropdown-btn > a,
+        .farmListing .header-profile .header-left .dropdown-btn > a,
+        .nftHeader .card-profile .card-body .dropdown-btn > a,
+        .nftHeader .card-profile .header-left .dropdown-btn > a,
+        .nftHeader .header-profile .card-body .dropdown-btn > a,
+        .nftHeader .header-profile .header-left .dropdown-btn > a {
+          font-size: 1.4rem;
+          padding: 0.3rem 1rem;
+          background-color: var(--bg-secondary);
+          color: var(--primary-color);
+          box-shadow: none; }
+          .nftListing .card-profile .card-body .dropdown-btn > a::before,
+          .nftListing .card-profile .header-left .dropdown-btn > a::before,
+          .nftListing .header-profile .card-body .dropdown-btn > a::before,
+          .nftListing .header-profile .header-left .dropdown-btn > a::before,
+          .farmListing .card-profile .card-body .dropdown-btn > a::before,
+          .farmListing .card-profile .header-left .dropdown-btn > a::before,
+          .farmListing .header-profile .card-body .dropdown-btn > a::before,
+          .farmListing .header-profile .header-left .dropdown-btn > a::before,
+          .nftHeader .card-profile .card-body .dropdown-btn > a::before,
+          .nftHeader .card-profile .header-left .dropdown-btn > a::before,
+          .nftHeader .header-profile .card-body .dropdown-btn > a::before,
+          .nftHeader .header-profile .header-left .dropdown-btn > a::before {
+            font-family: "Material Icons Round";
+            content: "edit";
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-right: 1.7rem; }
+          .nftListing .card-profile .card-body .dropdown-btn > a::after,
+          .nftListing .card-profile .header-left .dropdown-btn > a::after,
+          .nftListing .header-profile .card-body .dropdown-btn > a::after,
+          .nftListing .header-profile .header-left .dropdown-btn > a::after,
+          .farmListing .card-profile .card-body .dropdown-btn > a::after,
+          .farmListing .card-profile .header-left .dropdown-btn > a::after,
+          .farmListing .header-profile .card-body .dropdown-btn > a::after,
+          .farmListing .header-profile .header-left .dropdown-btn > a::after,
+          .nftHeader .card-profile .card-body .dropdown-btn > a::after,
+          .nftHeader .card-profile .header-left .dropdown-btn > a::after,
+          .nftHeader .header-profile .card-body .dropdown-btn > a::after,
+          .nftHeader .header-profile .header-left .dropdown-btn > a::after {
+            margin-left: 1.7rem; }
+          .nftListing .card-profile .card-body .dropdown-btn > a span,
+          .nftListing .card-profile .header-left .dropdown-btn > a span,
+          .nftListing .header-profile .card-body .dropdown-btn > a span,
+          .nftListing .header-profile .header-left .dropdown-btn > a span,
+          .farmListing .card-profile .card-body .dropdown-btn > a span,
+          .farmListing .card-profile .header-left .dropdown-btn > a span,
+          .farmListing .header-profile .card-body .dropdown-btn > a span,
+          .farmListing .header-profile .header-left .dropdown-btn > a span,
+          .nftHeader .card-profile .card-body .dropdown-btn > a span,
+          .nftHeader .card-profile .header-left .dropdown-btn > a span,
+          .nftHeader .header-profile .card-body .dropdown-btn > a span,
+          .nftHeader .header-profile .header-left .dropdown-btn > a span {
+            color: var(--text-primary);
+            font-size: 1.8rem; }
+          .nftListing .card-profile .card-body .dropdown-btn > a:hover span, .nftListing .card-profile .card-body .dropdown-btn > a:active span,
+          .nftListing .card-profile .header-left .dropdown-btn > a:hover span,
+          .nftListing .card-profile .header-left .dropdown-btn > a:active span,
+          .nftListing .header-profile .card-body .dropdown-btn > a:hover span,
+          .nftListing .header-profile .card-body .dropdown-btn > a:active span,
+          .nftListing .header-profile .header-left .dropdown-btn > a:hover span,
+          .nftListing .header-profile .header-left .dropdown-btn > a:active span,
+          .farmListing .card-profile .card-body .dropdown-btn > a:hover span,
+          .farmListing .card-profile .card-body .dropdown-btn > a:active span,
+          .farmListing .card-profile .header-left .dropdown-btn > a:hover span,
+          .farmListing .card-profile .header-left .dropdown-btn > a:active span,
+          .farmListing .header-profile .card-body .dropdown-btn > a:hover span,
+          .farmListing .header-profile .card-body .dropdown-btn > a:active span,
+          .farmListing .header-profile .header-left .dropdown-btn > a:hover span,
+          .farmListing .header-profile .header-left .dropdown-btn > a:active span,
+          .nftHeader .card-profile .card-body .dropdown-btn > a:hover span,
+          .nftHeader .card-profile .card-body .dropdown-btn > a:active span,
+          .nftHeader .card-profile .header-left .dropdown-btn > a:hover span,
+          .nftHeader .card-profile .header-left .dropdown-btn > a:active span,
+          .nftHeader .header-profile .card-body .dropdown-btn > a:hover span,
+          .nftHeader .header-profile .card-body .dropdown-btn > a:active span,
+          .nftHeader .header-profile .header-left .dropdown-btn > a:hover span,
+          .nftHeader .header-profile .header-left .dropdown-btn > a:active span {
+            color: var(--text-primary); }
+        .nftListing .card-profile .card-body .dropdown-btn.show a,
+        .nftListing .card-profile .header-left .dropdown-btn.show a,
+        .nftListing .header-profile .card-body .dropdown-btn.show a,
+        .nftListing .header-profile .header-left .dropdown-btn.show a,
+        .farmListing .card-profile .card-body .dropdown-btn.show a,
+        .farmListing .card-profile .header-left .dropdown-btn.show a,
+        .farmListing .header-profile .card-body .dropdown-btn.show a,
+        .farmListing .header-profile .header-left .dropdown-btn.show a,
+        .nftHeader .card-profile .card-body .dropdown-btn.show a,
+        .nftHeader .card-profile .header-left .dropdown-btn.show a,
+        .nftHeader .header-profile .card-body .dropdown-btn.show a,
+        .nftHeader .header-profile .header-left .dropdown-btn.show a {
+          background-color: var(--bg-secondary);
+          font-size: 1.2rem;
+          padding: 1rem;
+          color: var(--text-primary); }
+        .nftListing .card-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .nftListing .card-profile .header-left .dropdown-btn .dropdown-menu.show,
+        .nftListing .header-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .nftListing .header-profile .header-left .dropdown-btn .dropdown-menu.show,
+        .farmListing .card-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .farmListing .card-profile .header-left .dropdown-btn .dropdown-menu.show,
+        .farmListing .header-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .farmListing .header-profile .header-left .dropdown-btn .dropdown-menu.show,
+        .nftHeader .card-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .nftHeader .card-profile .header-left .dropdown-btn .dropdown-menu.show,
+        .nftHeader .header-profile .card-body .dropdown-btn .dropdown-menu.show,
+        .nftHeader .header-profile .header-left .dropdown-btn .dropdown-menu.show {
+          width: 100%; }
+
+#farmsPage .popover-description {
+  position: initial;
+  display: flex;
+  margin: 1.5rem auto;
+  font-size: 1.34rem;
+  text-transform: initial; }
+  #farmsPage .popover-description span {
+    margin-right: 0.5rem; }
 
 .dark-edition .popover.bs-popover-bottom,
 .dark-edition .popover.bs-popover-top,
 .light-edition .popover.bs-popover-bottom,
 .light-edition .popover.bs-popover-top {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-secondary);
   box-shadow: var(--shadow-primary); }
-  .dark-edition .popover.bs-popover-bottom .arrow, .dark-edition .popover.bs-popover-bottom .arrow::before,
+  .dark-edition .popover.bs-popover-bottom .arrow,
+  .dark-edition .popover.bs-popover-bottom .arrow::before,
   .dark-edition .popover.bs-popover-top .arrow,
   .dark-edition .popover.bs-popover-top .arrow::before,
   .light-edition .popover.bs-popover-bottom .arrow,
@@ -1231,7 +1472,8 @@ textarea, input {
   .light-edition .popover.bs-popover-top .arrow,
   .light-edition .popover.bs-popover-top .arrow::before {
     display: none; }
-  .dark-edition .popover.bs-popover-bottom .popover-header, .dark-edition .popover.bs-popover-bottom .popover-body,
+  .dark-edition .popover.bs-popover-bottom .popover-header,
+  .dark-edition .popover.bs-popover-bottom .popover-body,
   .dark-edition .popover.bs-popover-top .popover-header,
   .dark-edition .popover.bs-popover-top .popover-body,
   .light-edition .popover.bs-popover-bottom .popover-header,
@@ -1242,16 +1484,18 @@ textarea, input {
     max-height: 15rem;
     overflow: auto;
     color: var(--text-primary); }
-    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar,
+    .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar,
     .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar,
     .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar,
     .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
     .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar,
     .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar {
-      width: .5rem;
-      height: .3rem; }
-    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb,
+      width: 0.5rem;
+      height: 0.3rem; }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb,
+    .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb,
     .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb,
     .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb,
@@ -1260,7 +1504,8 @@ textarea, input {
     .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb {
       background: var(--scrollbar-thumb);
       border-radius: 10px; }
-    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb:hover, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb:hover,
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb:hover,
+    .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb:hover,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb:hover,
     .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb:hover,
     .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb:hover,
@@ -1268,7 +1513,8 @@ textarea, input {
     .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb:hover,
     .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb:hover {
       background: var(--scrollbar-thumb-hover); }
-    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track,
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track,
+    .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track,
     .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track,
     .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track,
@@ -1278,7 +1524,8 @@ textarea, input {
       background: var(--scrolbar-track);
       border-radius: 10px;
       box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
-    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track:hover, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track:hover,
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track:hover,
+    .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track:hover,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track:hover,
     .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track:hover,
     .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track:hover,
@@ -1291,8 +1538,8 @@ textarea, input {
   .light-edition .popover.bs-popover-bottom .popover-header,
   .light-edition .popover.bs-popover-top .popover-header {
     background-color: transparent;
-    border-bottom: 0.1rem solid var(--modal-border-text);
-    font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid var(--modal-border-text);
+    font-family: "Roboto Mono", sans-serif;
     font-size: 1.3rem;
     color: var(--text-primary);
     font-weight: 500; }
@@ -1306,7 +1553,7 @@ textarea, input {
   .light-edition .popover.bs-popover-bottom .popover-body,
   .light-edition .popover.bs-popover-top .popover-body {
     font-size: 1.2rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "Baloo 2", sans-serif;
     color: var(--text-primary);
     font-weight: 400; }
 
@@ -1314,7 +1561,8 @@ textarea, input {
 .dark-edition .tooltip.bs-tooltip-top .tooltip-inner,
 .light-edition .tooltip.bs-tooltip-bottom .tooltip-inner,
 .light-edition .tooltip.bs-tooltip-top .tooltip-inner {
-  background-color: var(--subheading-color); }
+  background-color: var(--bg-secondary);
+  color: var(--text-primary); }
 
 .nftHeader {
   width: 100%; }
@@ -1379,6 +1627,9 @@ textarea, input {
 #collectiblePage .collectible-wrapper {
   display: flex;
   margin-top: 3rem; }
+  @media screen and (max-width: 700px) {
+    #collectiblePage .collectible-wrapper {
+      flex-direction: column; } }
 
 #collectiblePage .collectible-wrapper .image-container {
   flex: 2;
@@ -1392,6 +1643,9 @@ textarea, input {
   align-self: flex-start;
   box-shadow: var(--shadow-primary);
   border-radius: .4rem; }
+  @media screen and (max-width: 700px) {
+    #collectiblePage .collectible-wrapper .image-container {
+      margin: auto; } }
   #collectiblePage .collectible-wrapper .image-container .btn.btn-outline.video-btn-link {
     border: 1px solid var(--dark-primary);
     background-color: var(--white) !important;
@@ -1420,7 +1674,7 @@ textarea, input {
       #collectiblePage .collectible-wrapper .details-container__upper .header .title {
         margin-top: 0; }
       #collectiblePage .collectible-wrapper .details-container__upper .header .title h4 {
-        font-family: "Poppins", sans-serif;
+        font-family: "Baloo 2", sans-serif;
         font-size: 2.4rem;
         color: var(--primary-color);
         font-weight: 700;
@@ -1568,18 +1822,23 @@ textarea, input {
     padding: 1.5rem;
     color: var(--modal-text);
     border-bottom: 0.1rem solid var(--modal-border-text);
-    background-color: var(--bg-tertiary); }
+    background-color: var(--bg-primary); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title {
-      font-family: "Poppins", sans-serif;
+      font-family: "Baloo 2", sans-serif;
       font-size: 2rem;
       font-weight: 700;
       letter-spacing: 0.48px; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-header .infoHover,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-header .infoHover {
+      margin: 0 1rem 0 auto;
+      padding: 0; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header .close {
       color: var(--modal-text);
       opacity: 1;
-      text-shadow: none; }
+      text-shadow: none;
+      margin: -1rem; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close:focus,
       .light-edition .main-panel .modal-dialog .modal-content .modal-header .close:focus {
         outline: none; }
@@ -1596,23 +1855,35 @@ textarea, input {
       border-radius: 0.4rem;
       background-color: var(--bg-primary);
       margin-bottom: 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body label,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body label {
+      width: max-content; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body select,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body select {
       background-color: transparent;
       height: auto;
-      background-image: none;
       border: 0.1rem solid #3b414c;
       border-radius: 0.8rem;
       font-size: 1.3rem;
       color: var(--modal-text);
-      padding: 1rem; }
+      padding: 1rem;
+      background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 60%), linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
+      background-position: calc(100% - 28px) 16px, calc(100% - 22px) 16px, 100% 0;
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body select:hover,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body select:hover {
         cursor: var(--cursor-pointer); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body select optgroup,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body select optgroup {
+        background-color: var(--bg-secondary);
+        color: #a3abb2; }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body select option,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body select option {
-        background-color: var(--bg-tertiary);
-        padding: 0.5rem 0; }
+        background-color: var(--bg-secondary);
+        color: var(--text-primary); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .col {
       padding: 0; }
@@ -1631,6 +1902,172 @@ textarea, input {
         border: 0.1rem solid var(--primary-hover-dark);
         color: var(--primary-hover-dark);
         cursor: var(--cursor-pointer) !important; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector {
+      display: flex;
+      flex-direction: column; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector div.img-side,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector div.img-side {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector div.img-side p,
+        .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector div.img-side p {
+          height: max-content;
+          margin-left: 1.5rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector label,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector label {
+        width: max-content;
+        color: var(--modal-text);
+        padding: 1rem;
+        border: 0.1rem solid var(--modal-text);
+        border-radius: 0.8rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector p,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group.img-selector p {
+        margin: 0.5rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body #rewardPerDay,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body #rewardPerDay {
+      display: flex;
+      justify-content: space-around; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body #rewardPerDay button,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body #rewardPerDay button {
+        margin-left: 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body #farmSocialMediaAdd,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body #farmSocialMediaAdd {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body #farmSocialMediaAdd p,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body #farmSocialMediaAdd p {
+        margin: 0;
+        margin-left: 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .farmSocialMediaGroup,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .farmSocialMediaGroup {
+      display: flex;
+      justify-content: space-between; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .socialMediaName[disabled="disabled"],
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .socialMediaName[disabled="disabled"] {
+      opacity: 0.6; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .customLinkDiv,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .customLinkDiv {
+      display: flex;
+      justify-content: space-between; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .customLinkDiv input,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .customLinkDiv input {
+        width: 49%; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range-wrap,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .range-wrap {
+      position: relative;
+      margin: 1rem auto 3rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range-wrap input,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range-wrap input {
+        cursor: var(--cursor-pointer) !important; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .range {
+      width: 100%;
+      background-color: transparent;
+      -webkit-appearance: none; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus {
+        outline: none; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-webkit-slider-runnable-track,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: var(--bg-primary);
+        border-radius: 10px;
+        border: 0px solid #000000; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-webkit-slider-thumb,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-webkit-slider-thumb {
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -14px; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-webkit-slider-runnable-track,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-webkit-slider-runnable-track {
+        background: var(--bg-primary); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-moz-range-track,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-moz-range-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: var(--bg-primary);
+        border-radius: 10px;
+        border: 0px solid #000000; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-moz-range-thumb,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-moz-range-thumb {
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-track,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-fill-lower,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-fill-lower {
+        background: var(--bg-primary);
+        border: 0px solid #000000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px #000000; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-fill-upper,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-fill-upper {
+        background: var(--bg-primary);
+        border: 0px solid #000000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px #000000; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-thumb,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range::-ms-thumb {
+        margin-top: 1px;
+        box-shadow: 1px 1px 0px #000000;
+        border: 0px solid #000000;
+        height: 32px;
+        width: 12px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        cursor: pointer; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-ms-fill-lower,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-ms-fill-lower {
+        background: var(--bg-primary); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-ms-fill-upper,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .range:focus::-ms-fill-upper {
+        background: var(--bg-primary); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .bubble,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .bubble {
+      background: var(--primary-color);
+      color: white;
+      padding: 4px 12px;
+      position: absolute;
+      border-radius: 4px;
+      left: 50%;
+      top: 3rem;
+      transform: translateX(-50%); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .bubble::after,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .bubble::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--primary-color);
+        left: 50%; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label {
       display: flex;
@@ -1659,7 +2096,6 @@ textarea, input {
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input {
-      height: auto;
       background-color: transparent !important;
       background-image: none;
       border: 0.1rem solid var(--modal-border-text);
@@ -1693,6 +2129,10 @@ textarea, input {
       font-size: 1.3rem;
       color: var(--modal-text);
       transition: all 0.3s; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea::placeholder,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea::placeholder {
+        font-size: 1.3rem;
+        color: var(--modal-border-text); }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus {
         border: 0.1rem solid var(--primary-color); }
@@ -1715,14 +2155,59 @@ textarea, input {
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select {
         height: auto;
         margin-bottom: 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body #farmSelectNftButton,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body #farmSelectNftButton {
+      display: flex;
+      align-items: center; }
+  .dark-edition .main-panel .modal-dialog .modal-content .helperHeader,
+  .light-edition .main-panel .modal-dialog .modal-content .helperHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem !important; }
+    .dark-edition .main-panel .modal-dialog .modal-content .helperHeader p,
+    .light-edition .main-panel .modal-dialog .modal-content .helperHeader p {
+      margin: 0;
+      font-weight: 600; }
+  .dark-edition .main-panel .modal-dialog .modal-content #feeCollection h3,
+  .light-edition .main-panel .modal-dialog .modal-content #feeCollection h3 {
+    font-family: Baloo 2;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.56;
+    color: var(--primary-color); }
+  .dark-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox,
+  .light-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox {
+    display: flex;
+    align-items: flex-start; }
+    .dark-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox input,
+    .light-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox input {
+      margin-top: 0.2rem;
+      margin-right: 1rem;
+      cursor: var(--cursor-pointer); }
+    .dark-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox label,
+    .light-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox label {
+      font-family: "Roboto Mono";
+      font-size: 1.3rem;
+      line-height: 1.56;
+      cursor: var(--cursor-pointer); }
+      .dark-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox label span,
+      .light-edition .main-panel .modal-dialog .modal-content .farm-builder-checkbox label span {
+        font-weight: 500;
+        color: var(--primary-color); }
   .dark-edition .main-panel .modal-dialog .modal-content .modal-footer,
   .light-edition .main-panel .modal-dialog .modal-content .modal-footer {
+    background-color: var(--bg-primary);
     border-top: 0.1rem solid var(--modal-border-text);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
     line-height: 1.3; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .disabled,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .disabled {
+      opacity: 0.65;
+      cursor: var(--cursor-default); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child),
     .light-edition .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child) {
       margin-left: 0; }
@@ -1771,52 +2256,69 @@ textarea, input {
       .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active {
         background-color: var(--primary-hover-dark); }
 
-#marketForm #tierGroup select {
-  background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 60%), linear-gradient(135deg, var(--primary-color) 40%, transparent 50%) !important;
-  background-position: calc(100% - 29px) 16px, calc(100% - 22px) 16px, 100% 0;
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-  -webkit-appearance: none;
-  -moz-appearance: none; }
-
 #nftSellWallet .approveNft {
   display: block; }
 
-#nftSellWallet .modalErrorDiv {
+.modalErrorDiv {
   display: flex;
   align-items: center; }
-  #nftSellWallet .modalErrorDiv .imageContainer {
+  .modalErrorDiv .imageContainer {
     display: flex;
     width: 4.8rem;
     height: 4.8rem;
     margin-right: 2.4rem;
     justify-content: center;
     align-items: center; }
-    #nftSellWallet .modalErrorDiv .imageContainer img {
+    .modalErrorDiv .imageContainer img {
       width: max-content;
       height: max-content; }
-  #nftSellWallet .modalErrorDiv h3 {
+  .modalErrorDiv h3 {
     margin-bottom: 0;
     color: var(--heading-color);
     font-weight: 500; }
-  #nftSellWallet .modalErrorDiv h4 {
+  .modalErrorDiv h4 {
     color: var(--heading-color);
     font-weight: bold; }
-  #nftSellWallet .modalErrorDiv p {
+  .modalErrorDiv p {
     color: var(--text-primary);
     margin: 0; }
 
-#nftSellWallet .modalDivider {
+.modalDivider {
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.24);
   margin: 1rem 0; }
 
+.modalFarmInfo {
+  display: flex;
+  align-items: center;
+  margin: 0.7rem 0.4rem; }
+  .modalFarmInfo img {
+    width: 4rem; }
+  .modalFarmInfo h3 {
+    margin: 0;
+    margin-left: 1rem;
+    font-weight: 500;
+    color: var(--primary-color); }
+
+#farmShopEditModal .modal-body .form-check {
+  margin: 1.5rem 0; }
+  #farmShopEditModal .modal-body .form-check input {
+    margin-top: 0.35rem; }
+  #farmShopEditModal .modal-body .form-check label {
+    width: initial; }
+    #farmShopEditModal .modal-body .form-check label span {
+      display: initial;
+      position: initial; }
+      #farmShopEditModal .modal-body .form-check label span.radioBtnLabel {
+        color: var(--primary-color);
+        font-weight: 500; }
+
 .dark-edition .main-panel .content .container-fluid.wallet .title-options-container,
 .light-edition .main-panel .content .container-fluid.wallet .title-options-container {
   display: flex;
   padding: 1rem 0;
-  align-items: center; }
+  flex-direction: column; }
   .dark-edition .main-panel .content .container-fluid.wallet .title-options-container h1,
   .light-edition .main-panel .content .container-fluid.wallet .title-options-container h1 {
     margin-bottom: 0; }
@@ -1832,6 +2334,24 @@ textarea, input {
     .dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after,
     .light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after {
       display: none; }
+  .dark-edition .main-panel .content .container-fluid.wallet .title-options-container button#walletActions,
+  .light-edition .main-panel .content .container-fluid.wallet .title-options-container button#walletActions {
+    font-size: 1.33rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.8rem 1.2rem; }
+
+.dark-edition .main-panel .content .container-fluid.wallet p,
+.light-edition .main-panel .content .container-fluid.wallet p {
+  font-family: "Roboto Mono";
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--text-primary); }
 
 .dark-edition .main-panel .content .container-fluid.wallet .wallet-container,
 .light-edition .main-panel .content .container-fluid.wallet .wallet-container {
@@ -1906,16 +2426,30 @@ textarea, input {
     .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span.dark-mode.active {
       background-color: var(--primary-color); }
 
+.outline-btn {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 0.8rem;
+  box-shadow: none;
+  font-size: 1.4rem;
+  text-transform: none;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold; }
+  .outline-btn:hover {
+    color: var(--primary-color); }
+  .outline-btn:focus {
+    color: var(--primary-color); }
+
 .dark-edition .sidebar,
 .light-edition .sidebar {
   width: 28rem;
-  background-color: var(--bg-secondary);
   opacity: 1;
   font-size: 1.6rem;
-  box-shadow: var(--shadow-primary); }
+  box-shadow: var(--shadow-primary);
+  background-image: repeating-radial-gradient(circle farthest-corner at 50% 50%, rgba(51, 76, 245, 0.03), rgba(150, 61, 219, 0.03) 25%, rgba(211, 64, 196, 0.03) 50%, rgba(228, 124, 135, 0.03) 75%, rgba(244, 183, 75, 0.03)); }
   .dark-edition .sidebar::before,
   .light-edition .sidebar::before {
-    background-color: var(--bg-secondary);
     font-size: 1.6rem; }
   @media only screen and (max-width: 991px) {
     .dark-edition .sidebar,
@@ -2015,7 +2549,7 @@ textarea, input {
     color: var(--primary-color);
     margin-right: 1.3rem; }
   .sidebar .nav p {
-    font-size: 1.4rem;
+    font-size: 1.18rem;
     font-weight: 500;
     letter-spacing: 0.32px;
     color: #808080;
@@ -2070,7 +2604,6 @@ textarea, input {
         transform: rotateX(180deg); }
   .sidebar .nav li.collapsibleParent i svg {
     width: 2.5rem;
-    height: 2.5rem;
     position: relative;
     top: 0.3rem;
     left: 0.15rem; }
@@ -2079,7 +2612,6 @@ textarea, input {
   .sidebar .nav li.collapsibleParent.active i svg path:first-child {
     fill: var(--bg-secondary) !important; }
   .sidebar .nav li.collapsible a {
-    background-color: var(--bg-primary);
     margin-top: 0 !important;
     border-radius: 0; }
     .sidebar .nav li.collapsible a i {
@@ -2154,7 +2686,7 @@ textarea, input {
   border-radius: 0.8rem;
   padding: 0.8rem; }
   .sidebarPopover a p {
-    font-family: Poppins;
+    font-family: "Roboto Mono";
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -2182,7 +2714,8 @@ textarea, input {
 .main-panel .content .custom-header {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  font-family: "Baloo 2", "sans-serif"; }
   @media only screen and (max-width: 991px) {
     .main-panel .content .custom-header {
       margin-top: -3rem;
@@ -2197,7 +2730,7 @@ textarea, input {
 .dark-edition .main-panel,
 .light-edition .main-panel {
   width: calc(100% - 28rem);
-  background-color: var(--bg-primary); }
+  background-image: repeating-radial-gradient(circle farthest-corner at 50% 50%, rgba(51, 76, 245, 0.03), rgba(150, 61, 219, 0.03) 25%, rgba(211, 64, 196, 0.03) 50%, rgba(228, 124, 135, 0.03) 75%, rgba(244, 183, 75, 0.03)) !important; }
   @media only screen and (max-width: 991px) {
     .dark-edition .main-panel,
     .light-edition .main-panel {
@@ -2218,11 +2751,12 @@ textarea, input {
     padding: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 30px;
     background-color: var(--primary-color); }
     .dark-edition .main-panel .content .add-new-card-container:hover,
     .light-edition .main-panel .content .add-new-card-container:hover {
-      cursor: var(--cursor-pointer); }
+      cursor: var(--cursor-pointer);
+      background-image: linear-gradient(143deg, #aa3ed3, #334cf5); }
     .dark-edition .main-panel .content .add-new-card-container span,
     .light-edition .main-panel .content .add-new-card-container span {
       margin-right: 1rem;
@@ -2246,7 +2780,6 @@ textarea, input {
           width: unset; } }
   .dark-edition .main-panel .card,
   .light-edition .main-panel .card {
-    background: var(--bg-tertiary);
     border-radius: 0.8rem;
     z-index: auto;
     margin: 0; }

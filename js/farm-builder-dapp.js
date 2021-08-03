@@ -10,6 +10,8 @@ function TncDapp() {
     this.prevAccounts = [];
     this.prevChainId = '';
 
+    this.defaultSocialMediaRow;
+
     this.populateMyFarms = async function(){
 
         if(_this.lastFarmIndex == -1) {
@@ -235,6 +237,7 @@ function TncDapp() {
 
         let rate = await tncLib.farmRewardRate(farmAddress);
         $('#farmEditRewardRate').val(rate);
+        setRewardRate();
     };
 
     this.populateController = async function(e){
@@ -281,19 +284,57 @@ function TncDapp() {
             let data = await $.getJSON(_uri);
             if (typeof data == 'object') {
 
+                //Get the social media dropdown row without any values
+                let socialMediaRow = _this.defaultSocialMediaRow;
+
+                socialMediaRow.find(".removeSocial").on("click", function () {
+                    removesSocial(this);
+                });
+
+              $(".farmSocialMediaAdd").fadeIn();
+
+                for(let key in data){
+                    if(key == "name" || key == "description" || key == "image" || key == "customLink" || data[key] == ""){
+                        continue;
+                    }
+
+                    //Special case where the object was stored differently in previous versions
+                    if (typeof data[key] == 'object') {
+                        for(let key2 in data[key]){
+                            let copy_SocialMediaRow = socialMediaRow.clone();
+
+                            copy_SocialMediaRow.find("select").val(data[key][key2].name).attr("disabled", "true");
+                            copy_SocialMediaRow.find("input").val(data[key][key2].value).prop("disabled", true);;
+                            copy_SocialMediaRow.find(".removeSocial").on("click", function () {
+                                removesSocial(this);
+                            });
+
+                            $("#editSocialMedia .farmSocialMediaGroupWrapper").append(copy_SocialMediaRow);
+                        }
+
+                        continue;
+                    }
+
+                    let copy_SocialMediaRow = socialMediaRow.clone();
+
+                    copy_SocialMediaRow.find("select").val(key).attr("disabled", "true");
+                    copy_SocialMediaRow.find("input").val(data[key]).prop("disabled", true);
+                    copy_SocialMediaRow.find(".removeSocial").on("click", function () {
+                        removesSocial(this);
+                      });
+
+                    $("#editSocialMedia .farmSocialMediaGroupWrapper").append(copy_SocialMediaRow);
+                }
+
+                if($("#editSocialMedia .farmSocialMediaGroupWrapper").children().length == 0){
+                    //If there are no links then add a blank row
+                    $("#editSocialMedia .farmSocialMediaGroupWrapper").append(socialMediaRow);
+                }
+                
                 $('#farmInfoFarmAddress').val(farmAddress);
                 $('#farmInfoName').val(data.name);
                 $('#farmInfoDescription').val(data.description);
                 $('#farmInfoImageUrl').val(data.image);
-                $('#farmInfoTwitter').val(data.twitter);
-                $('#farmInfoDiscord').val(data.discord);
-                $('#farmInfoTelegram').val(data.telegram);
-                $('#farmInfoMedium').val(data.medium);
-                $('#farmInfoInstagram').val(data.instagram);
-                $('#farmInfoYoutube').val(data.youtube);
-                $('#farmInfoWeb').val(data.web);
-                $('#farmInfoEmail').val(data.email);
-                $('#farmInfoPhone').val(data.phone);
                 $('#farmInfoCustomLink').val(data.customLink.value);
                 $('#farmInfoCustomLinkText').val(data.customLink.name);
                 $('.imageFileDisplay').html('<img src=' + JSON.stringify(data.image) + ' border="0" width="200"/>');
@@ -303,6 +344,11 @@ function TncDapp() {
 
             console.log('Trouble resolving farm uri: ', _uri);
         }
+
+        //Resetting value to default on close
+        $("#farmInfoModal").on('hidden.bs.modal', function () {
+            $("#editSocialMedia .farmSocialMediaGroup").remove();
+        });
     };
 
     this.populateShopEdit = async function(e){
@@ -483,15 +529,14 @@ function TncDapp() {
             shopAddress,
             runMode,
             function () {
-                toastr["info"]('Please wait for the transaction to finish.', "Shop RunMode....");
+                $("#farmShopEditModal").modal("hide")
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
                 console.log(receipt);
                 toastr.remove();
-                toastr["success"]('Transaction has been finished.', "Success");
-
-                $('#farmShopEditButton').prop('disabled', false);
-                $('#farmShopEditButton').html('Save');
+                $("#farmShopEditModal").modal("hide")
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -518,15 +563,6 @@ function TncDapp() {
         let description = $('#farmDescription').val().trim();
         let image = $('#farmImageUrl').val().trim();
         let controller = $('#farmControllerAddress').val().trim();
-        let twitter = $('#farmTwitter').val().trim();
-        let discord = $('#farmDiscord').val().trim();
-        let telegram = $('#farmTelegram').val().trim();
-        let medium = $('#farmMedium').val().trim();
-        let instagram = $('#farmInstagram').val().trim();
-        let youtube = $('#farmYoutube').val().trim();
-        let web = $('#farmWeb').val().trim();
-        let email = $('#farmEmail').val().trim();
-        let phone = $('#farmPhone').val().trim();
         let link = $('#farmCustomLink').val().trim();
         let text = $('#farmCustomLinkText').val().trim();
 
@@ -546,17 +582,15 @@ function TncDapp() {
             name : name,
             description : description,
             image : image,
-            twitter : twitter,
-            discord: discord,
-            telegram: telegram,
-            medium: medium,
-            instagram: instagram,
-            youtube : youtube,
-            web : web,
-            email : email,
-            phone : phone,
             customLink : { name : text, value : link }
         };
+
+        $(".farmSocialMediaGroup").each(function(){
+            let social = $(this).find("select option:selected").val();
+            let link = $(this).find("input").val().trim();
+
+            farmInfo[social] = link
+        })
 
         console.log(JSON.stringify(farmInfo));
 
@@ -582,12 +616,13 @@ function TncDapp() {
                 token,
                 farmJsonUrl,
                 function () {
-                    toastr["info"]('Please wait for the transaction to finish.', "New Farm....");
+                    $("#farmModal").modal("hide")
+                    _this.infoModal("info" ,"Please wait for the transaction to finish.");
                 },
                 function (receipt) {
                     console.log(receipt);
-                    toastr.remove();
-                    toastr["success"]('Transaction has been finished.', "Success");
+                    $("#farmModal").modal("hide")
+                    _this.infoModal("success" ,"Transaction has been finished.");
 
                     _this.lastFarmIndex = -1;
                     _this.populateMyFarms();
@@ -603,24 +638,39 @@ function TncDapp() {
         });
     };
 
+
+    this.infoModal = function(state, message){
+
+        let imgSource
+
+        if(state == "success"){
+            imgSource = "assets/img/icons/task_success_black_48.svg";
+        }
+        else{
+            imgSource = "assets/img/icons/info_black_48.svg";
+        }
+
+        _alert("<div class='modalFarmInfo'>" +
+        "<img src='" + imgSource + "'>" +
+        "<h3>" + message + "</h3>" +
+        "</div>");        
+    }
+
     this.updateRewardRate = async function(){
-        let rate = $('#farmEditRewardRate').val().trim();
-        if(rate == '' || parseInt(rate) <= 0){ _alert('Please enter a valid reward rate in seconds. Default is 86400 (1 day).'); return; }
+        let rate = $('#farmEditRewardRate').val();
+        if(isNaN(parseFloat(rate)) || parseFloat(rate) <= 0){ _alert('Please enter a valid reward rate in seconds. Default is 86400 (1 day).'); return; }
         let farmAddress = $('#editRewardRate').val();
         await tncLib.farmSetRewardRate(
             rate,
             farmAddress,
             function () {
-                $('#editRewardRateButton').prop('disabled', true);
-                $('#editRewardRateButton').html('Processing...');
-                toastr["info"]('Please wait for the transaction to finish.', "Set Reward Rate...");
+                $("#editRewardRateModal").modal("hide");
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
-                console.log(receipt);
-                toastr.remove();
-                $('#editRewardRateButton').prop('disabled', false);
-                $('#editRewardRateButton').html('Update');
-                toastr["success"]('Transaction has been finished.', "Success");
+                console.log(receipt);                
+                $("#editRewardRateModal").modal("hide");
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -643,16 +693,14 @@ function TncDapp() {
             controller,
             farmAddress,
             function () {
-                $('#editControllerButton').prop('disabled', true);
-                $('#editControllerButton').html('Processing...');
-                toastr["info"]('Please wait for the transaction to finish.', "Set Controller...");
+                $("#editControllerModal").modal("hide")
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
                 console.log(receipt);
                 toastr.remove();
-                $('#editControllerButton').prop('disabled', false);
-                $('#editControllerButton').html('Update');
-                toastr["success"]('Transaction has been finished.', "Success");
+                $("#editControllerModal").modal("hide")
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -686,16 +734,14 @@ function TncDapp() {
             maxStake,
             farmAddress,
             function () {
-                $('#editStakeButton').prop('disabled', true);
-                $('#editStakeButton').html('Processing...');
-                toastr["info"]('Please wait for the transaction to finish.', "Edit Stakes...");
+                $("#editStakeModal").modal("hide")
+                _this.infoModal("info" ,"Please wait for the transaction to finish.");
             },
             function (receipt) {
                 console.log(receipt);
                 toastr.remove();
-                $('#editStakeButton').prop('disabled', false);
-                $('#editStakeButton').html('Update');
-                toastr["success"]('Transaction has been finished.', "Success");
+                $("#editStakeModal").modal("hide")
+                _this.infoModal("success" ,"Transaction has been finished.");
             },
             function (err) {
                 toastr.remove();
@@ -713,15 +759,6 @@ function TncDapp() {
         let name = $('#farmInfoName').val().trim();
         let description = $('#farmInfoDescription').val().trim();
         let image = $('#farmInfoImageUrl').val().trim();
-        let twitter = $('#farmInfoTwitter').val().trim();
-        let discord = $('#farmInfoDiscord').val().trim();
-        let telegram = $('#farmInfoTelegram').val().trim();
-        let medium = $('#farmInfoMedium').val().trim();
-        let instagram = $('#farmInfoInstagram').val().trim();
-        let youtube = $('#farmInfoYoutube').val().trim();
-        let web = $('#farmInfoWeb').val().trim();
-        let email = $('#farmInfoEmail').val().trim();
-        let phone = $('#farmInfoPhone').val().trim();
         let link = $('#farmInfoCustomLink').val().trim();
         let text = $('#farmInfoCustomLinkText').val().trim();
 
@@ -731,17 +768,15 @@ function TncDapp() {
             name : name,
             description : description,
             image : image,
-            twitter : twitter,
-            discord: discord,
-            telegram: telegram,
-            medium: medium,
-            instagram: instagram,
-            youtube : youtube,
-            web : web,
-            email : email,
-            phone : phone,
             customLink : { name : text, value : link }
         };
+
+        $("#editSocialMedia .farmSocialMediaGroup").each(function(){
+            let social = $(this).find("select option:selected").val();
+            let link = $(this).find("input").val().trim();
+
+            farmInfo[social] = link
+        })
 
         console.log(JSON.stringify(farmInfo));
 
@@ -759,16 +794,14 @@ function TncDapp() {
                 $('#farmInfoFarmAddress').val(),
                 farmJsonUrl,
                 function () {
-                    $('#farmInfoButton').prop('disabled', true);
-                    $('#farmInfoButton').html('Processing...');
-                    toastr["info"]('Please wait for the transaction to finish.', "Update Farm Info....");
+                    $("#farmInfoModal").modal("hide");
+                    _this.infoModal("info" ,"Please wait for the transaction to finish.");
                 },
                 function (receipt) {
                     console.log(receipt);
-                    toastr.remove();
-                    $('#farmInfoButton').prop('disabled', false);
-                    $('#farmInfoButton').html('Update');
-                    toastr["success"]('Transaction has been finished.', "Success");
+                    $("#farmInfoModal").modal("hide");
+                    _this.infoModal("success" ,"Transaction has been finished.");
+
                     _this.lastFarmIndex = -1;
                     _this.populateMyFarms();
                 },
@@ -862,9 +895,9 @@ function TncDapp() {
 
         let fee = await web3.utils.fromWei(await window.tncLib.getFarmFee()+"");
         let nif = await web3.utils.fromWei(await window.tncLib.getFarmMinimumNif());
-
-        $('#nifMinFarm').html(nif);
-        $('#ethFeeFarm').html(fee);
+        
+        $('#farm-builder-currency').html(getCurrency());        
+        $('#farm-builder-fee').html(fee);
     };
 
     this.clearFarm = function(){
@@ -1181,6 +1214,8 @@ function TncDapp() {
         $('#editStakeButton').on('click', _this.updateStakes);
         $('#farmInfoButton').on('click', _this.updateFarmInfo);
 
+        _this.defaultSocialMediaRow = $(".farmSocialMediaGroup").first().clone();
+        
         $('#farmCustomTokenAddress').on('change', async function(){
             let token = $(this).val().trim();
             if(await web3.utils.isAddress(token)){
@@ -1222,6 +1257,232 @@ function TncDapp() {
             }
             console.log(error);
         });
+
+        
+        $("#farmModal [data-toggle='popover']").each(function(){
+            $(this).popover();
+        })
+
+        $(".farmSocialMediaAdd").on("click", async function () {
+          let socialMediaWrapper = $(this).siblings(".farmSocialMediaGroupWrapper");
+          let socialMediaFields = socialMediaWrapper.find(".farmSocialMediaGroup").last().clone();
+
+          if($(socialMediaFields).find("option").length == 1){
+            //Prevent from creating more dropdowns than there are social media options  
+            return;
+          }
+
+          socialMediaWrapper.find('select[name="socialMediaName[]"]').each(function (i) {
+            removeOption(this);
+            socialMediaFields
+              .find('option[value="' + $(this).val() + '"]')
+              .remove();
+          });
+
+          if (socialMediaFields.find('input[type="text"]').val()) {
+            socialMediaFields.find('input[type="text"]').val("");
+            socialMediaWrapper.find(".farmSocialMediaGroup").last().find("select").attr("disabled", "true");
+            socialMediaWrapper.find(".farmSocialMediaGroup").last().find("input").prop("disabled", true);
+
+            socialMediaFields.find("select").removeAttr("disabled");
+            socialMediaFields.find("input").prop("disabled", false);
+            socialMediaWrapper.append(socialMediaFields);
+
+            if($(socialMediaFields).find("option").length == 1){
+                $(this).fadeOut();
+            }
+
+            socialMediaFields.find(".removeSocial").on("click", function () {
+              removesSocial(this);
+            });
+          }
+        });
+
+        $(".removeSocial").on("click", function () {
+          removesSocial(this);
+        });
+
+        //Remove option from dropdown if it is already selected
+        function removeOption(el) {
+          //el is select
+          let option = $(el).val();
+          $(el).parent().siblings().find('[name="socialMediaName[]"]').each(function () {
+            if ($(this).find(":selected").val() != option) {
+              $(this)
+                .find('option[value="' + option + '"]')
+                .remove();
+            }
+          });
+        }
+
+        function reAddOptions(el){
+            //el is remove button
+
+            let option = $(el)
+            .parent()
+            .find("select")
+            .find(":selected")
+            .text();
+
+            $(el).parent().siblings().find('[name="socialMediaName[]"]').each(function(){
+                let optionString = "<option value=" + option + ">" + option + "</option>";
+                $(this).append(optionString);
+            })
+        }
+        
+        window.removesSocial = function(el){
+            //el is remove button         
+            if ($(el).parent().siblings().length > 0) {
+
+                if($(el).parent().siblings().length == 1){
+                    //Re enabling the dropdown when only one is available
+                    $(el).parent().siblings().find("select").removeAttr("disabled");
+                    $(el).parent().siblings().find("input").prop("disabled", false);
+                }
+
+                let attr = $(el).parent().find("select").attr("disabled")
+                if (typeof attr !== 'undefined' && attr !== false) {
+                    
+                    reAddOptions(el);
+                }                
+
+              $(el).parent().remove();
+              
+
+              $(".farmSocialMediaAdd").fadeIn();
+            }
+        }
+
+        //Setting up the range slider
+        let range = document.querySelector(".range");
+        let bubble = document.querySelector(".bubble");
+        let currentTick = 0;
+        let bubbleValue = 0;
+
+        let defaultSliderValue = 86400 //Setting the default value
+        
+        range.value = defaultSliderValue * 10; 
+        range.addEventListener("input", () => {
+            setBubble();
+            $("#farmEditRewardRate").val(bubbleValue)
+        });
+        setBubble();
+
+        function setBubble() {
+          let val = range.value;
+
+          let min = range.min ? range.min : 0;
+          let max = range.max ? range.max : 100;
+          let step = range.step;
+          let newVal = Number(((val - min) * 100) / (max - min));
+
+          currentTick = val / step;
+
+          if (currentTick <= 10) {
+            bubbleValue = val / 10;
+          } else {
+            bubbleValue = step * ((currentTick - 10) * 10);
+          }
+
+          bubble.innerHTML = bubbleValue;          
+          bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+        }
+        
+        $("#farmEditRewardRate").change(function(){
+            setRewardRate();
+
+            let userInput = $("#farmEditRewardRate").val();
+
+            //Multiplication is neccesary because of the way the nonlinear input works
+            if(userInput * 10 < Number(range.min)){
+              bubble.style.left = '8px'
+            }
+            //The number is the middle value in between the ranges values. The ones displayed are a bit different because of the way the nonlinear input works
+            else if(userInput > 86400 && userInput <= 475200){
+                range.value = 864000;
+            }
+            else if(userInput > 475200 && userInput <= 1296000){
+                range.value = 950400;
+            }
+            else if(userInput > 1296000 && userInput <= 2160000){
+                range.value = 1036800;
+            }
+            else if(userInput > 2160000 && userInput <= 3024000){
+                range.value = 1123200;
+            }
+            else if(userInput > 3024000 && userInput <= 3888000){
+                range.value = 1209600;
+            }
+            else if(userInput > 3888000 && userInput <= 4752000){
+                range.value = 1296000;
+            }
+            else if(userInput > 4752000 && userInput <= 5616000){
+                range.value = 1382400;
+            }
+            else if(userInput > 5616000 && userInput <= 6480000){
+                range.value = 1468800;
+            }
+            else if(userInput > 6480000 && userInput <= 7344000){
+                range.value = 1555200;
+            }
+            else if(userInput > 7344000){
+                range.value = 1641600;
+                bubble.style.left = 'calc(100% + -7px)'
+            }
+            else if(userInput * 10 > Number(range.max)){
+                bubble.style.left = 'calc(100% + -7px)'
+            }
+
+            setBubble();
+            bubble.innerHTML = userInput;
+        });
+
+        window.setRewardRate = function() {
+          let input = $("#farmEditRewardRate");
+          let userValue = Number(input.val());
+
+          if (userValue <= 0 || isNaN(userValue)) {
+            $(range).attr({
+              min: defaultSliderValue,
+              max: defaultSliderValue * 20,
+              step: defaultSliderValue,
+            });
+            range.value = defaultSliderValue * 10;
+
+            input.val(defaultSliderValue);
+          } else {
+            range.value = userValue * 10;
+          }
+          
+          setBubble();
+          bubble.innerHTML = $("#farmEditRewardRate").val();
+          
+        }
+
+        $("#rangeMin").on("click", function(){
+            range.value = $(range).attr("min");
+          setBubble();
+          $("#farmEditRewardRate").val(bubble.innerHTML);
+
+        })
+
+        $("#rangeMax").on("click", function(){
+            range.value = $(range).attr("max");
+          setBubble();
+          $("#farmEditRewardRate").val(bubble.innerHTML);
+
+
+        })
+        //------------------------------------
+        
+        $(".farm-builder-checkbox input[type=checkbox]").change(function(){
+            if($(this).is(':checked')){
+                $("#farmSubmit").removeClass("disabled")
+            }
+            else{
+                $("#farmSubmit").addClass("disabled")
+            }
+        })
     });
 }
 

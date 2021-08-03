@@ -217,7 +217,7 @@ $(document).ready(async function(){
                     }else if(chain_id == '89'){
 
                         chainName = 'Polygon (Matic)';
-                        rpcUrl = 'https://rpc-mainnet.maticvigil.com/';
+                        rpcUrl = 'https://rpc-mainnet.matic.network/';
                         currencyName = 'MATIC';
                         currencySymbol = 'MATIC';
                         currencyDecimals = 18;
@@ -402,7 +402,7 @@ function runReadableOnly(){
                 rpcUrl = 'https://forno.celo.org/';
                 break;
             case '89':
-                rpcUrl = 'https://rpc-mainnet.maticvigil.com/';
+                rpcUrl = 'https://rpc-mainnet.matic.network/';
                 break;
             case '38':
                 rpcUrl = 'https://bsc-dataseed.binance.org/';

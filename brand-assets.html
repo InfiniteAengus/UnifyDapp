@@ -6,8 +6,8 @@
   <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
   <title>Brand Assets - Unifty</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
   <link rel="manifest" href="site.webmanifest">
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <script type="text/javascript" src="js/jquery.js"></script>
@@ -27,7 +27,13 @@
   <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
     integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 
@@ -359,7 +365,7 @@
   <div class="sidebar">
     <div class="logo">
       <a href="https://unifty.io" class="simple-text logo-normal">
-        <img src="assets/img/unifty2.png" width="125" border="0" />
+        <img src="assets/img/logo_transparent.png" width="90" border="0" />
         <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
           Binance Smart Chain
         </div>
@@ -402,6 +408,12 @@
           <a class="nav-link" href="farm-builder.html">
             <i class="material-icons-round">build</i>
             <p>Farm Builder</p>
+          </a>
+        </li>
+        <li class="nav-item" id="tiktokNFTs" style="display:none;">
+          <a class="nav-link" href="tiktok.html">
+            <i class="material-icons-round">collections</i>
+            <p>TikTok™ NFTs</p>
           </a>
         </li>
         <li class="nav-item bridgeNav">
@@ -562,15 +574,14 @@
 
       <div class="sidebar-divider"></div>
 
-      
-       <ul class="nav">
-         <li class="nav-item">
-           <a id="menu-collapse" class="nav-link">
-             <i class="material-icons-round">menu_open</i>
-             <p>Collapse menu</p>
-           </a>
-         </li>
-       </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a id="menu-collapse" class="nav-link">
+            <i class="material-icons-round">menu_open</i>
+            <p>Collapse menu</p>
+          </a>
+        </li>
+      </ul>
 
       <div class="sidebar-bottom">
         <div class="sidebar-text">
@@ -629,12 +640,6 @@
       <div class="custom-header">
         <div class="custom-header__title">Unifty.io</div>
         <div class="custom-header__dropdowns">
-          <script>
-            // fix for initial doubleclick required upon page load
-            $(document).ready(function () {
-              $('#chainSelectionDropdown').click();
-            });
-          </script>
 
           <div class="dropdown ml-3 mr-3 dropdown--chains">
             <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
@@ -682,7 +687,7 @@
             </div>
           </div>
           <div class="col-xl-12">
-            <a href="https://unifty-team.monday.com/protected_static/9251106/resources/247030056/Logo.zip" download="Assets" class="add-new-card-container">
+            <a href="assets/downloadable_assets/Logo.zip" download="Unifty Assets" class="add-new-card-container">
               <span class="fa fa-download"></span> Download Assets
             </a>
   
@@ -690,10 +695,7 @@
 
               <div class="brand-assets-img-element">
                 <div class="img-holder">
-                  <a href="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Dark.png"
-                    download="Unifty-Logo-Inline-Dark">
-                    <img src="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Dark.png"  width="250" loading="lazy" />
-                  </a>
+                  <img src="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Dark.svg" width="250" loading="lazy" />                
                 </div>
 
                 <h3>Logo Inline Dark</h3>
@@ -708,10 +710,7 @@
 
               <div class="brand-assets-img-element">
                 <div class="img-holder">
-                  <a href="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Light.png"
-                    download="Unifty-Logo-Inline-Light">
-                    <img src="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Light.png" width="250" loading="lazy" />
-                  </a>
+                    <img src="assets/img/logo/Unifty-Logo-Inline/Unifty-Logo-Inline-Light.svg" width="250" loading="lazy" />                 
                 </div>
 
                 <h3>Logo Inline Light</h3>
@@ -726,10 +725,7 @@
 
               <div class="brand-assets-img-element">
                 <div class="img-holder">
-                  <a href="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Dark.png"
-                    download="Unifty-Logo-Stacked-Dark">
-                    <img src="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Dark.png" width="250" loading="lazy" />
-                  </a>
+                    <img src="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Dark.svg" width="250" loading="lazy" />
                 </div>
 
                 <h3>Logo Stacked Dark</h3>
@@ -744,10 +740,7 @@
               
               <div class="brand-assets-img-element">
                 <div class="img-holder">
-                  <a href="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Light.png"
-                    download="Unifty-Logo-Stacked-Light">
-                    <img src="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Light.png" width="250" loading="lazy" />
-                  </a>
+                    <img src="assets/img/logo/Unifty-Logo-Stacked/Unifty-Logo-Stacked-Light.svg" width="250" loading="lazy" />
                 </div>
 
                 <h3>Logo Stacked Light</h3>
@@ -762,10 +755,7 @@
 
               <div class="brand-assets-img-element">
                 <div class="img-holder">
-                  <a href="assets/img/logo/Unifty-Logo-Icon/Unifty-Logo-Icon.png"
-                    download="Unifty-Logo">
-                    <img src="assets/img/logo/Unifty-Logo-Icon/Unifty-Logo-Icon.png" width="250" loading="lazy" />
-                  </a>
+                    <img src="assets/img/logo/Unifty-Logo-Icon/Unifty-Logo-Icon.svg" width="250" loading="lazy" />
                 </div>
 
                 <h3>Logo Icon</h3>
