@@ -193,12 +193,9 @@ function TncDapp() {
 
         let decimals = await tncLib.tokenDecimalsErc20(token);
 
+        console.log("PRICE: ", price);
+
         price = _this.formatNumberString(price, decimals);
-
-        if(price.length >= 10) {
-
-            price = price.substring(0, price.length - 10);
-        }
 
         let rawPrice = price;
 

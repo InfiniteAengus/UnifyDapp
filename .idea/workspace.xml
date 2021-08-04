@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b8c123-070c-42de-851e-d8a3fedd6f9e" name="Default Changelist" comment="">
+    <list default="true" id="89b8c123-070c-42de-851e-d8a3fedd6f9e" name="Default Changelist" comment="# fixed a re-introdcued decimal conversion bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/collectible-dapp.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/collectible-dapp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/custom-collectible-dapp.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom-collectible-dapp.js" afterDir="false" />
@@ -31,6 +31,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -50,7 +51,7 @@
       <workItem from="1625687585023" duration="5000" />
       <workItem from="1625687638691" duration="66000" />
       <workItem from="1625687716734" duration="38000" />
-      <workItem from="1628026839006" duration="1071000" />
+      <workItem from="1628026839006" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="+ added marketbuilder">
       <created>1623198762156</created>
@@ -108,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628026968482</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="# fixed a re-introdcued decimal conversion bug">
+      <created>1628035203838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628035203838</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,13 +143,14 @@
     <MESSAGE value="+ added new features" />
     <MESSAGE value="# general ux and ui improvements" />
     <MESSAGE value="# changed to new design and logo&#10;# fixed an issue with cancelling NFTs in the marketplaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="# changed to new design and logo&#10;# fixed an issue with cancelling NFTs in the marketplaces" />
+    <MESSAGE value="# fixed a re-introdcued decimal conversion bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="# fixed a re-introdcued decimal conversion bug" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1628026967786">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1628036074540">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1628026967786" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1628036074540" />
     <state x="147" y="64" key="MergeDialog" timestamp="1625687695883">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -150,9 +159,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="173" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1625687701586" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1628027312999">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1628035210397">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1628027312999" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1628035210397" />
   </component>
 </project>
