@@ -1305,6 +1305,7 @@ p
     };
 
     this.removingDecimals = function (string) {
+        if(string == '0') return '0';
       while (true) {
         if (string.slice(-1) == 0) {
           string = string.substring(0, string.length - 1);
