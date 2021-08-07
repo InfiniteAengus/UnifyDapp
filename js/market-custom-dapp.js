@@ -518,7 +518,7 @@ function TncDapp() {
 
     this.performCancellation = async function(){
 
-        let ask = await tncLibMarket.getAskBase($('#nftBuyIndex').val());
+        let ask = await tncLibMarket.getAskBase($('#nftBuyIndex').val(), _this.marketAddress);
 
         if(parseInt(ask.amounts) == 0){
 
@@ -554,7 +554,7 @@ function TncDapp() {
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
 
-                let errMsg = 'An error occurred with your cancellation transaction.';                    
+                let errMsg = 'An error occurred with your cancellation transaction.';
                 toastr["error"](errMsg, "Error");
                 errorPopup("Error", errMsg, err.stack);
             }
@@ -618,7 +618,7 @@ function TncDapp() {
                 },
                 function (err) {
                     toastr.remove();
-                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    let errMsg = 'An error occurred with your approval transaction.';
                     toastr["error"](errMsg, "Error");
                     errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
@@ -672,7 +672,7 @@ function TncDapp() {
                     $('#nftBatchBuy'+index).prop('disabled', false);
                     $('#nftBatchBuy'+index).html('Buy');
                     $(_button).html('Buy!');
-                    let errMsg = 'An error occurred with your buying transaction.';                    
+                    let errMsg = 'An error occurred with your buying transaction.';
                     toastr["error"](errMsg, "Error");
                     errorPopup("Error", errMsg, err.stack);
                     if(!err.message.includes('denied transaction')) {
@@ -769,7 +769,7 @@ function TncDapp() {
                         },
                         function (err) {
                             toastr.remove();
-                            let errMsg = 'An error occurred with your approval transaction.';                    
+                            let errMsg = 'An error occurred with your approval transaction.';
                             toastr["error"](errMsg, "Error");
                             errorPopup("Error", errMsg, err.stack);
                             $(_button).prop('disabled', false);
@@ -820,7 +820,7 @@ function TncDapp() {
                             $('#nftBuyButtonShortcut'+index).prop('disabled', false);
                             $('#nftBuyButtonShortcut'+index).html('Buy');
                             $(_button).html('Buy!');
-                            let errMsg = 'An error occurred with your buying transaction.';                    
+                            let errMsg = 'An error occurred with your buying transaction.';
                             toastr["error"](errMsg, "Error");
                             errorPopup("Error", errMsg, err.stack);
                             if(!err.message.includes('denied transaction')) {
@@ -929,7 +929,7 @@ function TncDapp() {
                 },
                 function (err) {
                     toastr.remove();
-                    let errMsg = 'An error occurred with your approval transaction.';                    
+                    let errMsg = 'An error occurred with your approval transaction.';
                     toastr["error"](errMsg, "Error");
                     errorPopup("Error", errMsg, err.stack);
                     $(_button).prop('disabled', false);
@@ -967,7 +967,7 @@ function TncDapp() {
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Swap!');
-                    let errMsg = 'An error occurred with your swapping transaction.';                    
+                    let errMsg = 'An error occurred with your swapping transaction.';
                     toastr["error"](errMsg, "Error");
                     errorPopup("Error", errMsg, err.stack);
                     if(!err.message.includes('denied transaction')) {
@@ -1271,7 +1271,7 @@ function TncDapp() {
                     toastr.remove();
                     $(_button).prop('disabled', false);
                     $(_button).html('Withdraw');
-                    let errMsg = 'An error occurred with your withdrawal transaction.';                    
+                    let errMsg = 'An error occurred with your withdrawal transaction.';
                     toastr["error"](errMsg, "Error");
                     errorPopup("Error", errMsg, err.stack);
                 }
@@ -2069,7 +2069,7 @@ function TncDapp() {
                 $(_button).prop('disabled', false);
                 $(_button).html('Accept');
                 _alert("We could not perform your accept request. Please contact the market owner.");
-                let errMsg = 'An error occurred with your swapping transaction.';                    
+                let errMsg = 'An error occurred with your swapping transaction.';
                 toastr["error"](errMsg, "Error");
                 errorPopup("Error", errMsg, err.stack);
             }
@@ -2108,9 +2108,9 @@ function TncDapp() {
                 toastr.remove();
                 $(_button).prop('disabled', false);
                 $(_button).html('Cancel');
-                let errMsg = 'An error occurred with your cancelling transaction.';                    
+                let errMsg = 'An error occurred with your cancelling transaction.';
                 toastr["error"](errMsg, "Error");
-                errorPopup("Error", errMsg, err.stack);                
+                errorPopup("Error", errMsg, err.stack);
             }
         );
     }
@@ -2217,7 +2217,7 @@ function TncDapp() {
                 toastr.remove();
                 $('#nftSellButton').prop('disabled', false);
                 $('#nftSellButton').html('Sell!');
-                let errMsg = 'An error occurred with your sell transaction.';                    
+                let errMsg = 'An error occurred with your sell transaction.';
                 toastr["error"](errMsg, "Error");
                 errorPopup("Error", errMsg, err.stack);
                 if(!err.message.includes('denied transaction')) {
@@ -2340,7 +2340,7 @@ function TncDapp() {
                 toastr.remove();
                 $('#storeRoyaltiesButton').prop('disabled', false);
                 $('#storeRoyaltiesButton').html('Set Royalties');
-                let errMsg = 'An error occurred with your royalties transaction.'                    
+                let errMsg = 'An error occurred with your royalties transaction.'
                 toastr["error"](errMsg, "Error");
                 errorPopup("Error", errMsg, err.stack);
             });
@@ -2490,34 +2490,34 @@ function TncDapp() {
 
     this.cleanUpDecimals = function (price) {
         price = _this.removingDecimals(price);
-  
+
         let decimalPoints = 0;
         if (price.includes(".")) {
-          decimalPoints = price.split(".")[1].length;
+            decimalPoints = price.split(".")[1].length;
         }
-  
+
         //So that we always have at least 2 zeroes after decimal point
         if (decimalPoints == 0){
-          price = price + "00"
+            price = price + "00"
         }
         else if(decimalPoints == 1){
             price = price + "0";
         }
-      
+
         return price
-      };
-  
-      this.removingDecimals = function (string) {
-          if(string == '0') return '0';
+    };
+
+    this.removingDecimals = function (string) {
+        if(string == '0') return '0';
         while (true) {
-          if (string.slice(-1) == 0) {
-            string = string.substring(0, string.length - 1);
-          } else {
-            return string;
-          }
+            if (string.slice(-1) == 0) {
+                string = string.substring(0, string.length - 1);
+            } else {
+                return string;
+            }
         }
-      };
-  
+    };
+
 
     this.getUrlParam = function(param_name) {
         const queryString = window.location.search;
