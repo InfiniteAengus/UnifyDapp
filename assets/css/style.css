@@ -376,7 +376,7 @@ textarea, input {
   text-align: center;
   max-width: 84px;
   border-radius: 11px;
-  color: #c6cbd1;
+  color: white;
   font-size: 12px;
   font-weight: bold;
   background-color: #9c27b0; }
@@ -386,7 +386,7 @@ textarea, input {
   text-align: center;
   max-width: 84px;
   border-radius: 11px;
-  color: #c6cbd1;
+  color: white;
   font-size: 12px;
   font-weight: bold;
   background-color: #202060; }
@@ -396,7 +396,7 @@ textarea, input {
   text-align: center;
   max-width: 84px;
   border-radius: 11px;
-  color: #c6cbd1;
+  color: white;
   font-size: 12px;
   font-weight: bold;
   background-color: #6c757d; }
@@ -2450,6 +2450,7 @@ textarea, input {
   background-image: repeating-radial-gradient(circle farthest-corner at 50% 50%, rgba(51, 76, 245, 0.03), rgba(150, 61, 219, 0.03) 25%, rgba(211, 64, 196, 0.03) 50%, rgba(228, 124, 135, 0.03) 75%, rgba(244, 183, 75, 0.03)); }
   .dark-edition .sidebar::before,
   .light-edition .sidebar::before {
+    background-color: var(--bg-tertiary);
     font-size: 1.6rem; }
   @media only screen and (max-width: 991px) {
     .dark-edition .sidebar,

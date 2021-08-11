@@ -842,7 +842,7 @@ function TncDapp() {
                         }
                     );
                 }
-                p
+p
                 found = true;
                 break;
             }
@@ -1276,33 +1276,33 @@ function TncDapp() {
     };
 
     this.cleanUpDecimals = function (price) {
-        price = _this.removingDecimals(price);
+      price = _this.removingDecimals(price);
 
-        let decimalPoints = 0;
-        if (price.includes(".")) {
-            decimalPoints = price.split(".")[1].length;
-        }
+      let decimalPoints = 0;
+      if (price.includes(".")) {
+        decimalPoints = price.split(".")[1].length;
+      }
 
-        //So that we always have at least 2 zeroes after decimal point
-        if (decimalPoints == 0){
-            price = price + "00"
-        }
-        else if(decimalPoints == 1){
-            price = price + "0";
-        }
-
-        return price
+      //So that we always have at least 2 zeroes after decimal point
+      if (decimalPoints == 0){
+        price = price + "00"
+      }
+      else if(decimalPoints == 1){
+          price = price + "0";
+      }
+    
+      return price
     };
 
     this.removingDecimals = function (string) {
         if(string == '0') return '0';
-        while (true) {
-            if (string.slice(-1) == 0) {
-                string = string.substring(0, string.length - 1);
-            } else {
-                return string;
-            }
+      while (true) {
+        if (string.slice(-1) == 0) {
+          string = string.substring(0, string.length - 1);
+        } else {
+          return string;
         }
+      }
     };
 
     this.getUrlParam = function(param_name) {
