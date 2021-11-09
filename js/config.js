@@ -14,12 +14,33 @@ let disable_sell_button = false;
 // as the royalties button is solely meant for the built-in marketplace, not for custom marketplaces
 let disable_royalties_button = false;
 
-// recommended block lists for adult collections on the marketplace
+// list of verified collections
+let verified_collections = [];
+
+switch(chain_id) {
+    // celo
+    case 'a4ec':
+        verified_collections = [
+            "0x9f46B8290A6D41B28dA037aDE0C3eBe24a5D1160".toLowerCase(), // celopunks
+        ];
+        break;
+}
+
+// recommended block lists for adult or scam collections on the marketplace
 // remove the switch below to display all offers from these collections in the public marketplace
 // add more items of any collection you want to block
 let blocked_collections = [];
 
 switch(chain_id){
+    // celo
+    case 'a4ec':
+        blocked_collections = [
+        "0x9F46f32A7Ad897858Fd30bC4EF535D83cF0d1160".toLowerCase(), // faked celopunks
+        "0x67FdC022FaDFa0527788546F916A008cE277d597".toLowerCase(), // faked celopunks
+        "0x780C57355a86Ef4aBeD90370e86F4566f27d1591".toLowerCase(), // faked celopunks
+        "0x9F46B8290AeF6840EE5c3684B34c6469F6BDcFdc".toLowerCase(), // faked celopunks
+        ];
+        break;
     // xDai
     case '64':
         blocked_collections = [
@@ -31,6 +52,8 @@ switch(chain_id){
     // Binance Smart Chain
     case '38':
         blocked_collections = [
+            "0x56eC49a9B28Eb09655c2Ed72b3bBDdcEbf5aa09e".toLowerCase(), // PASION DE ANGEL
+            "0x4f499F278c4F638C8DBC3fbf511863Ad6C445474".toLowerCase(), // JesseGoneWild
             "0xee47899A976CA85AE0fCFFb8c2a0fA4c9Eaa7ba7".toLowerCase(), // skin on skin
             "0x009958B1D79559570D75f8C852b3D4627CB6af30".toLowerCase(), // ariadna
             "0x6b8CBD4A71621D993e2b49b5e87471a6F08704E9".toLowerCase(), // bc

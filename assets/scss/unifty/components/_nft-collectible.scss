@@ -9,7 +9,7 @@
   
   #collectiblePage .collectible-wrapper .image-container {
     flex: 2;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-collectible);
     margin-right: 3rem;
     padding: 5rem;
     text-align: center;
@@ -46,7 +46,7 @@
     flex-direction: column;
   
     &__upper {
-      background-color: var(--bg-secondary);
+      background-color: var(--bg-collectible);
       padding: 5rem;
       box-shadow: var(--shadow-primary);
       border-radius: .4rem;
@@ -70,10 +70,12 @@
         }
   
         #amount-div {
+          text-align: right;
           span.badge.badge-info {
             background-color: unset;
             color: var(--text-primary);
             font-size: 1.2rem;
+            
           }
         }
       }
@@ -99,7 +101,7 @@
           width: 50%;
           min-width: 20rem;
           box-shadow: none;
-          border-radius: .6rem;
+          border-radius: 30px;
           border: 1px solid var(--primary-color);
           background-color: var(--primary-color) !important;
           color: var(--bg-secondary);
@@ -116,7 +118,7 @@
       #collapse-nft-description.collapse {
         font-size: 1.2rem;
         color: var(--text-primary);
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-collectible);
         padding: 0 4.5rem;
         border-radius: .4rem;
   
@@ -131,7 +133,7 @@
         font-size: 1.2rem;
         color: var(--text-primary);
         padding: 0 4.5rem;
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-collectible);
         border-radius: .4rem;
   
         .utils-vertical {
@@ -159,7 +161,7 @@
         font-size: 1.2rem;
         color: var(--text-primary);
         padding: 0 4.5rem;
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-collectible);
         border-radius: .4rem;
   
         .utils-vertical {

@@ -35,6 +35,9 @@
     .infoHover{
       margin: 0 1rem 0 auto;
       padding: 0;
+      background: none;
+      box-shadow: none;
+
     }
 
     //icon close
@@ -115,7 +118,7 @@
       padding: 0.8rem 0.5rem;
       font-size: 1.2rem;
       border: 0.1rem solid var(--primary-color);
-      border-radius: 0.4rem;
+      border-radius: 30px;
       background-color: transparent;
       color: var(--primary-color);
       box-shadow: none;

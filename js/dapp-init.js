@@ -307,7 +307,6 @@ $(document).ready(async function(){
     // Non-dapp browsers...
     else {
 
-
         if(localStorage.getItem('torusLoaded') != 'true') {
             $('#torus').css('display', 'inline-block');
             runReadableOnly();

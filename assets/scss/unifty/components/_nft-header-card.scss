@@ -5,19 +5,32 @@
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 750px){
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+  .light-edition .main-panel .nftHeader-stakingOptions-container 
+  #farmHeader {
+  width: 25rem !important;
+}
+}
+@media only screen and (max-width: 400px){
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+  .light-edition .main-panel .nftHeader-stakingOptions-container 
+  #farmHeader {
+  width: 15rem !important;
+}
+}
+
 .dark-edition .main-panel .nftHeader-stakingOptions-container,
 .light-edition .main-panel .nftHeader-stakingOptions-container {
   #farmHeader {
-    background-color: var(--bg-tertiary);
+    //background-color: var(--bg-tertiary);
     flex: 1;
     margin-right: 2rem;
     box-shadow: var(--shadow-primary);
     border-radius: .8rem;
 
-    @include respond (bootstrap-xxl) {
-      margin-right: 0;
-      margin-bottom: 3rem;
-    }
+   
+    
 
     .nftHeader.col-md-12.mb-4 {
       padding: 0 !important;
@@ -36,6 +49,7 @@
         word-wrap: normal;
         padding: .5rem 2rem;
         box-shadow: none;
+        background-color: var(--bg-secondary);
 
         .card-content {
           display: flex;

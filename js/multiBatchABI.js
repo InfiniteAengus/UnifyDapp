@@ -22,6 +22,25 @@ const multiBatchABI = [
         "anonymous": false,
         "inputs": [
             {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_sender",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_to",
+                "type": "address"
+            }
+        ],
+        "name": "TransferError",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
                 "indexed": true,
                 "internalType": "address",
                 "name": "account",
@@ -45,7 +64,6 @@ const multiBatchABI = [
         "type": "event"
     },
     {
-        "constant": false,
         "inputs": [
             {
                 "internalType": "address",
@@ -55,12 +73,10 @@ const multiBatchABI = [
         ],
         "name": "addWhitelistAdmin",
         "outputs": [],
-        "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "constant": true,
         "inputs": [],
         "name": "isOwner",
         "outputs": [
@@ -70,12 +86,10 @@ const multiBatchABI = [
                 "type": "bool"
             }
         ],
-        "payable": false,
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "constant": true,
         "inputs": [
             {
                 "internalType": "address",
@@ -91,12 +105,10 @@ const multiBatchABI = [
                 "type": "bool"
             }
         ],
-        "payable": false,
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "constant": true,
         "inputs": [],
         "name": "owner",
         "outputs": [
@@ -106,30 +118,24 @@ const multiBatchABI = [
                 "type": "address"
             }
         ],
-        "payable": false,
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "constant": false,
         "inputs": [],
         "name": "renounceOwnership",
         "outputs": [],
-        "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "constant": false,
         "inputs": [],
         "name": "renounceWhitelistAdmin",
         "outputs": [],
-        "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "constant": false,
         "inputs": [
             {
                 "internalType": "address",
@@ -154,12 +160,10 @@ const multiBatchABI = [
         ],
         "name": "transferMultiBatch",
         "outputs": [],
-        "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "constant": false,
         "inputs": [
             {
                 "internalType": "address",
@@ -169,7 +173,6 @@ const multiBatchABI = [
         ],
         "name": "transferOwnership",
         "outputs": [],
-        "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     }

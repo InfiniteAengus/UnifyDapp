@@ -28,6 +28,20 @@ body {
 
 body.dark-edition {
   cursor: var(--cursor-default); }
+  body.dark-edition::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.1rem; }
+  body.dark-edition::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px; }
+  body.dark-edition::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover); }
+  body.dark-edition::-webkit-scrollbar-track {
+    background: var(--scrolbar-track);
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
+  body.dark-edition::-webkit-scrollbar-track:hover {
+    background: var(--scrollbar-track-hover); }
   body.dark-edition a:link,
   body.dark-edition a:hover,
   body.dark-edition a:active,
@@ -36,6 +50,20 @@ body.dark-edition {
 
 body.light-edition {
   cursor: var(--cursor-default); }
+  body.light-edition::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.1rem; }
+  body.light-edition::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px; }
+  body.light-edition::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover); }
+  body.light-edition::-webkit-scrollbar-track {
+    background: var(--scrolbar-track);
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
+  body.light-edition::-webkit-scrollbar-track:hover {
+    background: var(--scrollbar-track-hover); }
   body.light-edition a:link,
   body.light-edition a:hover,
   body.light-edition a:active,
@@ -47,10 +75,11 @@ body.light-edition {
   --primary-hover-light: rgba(253, 121, 226, .1);
   --primary-hover-dark: #f047ce;
   --title-color: #ec6fd2;
+  --bg-collectible:#1f283e;
   --bg-primary: #0d141a;
   --bg-secondary: #121a21;
   --bg-secondary-light: rgba(18, 26, 33, .5);
-  --bg-tertiary: #121a21;
+  --bg-tertiary: #202940;
   --text-primary: #9d9db4;
   --text-primary-light: rgba(157, 157, 180, .5);
   --text-footer: #9d9db4;
@@ -60,13 +89,11 @@ body.light-edition {
   --modal-text: #f4f7fb;
   --image-padding: #192027;
   --traits-bg: rgba(13, 20, 26, .5);
-  --shadow-primary: 0 16px 38px -12px rgba(0, 0, 0, .56), 
-    0 4px 25px 0px rgba(0, 0, 0, .12), 
-    0 8px 10px -5px rgba(0, 0, 0, .20);
+  --shadow-primary: 0 16px 20px -12px rgba(0, 0, 0, .20), 0 4px 20px 0px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20);
   --cursor-default: url(../img/unifty-icons/cursor-default-dark.svg), auto;
   --cursor-pointer: url(../img/unifty-icons/cursor-pointer-dark.svg), auto;
   --cursor-text: url(../img/unifty-icons/cursor-text-dark-thin.svg), auto;
-  -scrollbar-track: rgba(253, 121, 226, 0.1);
+  --scrollbar-track: rgba(253, 121, 226, .1);
   --scrollbar-track-shadow: #121a21;
   --scrollbar-track-hover: #666666;
   --scrollbar-thumb: linear-gradient(0deg, #5c5c73 27%,rgba(253, 121, 226, .5) 60%);
@@ -76,11 +103,12 @@ body.light-edition {
   --primary-color: #202060;
   --primary-hover-light: rgba(32, 32, 96, .1);
   --primary-hover-dark: #06064a;
+  --bg-collectible:#ffff;
   --title-color: #202040;
   --bg-primary: #f4f7fb;
   --bg-secondary: #ffffff;
   --bg-secondary-light: rgba(255, 255, 255, .5);
-  --bg-tertiary: #eef0f8;
+  --bg-tertiary: #fff;
   --text-primary: #4c4c6f;
   --text-primary-light: rgba(76, 76, 111, .5);
   --text-footer: rgba(76, 76, 111, .5);
@@ -90,9 +118,7 @@ body.light-edition {
   --modal-text: #202040;
   --image-padding: #e2e3e8;
   --traits-bg: #fff;
-  --shadow-primary: 0 16px 38px -12px rgba(225, 225, 225, .56), 
-    0 4px 25px 0px rgba(225, 225, 225, .12), 
-    0 8px 10px -5px rgba(225, 225, 225, .2);
+  --shadow-primary: 0 16px 20px -12px rgba(225, 225, 225, .4), 0 4px 20px 0px rgba(225, 225, 225, .12), 0 8px 10px -5px rgba(225, 225, 225, .2);
   --cursor-default: url(../img/unifty-icons/cursor-default-light.svg), auto;
   --cursor-pointer: url(../img/unifty-icons/cursor-pointer-light.svg), auto;
   --cursor-text: url(../img/unifty-icons/cursor-text-light-thin.svg), auto;
@@ -112,7 +138,8 @@ body.light-edition {
   margin: 2rem 0; }
   #loadMore #loadMoreButton {
     font-size: 1.2rem;
-    font-weight: 500; }
+    font-weight: 500;
+    border-radius: 3rem; }
 
 h1 {
   font-family: "Baloo 2", sans-serif;
@@ -195,9 +222,10 @@ textarea, input {
 .dark-edition #categoryDropdown {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 0.8rem 1.2rem; }
+  padding: 0.8rem 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif; }
   .light-edition #walletActions span,
   .light-edition #bridgeActions span,
   .light-edition #categoryDropdown span,
@@ -209,7 +237,9 @@ textarea, input {
 
 .light-edition .dropdown-menu,
 .dark-edition .dropdown-menu {
-  background-color: var(--bg-secondary); }
+  background-color: var(--bg-secondary);
+  min-width: 100%;
+  font-family: "Baloo 2", sans-serif !important; }
   .light-edition .dropdown-menu a.dropdown-item,
   .dark-edition .dropdown-menu a.dropdown-item {
     font-size: 1.4rem; }
@@ -246,14 +276,15 @@ textarea, input {
         margin-right: .5rem; }
     .dark-edition .card.farm-card .card-body .card-title,
     .light-edition .card.farm-card .card-body .card-title {
-      font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: .32px;
       margin-bottom: 1rem;
       color: var(--heading-color);
       display: flex;
       width: calc(100% - 10rem);
-      height: 6rem; }
+      height: 6rem;
+      font-size: 1.65rem;
+      font-family: "Baloo 2", sans-serif; }
     .dark-edition .card.farm-card .card-body .card-description,
     .light-edition .card.farm-card .card-body .card-description {
       font-size: 1.4rem;
@@ -520,15 +551,16 @@ textarea, input {
       color: var(--heading-color) !important;
       font-size: 2rem;
       font-weight: 400;
-      padding: 15px 10px 10px; }
+      padding: 15px 20px 10px;
+      font-family: "Baloo 2", sans-serif; }
     #guidesTabs .nav-item a.active {
       font-weight: bold;
       border: 1px solid !important;
       border-bottom: 2px solid !important;
-      border-color: var(--heading-color) var(--heading-color) var(--bg-primary) !important;
       border-radius: 8px 8px 0 0;
       margin-bottom: -1px;
       margin-left: -1px;
+      border-color: var(--heading-color) var(--heading-color) var(--bg-tertiary) !important;
       background-color: transparent; }
 
 #guidesContent {
@@ -554,10 +586,9 @@ textarea, input {
     text-align: left;
     box-shadow: none;
     border-radius: 0;
-    box-shadow: var(--shadow-primary);
     padding: 13px 20px;
     border: 0;
-    background-color: var(--bg-tertiary) !important;
+    background-color: rgba(255, 255, 255, 0) !important;
     cursor: pointer; }
     #guidesContent #faq button[aria-expanded="false"]::after {
       font-family: "Material Icons";
@@ -594,7 +625,7 @@ textarea, input {
         line-height: 1.5; }
 
 #learn-more-socialDiv {
-  width: 30%;
+  width: 40%;
   height: 100%;
   margin-left: 4rem;
   background-color: var(--bg-secondary) !important;
@@ -602,7 +633,9 @@ textarea, input {
   #learn-more-socialDiv h3 {
     color: var(--primary-color);
     font-weight: bold;
-    line-height: 1.5; }
+    line-height: 1.5;
+    font-family: 'Baloo 2';
+    font-size: 2rem; }
   #learn-more-socialDiv > div {
     display: flex;
     flex-direction: row;
@@ -666,7 +699,8 @@ textarea, input {
   justify-content: space-around !important;
   padding: 2.4rem 3.6rem 1.3rem;
   border-radius: .8rem;
-  box-shadow: var(--shadow-primary); }
+  box-shadow: var(--shadow-primary);
+  background-color: var(--bg-secondary) !important; }
   .dark-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3, .dark-edition .nftHeader-stakingOptions-container #stakingOptions .my-3,
   .light-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3,
   .light-edition .nftHeader-stakingOptions-container #stakingOptions .my-3 {
@@ -745,18 +779,24 @@ textarea, input {
 .card-title {
   font-size: 2rem; }
 
+@media only screen and (max-width: 750px) {
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+  .light-edition .main-panel .nftHeader-stakingOptions-container
+#farmHeader {
+    width: 25rem !important; } }
+
+@media only screen and (max-width: 400px) {
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+  .light-edition .main-panel .nftHeader-stakingOptions-container
+#farmHeader {
+    width: 15rem !important; } }
+
 .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
 .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
-  background-color: var(--bg-tertiary);
   flex: 1;
   margin-right: 2rem;
   box-shadow: var(--shadow-primary);
   border-radius: .8rem; }
-  @media only screen and (max-width: 87.5em) {
-    .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
-    .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
-      margin-right: 0;
-      margin-bottom: 3rem; } }
   .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4,
   .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4 {
     padding: 0 !important;
@@ -772,7 +812,8 @@ textarea, input {
       color: var(--text-primary);
       word-wrap: normal;
       padding: .5rem 2rem;
-      box-shadow: none; }
+      box-shadow: none;
+      background-color: var(--bg-secondary); }
       .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content,
       .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content {
         display: flex; }
@@ -827,7 +868,9 @@ textarea, input {
   .nftListing .btn,
   .farmListing .btn,
   .nftHeader .btn {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    border-radius: 3rem;
+    font-family: "Baloo 2", sans-serif; }
   .nftListing .card .traits-collapse,
   .farmListing .card .traits-collapse,
   .nftHeader .card .traits-collapse {
@@ -851,9 +894,10 @@ textarea, input {
       min-height: 15.6rem;
       max-width: 15.6rem;
       max-height: 15.6rem;
-      padding: 0.8rem !important;
+      padding: 0.25rem !important;
       margin: 1.5rem auto 0.5rem;
-      background-color: var(--image-padding);
+      background-color: var(--bg-secondary);
+      box-shadow: var(--shadow-primary);
       border-radius: 0.6rem !important;
       object-fit: cover;
       /*
@@ -884,7 +928,8 @@ textarea, input {
     .nftHeader .card-profile .header-left,
     .nftHeader .header-profile .card-body,
     .nftHeader .header-profile .header-left {
-      position: static; }
+      position: static;
+      background-color: var(--bg-secondary); }
       .nftListing .card-profile .card-body .text-truncate a,
       .nftListing .card-profile .header-left .text-truncate a,
       .nftListing .header-profile .card-body .text-truncate a,
@@ -923,10 +968,11 @@ textarea, input {
       .nftHeader .card-profile .header-left h5.card-title,
       .nftHeader .header-profile .card-body h5.card-title,
       .nftHeader .header-profile .header-left h5.card-title {
-        font-size: 1.8rem;
         font-weight: 700;
         letter-spacing: 0.28px;
-        margin: 0 0 1rem 0; }
+        margin: 0 0 1rem 0;
+        font-size: 2rem;
+        font-family: "Baloo 2", sans-serif; }
         .nftListing .card-profile .card-body h5.card-title a,
         .nftListing .card-profile .header-left h5.card-title a,
         .nftListing .header-profile .card-body h5.card-title a,
@@ -1106,14 +1152,14 @@ textarea, input {
       .nftHeader .card-profile .header-left a.redeemButton,
       .nftHeader .header-profile .card-body a.redeemButton,
       .nftHeader .header-profile .header-left a.redeemButton {
+        border-radius: 3rem;
+        padding: 0.6rem 0.8rem;
         font-size: 1.4rem;
         box-shadow: none;
         border: none;
         text-transform: none;
-        border-radius: 0.6rem;
         background-color: var(--primary-color);
         color: var(--bg-secondary);
-        padding: 0.3rem 0.8rem;
         font-weight: 500;
         width: 90%;
         text-overflow: ellipsis;
@@ -1148,8 +1194,7 @@ textarea, input {
       .nftHeader .header-profile .header-left a.traits {
         font-size: 1.4rem;
         border: 0.1rem solid var(--text-primary);
-        border-radius: 0.6rem;
-        background-color: var(--image-padding) !important;
+        border-radius: 3rem;
         text-transform: none;
         color: var(--text-primary);
         padding: 0.3rem 0.8rem;
@@ -1349,7 +1394,9 @@ textarea, input {
           padding: 0.3rem 1rem;
           background-color: var(--bg-secondary);
           color: var(--primary-color);
-          box-shadow: none; }
+          box-shadow: none;
+          font-family: "Baloo 2", sans-serif;
+          min-width: 100%; }
           .nftListing .card-profile .card-body .dropdown-btn > a::before,
           .nftListing .card-profile .header-left .dropdown-btn > a::before,
           .nftListing .header-profile .card-body .dropdown-btn > a::before,
@@ -1431,9 +1478,24 @@ textarea, input {
         .nftHeader .header-profile .card-body .dropdown-btn.show a,
         .nftHeader .header-profile .header-left .dropdown-btn.show a {
           background-color: var(--bg-secondary);
-          font-size: 1.2rem;
-          padding: 1rem;
+          font-size: 1.4rem;
+          padding: 1rem 1.2rem;
           color: var(--text-primary); }
+          .nftListing .card-profile .card-body .dropdown-btn.show a:hover,
+          .nftListing .card-profile .header-left .dropdown-btn.show a:hover,
+          .nftListing .header-profile .card-body .dropdown-btn.show a:hover,
+          .nftListing .header-profile .header-left .dropdown-btn.show a:hover,
+          .farmListing .card-profile .card-body .dropdown-btn.show a:hover,
+          .farmListing .card-profile .header-left .dropdown-btn.show a:hover,
+          .farmListing .header-profile .card-body .dropdown-btn.show a:hover,
+          .farmListing .header-profile .header-left .dropdown-btn.show a:hover,
+          .nftHeader .card-profile .card-body .dropdown-btn.show a:hover,
+          .nftHeader .card-profile .header-left .dropdown-btn.show a:hover,
+          .nftHeader .header-profile .card-body .dropdown-btn.show a:hover,
+          .nftHeader .header-profile .header-left .dropdown-btn.show a:hover {
+            background: none;
+            box-shadow: none;
+            background-color: var(--primary-hover-light); }
         .nftListing .card-profile .card-body .dropdown-btn .dropdown-menu.show,
         .nftListing .card-profile .header-left .dropdown-btn .dropdown-menu.show,
         .nftListing .header-profile .card-body .dropdown-btn .dropdown-menu.show,
@@ -1483,7 +1545,8 @@ textarea, input {
     padding: 1rem;
     max-height: 15rem;
     overflow: auto;
-    color: var(--text-primary); }
+    color: var(--text-primary);
+    justify-content: flex-start; }
     .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar,
     .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
     .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar,
@@ -1567,6 +1630,9 @@ textarea, input {
 .nftHeader {
   width: 100%; }
 
+.aria-describedby {
+  font-size: 200px; }
+
 .dark-edition
 .main-panel
 .content
@@ -1584,7 +1650,7 @@ textarea, input {
 .card.card-profile
 .card-body button.btn-outline {
   background: var(--primary-color) !important;
-  border-radius: 0.6rem;
+  border-radius: 30px;
   border: 0.1rem solid var(--bg-primary);
   font-size: 1.6rem;
   color: var(--bg-secondary);
@@ -1633,7 +1699,7 @@ textarea, input {
 
 #collectiblePage .collectible-wrapper .image-container {
   flex: 2;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-collectible);
   margin-right: 3rem;
   padding: 5rem;
   text-align: center;
@@ -1663,7 +1729,7 @@ textarea, input {
   display: flex;
   flex-direction: column; }
   #collectiblePage .collectible-wrapper .details-container__upper {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-collectible);
     padding: 5rem;
     box-shadow: var(--shadow-primary);
     border-radius: .4rem; }
@@ -1679,10 +1745,12 @@ textarea, input {
         color: var(--primary-color);
         font-weight: 700;
         margin: 0; }
-      #collectiblePage .collectible-wrapper .details-container__upper .header #amount-div span.badge.badge-info {
-        background-color: unset;
-        color: var(--text-primary);
-        font-size: 1.2rem; }
+      #collectiblePage .collectible-wrapper .details-container__upper .header #amount-div {
+        text-align: right; }
+        #collectiblePage .collectible-wrapper .details-container__upper .header #amount-div span.badge.badge-info {
+          background-color: unset;
+          color: var(--text-primary);
+          font-size: 1.2rem; }
     #collectiblePage .collectible-wrapper .details-container__upper .collection-name {
       font-size: 1.6rem;
       color: var(--text-primary); }
@@ -1696,7 +1764,7 @@ textarea, input {
       width: 50%;
       min-width: 20rem;
       box-shadow: none;
-      border-radius: .6rem;
+      border-radius: 30px;
       border: 1px solid var(--primary-color);
       background-color: var(--primary-color) !important;
       color: var(--bg-secondary);
@@ -1708,7 +1776,7 @@ textarea, input {
   #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse {
     font-size: 1.2rem;
     color: var(--text-primary);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-collectible);
     padding: 0 4.5rem;
     border-radius: .4rem; }
     #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-description.collapse.show .utils-vertical,
@@ -1721,7 +1789,7 @@ textarea, input {
     font-size: 1.2rem;
     color: var(--text-primary);
     padding: 0 4.5rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-collectible);
     border-radius: .4rem; }
     #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapse.show .utils-vertical,
     #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-details.collapsing .utils-vertical,
@@ -1748,7 +1816,7 @@ textarea, input {
     font-size: 1.2rem;
     color: var(--text-primary);
     padding: 0 4.5rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-collectible);
     border-radius: .4rem; }
     #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapse.show .utils-vertical,
     #collectiblePage .collectible-wrapper .details-container__lower #collapse-nft-traits.collapsing .utils-vertical,
@@ -1832,7 +1900,9 @@ textarea, input {
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header .infoHover,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header .infoHover {
       margin: 0 1rem 0 auto;
-      padding: 0; }
+      padding: 0;
+      background: none;
+      box-shadow: none; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header .close {
       color: var(--modal-text);
@@ -1893,7 +1963,7 @@ textarea, input {
       padding: 0.8rem 0.5rem;
       font-size: 1.2rem;
       border: 0.1rem solid var(--primary-color);
-      border-radius: 0.4rem;
+      border-radius: 30px;
       background-color: transparent;
       color: var(--primary-color);
       box-shadow: none; }
@@ -2428,14 +2498,15 @@ textarea, input {
 
 .outline-btn {
   background-color: var(--bg-secondary);
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   border: 0.2rem solid var(--primary-color);
   border-radius: 0.8rem;
   box-shadow: none;
   font-size: 1.4rem;
   text-transform: none;
   padding: 0.7rem 1.5rem;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: "Baloo 2", sans-serif; }
   .outline-btn:hover {
     color: var(--primary-color); }
   .outline-btn:focus {
@@ -2447,7 +2518,7 @@ textarea, input {
   opacity: 1;
   font-size: 1.6rem;
   box-shadow: var(--shadow-primary);
-  background-image: repeating-radial-gradient(circle farthest-corner at 50% 50%, rgba(51, 76, 245, 0.03), rgba(150, 61, 219, 0.03) 25%, rgba(211, 64, 196, 0.03) 50%, rgba(228, 124, 135, 0.03) 75%, rgba(244, 183, 75, 0.03)); }
+  background-image: none; }
   .dark-edition .sidebar::before,
   .light-edition .sidebar::before {
     background-color: var(--bg-tertiary);
@@ -2462,29 +2533,9 @@ textarea, input {
     height: calc(100vh - 16rem);
     display: flex;
     flex-direction: column;
-    padding-bottom: 6rem;
+    padding-bottom: 0;
     overflow: hidden;
     overflow-y: auto; }
-    @media only screen and (min-width: 112.5em) {
-      .dark-edition .sidebar .sidebar-wrapper,
-      .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 0.7rem; } }
-    @media only screen and (max-width: 75em) {
-      .dark-edition .sidebar .sidebar-wrapper,
-      .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 5rem; } }
-    @media only screen and (max-width: 991px) {
-      .dark-edition .sidebar .sidebar-wrapper,
-      .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 4rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .dark-edition .sidebar .sidebar-wrapper,
-      .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 5.5rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .dark-edition .sidebar .sidebar-wrapper,
-      .light-edition .sidebar .sidebar-wrapper {
-        padding-bottom: 8rem; } }
     .dark-edition .sidebar .sidebar-wrapper .sidebar-bottom,
     .light-edition .sidebar .sidebar-wrapper .sidebar-bottom {
       flex: 1;
@@ -2531,7 +2582,7 @@ textarea, input {
   display: none; }
 
 .dark-edition .sidebar .sidebar-wrapper ul.nav:first-child, .light-edition .sidebar .sidebar-wrapper ul.nav:first-child {
-  overflow: auto; }
+  overflow: inherit; }
 
 .dark-edition .sidebar .logo,
 .light-edition .sidebar .logo {
@@ -2546,16 +2597,18 @@ textarea, input {
 .sidebar .nav {
   margin-top: 0; }
   .sidebar .nav i {
-    font-size: 2.1rem;
+    font-size: 2rem;
     color: var(--primary-color);
     margin-right: 1.3rem; }
   .sidebar .nav p {
-    font-size: 1.18rem;
     font-weight: 500;
     letter-spacing: 0.32px;
     color: #808080;
     width: max-content;
-    overflow: hidden; }
+    overflow: hidden;
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    font-family: "Baloo 2", sans-serif; }
   .sidebar .nav li > a {
     margin: 1rem 2.4rem 0 !important; }
   .sidebar .nav li.active:not(.collapsible) > a {
@@ -2624,24 +2677,38 @@ textarea, input {
     color: var(--primary-color); }
 
 .sidebar-text {
+  font-family: "Baloo 2", sans-serif;
+  margin: auto;
+  background-color: var(--bg-collectible);
+  height: 5.3rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   color: var(--text-footer); }
   .sidebar-text.icons {
-    margin: 4rem 0 1rem; }
+    padding-top: 1rem;
+    display: block !important; }
     .sidebar-text.icons span a {
-      margin: 0 1rem; }
+      margin: 0 1rem;
+      height: 1.6rem; }
+      @media only screen and (max-width: 700px) {
+        .sidebar-text.icons span a {
+          margin: 0 0.4rem;
+          height: 1.6rem; } }
+      .sidebar-text.icons span a img {
+        height: 2rem; }
     .sidebar-text.icons span a:hover {
       color: var(--heading-color); }
-  .sidebar-text.rights span {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.24px;
-    text-align: center; }
-    .sidebar-text.rights span i {
-      font-size: 1rem;
-      vertical-align: middle; }
+  .sidebar-text.left {
+    padding-left: 0; }
+    .sidebar-text.left span {
+      font-weight: 300;
+      letter-spacing: 0.24px;
+      text-align: center;
+      margin-left: 2rem;
+      font-size: 1.35rem; }
+      .sidebar-text.left span i {
+        font-size: 1rem;
+        vertical-align: middle; }
 
 .sidebar-divider {
   border-bottom: 0.1rem solid #4c4c6f;
@@ -2650,27 +2717,27 @@ textarea, input {
 .dark-edition .sidebar.collapsed,
 .light-edition .sidebar.collapsed {
   width: 10rem; }
-  .dark-edition .sidebar.collapsed .logo img,
-  .light-edition .sidebar.collapsed .logo img {
-    width: 8.5rem;
-    height: 8.5rem; }
-  .dark-edition .sidebar.collapsed .sidebar-wrapper .nav li > a,
-  .light-edition .sidebar.collapsed .sidebar-wrapper .nav li > a {
-    margin: 1rem 2.6rem 0; }
-  .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item,
-  .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item {
-    width: max-content; }
-    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i,
-    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i {
-      margin: 0; }
-    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p,
-    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p {
-      width: 0px;
-      height: 0px;
-      overflow: auto; }
-    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after,
-    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after {
-      display: none; }
+  .dark-edition .sidebar.collapsed .sidebar-wrapper .nav,
+  .light-edition .sidebar.collapsed .sidebar-wrapper .nav {
+    height: max-content; }
+    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav li > a,
+    .light-edition .sidebar.collapsed .sidebar-wrapper .nav li > a {
+      margin: 1rem 2.6rem 0; }
+    .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item,
+    .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item {
+      width: max-content;
+      height: 42px; }
+      .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i,
+      .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item i {
+        margin: 0; }
+      .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p,
+      .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item p {
+        width: 0px;
+        height: 0px;
+        overflow: auto; }
+      .dark-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after,
+      .light-edition .sidebar.collapsed .sidebar-wrapper .nav .nav-item.collapsibleParent a::after {
+        display: none; }
 
 .bs-popover-right {
   border-radius: 0.8rem; }
@@ -2687,7 +2754,6 @@ textarea, input {
   border-radius: 0.8rem;
   padding: 0.8rem; }
   .sidebarPopover a p {
-    font-family: "Roboto Mono";
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -2695,8 +2761,10 @@ textarea, input {
     line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
-    color: #6c757d;
-    margin: 0; }
+    margin: 0;
+    font-family: "Baloo 2", sans-serif;
+    color: var(--text-primary);
+    padding: 0   0.5rem; }
   .sidebarPopover a i {
     color: transparent;
     font-size: 1.2rem;
@@ -2749,11 +2817,12 @@ textarea, input {
     font-size: 1.4rem;
     color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
-    padding: 12px;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 30px;
-    background-color: var(--primary-color); }
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    font-family: "Baloo 2", sans-serif; }
     .dark-edition .main-panel .content .add-new-card-container:hover,
     .light-edition .main-panel .content .add-new-card-container:hover {
       cursor: var(--cursor-pointer);
@@ -2787,7 +2856,8 @@ textarea, input {
   .dark-edition .main-panel .nftHeader-stakingOptions-container,
   .light-edition .main-panel .nftHeader-stakingOptions-container {
     display: flex;
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    background-color: var(--bg-secondary); }
     @media only screen and (max-width: 87.5em) {
       .dark-edition .main-panel .nftHeader-stakingOptions-container,
       .light-edition .main-panel .nftHeader-stakingOptions-container {
@@ -2823,7 +2893,8 @@ textarea, input {
   .light-edition .main-panel .content .container-fluid #bridgedPage.row {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    grid-gap: 2rem; }
+    grid-gap: 2rem;
+    margin: 3rem 0 0 0; }
   .dark-edition .main-panel .content .container-fluid .col-xl-12,
   .dark-edition .main-panel .content .container-fluid .col-lg-12,
   .light-edition .main-panel .content .container-fluid .col-xl-12,

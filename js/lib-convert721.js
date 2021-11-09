@@ -45,7 +45,7 @@ function TncLibConvert721() {
         // BINANCE MAINNET
     } else if (chain_id === "38") {
 
-        this.conv721 = new web3.eth.Contract(converter721To1155ABI, '0xCe24782557508f7A4b5dFf0972ef6359583F5acF', {from: this.account});
+        this.conv721 = new web3.eth.Contract(converter721To1155ABI, '0xF2b4F2168e5b31C1564E6d00Ea44CfB5A173065a', {from: this.account});
         this.uniftyverse721 = "0xCe24782557508f7A4b5dFf0972ef6359583F5acF";
 
         // assuming ethereum mainnet if nothing else specified

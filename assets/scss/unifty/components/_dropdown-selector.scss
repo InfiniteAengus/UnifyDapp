@@ -27,9 +27,13 @@
   #categoryDropdown {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: 400;
+    
     padding: 0.8rem 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: "Baloo 2", sans-serif;
+   
+
 
     span {
       font-size: 1.4rem;
@@ -39,10 +43,18 @@
 
   .dropdown-menu {
     background-color: var(--bg-secondary);
+    min-width: 100%;
+    font-family: "Baloo 2", sans-serif !important;
+    
+
 
     a.dropdown-item {
       font-size: 1.4rem;
+      
     }
+
+    
+
   }
 
   .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {

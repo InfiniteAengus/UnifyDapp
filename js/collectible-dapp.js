@@ -43,6 +43,8 @@ function TncDapp() {
         let data_link = '';
         let data_attributes = [];
 
+        console.log("IPFS URL: ", nft.uri);
+
         try {
 
             let data = await $.getJSON(nft.uri.replace('ipfs://','https://gateway.ipfs.io/ipfs/').replace('/ipfs/ipfs/', '/ipfs/'));
@@ -62,7 +64,7 @@ function TncDapp() {
         }catch (e){
 
             try {
-                let data = await $.getJSON(nft.uri.toLowerCase().replace('gateway.ipfs.io', 'cloudflare-ipfs.com'));
+                let data = await $.getJSON(nft.uri.replace('gateway.ipfs.io', 'cloudflare-ipfs.com'));
 
                 if (typeof data == 'object') {
 
@@ -257,7 +259,7 @@ function TncDapp() {
         }catch (e){
 
             try {
-                let data = await $.getJSON(nft.uri.toLowerCase().replace('gateway.ipfs.io', 'cloudflare-ipfs.com'));
+                let data = await $.getJSON(nft.uri.replace('gateway.ipfs.io', 'cloudflare-ipfs.com'));
 
                 if (typeof data == 'object') {
 

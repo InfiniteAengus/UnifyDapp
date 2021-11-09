@@ -1,6 +1,6 @@
 .outline-btn{
     background-color: var(--bg-secondary);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     border: 0.2rem solid var(--primary-color);
     border-radius: 0.8rem;
     box-shadow: none;
@@ -8,6 +8,7 @@
     text-transform: none;
     padding: 0.7rem 1.5rem;
     font-weight: bold;
+    font-family: "Baloo 2", sans-serif;
   
     &:hover{
       color: var(--primary-color);

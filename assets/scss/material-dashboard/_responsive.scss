@@ -321,6 +321,12 @@
 /*          Changes for small display      */
 
 @media (max-width: 991px){
+    
+
+    .dropdown-item{
+        font-size: 1.75rem !important;
+    
+
 
     .form-group{
         textarea{
@@ -451,7 +457,7 @@
         box-shadow: none;
 
         .sidebar-wrapper{
-            padding-bottom: 150px;
+           // padding-bottom: 150px;
         }
 
         .navbar-form + .nav-mobile-menu {
@@ -848,7 +854,7 @@
     }
     .navbar-collapse{
         .nav p{
-            font-size: $font-size-base;
+            font-size: 1.6rem !important;
             margin: 0;
         }
     }
@@ -860,6 +866,8 @@
     .navbar .navbar-collapse {
       .navbar-nav .nav-item .nav-link p {
         display: none;
+      
+
       }
     }
   }

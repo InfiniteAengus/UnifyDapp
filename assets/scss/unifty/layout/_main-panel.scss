@@ -27,11 +27,13 @@
     font-size: 1.4rem;
     color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
-    padding: 12px;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 30px;
     background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    font-family: "Baloo 2", sans-serif;
+
 
     &:hover {
       cursor: var(--cursor-pointer);
@@ -80,6 +82,7 @@
   .nftHeader-stakingOptions-container {
     display: flex;
     margin-bottom: 3rem;
+    background-color: var(--bg-secondary);
 
     @include respond(bootstrap-xxl) {
       flex-direction: column;
@@ -122,6 +125,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
       grid-gap: 2rem;
+      margin: 3rem 0 0 0;
     }
 
     .col-xl-12,

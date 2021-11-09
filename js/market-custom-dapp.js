@@ -2649,7 +2649,9 @@ function run(connected) {
 
         let dapp = new TncDapp();
         dapp.wrapperAddress = getUrlParam('location');
-        dapp.isWrapAdmin = await tncLibMarket.isWrapAdmin(tncLib.account, dapp.wrapperAddress);
+        if(tncLib.account != '0x0000000000000000000000000000000000000000') {
+            dapp.isWrapAdmin = await tncLibMarket.isWrapAdmin(tncLib.account, dapp.wrapperAddress);
+        }
         let addresses = await tncLibMarket.getMarketContractAddresses(dapp.wrapperAddress);
         console.log("Addresses: ", addresses);
         dapp.marketAddress = addresses.market;

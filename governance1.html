@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <title>Community Governance - Unifty</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/web3.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script type="text/javascript" src="js/ipfs.js"></script>
+    <script type="text/javascript" src="js/buffer.js"></script>
+    <script type="text/javascript" src="js/config.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/farmABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/govABI1.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/govConsumerABI1.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/lib-gov1.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/gov-dapp1.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/sidebar.js"></script>
+    <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/js/plugins/chartist.min.js"></script>
+    <script src="assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
+    <script>
+        /*
+        $(document).ready(function () {
+            new ClipboardJS('.btn-clipboard');
+            $("#chainSelectionDropdown").click();
+        });*/
+    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+          integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <style type="text/css">
+        .dark-edition .modal .form-control {
+            color: #8b92a9;
+        }
+
+        .dark-edition .modal a {
+            color: #8b92a9;
+            font-weight: 700;
+        }
+
+        .dark-edition .modal .form-control,
+        .is-focused .dark-edition .modal .form-control {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        .nftListing {
+            min-width: 300px;
+        }
+
+        .btn-outline {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        .btn-clipboard {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .fa-clipboard {
+            font-size: 1.2rem !important;
+        }
+
+        .traits-collapse ul li {
+            border-bottom: 1px solid #8b92a9;
+        }
+
+        .traits-collapse ul li:last-child {
+            border-bottom: none;
+        }
+
+        .dark-edition .card .card-body .card-description {
+            color: #8b92a9;
+        }
+
+        .description,
+        .card-description,
+        .footer-big p {
+            color: #8b92a9;
+        }
+
+        .title,
+        .title a,
+        .card-title,
+        .card-title a,
+        .info-title,
+        .info-title a,
+        .footer-brand,
+        .footer-brand a,
+        .footer-big h5,
+        .footer-big h5 a,
+        .footer-big h4,
+        .footer-big h4 a,
+        .media .media-heading,
+        .media .media-heading a {
+            color: #8b92a9;
+        }
+
+        body {
+            color: #8b92a9;
+        }
+
+        .navbar,
+        .navbar-text a {
+            color: inherit;
+        }
+
+        #addedAttributes .col {
+            margin-top: auto;
+            margin-bottom: auto;
+
+            margin-right: 5px;
+        }
+
+        #addedAttributes .col .addedAttributeDelete{
+            margin-bottom: 0px;
+            margin-top: 0px !important;
+        }
+
+        .dark-edition input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #666666!important;
+            opacity: 1 !important; /* Firefox */
+        }
+
+        .light-edition input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #979797 !important;
+            opacity: 1 !important; /* Firefox */
+        }
+
+    </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<script src="js/themeDefault.js"></script>
+
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="logo">
+        <a href="https://unifty.io" class="simple-text logo-normal">
+            <img src="assets/img/logo_transparent.png" width="90" border="0" />
+            <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+                Binance Smart Chain
+            </div>
+        </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" >
+                    <i class="material-icons-round">home</i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="governance.html">
+                    <i class="material-icons-round">explore</i>
+                    <p>Governance / $UNT</p>
+                </a>
+            </li>
+            <li class="nav-item" id="marketNavLink">
+                <a class="nav-link" href="market.html">
+                    <i class="material-icons-round">storefront</i>
+                    <p>NFT Market</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="collectibles.html">
+                    <i class="material-icons-round">account_balance_wallet</i>
+                    <p>Your Wallet</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="manager.html">
+                    <i class="material-icons-round">collections</i>
+                    <p>Collection Manager</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="market-builder.html">
+                    <i class="material-icons-round">add_business</i>
+                    <p>Market Builder</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="farm-builder.html">
+                    <i class="material-icons-round">build</i>
+                    <p>Farm Builder</p>
+                </a>
+            </li>
+            <li class="nav-item" id="tiktokNFTs" style="display:none;">
+                <a class="nav-link" href="tiktok.html">
+                    <i class="material-icons-round">collections</i>
+                    <p>TikTok™ NFTs</p>
+                </a>
+            </li>
+            <li class="nav-item bridgeNav">
+                <a class="nav-link" href="bridge.html">
+                    <i class="material-icons-round">360</i>
+                    <p>NFT Bridge</p>
+                </a>
+            </li>
+
+            <div id="accordion">
+                <!-- FARMS -->
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item collapsibleParent">
+                            <a class="nav-link" data-toggle="collapse" data-target="#collapseFarm" aria-expanded="false"  >
+                                <div>
+                                    <i class="material-icons-round">grass</i>
+                                    <p>Farms</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div id="collapseFarm" class="collapse hide" data-parent="#accordion">
+                        <ul class="nav">
+                            <li class="nav-item collapsible" id="xdaiFarm">
+                                <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0x87E5aFba16E3BEbd967699B4D5472B2ae1AA8Fa7">
+                                    <i class="material-icons">fiber_manual_record</i>
+                                    <p>Rares Farm - NIF (xDai)</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item collapsible" id="genesisFarm">
+                                <a class="nav-link" href="https://unifty.io/farm.html?farm=0xA2c88A39b1DE8f1d723d9E76AD07f6012826d0f3">
+                                    <i class="material-icons">fiber_manual_record</i>
+                                    <p>Genesis Farm - NIF-LP</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank"
+                           href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e">
+                            <i class="material-icons-round">find_replace</i>
+                            <p>Get $NIF on Uniswap</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="ramp-btn">
+                        <a class="nav-link">
+                            <i class="material-icons-round">attach_money</i>
+                            <p>Buy crypto with RAMP</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- UNIFTY -->
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item collapsibleParent">
+                            <a class="nav-link" data-toggle="collapse" data-target="#collapseUnifty" aria-expanded="false">
+                                <div>
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="#202060"
+                                                  d="M16.174 6.942L23 5l-7.261.522L17 3l-3 2 1-3-3.032 2.274A7.842 7.842 0 0 0 10 4H5l1.049 1.049a8.031 8.031 0 0 0-1.813 1.412L1 7l2.234.745a7.916 7.916 0 0 0-1.083 2.721L1 12h1a7.746 7.746 0 0 0 .134 1.422l-.021.005a10 10 0 0 0 4.341 6.88c.11.075.22.15.332.221l.123.074a9.907 9.907 0 0 0 5.2 1.472c.709 0 2.776-.074 2.776-.5A10 10 0 0 0 11 15.012V15a8.891 8.891 0 0 1 .456-2.8 3.5 3.5 0 0 0 2.59 1.751A2.5 2.5 0 0 0 19 13.5c0-.876-2.1-5.539-2.1-5.539a8.028 8.028 0 0 0-.726-1.019zm-5.206 4.128c.028 0 .057 0 .086.006v.01c-.029-.004-.054-.012-.086-.016z" />
+                                            <path fill="none" d="M0 0H24V24H0z" />
+                                        </svg>
+                                    </i>
+                                    <p>Unifty</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div id="collapseUnifty" class="collapse hide" data-parent="#accordion">
+                        <ul class="nav">
+                            <li class="nav-item shop collapsible" id="shopEthereum" style="display:none;">
+                                <a class="nav-link" href="https://unifty.io/farm-view.html?address=0x7387DF14E182b37aEF944C231E6f4D88EbBa1145">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Shop</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item shop collapsible" id="shopXdai" style="display:none;">
+                                <a class="nav-link" href="https://unifty.io/xdai/farm-view.html?address=0xCBe3F53c26A717704d12D219F8B43016BbDa9082">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Shop</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item shop collapsible" id="shopBsc" style="display:none;">
+                                <a class="nav-link" href="https://unifty.io/bsc/farm-view.html?address=0x7B717526fF81f28053F82170D96f01B4605A5e90">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Shop</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item collapsible ">
+                                <a class="nav-link" href="about.html">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>About Unifty</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item collapsible">
+                                <a class="nav-link" href="roadmap.html">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Roadmap</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item collapsible">
+                                <a class="nav-link" href="brand-assets.html">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Brand Assets</p>
+                                </a>
+                            </li>
+                            <li class="nav-item collapsible">
+                                <a class="nav-link" href="changelog.html">
+                                    <i class="material-icons-round">
+                                        fiber_manual_record
+                                    </i>
+                                    <p>Changelog</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- GUIDES AND FAQ -->
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="guides-faq.html">
+                            <i class="material-icons">help_center</i>
+                            <p>Guides & FAQ</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+
+        <div class="sidebar-divider"></div>
+
+        <ul class="nav">
+            <li class="nav-item">
+                <a id="menu-collapse" class="nav-link">
+                    <i class="material-icons-round">menu_open</i>
+                    <p>Collapse menu</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-text icons" >
+            <span class="navbar-text">  
+              <a href="https://t.me/unifty" target="_blank">
+                <img src="assets/img/social-icons/telegram.svg">
+              </a>
+              <a href="https://discord.gg/5ZBTgnAd9s" target="_blank">
+                <img src="assets/img/social-icons/discord.svg">
+              </a>
+              <a href="https://twitter.com/unifty_com" target="_blank">
+                <img src="assets/img/social-icons/twiter.svg">
+              </a>
+              
+              <a href="https://www.linkedin.com/company/unifty/" target="_blank">
+                <img src="assets/img/social-icons/linkedin.svg">             
+              </a>
+              <a href="https://www.youtube.com/channel/UCcObER-bpLPf8ni3vhDhUTw" target="_blank">
+                <img src="assets/img/social-icons/youtube.svg">             
+              </a>
+              <a href="https://www.instagram.com/uniftyofficial/" target="_blank">
+                <img src="assets/img/social-icons/instagram.svg">
+              </a>
+
+              </span>
+            </div>
+
+                <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Unifty Development d.o.o.<br/>All rights reserved.
+            </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- SIDEBAR END -->
+
+<div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                    aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+        <!-- HEADER -->
+        <div class="custom-header">
+            <div class="custom-header__title">Unifty.io - Community Governance</div>
+            <div class="custom-header__dropdowns">
+
+                <div class="dropdown ml-3 mr-3 dropdown--chains">
+                    <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ethereum
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="https://unifty.io/"><img src="assets/img/network-icons/ethereum_logo.svg">Ethereum</a>
+                        <a class="dropdown-item" href="https://unifty.io/xdai/"><img src="assets/img/network-icons/xdai_logo.svg">xDai</a>
+                        <a class="dropdown-item" href="https://unifty.io/bsc/"><img src="assets/img/network-icons/binance_logo.svg">Binance Smart Chain</a>
+                        <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
+                        <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
+                        <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
+                        <a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/"><img src="assets/img/network-icons/rinkeby_logo.svg">Moonbeam (Alpha)</a>
+                        <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
+                    </div>
+                </div>
+
+                <div class="theme-toggler">
+                    <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+                        <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+                    </label>
+                    <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+                </div>
+
+            </div>
+        </div>
+        <!-- HEADER END -->
+
+        <div class="content__welcome-text">
+            <p>
+                Welcome to the Unifty Community Governance! Vote on important decisions and participate in the Unifty ecosystem!
+
+            </p>
+        </div>
+
+        <div class="container-fluid mt-5">
+
+            <div class="nftHeader-stakingOptions-container" style="min-width:100% ;">
+
+                <div id="farmHeader">
+                    <div class="nftHeader col-md-12 mb-4">
+                        <div class="card">
+                            <!-- <div class="row"> -->
+                            <div>
+                                <div class="card-content">
+
+                                    <div class="col-3">
+                                        <img class="card-img" loading="lazy" src="assets/img/unifty2.png" alt="Unifty" style="width: 100%;max-width: 500px;" />
+                                    </div>
+
+                                    <div class="col-9">
+                                        <div class="card-body">
+                                            <h1>Governance Closed!</h1>
+                                            <p class="card-text">
+                                                <br/><br/>
+                                                Please unstake your existing $NIF stakes as this version of the governance is closed.
+                                                <br/>
+                                                <br/>
+                                                Further staking is disabled. You may restake in the new version.
+                                                <br/>
+                                                <br/>
+                                                You can find the new version <a href="https://unifty.io/governance.html">here</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="stakingOptions">
+                    <!-- make container consist from 3 rows -->
+                    <div class="first-row">
+                        <a href="javascript:void(0);" class="btn btn-secondary mb-3 mr-1">
+                            Staking <span id="nifStaked"></span> $NIF</span>
+                        </a>
+                        <div class="divider"></div>
+                        <a href="javascript:void(0);" class="btn btn-secondary mb-3 mr-1">
+                            Earned <span id="untEarned">0.0000</span> $UNT</span><br/>
+                            <sub>Current Estimate: <span id="untEarnedLive">0.0000</span> $UNT</sub>
+                        </a>
+                    </div>
+
+                    <div class="second-row">
+
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="btn btn-primary mb-3" id="peers" data-toggle="modal"
+                               data-target="#peersModal">
+                                Vaults
+                            </a>
+                        </div>
+
+                        <div class="dropdown mt-3">
+                            <a href="javascript:void(0);" class="btn btn-primary dropdown-toggle mb-3" id="collectionActions"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Actions
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="nftActions">
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal"
+                                   data-target="#stakeNif">Stake $NIF</a>
+                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal"
+                                   data-target="#proposal">New Proposal</a>
+                                <a href="javascript:void(0);" class="dropdown-item" id="withdrawUnt">Withdraw $UNT</a>
+                                <a href="javascript:void(0);" class="dropdown-item"  data-toggle="modal"
+                                   data-target="#unstakeNif">Unstake $NIF</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="third-row">
+                        <div class="row justify-content-center content-center mb-3" style="font-size: 0.8em;">
+                            Powered&nbsp;by&nbsp;<a href="https://t.me/unifty">Unifty</a>&nbsp;and&nbsp;<a
+                                href="https://app.uniswap.org/#/swap?outputCurrency=0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e"
+                                target="_blank">$NIF</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script id="gov-template" type="text/x-handlebars-template">
+            <div class="farmListing mb-3">
+                <div class="card card-profile">
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            {{name}}
+                        </h5>
+
+                        <div class="collection-name">{{subtitle}}</div>
+
+                        {{#ifNotEquals description ""}}
+                        <p style="font-size: 1.4em;" class="text-truncate">
+                            {{breaklines description}}
+                        </p>
+                        {{/ifNotEquals}}
+
+                        <button class="traits btn btn-outline details" id="details{{proposalId}}" data-id="{{proposalId}}" data-action="details" data-toggle="modal"
+                                data-target="#detailsModal">{{details_button}}</button>
+
+                        {{#ifEquals executable "true"}}
+                        <br/>
+                        <button class="traits btn btn-outline execute" id="execute{{proposalId}}" data-id="{{proposalId}}">Execute</button>
+                        {{/ifEquals}}
+
+                        {{#ifNotEquals timeLeft "0"}}
+                            <div style="font-size: 1.4em;">Ends in</div>
+                            <div id="timeLeftCounter{{proposalId}}" style="font-size: 1.4em;"></div>
+                        {{/ifNotEquals}}
+
+                        {{#ifNotEquals resolved ""}}
+                        <div style="font-size: 1.4em;">{{resolved}}</div>
+                        {{/ifNotEquals}}
+
+                        {{#ifNotEquals result ""}}
+                        <div style="font-size: 1.4em;">{{result}}</div>
+                        {{/ifNotEquals}}
+
+                    </div>
+                </div>
+            </div>
+
+        </script>
+
+
+        <div class="row" id="marketsPage"></div>
+
+    </div>
+
+    <!-- PEERS -->
+    <div class="modal fade" style="overflow-y: scroll;" id="peersModal" tabindex="-1" role="dialog"
+         aria-labelledby="peersModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="peersModalLabel">Vaults</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <p>
+                        Please pick a vault to synthetically allocate your staked $NIF and earn $UNT as rewards.<br/><br/>
+                        The rewards are vault dependent, please make sure to read their descriptions prior allocating.
+                    </p>
+
+                    <div style="max-height: 500px; overflow: auto;" id="peerList"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="modal fade" style="overflow-y: scroll;" id="detailsModal" tabindex="-1" role="dialog"
+         aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel">Proposal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <h3 id="detailsTitle"></h3>
+                    <div class="mb-3" id="detailsEndTime"></div>
+
+                    <p style="width: 100%; max-height: 400px; overflow: auto;" id="detailsDescription"></p>
+
+                    <div class="detailsParams mt-3 mb-3" id="detailsConsumer" style="display:none;"></div>
+                    <div class="detailsParams mt-3 mb-3" id="detailsGrant" style="display:none;"></div>
+                    <div class="detailsParams mt-3 mb-3" id="detailsPeer" style="display:none;"></div>
+                    <div class="detailsParams mt-3 mb-3" id="detailsRemoveConsumer" style="display:none;"></div>
+                    <div class="detailsParams mt-3 mb-3" id="detailsRemovePeer" style="display:none;"></div>
+
+                    <div id="detailsResolved" style="display:none;"></div>
+                    <div id="detailsResult" style="display:none;"></div>
+
+                    <div class="mb-3" id="detailsVote" style="display:none;">
+                        <button class="btn btn-primary" id="detailsApprove">Approve</button>
+                        <button class="btn btn-primary" id="detailsReject">Reject</button>
+                    </div>
+
+                    <div class="mb-3" id="detailsExec" style="display:none;">
+                        <button class="btn btn-primary" id="detailsExecute">Execute</button>
+                    </div>
+
+                    <div style="width: 100%; max-height: 400px; overflow: auto;" class="mt-3" id="detailsVotes"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROPOSAL -->
+    <div class="modal fade" style="overflow-y: scroll;" id="proposal" tabindex="-1" role="dialog"
+         aria-labelledby="proposalModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="proposalModalLabel">New Proposal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <p>
+                        Please select the type of proposal and suggest parameter values.<br/>
+                        If your proposal is accepted, the governance contract will be updated using your suggested values for the selected type.
+                    </p>
+
+                    <form onsubmit="return false">
+
+                        <div class="form-group">
+                            <label for="proposalType">Proposal Type</label>
+                            <select class="form-control" id="proposalType">
+                                <option value="">Please Choose</option>
+                                <option value="general">General Proposal</option>
+                                <option value="consumer">Add Grant</option>
+                                <option value="grant">Update Grant</option>
+                                <option value="peer">Add Vault To Grant</option>
+                                <option value="removeConsumer">Remove Grant</option>
+                                <option value="removePeer">Remove Vault from Grant</option>
+
+                                <option value="maxProposalDuration">Max. Proposal Duration</option>
+                                <option value="minProposalDuration">Min. Proposal Duration</option>
+                                <option value="proposalExecutionLimit">Proposal Execution Limit</option>
+
+                                <option value="quorum">Quorum</option>
+                                <option value="minNifOverallStake">Min. $NIF Overall Stake</option>
+                                <option value="minNifStake">Min. $NIF Stake</option>
+                                <option value="minNifConsumptionStake">Min. $NIF Consumption Stake</option>
+
+                            </select>
+                        </div>
+
+                    </form>
+
+                    <form id="proposalForm" onsubmit="return false;">
+
+                        <div class="form-group proposalField" style="display:none;">
+                            <label for="title">Title</label>
+                            <input type="text" value="" placeholder="Add a title for your proposal." class="form-control" id="title">
+                        </div>
+
+                        <div class="form-group proposalField" style="display:none;">
+                            <label for="description">Description</label>
+                            <textarea class="w-100" id="description"></textarea>
+                        </div>
+
+                        <!-- Add Consumer -->
+                        <div id="addConsumer" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeConsumerAddress">Address to add</label>
+                                <input type="text" placeholder="The address of the proposed grant contract." class="form-control" id="typeConsumerAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeConsumerGrant">$UNT Grant</label>
+                                <input type="text" placeholder="The amount of $UNT grant." class="form-control" id="typeConsumerGrant">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeConsumerRate">Grant Duration</label>
+                                <input type="text" value="86400" placeholder="The grant duration (vesting period)." class="form-control" id="typeConsumerRate">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeConsumerStart">Start Time (UTC Timestamp)</label>
+                                <input type="text" value="" placeholder="The start time for the grant" class="form-control" id="typeConsumerStart">
+                            </div>
+
+                        </div>
+
+                        <!-- GRANT -->
+                        <div id="updateGrant" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeUpdateGrantAddress">Address to update the grant for</label>
+                                <input type="text" placeholder="The address of an existing grant contract." class="form-control" id="typeUpdateGrantAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeUpdateGrantGrant">$UNT Grant</label>
+                                <input type="text" placeholder="The amount of $UNT grant." class="form-control" id="typeUpdateGrantGrant">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeUpdateGrantRate">Grant Duration</label>
+                                <input type="text" value="86400" placeholder="The grant duration (vesting period)." class="form-control" id="typeUpdateGrantRate">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeUpdateGrantStart">Start Time (UTC Timestamp)</label>
+                                <input type="text" value="" placeholder="The start time for the grant" class="form-control" id="typeUpdateGrantStart">
+                            </div>
+
+                        </div>
+
+                        <!-- ADD PEER -->
+                        <div id="addPeer" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeAddPeerAddress">Grant Contract Address</label>
+                                <input type="text" placeholder="The address of an existing grant contract." class="form-control" id="typeAddPeerAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeAddPeerPeer">Vault Address</label>
+                                <input type="text" placeholder="The address of the proposed grant's vault." class="form-control" id="typeAddPeerPeer">
+                            </div>
+
+                        </div>
+
+                        <!-- REMOVE CONSUMER -->
+                        <div id="removeConsumer" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeRemoveConsumerAddress">Grant Contract Address</label>
+                                <input type="text" placeholder="The address of an existing grant contract to be removed." class="form-control" id="typeRemoveConsumerAddress">
+                            </div>
+
+                        </div>
+
+                        <!-- REMOVE PEER -->
+                        <div id="removePeer" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeRemovePeerConsumerAddress">Grant Contract Address</label>
+                                <input type="text" placeholder="The address of an existing grant contract." class="form-control" id="typeRemovePeerConsumerAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeRemovePeerAddress">Vault Address</label>
+                                <input type="text" placeholder="The address of an existing vault contract to be removed." class="form-control" id="typeRemovePeerAddress">
+                            </div>
+
+                        </div>
+
+                        <!-- Max. Proposal Duration -->
+                        <div id="maxProposalDuration" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeMaxProposalDuration">Max. Proposal Duration</label>
+                                <input type="text" placeholder="" class="form-control" id="typeMaxProposalDuration">
+                            </div>
+
+                        </div>
+
+                        <!-- Min. Proposal Duration -->
+                        <div id="minProposalDuration" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeMinProposalDuration">Min. Proposal Duration</label>
+                                <input type="text" placeholder="" class="form-control" id="typeMinProposalDuration">
+                            </div>
+
+                        </div>
+
+                        <!-- Proposal Execution Limit -->
+                        <div id="proposalExecutionLimit" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeProposalExecutionLimit">Proposal Execution Limit</label>
+                                <input type="text" placeholder="" class="form-control" id="typeProposalExecutionLimit">
+                            </div>
+
+                        </div>
+
+                        <!-- Quorum -->
+                        <div id="quorum" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeQuorum">Quorum</label>
+                                <input type="text" placeholder="Please enter an amount in $NIF as quorum." class="form-control" id="typeQuorum">
+                            </div>
+
+                        </div>
+
+                        <!-- Min. Nif Overall Stake -->
+                        <div id="minNifOverallStake" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeMinNifOverallStake">Min. $NIF Overall Stake</label>
+                                <input type="text" placeholder="" class="form-control" id="typeMinNifOverallStake">
+                            </div>
+
+                        </div>
+
+                        <!-- Min. Nif Stake -->
+                        <div id="minNifStake" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeMinNifStake">Min. $NIF Stake</label>
+                                <input type="text" placeholder="" class="form-control" id="typeMinNifStake">
+                            </div>
+
+                        </div>
+
+                        <!-- Min. Nif Consumption Stake -->
+                        <div id="minNifConsumptionStake" class="proposalType" style="display:none;">
+
+                            <div class="form-group">
+                                <label for="typeMinNifConsumptionStake">Min. $NIF Consumption Stake</label>
+                                <input type="text" placeholder="" class="form-control" id="typeMinNifConsumptionStake">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group proposalField" style="display:none;">
+                            <label for="duration">Voting Duration (in seconds)</label>
+                            <input type="text" value="" placeholder="The voting duration for this proposal." class="form-control" id="duration">
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button style="display:none;" type="button" class="btn btn-primary proposalField"
+                                id="proposalButton">Propose</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STAKE NIF -->
+    <div class="modal fade" style="overflow-y: scroll;" id="stakeNif" tabindex="-1" role="dialog"
+         aria-labelledby="stakeNifModallLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stakeNifModallLabel">Stake $NIF</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <form onsubmit="return false;">
+
+                        <div class="form-group">
+                            <label for="nifAmount">$NIF to stake</label>
+                            <input type="text" placeholder="Enter how much $NIF you would like to stake." class="form-control"
+                                   id="nifAmount">
+                           <sub>The amount will be added to already staked $NIF of yours. 14 days lock.</sub>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"
+                                id="stakeNifButton">Stake</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UNSTAKE NIF -->
+    <div class="modal fade" style="overflow-y: scroll;" id="unstakeNif" tabindex="-1" role="dialog"
+         aria-labelledby="unstakeNifModallLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="unstakeNifModallLabel">Unstake $NIF</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <form onsubmit="return false;">
+
+                        <div class="form-group">
+                            <label for="unstakeNifAmount">$NIF to unstake</label>
+                            <input type="text" placeholder="Enter how much $NIF you would like to unstake." class="form-control"
+                                   id="unstakeNifAmount">
+                            <button type="button" class="btn btn-link" id="unstakeMaxButton">Max.</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"
+                                id="unstakeNifButton">Unstake</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WARN ALLOCATION -->
+    <div class="modal fade" style="overflow-y: scroll;" id="warnAllocationModal" tabindex="-1" role="dialog"
+         aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="warnAllocationModalLabel">Allocation Warning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                    <p>
+                        Please make sure to withdraw earned $UNT before allocating to a new vault.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abort</button>
+                        <button type="button" class="btn btn-secondary" id="warnAllocationButton">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERT -->
+    <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+         aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                </div>
+                <div class="modal-footer">
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS END -->
+
+    <input type="hidden" id="nftErc1155CurrName" value="" />
+
+</div>
+
+</div>
+
+</div>
+<script src="js/ramp-init.js"></script>
+<script src="js/themeSwitch.js"></script>
+</body>
+
+</html>

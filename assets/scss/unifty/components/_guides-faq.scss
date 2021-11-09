@@ -10,7 +10,9 @@
       color: var(--heading-color) !important;
       font-size: 2rem;
       font-weight: 400;
-      padding: 15px 10px 10px;
+      padding: 15px 20px 10px;
+      font-family: "Baloo 2", sans-serif;
+
     }
 
     a.active {
@@ -18,13 +20,13 @@
 
       border: 1px solid !important;
       border-bottom: 2px solid !important;
-      border-color: var(--heading-color) var(--heading-color) var(--bg-primary) !important;
+      //border-color: var(--heading-color) var(--heading-color) var(--bg-primary) !important;
 
       border-radius: 8px 8px 0 0;
 
       margin-bottom: -1px;
       margin-left: -1px;
-
+      border-color: var(--heading-color) var(--heading-color) var(--bg-tertiary) !important;
       background-color: transparent;
     }
   }
@@ -65,10 +67,10 @@
       text-align: left;
       box-shadow: none;
       border-radius: 0;
-      box-shadow: var(--shadow-primary);
+      //box-shadow: var(--shadow-primary);
       padding: 13px 20px;
       border: 0;
-      background-color: var(--bg-tertiary) !important;
+      background-color: rgba(255, 255, 255, 0) !important;
 
       cursor: pointer;
 
@@ -133,7 +135,7 @@
 }
 
 #learn-more-socialDiv {
-  width: 30%;
+  width: 40%;
   height: 100%;
   margin-left: 4rem;
   background-color: var(--bg-secondary) !important;
@@ -144,6 +146,9 @@
 
     font-weight: bold;
     line-height: 1.5;
+    font-family: 'Baloo 2';
+    font-size: 2rem;
+
   }
 
   & > div {

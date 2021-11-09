@@ -9,12 +9,12 @@ function TncLibGov(){
     // ETHEREUM RINKEBY
     if(chain_id === "4") {
 
-        this.gov = new web3.eth.Contract(govABI, '0x580CEf1eF62a5fEC1A829489c3619De178fe7153', {from: this.account});
+        this.gov = new web3.eth.Contract(govABI, '0xfEB5B2E41b0578013FE713F4D153ed96b9320b72', {from: this.account});
         this.account = '';
 
     } else {
 
-        this.gov = new web3.eth.Contract(govABI, '0x4fc279038774b065Df6A88b784280BF6F10DfA94', {from: this.account});
+        this.gov = new web3.eth.Contract(govABI, '0xCF532428021BEd194F3AB8D4C003cC2e2cD8628a', {from: this.account});
         this.account = '';
 
     }
@@ -580,6 +580,40 @@ function TncLibGov(){
         const price = await web3.eth.getGasPrice();
 
         this.gov.methods.allocate(consumer, peer)
+            .send({
+                from:this.account,
+                gas: gas + Math.floor( gas * 0.1 ),
+                gasPrice: Number(price) + Math.floor( Number(price) * 0.1 )
+            })
+            .on('error', async function(e){
+                errCallback(e);
+            })
+            .on('transactionHash', async function(transactionHash){
+                preCallback();
+            })
+            .on("receipt", function (receipt) {
+                postCallback(receipt);
+            });
+    };
+
+    this.dellocate = async function(preCallback, postCallback, errCallback){
+
+        let gas = 0;
+
+        try {
+            await sleep(sleep_time);
+            gas = await this.gov.methods.dellocate().estimateGas({
+                from:this.account
+            });
+        }catch(e){
+            console.log(e.message);
+            errCallback(e);
+            return;
+        }
+
+        const price = await web3.eth.getGasPrice();
+
+        this.gov.methods.dellocate()
             .send({
                 from:this.account,
                 gas: gas + Math.floor( gas * 0.1 ),

@@ -7,7 +7,9 @@
   min-width: unset;
 
   .btn {
-    font-size: 1.2rem;
+    font-size: 1.2rem;    
+    border-radius: 3rem;
+    font-family: "Baloo 2", sans-serif;
   }
 
   .card .traits-collapse {
@@ -26,10 +28,11 @@
       min-height: 15.6rem;
       max-width: 15.6rem;
       max-height: 15.6rem;
-      padding: 0.8rem !important;
+      padding: 0.25rem !important;
       margin: 1.5rem auto 0.5rem;
-      background-color: var(--image-padding);
-
+      //background-color: var(--image-padding);
+      background-color: var(--bg-secondary); 
+      box-shadow: var(--shadow-primary);
       border-radius: 0.6rem !important;
       object-fit: cover;
 
@@ -52,6 +55,7 @@
     .card-body,
     .header-left {
       position: static;
+      background-color: var(--bg-secondary);
 
       //copy address
       .text-truncate {
@@ -66,10 +70,13 @@
 
       //title
       h5.card-title {
-        font-size: 1.8rem;
+        
         font-weight: 700;
         letter-spacing: 0.28px;
         margin: 0 0 1rem 0;
+        font-size: 2rem;
+        font-family: "Baloo 2", sans-serif;
+
 
         a {
           color: var(--heading-color);
@@ -143,14 +150,14 @@
 
       //points
       a.redeemButton {
+        border-radius: 3rem;
+        padding: 0.6rem 0.8rem;
         font-size: 1.4rem;
         box-shadow: none;
         border: none;
         text-transform: none;
-        border-radius: 0.6rem;
         background-color: var(--primary-color);
         color: var(--bg-secondary);
-        padding: 0.3rem 0.8rem;
         font-weight: 500;
         width: 90%;
         text-overflow: ellipsis;
@@ -168,8 +175,8 @@
       a.traits {
         font-size: 1.4rem;
         border: 0.1rem solid var(--text-primary);
-        border-radius: 0.6rem;
-        background-color: var(--image-padding) !important;
+        border-radius: 3rem;
+        //background-color: var(--image-padding) !important;
         text-transform: none;
         color: var(--text-primary);
         padding: 0.3rem 0.8rem;
@@ -186,9 +193,11 @@
         box-shadow: none;
         padding: 0;
         margin: 0;
-
+       
         span {
           font-size: 1.8rem;
+
+          
         }
 
         &:hover,
@@ -247,6 +256,8 @@
           background-color: var(--bg-secondary);
           color: var(--primary-color);
           box-shadow: none;
+          font-family: "Baloo 2", sans-serif;
+          min-width: 100%;
 
           &::before {
             font-family: "Material Icons Round";
@@ -276,9 +287,17 @@
 
         &.show a {
           background-color: var(--bg-secondary);
-          font-size: 1.2rem;
-          padding: 1rem;
+          font-size: 1.4rem;
+          padding: 1rem 1.2rem;
           color: var(--text-primary);
+          &:hover{
+            background: none;
+            box-shadow: none;
+            background-color: var(--primary-hover-light);
+
+          }
+
+          
         }
 
         .dropdown-menu.show {
@@ -309,7 +328,8 @@
 .light-edition .popover.bs-popover-top {
   background-color: var(--bg-secondary);
   box-shadow: var(--shadow-primary);
-
+  
+  
   .arrow,
   .arrow::before {
     display: none;
@@ -317,11 +337,12 @@
 
   .popover-header,
   .popover-body {
+    
     padding: 1rem;
     max-height: 15rem;
     overflow: auto;
     color: var(--text-primary);
-
+    justify-content: flex-start;
     &::-webkit-scrollbar {
       width: 0.5rem;
       height: 0.3rem;
@@ -377,4 +398,7 @@
 
 .nftHeader {
   width: 100%;
+}
+.aria-describedby{
+  font-size: 200px;
 }

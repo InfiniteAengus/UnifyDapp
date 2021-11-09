@@ -565,6 +565,19 @@ function TncDapp() {
         let controller = $('#farmControllerAddress').val().trim();
         let link = $('#farmCustomLink').val().trim();
         let text = $('#farmCustomLinkText').val().trim();
+        //let check= $('#flexCheckDefault').val().is(':checked');
+       
+        $('#flexCheckDefault').on('change', function() { 
+            // From the other examples
+            if (!this.checked) {
+                { _alert('Please read the notice and check the box to continue!'); return; }
+            }
+        });
+
+        // if(check);
+        // {   console.log(check.checked)
+        //     { _alert('Please check the checkbox regarding fee'); return; }
+        // }
 
         if(name == ''){ _alert('Please enter a farm name'); return; }
         if(token == '' || token == 'custom'){ _alert('Please choose a staking token or add a custom address'); return; }
@@ -577,6 +590,11 @@ function TncDapp() {
         if(parseFloat(maxStake) < parseFloat(minStake) || parseFloat(maxStake) == 0){ _alert('Maximum stake must be equal or larger than minimum stake'); return; }
         if(controller == ''){ _alert('Please enter a controller address'); return; }
         if(!await web3.utils.isAddress(controller)){ _alert('Invalid controller address'); return; }
+        if( ! ($('#flexCheckDefault').is(":checked")))
+        {
+            { _alert('Please read the notice and check the box to continue!'); return; }
+        } 
+        
 
         let farmInfo = {
             name : name,

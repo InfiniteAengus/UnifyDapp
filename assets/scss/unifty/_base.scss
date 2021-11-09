@@ -33,6 +33,25 @@ body {
 
 body.dark-edition {
   cursor: var(--cursor-default);
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scrolbar-track);
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow);
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: var(--scrollbar-track-hover);
+  }
 
   a:link,
   a:hover,
@@ -44,7 +63,25 @@ body.dark-edition {
 
 body.light-edition {
   cursor: var(--cursor-default);
-
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scrolbar-track);
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow);
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: var(--scrollbar-track-hover);
+  }
 
   a:link,
   a:hover,
@@ -60,11 +97,11 @@ body.light-edition {
   --primary-hover-dark: #f047ce;
 
   --title-color: #ec6fd2;
-
+  --bg-collectible:#1f283e;
   --bg-primary: #0d141a;
   --bg-secondary: #121a21;
   --bg-secondary-light: rgba(18, 26, 33, .5);
-  --bg-tertiary: #121a21;
+  --bg-tertiary: #202940;
 
   --text-primary: #9d9db4;
   --text-primary-light: rgba(157, 157, 180, .5);
@@ -80,16 +117,14 @@ body.light-edition {
 
   --traits-bg: rgba(13, 20, 26, .5);
 
-  --shadow-primary: 0 16px 38px -12px rgba(0, 0, 0, .56), 
-    0 4px 25px 0px rgba(0, 0, 0, .12), 
-    0 8px 10px -5px rgba(0, 0, 0, .20);
+  --shadow-primary: 0 16px 20px -12px rgba(0, 0, 0, .20), 0 4px 20px 0px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20);
 
   --cursor-default: url(../img/unifty-icons/cursor-default-dark.svg), auto;
   --cursor-pointer: url(../img/unifty-icons/cursor-pointer-dark.svg), auto;
   --cursor-text: url(../img/unifty-icons/cursor-text-dark-thin.svg), auto;
 
   //scrollbar bg
-  -scrollbar-track: rgba(253, 121, 226, .1);
+  --scrollbar-track: rgba(253, 121, 226, .1);
   --scrollbar-track-shadow: #121a21;
   --scrollbar-track-hover: #666666;
   --scrollbar-thumb: linear-gradient(0deg, #5c5c73 27%,rgba(253, 121, 226, .5) 60%);
@@ -100,13 +135,13 @@ body.light-edition {
   --primary-color: #202060;
   --primary-hover-light: rgba(32, 32, 96, .1);
   --primary-hover-dark: #06064a;
-
+  --bg-collectible:#ffff;
   --title-color: #202040;
 
   --bg-primary: #f4f7fb;
   --bg-secondary: #ffffff;
   --bg-secondary-light: rgba(255, 255, 255, .5);
-  --bg-tertiary: #eef0f8;
+  --bg-tertiary: #fff;
 
   --text-primary: #4c4c6f;
   --text-primary-light: rgba(76, 76, 111, .5);
@@ -122,9 +157,7 @@ body.light-edition {
 
   --traits-bg: #fff;
 
-  --shadow-primary: 0 16px 38px -12px rgba(225, 225, 225, .56), 
-    0 4px 25px 0px rgba(225, 225, 225, .12), 
-    0 8px 10px -5px rgba(225, 225, 225, .2);
+  --shadow-primary: 0 16px 20px -12px rgba(225, 225, 225, .4), 0 4px 20px 0px rgba(225, 225, 225, .12), 0 8px 10px -5px rgba(225, 225, 225, .2);
 
   --cursor-default: url(../img/unifty-icons/cursor-default-light.svg), auto;
   --cursor-pointer: url(../img/unifty-icons/cursor-pointer-light.svg), auto;
@@ -154,7 +187,8 @@ body.light-edition {
   margin: 2rem 0;
 
   #loadMoreButton{
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
     font-weight: 500;
+     border-radius: 3rem;
   }
 }

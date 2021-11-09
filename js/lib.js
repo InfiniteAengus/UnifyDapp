@@ -67,7 +67,7 @@ function TncLib(){
         this.genesis = new web3.eth.Contract(genesisABI, '0x0dF727dFD080224678307FCDd9B86a4EB6D5533C', {from: this.account});
         this.farm = new web3.eth.Contract(farmABI, '0xC2bC267EF4EA7Db7bD0F4F924A04A9eaE64D8eE3', {from: this.account});
         this.farmShop = new web3.eth.Contract(farmShopABI, '0x3bed2637738c403bE932E81a8D66137Ee94c1D3c', {from: this.account});
-        this.multiBatch = new web3.eth.Contract(multiBatchABI, '0x5E441Ce3Fde4a6172985913B64f9804A4552c45e', {from: this.account});
+        this.multiBatch = new web3.eth.Contract(multiBatchABI, '0xEd396b34c1BBEC4eBC94aDFe27C5aB642EcdB6E1', {from: this.account});
         this.account = '';
         this.defaultProxyRegistryAddress = '0x0000000000000000000000000000000000000000'; // opensea
 
@@ -1622,7 +1622,9 @@ function TncLib(){
         await sleep(sleep_time);
 
         let erc1155 = new web3.eth.Contract( erc1155ABI, erc1155Address, {from:this.account} );
-        let events = await fetchUrl(api_url + '1.0/'+chain_id+'/collections/events/TransferSingle/erc1155Address/'+erc1155Address+'/to/'+this.account, 5000);
+        let events = await fetchUrl(api_url + '1.0/'+chain_id+'/collections/events/TransferSingle/erc1155Address/'+erc1155Address+'/to/'+address, 5000);
+
+        console.log(api_url + '1.0/'+chain_id+'/collections/events/TransferSingle/erc1155Address/'+erc1155Address+'/to/'+address);
 
         if(events == 'not-indexed'){
             events = '[]';
@@ -1660,7 +1662,7 @@ function TncLib(){
             }
         }
 
-        events = await fetchUrl(api_url + '1.0/'+chain_id+'/collections/events/TransferBatch/erc1155Address/'+erc1155Address+'/to/'+this.account, 5000);
+        events = await fetchUrl(api_url + '1.0/'+chain_id+'/collections/events/TransferBatch/erc1155Address/'+erc1155Address+'/to/'+address, 5000);
 
         if(events === 'not-indexed'){
             events = '[]';

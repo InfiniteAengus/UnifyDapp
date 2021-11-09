@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" x2="0.249" y2="1.264" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#64e1f5"/>
+      <stop offset="0.618" stop-color="#6067f2"/>
+      <stop offset="1" stop-color="#3d13ae"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.599" y1="0.931" x2="0.455" y2="-0.097" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5750df"/>
+      <stop offset="0.225" stop-color="#963ddb"/>
+      <stop offset="0.477" stop-color="#d340c4"/>
+      <stop offset="0.744" stop-color="#e47c87"/>
+      <stop offset="0.991" stop-color="#f4b74b"/>
+      <stop offset="1" stop-color="#f4b74b"/>
+    </linearGradient>
+  </defs>
+  <g id="Unifty-Logo" transform="translate(-12357 479)">
+    <rect id="Rectangle_1486" data-name="Rectangle 1486" width="90" height="90" transform="translate(12357 -479)" fill="none"/>
+    <g id="Group_196" data-name="Group 196" transform="translate(12376 -460)">
+      <path id="Path_721" data-name="Path 721" d="M76.288,52.828V25.5H65.85A10.283,10.283,0,0,0,55.412,35.818V52.828c0,4.069.384,6.966-3.1,10.313a10.458,10.458,0,0,1-7.366,3.08c.494,4.768,1.472,6.966,4.954,8.974a14.145,14.145,0,0,0,8.84,1.205C66.679,75.133,76.981,69.185,76.288,52.828Z" transform="translate(-24.321 -25.372)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="Path_722" data-name="Path 722" d="M50.96,36.45A11.039,11.039,0,0,0,39.921,25.411H30.334V45.77A20.626,20.626,0,0,0,50.96,66.4h0Z" transform="translate(-30.334 -25.411)" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>
